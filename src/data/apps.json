@@ -1,0 +1,8611 @@
+{
+  "generatedAt": "2026-07-21T20:28:14.092Z",
+  "count": 1368,
+  "source": "ComparEdge CC-BY-4.0 + Promonet niche seeds + matrix tools",
+  "apps": [
+    {
+      "name": "10000ft",
+      "slug": "10000ft",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "10to8",
+      "slug": "10to8",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "10Web",
+      "slug": "10web",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "15Five",
+      "slug": "15five",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "17hats",
+      "slug": "17hats",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "1inch",
+      "slug": "1inch",
+      "category": "defi-tools",
+      "aliases": []
+    },
+    {
+      "name": "1Password",
+      "slug": "1password",
+      "category": "password-managers",
+      "aliases": []
+    },
+    {
+      "name": "1Password Business",
+      "slug": "1password-business",
+      "category": "iam",
+      "aliases": [
+        "1password enterprise"
+      ]
+    },
+    {
+      "name": "3Commas",
+      "slug": "3commas",
+      "category": "crypto-trading-bots",
+      "aliases": []
+    },
+    {
+      "name": "6sense",
+      "slug": "6sense",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "8x8",
+      "slug": "8x8",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "AbacusLaw",
+      "slug": "abacuslaw",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "AbelDent",
+      "slug": "abeldent",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "AccuLynx",
+      "slug": "acculynx",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Actionstep",
+      "slug": "actionstep",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "ActiveCampaign",
+      "slug": "activecampaign",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "Acuity Scheduling",
+      "slug": "acuity-scheduling",
+      "category": "Scheduling",
+      "aliases": [
+        "Acuity"
+      ]
+    },
+    {
+      "name": "Acumatica",
+      "slug": "acumatica",
+      "category": "erp",
+      "aliases": []
+    },
+    {
+      "name": "Adalo",
+      "slug": "adalo",
+      "category": "CMS",
+      "aliases": []
+    },
+    {
+      "name": "Adaptive Insights",
+      "slug": "adaptive-insights",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Adobe Creative Cloud",
+      "slug": "adobe-creative-cloud",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Adobe Firefly",
+      "slug": "adobe-firefly",
+      "category": "ai-image",
+      "aliases": []
+    },
+    {
+      "name": "Adobe Illustrator",
+      "slug": "adobe-illustrator",
+      "category": "design-tools",
+      "aliases": []
+    },
+    {
+      "name": "Adobe Photoshop",
+      "slug": "adobe-photoshop",
+      "category": "design-tools",
+      "aliases": []
+    },
+    {
+      "name": "Adobe Podcast",
+      "slug": "adobe-podcast",
+      "category": "ai-voice",
+      "aliases": []
+    },
+    {
+      "name": "Adobe Sign",
+      "slug": "adobe-sign",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "ADP RUN",
+      "slug": "adp-run",
+      "category": "Payroll",
+      "aliases": [
+        "ADP"
+      ]
+    },
+    {
+      "name": "AdvancedMD",
+      "slug": "advancedmd",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Adyen",
+      "slug": "adyen",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Affinity Designer",
+      "slug": "affinity-designer",
+      "category": "design-tools",
+      "aliases": []
+    },
+    {
+      "name": "Affirm",
+      "slug": "affirm",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Afterpay",
+      "slug": "afterpay",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Aftershoot",
+      "slug": "aftershoot",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "AgencyAnalytics",
+      "slug": "agencyanalytics",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Agencybloc",
+      "slug": "agencybloc",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "AgencyBloc AMS",
+      "slug": "agencybloc-ams",
+      "category": "Insurance",
+      "aliases": []
+    },
+    {
+      "name": "Agicap",
+      "slug": "agicap",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Agile CRM",
+      "slug": "agile-crm",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Aha!",
+      "slug": "aha",
+      "category": "Project Management",
+      "aliases": []
+    },
+    {
+      "name": "Ahrefs",
+      "slug": "ahrefs",
+      "category": "seo-tools",
+      "aliases": []
+    },
+    {
+      "name": "AI21 Studio",
+      "slug": "ai21-studio",
+      "category": "ai-writing",
+      "aliases": [
+        "ai21 labs"
+      ]
+    },
+    {
+      "name": "Aider",
+      "slug": "aider",
+      "category": "ai-coding",
+      "aliases": []
+    },
+    {
+      "name": "Airbase",
+      "slug": "airbase",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Airbyte",
+      "slug": "airbyte",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Aircall",
+      "slug": "aircall",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Airtable",
+      "slug": "airtable",
+      "category": "project-management",
+      "aliases": []
+    },
+    {
+      "name": "Akaunting",
+      "slug": "akaunting",
+      "category": "accounting",
+      "aliases": [
+        "money manager"
+      ]
+    },
+    {
+      "name": "Alation",
+      "slug": "alation",
+      "category": "data-observability",
+      "aliases": []
+    },
+    {
+      "name": "Albato",
+      "slug": "albato",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "Algolia",
+      "slug": "algolia",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Alteryx",
+      "slug": "alteryx",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Altrady",
+      "slug": "altrady",
+      "category": "crypto-trading-bots",
+      "aliases": []
+    },
+    {
+      "name": "Amazon Nova",
+      "slug": "amazon-nova",
+      "category": "llm",
+      "aliases": []
+    },
+    {
+      "name": "Amazon Q Developer",
+      "slug": "amazon-q-developer",
+      "category": "ai-coding",
+      "aliases": []
+    },
+    {
+      "name": "Amazon S3",
+      "slug": "amazon-s3",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Amazon Seller Central",
+      "slug": "amazon-seller-central",
+      "category": "Ecommerce",
+      "aliases": [
+        "Amazon"
+      ]
+    },
+    {
+      "name": "Amazon Web Services (AWS)",
+      "slug": "amazon-web-services-aws",
+      "category": "cloud-hosting",
+      "aliases": [
+        "aws"
+      ]
+    },
+    {
+      "name": "Amplitude",
+      "slug": "amplitude",
+      "category": "analytics",
+      "aliases": []
+    },
+    {
+      "name": "Amplitude Experiment",
+      "slug": "amplitude-experiment",
+      "category": "Project Management",
+      "aliases": []
+    },
+    {
+      "name": "AMS360",
+      "slug": "ams360",
+      "category": "Insurance",
+      "aliases": []
+    },
+    {
+      "name": "Anaplan",
+      "slug": "anaplan",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "And.co",
+      "slug": "and-co",
+      "category": "Professional Services",
+      "aliases": []
+    },
+    {
+      "name": "Anecdotes",
+      "slug": "anecdotes",
+      "category": "compliance",
+      "aliases": [
+        "anecdotes ai"
+      ]
+    },
+    {
+      "name": "Angi Ads",
+      "slug": "angi-ads",
+      "category": "Home Services",
+      "aliases": [
+        "Angi"
+      ]
+    },
+    {
+      "name": "Anthropic API (Claude)",
+      "slug": "anthropic-api-claude",
+      "category": "llm",
+      "aliases": [
+        "claude api"
+      ]
+    },
+    {
+      "name": "Apartment Therapy PMS",
+      "slug": "apartment-therapy-pms",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "Apartments.com",
+      "slug": "apartments-com",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "Apollo.io",
+      "slug": "apollo-io",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "AppFolio",
+      "slug": "appfolio",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "AppFolio Investment Management",
+      "slug": "appfolio-investment-management",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "Applied Epic",
+      "slug": "applied-epic",
+      "category": "Insurance",
+      "aliases": []
+    },
+    {
+      "name": "Appointlet",
+      "slug": "appointlet",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Appointy",
+      "slug": "appointy",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Appsmith",
+      "slug": "appsmith",
+      "category": "CMS",
+      "aliases": []
+    },
+    {
+      "name": "Aqua Security",
+      "slug": "aqua-security",
+      "category": "cloud-security",
+      "aliases": []
+    },
+    {
+      "name": "Arborgold",
+      "slug": "arborgold",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Archy",
+      "slug": "archy",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Arive",
+      "slug": "arive",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "AroFlo",
+      "slug": "aroflo",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Arthur AI",
+      "slug": "arthur-ai",
+      "category": "ai-security",
+      "aliases": []
+    },
+    {
+      "name": "AS400",
+      "slug": "as400",
+      "category": "Custom",
+      "aliases": []
+    },
+    {
+      "name": "Asana",
+      "slug": "asana",
+      "category": "project-management",
+      "aliases": []
+    },
+    {
+      "name": "Ashby",
+      "slug": "ashby",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Aspire",
+      "slug": "aspire",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "athenahealth",
+      "slug": "athenahealth",
+      "category": "Healthcare",
+      "aliases": [
+        "Athena"
+      ]
+    },
+    {
+      "name": "Atlan",
+      "slug": "atlan",
+      "category": "data-observability",
+      "aliases": []
+    },
+    {
+      "name": "Attentive",
+      "slug": "attentive",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Attio",
+      "slug": "attio",
+      "category": "crm",
+      "aliases": []
+    },
+    {
+      "name": "ATTOM",
+      "slug": "attom",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Augment Code",
+      "slug": "augment-code",
+      "category": "ai-coding",
+      "aliases": []
+    },
+    {
+      "name": "Auth0",
+      "slug": "auth0",
+      "category": "Security",
+      "aliases": []
+    },
+    {
+      "name": "Authorize.net",
+      "slug": "authorize-net",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Autodesk Construction IQ",
+      "slug": "autodesk-construction-iq",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "AutoEntry",
+      "slug": "autoentry",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "AutoGPT",
+      "slug": "autogpt",
+      "category": "ai-agents",
+      "aliases": []
+    },
+    {
+      "name": "Avail",
+      "slug": "avail",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "Avalara",
+      "slug": "avalara",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "AvidXchange",
+      "slug": "avidxchange",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Avoma",
+      "slug": "avoma",
+      "category": "ai-meeting",
+      "aliases": []
+    },
+    {
+      "name": "AWeber",
+      "slug": "aweber",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "AWS AppFlow",
+      "slug": "aws-appflow",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "Axonaut",
+      "slug": "axonaut",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Azure Blob Storage",
+      "slug": "azure-blob-storage",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Azure DevOps",
+      "slug": "azure-devops",
+      "category": "Project Management",
+      "aliases": []
+    },
+    {
+      "name": "Azure Logic Apps",
+      "slug": "azure-logic-apps",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "BambooHR",
+      "slug": "bamboohr",
+      "category": "hr-tools",
+      "aliases": []
+    },
+    {
+      "name": "Banana Gun",
+      "slug": "banana-gun",
+      "category": "crypto-telegram-bots",
+      "aliases": []
+    },
+    {
+      "name": "Bandwidth",
+      "slug": "bandwidth",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Bardeen",
+      "slug": "bardeen",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "Basecamp",
+      "slug": "basecamp",
+      "category": "project-management",
+      "aliases": []
+    },
+    {
+      "name": "Beautiful.ai",
+      "slug": "beautiful-ai",
+      "category": "ai-productivity",
+      "aliases": [
+        "beautiful ai"
+      ]
+    },
+    {
+      "name": "beehiiv",
+      "slug": "beehiiv",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "Bench",
+      "slug": "bench",
+      "category": "accounting",
+      "aliases": [
+        "Bench Accounting"
+      ]
+    },
+    {
+      "name": "Benchmark Email",
+      "slug": "benchmark-email",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "BeSmartee",
+      "slug": "besmartee",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Better Proposals",
+      "slug": "better-proposals",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Beyond Identity",
+      "slug": "beyond-identity",
+      "category": "iam",
+      "aliases": []
+    },
+    {
+      "name": "Big Cartel",
+      "slug": "big-cartel",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "BigCommerce",
+      "slug": "bigcommerce",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Bigeye",
+      "slug": "bigeye",
+      "category": "data-observability",
+      "aliases": []
+    },
+    {
+      "name": "BigID",
+      "slug": "bigid",
+      "category": "compliance",
+      "aliases": []
+    },
+    {
+      "name": "BigQuery",
+      "slug": "bigquery",
+      "category": "Data",
+      "aliases": [
+        "Google BigQuery"
+      ]
+    },
+    {
+      "name": "BigTime",
+      "slug": "bigtime",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Bill.com",
+      "slug": "bill-com",
+      "category": "Accounting",
+      "aliases": [
+        "BILL"
+      ]
+    },
+    {
+      "name": "Bill4Time",
+      "slug": "bill4time",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Binance",
+      "slug": "binance",
+      "category": "crypto-exchanges",
+      "aliases": []
+    },
+    {
+      "name": "Bitget",
+      "slug": "bitget",
+      "category": "crypto-exchanges",
+      "aliases": []
+    },
+    {
+      "name": "Bitrix24",
+      "slug": "bitrix24",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Bitsgap",
+      "slug": "bitsgap",
+      "category": "crypto-trading-bots",
+      "aliases": []
+    },
+    {
+      "name": "Bitwarden",
+      "slug": "bitwarden",
+      "category": "password-managers",
+      "aliases": []
+    },
+    {
+      "name": "Black Knight",
+      "slug": "black-knight",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Blackbaud",
+      "slug": "blackbaud",
+      "category": "Nonprofit",
+      "aliases": []
+    },
+    {
+      "name": "Blackboard",
+      "slug": "blackboard",
+      "category": "Education",
+      "aliases": []
+    },
+    {
+      "name": "Blend",
+      "slug": "blend",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Blockpit",
+      "slug": "blockpit",
+      "category": "crypto-tax",
+      "aliases": []
+    },
+    {
+      "name": "Bloom",
+      "slug": "bloom",
+      "category": "crypto-telegram-bots",
+      "aliases": []
+    },
+    {
+      "name": "Bloomerang",
+      "slug": "bloomerang",
+      "category": "Nonprofit",
+      "aliases": []
+    },
+    {
+      "name": "Bluebeam",
+      "slug": "bluebeam",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Bluehost",
+      "slug": "bluehost",
+      "category": "cloud-hosting",
+      "aliases": []
+    },
+    {
+      "name": "Bluevine",
+      "slug": "bluevine",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Bold Subscriptions",
+      "slug": "bold-subscriptions",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "BoldSign",
+      "slug": "boldsign",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "BoldTrail",
+      "slug": "boldtrail",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Bolt",
+      "slug": "bolt",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "Bolt.new",
+      "slug": "bolt-new",
+      "category": "ai-coding",
+      "aliases": [
+        "bolt new"
+      ]
+    },
+    {
+      "name": "BONKbot",
+      "slug": "bonkbot",
+      "category": "crypto-telegram-bots",
+      "aliases": []
+    },
+    {
+      "name": "Bonsai",
+      "slug": "bonsai",
+      "category": "accounting",
+      "aliases": []
+    },
+    {
+      "name": "Book Like A Boss",
+      "slug": "book-like-a-boss",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Booker",
+      "slug": "booker",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Booksy",
+      "slug": "booksy",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Boomi",
+      "slug": "boomi",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "BoomTown",
+      "slug": "boomtown",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Botpress",
+      "slug": "botpress",
+      "category": "ai-assistants",
+      "aliases": [
+        "botpress io"
+      ]
+    },
+    {
+      "name": "Boulevard",
+      "slug": "boulevard",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Box",
+      "slug": "box",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Braintree",
+      "slug": "braintree",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Braze",
+      "slug": "braze",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Breezy HR",
+      "slug": "breezy-hr",
+      "category": "Recruitment",
+      "aliases": [
+        "Breezy"
+      ]
+    },
+    {
+      "name": "Brevo",
+      "slug": "brevo",
+      "category": "email-marketing",
+      "aliases": [
+        "Sendinblue"
+      ]
+    },
+    {
+      "name": "Brex",
+      "slug": "brex",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Bright Accounting",
+      "slug": "bright-accounting",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Brightpearl",
+      "slug": "brightpearl",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "Brivity",
+      "slug": "brivity",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Browser Use",
+      "slug": "browser-use",
+      "category": "ai-agents",
+      "aliases": []
+    },
+    {
+      "name": "Bubble",
+      "slug": "bubble",
+      "category": "website-builders",
+      "aliases": [
+        "bubble io"
+      ]
+    },
+    {
+      "name": "Budibase",
+      "slug": "budibase",
+      "category": "CMS",
+      "aliases": []
+    },
+    {
+      "name": "Buffer",
+      "slug": "buffer",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Buildertrend",
+      "slug": "buildertrend",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Buildertrend CRM",
+      "slug": "buildertrend-crm",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Buildium",
+      "slug": "buildium",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "Buildium Accounting",
+      "slug": "buildium-accounting",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "BuildShip",
+      "slug": "buildship",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "Bullhorn",
+      "slug": "bullhorn",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "BullX",
+      "slug": "bullx",
+      "category": "crypto-telegram-bots",
+      "aliases": []
+    },
+    {
+      "name": "Butter",
+      "slug": "butter",
+      "category": "video-conferencing",
+      "aliases": [
+        "butter video"
+      ]
+    },
+    {
+      "name": "Buttondown",
+      "slug": "buttondown",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "Bybit",
+      "slug": "bybit",
+      "category": "crypto-exchanges",
+      "aliases": []
+    },
+    {
+      "name": "BytePro",
+      "slug": "bytepro",
+      "category": "Mortgage",
+      "aliases": [
+        "Byte"
+      ]
+    },
+    {
+      "name": "Cal.com",
+      "slug": "cal-com",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Cal.com (Cal Video)",
+      "slug": "cal-com-cal-video",
+      "category": "video-conferencing",
+      "aliases": [
+        "cal video"
+      ]
+    },
+    {
+      "name": "Calendly",
+      "slug": "calendly",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Calendly Teams",
+      "slug": "calendly-teams",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Calyx Path",
+      "slug": "calyx-path",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Calyx Point",
+      "slug": "calyx-point",
+      "category": "Mortgage",
+      "aliases": [
+        "Point"
+      ]
+    },
+    {
+      "name": "Campaign Monitor",
+      "slug": "campaign-monitor",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "Canva",
+      "slug": "canva",
+      "category": "design-tools",
+      "aliases": []
+    },
+    {
+      "name": "Canva AI",
+      "slug": "canva-ai",
+      "category": "ai-image",
+      "aliases": []
+    },
+    {
+      "name": "Canvas LMS",
+      "slug": "canvas-lms",
+      "category": "Education",
+      "aliases": []
+    },
+    {
+      "name": "CapCut",
+      "slug": "capcut",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "CapCut AI",
+      "slug": "capcut-ai",
+      "category": "ai-video",
+      "aliases": []
+    },
+    {
+      "name": "Capsule",
+      "slug": "capsule",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Capsule CRM",
+      "slug": "capsule-crm",
+      "category": "crm",
+      "aliases": [
+        "capsule",
+        "Capsule"
+      ]
+    },
+    {
+      "name": "CapsuleHQ",
+      "slug": "capsulehq",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Capture One",
+      "slug": "capture-one",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "CareStack",
+      "slug": "carestack",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Carousel",
+      "slug": "carousel",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "Carrd",
+      "slug": "carrd",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "Cartesia",
+      "slug": "cartesia",
+      "category": "ai-voice",
+      "aliases": [
+        "cartesia ai"
+      ]
+    },
+    {
+      "name": "Case Status",
+      "slug": "case-status",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "CasePeer",
+      "slug": "casepeer",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Casetext",
+      "slug": "casetext",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Cash App Business",
+      "slug": "cash-app-business",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "CAST AI",
+      "slug": "cast-ai",
+      "category": "finops",
+      "aliases": []
+    },
+    {
+      "name": "CDK Global",
+      "slug": "cdk-global",
+      "category": "Automotive",
+      "aliases": [
+        "CDK"
+      ]
+    },
+    {
+      "name": "Celigo",
+      "slug": "celigo",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "Centerbase",
+      "slug": "centerbase",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Ceridian Dayforce",
+      "slug": "ceridian-dayforce",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "Cerner",
+      "slug": "cerner",
+      "category": "Healthcare",
+      "aliases": [
+        "Oracle Health"
+      ]
+    },
+    {
+      "name": "Certify",
+      "slug": "certify",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "ChannelAdvisor",
+      "slug": "channeladvisor",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "Character.AI",
+      "slug": "character-ai",
+      "category": "ai-assistants",
+      "aliases": [
+        "character ai"
+      ]
+    },
+    {
+      "name": "Chargebee",
+      "slug": "chargebee",
+      "category": "payments",
+      "aliases": []
+    },
+    {
+      "name": "Chatbase",
+      "slug": "chatbase",
+      "category": "ai-assistants",
+      "aliases": [
+        "chatbase io"
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "slug": "chatgpt",
+      "category": "llm",
+      "aliases": []
+    },
+    {
+      "name": "Chili Piper",
+      "slug": "chili-piper",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Chime",
+      "slug": "chime",
+      "category": "Real Estate",
+      "aliases": [
+        "Chime Technologies"
+      ]
+    },
+    {
+      "name": "Chorus",
+      "slug": "chorus",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Chroma",
+      "slug": "chroma",
+      "category": "vector-databases",
+      "aliases": []
+    },
+    {
+      "name": "Cin7",
+      "slug": "cin7",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "CINC",
+      "slug": "cinc",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Cisco Secure Endpoint",
+      "slug": "cisco-secure-endpoint",
+      "category": "endpoint-security",
+      "aliases": [
+        "cisco secure"
+      ]
+    },
+    {
+      "name": "Clari",
+      "slug": "clari",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Classy",
+      "slug": "classy",
+      "category": "Nonprofit",
+      "aliases": []
+    },
+    {
+      "name": "Claude",
+      "slug": "claude",
+      "category": "llm",
+      "aliases": []
+    },
+    {
+      "name": "Clay",
+      "slug": "clay",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Clear Books",
+      "slug": "clear-books",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Clearbit",
+      "slug": "clearbit",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Clearbit Reveal",
+      "slug": "clearbit-reveal",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "ClearDent",
+      "slug": "cleardent",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Clerk",
+      "slug": "clerk",
+      "category": "iam",
+      "aliases": []
+    },
+    {
+      "name": "ClickFunnels",
+      "slug": "clickfunnels",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "ClickHouse",
+      "slug": "clickhouse",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "ClickUp",
+      "slug": "clickup",
+      "category": "project-management",
+      "aliases": []
+    },
+    {
+      "name": "Cline",
+      "slug": "cline",
+      "category": "ai-coding",
+      "aliases": [
+        "cline ai"
+      ]
+    },
+    {
+      "name": "Clio",
+      "slug": "clio",
+      "category": "Legal",
+      "aliases": [
+        "Clio Manage",
+        "Clio Grow"
+      ]
+    },
+    {
+      "name": "Clockify",
+      "slug": "clockify",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Close",
+      "slug": "close",
+      "category": "crm",
+      "aliases": [
+        "Close.com"
+      ]
+    },
+    {
+      "name": "ClosingCorp",
+      "slug": "closingcorp",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Cloud CMA",
+      "slug": "cloud-cma",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Cloud9Ortho",
+      "slug": "cloud9ortho",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Cloudbeds",
+      "slug": "cloudbeds",
+      "category": "Hospitality",
+      "aliases": []
+    },
+    {
+      "name": "Cloudbeds MyAllocator",
+      "slug": "cloudbeds-myallocator",
+      "category": "Hospitality",
+      "aliases": []
+    },
+    {
+      "name": "CloudHealth by Broadcom",
+      "slug": "cloudhealth-by-broadcom",
+      "category": "finops",
+      "aliases": [
+        "cloudhealth"
+      ]
+    },
+    {
+      "name": "CloudSpot",
+      "slug": "cloudspot",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "Cloudways",
+      "slug": "cloudways",
+      "category": "cloud-hosting",
+      "aliases": []
+    },
+    {
+      "name": "CloudZero",
+      "slug": "cloudzero",
+      "category": "finops",
+      "aliases": []
+    },
+    {
+      "name": "Clover",
+      "slug": "clover",
+      "category": "Hospitality",
+      "aliases": []
+    },
+    {
+      "name": "Clover POS",
+      "slug": "clover-pos",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Clubhouse",
+      "slug": "clubhouse",
+      "category": "Project Management",
+      "aliases": []
+    },
+    {
+      "name": "CMA Wizard",
+      "slug": "cma-wizard",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "CockroachDB",
+      "slug": "cockroachdb",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "CoConstruct",
+      "slug": "coconstruct",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "CoConstruct Pro",
+      "slug": "coconstruct-pro",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "CoCounsel",
+      "slug": "cocounsel",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Coda",
+      "slug": "coda",
+      "category": "project-management",
+      "aliases": []
+    },
+    {
+      "name": "Codeium",
+      "slug": "codeium",
+      "category": "ai-coding",
+      "aliases": []
+    },
+    {
+      "name": "Cohere",
+      "slug": "cohere",
+      "category": "llm",
+      "aliases": []
+    },
+    {
+      "name": "Coinbase",
+      "slug": "coinbase",
+      "category": "crypto-exchanges",
+      "aliases": []
+    },
+    {
+      "name": "Coinbase Wallet",
+      "slug": "coinbase-wallet",
+      "category": "crypto-wallets",
+      "aliases": []
+    },
+    {
+      "name": "CoinGecko",
+      "slug": "coingecko",
+      "category": "crypto-portfolio-trackers",
+      "aliases": [
+        "coingecko portfolio"
+      ]
+    },
+    {
+      "name": "CoinGlass",
+      "slug": "coinglass",
+      "category": "crypto-analytics",
+      "aliases": []
+    },
+    {
+      "name": "CoinLedger",
+      "slug": "coinledger",
+      "category": "crypto-tax",
+      "aliases": []
+    },
+    {
+      "name": "CoinStats",
+      "slug": "coinstats",
+      "category": "crypto-portfolio-trackers",
+      "aliases": []
+    },
+    {
+      "name": "CoinTracker",
+      "slug": "cointracker",
+      "category": "crypto-tax",
+      "aliases": []
+    },
+    {
+      "name": "Collibra",
+      "slug": "collibra",
+      "category": "data-observability",
+      "aliases": []
+    },
+    {
+      "name": "Comeet",
+      "slug": "comeet",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Command R+",
+      "slug": "command-r",
+      "category": "llm",
+      "aliases": [
+        "command r plus"
+      ]
+    },
+    {
+      "name": "Common Room",
+      "slug": "common-room",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "CompanyCam",
+      "slug": "companycam",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Compass CRM",
+      "slug": "compass-crm",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "ComplianceEase",
+      "slug": "complianceease",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Composio",
+      "slug": "composio",
+      "category": "ai-agents",
+      "aliases": []
+    },
+    {
+      "name": "Concur",
+      "slug": "concur",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Confluence",
+      "slug": "confluence",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Consensus",
+      "slug": "consensus",
+      "category": "ai-productivity",
+      "aliases": [
+        "consensus ai"
+      ]
+    },
+    {
+      "name": "Constant Contact",
+      "slug": "constant-contact",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "Contentful",
+      "slug": "contentful",
+      "category": "CMS",
+      "aliases": []
+    },
+    {
+      "name": "ContractPodAi",
+      "slug": "contractpodai",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "ConvertKit",
+      "slug": "convertkit",
+      "category": "Marketing",
+      "aliases": [
+        "Kit"
+      ]
+    },
+    {
+      "name": "Copper",
+      "slug": "copper",
+      "category": "crm",
+      "aliases": [
+        "Copper CRM"
+      ]
+    },
+    {
+      "name": "Copy.ai",
+      "slug": "copy-ai",
+      "category": "ai-writing",
+      "aliases": [
+        "copy ai"
+      ]
+    },
+    {
+      "name": "CorelDRAW",
+      "slug": "coreldraw",
+      "category": "design-tools",
+      "aliases": []
+    },
+    {
+      "name": "CoreLogic",
+      "slug": "corelogic",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Cornix",
+      "slug": "cornix",
+      "category": "crypto-trading-bots",
+      "aliases": []
+    },
+    {
+      "name": "CosmoLex",
+      "slug": "cosmolex",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Coupa",
+      "slug": "coupa",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Cozy",
+      "slug": "cozy",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "Craft",
+      "slug": "craft",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Credo AI",
+      "slug": "credo-ai",
+      "category": "ai-security",
+      "aliases": []
+    },
+    {
+      "name": "Crello",
+      "slug": "crello",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "CrewAI",
+      "slug": "crewai",
+      "category": "ai-agents",
+      "aliases": []
+    },
+    {
+      "name": "Crisp",
+      "slug": "crisp",
+      "category": "customer-support",
+      "aliases": [
+        "crisp chat"
+      ]
+    },
+    {
+      "name": "CrowdStrike",
+      "slug": "crowdstrike",
+      "category": "Security",
+      "aliases": []
+    },
+    {
+      "name": "CrowdStrike Falcon",
+      "slug": "crowdstrike-falcon",
+      "category": "endpoint-security",
+      "aliases": [
+        "crowdstrike"
+      ]
+    },
+    {
+      "name": "CrowdStrike Falcon Cloud",
+      "slug": "crowdstrike-falcon-cloud",
+      "category": "cloud-security",
+      "aliases": [
+        "crowdstrike falcon"
+      ]
+    },
+    {
+      "name": "Crunch",
+      "slug": "crunch",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Cryptohopper",
+      "slug": "cryptohopper",
+      "category": "crypto-trading-bots",
+      "aliases": []
+    },
+    {
+      "name": "CS Disco",
+      "slug": "cs-disco",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "CSV export folder",
+      "slug": "csv-export-folder",
+      "category": "Custom",
+      "aliases": []
+    },
+    {
+      "name": "Culture Amp",
+      "slug": "culture-amp",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "Cursor",
+      "slug": "cursor",
+      "category": "ai-coding",
+      "aliases": []
+    },
+    {
+      "name": "Curve Dental",
+      "slug": "curve-dental",
+      "category": "Dental",
+      "aliases": [
+        "Curve Hero"
+      ]
+    },
+    {
+      "name": "Curve Finance",
+      "slug": "curve-finance",
+      "category": "dex",
+      "aliases": []
+    },
+    {
+      "name": "Curve Hero",
+      "slug": "curve-hero",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Custom API",
+      "slug": "custom-api",
+      "category": "Custom",
+      "aliases": []
+    },
+    {
+      "name": "Custom CRM",
+      "slug": "custom-crm",
+      "category": "Custom",
+      "aliases": [
+        "Homegrown CRM",
+        "Internal CRM"
+      ]
+    },
+    {
+      "name": "Custom ERP",
+      "slug": "custom-erp",
+      "category": "Custom",
+      "aliases": [
+        "Homegrown ERP",
+        "Internal ERP"
+      ]
+    },
+    {
+      "name": "Customer.io",
+      "slug": "customer-io",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "CustomerLabs",
+      "slug": "customerlabs",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "CyberArk",
+      "slug": "cyberark",
+      "category": "iam",
+      "aliases": []
+    },
+    {
+      "name": "CyberGhost",
+      "slug": "cyberghost",
+      "category": "vpn",
+      "aliases": []
+    },
+    {
+      "name": "Cyclr",
+      "slug": "cyclr",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "Cynet",
+      "slug": "cynet",
+      "category": "endpoint-security",
+      "aliases": []
+    },
+    {
+      "name": "Daily",
+      "slug": "daily",
+      "category": "video-conferencing",
+      "aliases": [
+        "dailyco"
+      ]
+    },
+    {
+      "name": "DALL-E 3",
+      "slug": "dall-e-3",
+      "category": "ai-image",
+      "aliases": [
+        "dalle"
+      ]
+    },
+    {
+      "name": "Dashlane",
+      "slug": "dashlane",
+      "category": "password-managers",
+      "aliases": []
+    },
+    {
+      "name": "DashThis",
+      "slug": "dashthis",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Databricks",
+      "slug": "databricks",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "Databricks AI Search",
+      "slug": "databricks-ai-search",
+      "category": "vector-databases",
+      "aliases": [
+        "databricks vector"
+      ]
+    },
+    {
+      "name": "Datadog",
+      "slug": "datadog",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "DataRobot",
+      "slug": "datarobot",
+      "category": "ai-productivity",
+      "aliases": []
+    },
+    {
+      "name": "DaySmart Vet",
+      "slug": "daysmart-vet",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "dbt",
+      "slug": "dbt",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "dbt Cloud",
+      "slug": "dbt-cloud",
+      "category": "data-observability",
+      "aliases": []
+    },
+    {
+      "name": "DealerSocket",
+      "slug": "dealersocket",
+      "category": "Automotive",
+      "aliases": []
+    },
+    {
+      "name": "DEAR Inventory",
+      "slug": "dear-inventory",
+      "category": "Manufacturing",
+      "aliases": [
+        "Cin7 Core"
+      ]
+    },
+    {
+      "name": "DeBank",
+      "slug": "debank",
+      "category": "crypto-portfolio-trackers",
+      "aliases": []
+    },
+    {
+      "name": "Deel",
+      "slug": "deel",
+      "category": "hr-tools",
+      "aliases": []
+    },
+    {
+      "name": "DeepSeek",
+      "slug": "deepseek",
+      "category": "llm",
+      "aliases": []
+    },
+    {
+      "name": "DefiLlama",
+      "slug": "defillama",
+      "category": "defi-tools",
+      "aliases": []
+    },
+    {
+      "name": "Delta",
+      "slug": "delta",
+      "category": "crypto-portfolio-trackers",
+      "aliases": [
+        "delta app"
+      ]
+    },
+    {
+      "name": "Demandbase",
+      "slug": "demandbase",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Demandforce",
+      "slug": "demandforce",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Demio",
+      "slug": "demio",
+      "category": "video-conferencing",
+      "aliases": []
+    },
+    {
+      "name": "Dental Intelligence",
+      "slug": "dental-intelligence",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Dentally",
+      "slug": "dentally",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Dentally Practice",
+      "slug": "dentally-practice",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "DentalSymphony",
+      "slug": "dentalsymphony",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Denticon",
+      "slug": "denticon",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Dentrix",
+      "slug": "dentrix",
+      "category": "Dental",
+      "aliases": [
+        "Dentrix Ascend"
+      ]
+    },
+    {
+      "name": "Dentrix Ascend",
+      "slug": "dentrix-ascend",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Dentrix Enterprise",
+      "slug": "dentrix-enterprise",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Descope",
+      "slug": "descope",
+      "category": "iam",
+      "aliases": []
+    },
+    {
+      "name": "Descript",
+      "slug": "descript",
+      "category": "ai-video",
+      "aliases": []
+    },
+    {
+      "name": "Devin",
+      "slug": "devin",
+      "category": "ai-agents",
+      "aliases": [
+        "devin ai"
+      ]
+    },
+    {
+      "name": "Dext",
+      "slug": "dext",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Diagnocat",
+      "slug": "diagnocat",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Dialpad",
+      "slug": "dialpad",
+      "category": "video-conferencing",
+      "aliases": []
+    },
+    {
+      "name": "Dify",
+      "slug": "dify",
+      "category": "ai-agents",
+      "aliases": [
+        "dify ai"
+      ]
+    },
+    {
+      "name": "DigitalOcean",
+      "slug": "digitalocean",
+      "category": "cloud-hosting",
+      "aliases": []
+    },
+    {
+      "name": "Disco",
+      "slug": "disco",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Discord",
+      "slug": "discord",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Divvy",
+      "slug": "divvy",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Docketwise",
+      "slug": "docketwise",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "DocMagic",
+      "slug": "docmagic",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Doctible",
+      "slug": "doctible",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "DocuSign",
+      "slug": "docusign",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "DocuSign CLM",
+      "slug": "docusign-clm",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "DocuSign eSignature",
+      "slug": "docusign-esignature",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Docutech",
+      "slug": "docutech",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Dolphin Imaging",
+      "slug": "dolphin-imaging",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "DonorPerfect",
+      "slug": "donorperfect",
+      "category": "Nonprofit",
+      "aliases": []
+    },
+    {
+      "name": "DoorLoop",
+      "slug": "doorloop",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "dotloop",
+      "slug": "dotloop",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Drata",
+      "slug": "drata",
+      "category": "compliance",
+      "aliases": []
+    },
+    {
+      "name": "DrChrono",
+      "slug": "drchrono",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Dreamdata",
+      "slug": "dreamdata",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Drift",
+      "slug": "drift",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Drip",
+      "slug": "drip",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "Dropbox",
+      "slug": "dropbox",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Drupal",
+      "slug": "drupal",
+      "category": "CMS",
+      "aliases": []
+    },
+    {
+      "name": "Dubsado",
+      "slug": "dubsado",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "Duck Creek",
+      "slug": "duck-creek",
+      "category": "Insurance",
+      "aliases": []
+    },
+    {
+      "name": "DuckDB",
+      "slug": "duckdb",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "Duda",
+      "slug": "duda",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "Dune Analytics",
+      "slug": "dune-analytics",
+      "category": "crypto-analytics",
+      "aliases": []
+    },
+    {
+      "name": "Duo",
+      "slug": "duo",
+      "category": "Security",
+      "aliases": [
+        "Duo Security"
+      ]
+    },
+    {
+      "name": "dYdX",
+      "slug": "dydx",
+      "category": "dex",
+      "aliases": []
+    },
+    {
+      "name": "E2 Shop System",
+      "slug": "e2-shop-system",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "Eaglesoft",
+      "slug": "eaglesoft",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Easyship",
+      "slug": "easyship",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "eBay",
+      "slug": "ebay",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "eClinicalWorks",
+      "slug": "eclinicalworks",
+      "category": "Healthcare",
+      "aliases": [
+        "eCW"
+      ]
+    },
+    {
+      "name": "Ecwid",
+      "slug": "ecwid",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Elasticsearch",
+      "slug": "elasticsearch",
+      "category": "vector-databases",
+      "aliases": [
+        "elasticsearch vector"
+      ]
+    },
+    {
+      "name": "ElevenLabs",
+      "slug": "elevenlabs",
+      "category": "ai-voice",
+      "aliases": []
+    },
+    {
+      "name": "Elicit",
+      "slug": "elicit",
+      "category": "ai-productivity",
+      "aliases": []
+    },
+    {
+      "name": "Ellie Mae Compass",
+      "slug": "ellie-mae-compass",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Eloqua",
+      "slug": "eloqua",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Emburse",
+      "slug": "emburse",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Emma",
+      "slug": "emma",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Empower LOS",
+      "slug": "empower-los",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Encharge",
+      "slug": "encharge",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Encompass",
+      "slug": "encompass",
+      "category": "Mortgage",
+      "aliases": [
+        "ICE Encompass",
+        "Ellie Mae"
+      ]
+    },
+    {
+      "name": "Entrata",
+      "slug": "entrata",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "Epic",
+      "slug": "epic",
+      "category": "Healthcare",
+      "aliases": [
+        "Epic EHR"
+      ]
+    },
+    {
+      "name": "Epicor",
+      "slug": "epicor",
+      "category": "erp",
+      "aliases": []
+    },
+    {
+      "name": "Etsy",
+      "slug": "etsy",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Everlaw",
+      "slug": "everlaw",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Evernote",
+      "slug": "evernote",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Evoliz",
+      "slug": "evoliz",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "EXACT",
+      "slug": "exact",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Excalidraw",
+      "slug": "excalidraw",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Excel tracker",
+      "slug": "excel-tracker",
+      "category": "Custom",
+      "aliases": [
+        "Spreadsheet system",
+        "Google Sheets tracker"
+      ]
+    },
+    {
+      "name": "Exodus",
+      "slug": "exodus",
+      "category": "crypto-wallets",
+      "aliases": [
+        "exodus wallet"
+      ]
+    },
+    {
+      "name": "eXp Collaboration Hub",
+      "slug": "exp-collaboration-hub",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Expensify",
+      "slug": "expensify",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "ExpressVPN",
+      "slug": "expressvpn",
+      "category": "vpn",
+      "aliases": []
+    },
+    {
+      "name": "ExtraHop",
+      "slug": "extrahop",
+      "category": "endpoint-security",
+      "aliases": []
+    },
+    {
+      "name": "EZLynx",
+      "slug": "ezlynx",
+      "category": "Insurance",
+      "aliases": []
+    },
+    {
+      "name": "ezyVet",
+      "slug": "ezyvet",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Factors.ai",
+      "slug": "factors-ai",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Fastcase",
+      "slug": "fastcase",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "FastSpring",
+      "slug": "fastspring",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Fathom",
+      "slug": "fathom",
+      "category": "ai-meeting",
+      "aliases": [
+        "fathom meeting"
+      ]
+    },
+    {
+      "name": "Fathom Analytics",
+      "slug": "fathom-analytics",
+      "category": "analytics",
+      "aliases": []
+    },
+    {
+      "name": "Fergus",
+      "slug": "fergus",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "FieldAware",
+      "slug": "fieldaware",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "FieldEdge",
+      "slug": "fieldedge",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "FieldPulse",
+      "slug": "fieldpulse",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "FieldRoutes",
+      "slug": "fieldroutes",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Fieldwire",
+      "slug": "fieldwire",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "FigJam",
+      "slug": "figjam",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Figma",
+      "slug": "figma",
+      "category": "design-tools",
+      "aliases": []
+    },
+    {
+      "name": "FileMaker",
+      "slug": "filemaker",
+      "category": "Custom",
+      "aliases": []
+    },
+    {
+      "name": "Filevine",
+      "slug": "filevine",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Fillout",
+      "slug": "fillout",
+      "category": "Forms",
+      "aliases": []
+    },
+    {
+      "name": "Finastra",
+      "slug": "finastra",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Fireflies.ai",
+      "slug": "fireflies-ai",
+      "category": "ai-productivity",
+      "aliases": [
+        "fireflies ai"
+      ]
+    },
+    {
+      "name": "Fishbowl",
+      "slug": "fishbowl",
+      "category": "Manufacturing",
+      "aliases": [
+        "Fishbowl Inventory"
+      ]
+    },
+    {
+      "name": "Fivetran",
+      "slug": "fivetran",
+      "category": "data-observability",
+      "aliases": []
+    },
+    {
+      "name": "Flexera",
+      "slug": "flexera",
+      "category": "finops",
+      "aliases": []
+    },
+    {
+      "name": "Float",
+      "slug": "float",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Float.com",
+      "slug": "float-com",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Flodesk",
+      "slug": "flodesk",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "Floify",
+      "slug": "floify",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Flowise",
+      "slug": "flowise",
+      "category": "ai-agents",
+      "aliases": []
+    },
+    {
+      "name": "FlutterFlow",
+      "slug": "flutterflow",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "Flux",
+      "slug": "flux",
+      "category": "ai-image",
+      "aliases": [
+        "flux ai"
+      ]
+    },
+    {
+      "name": "Fly.io",
+      "slug": "fly-io",
+      "category": "cloud-hosting",
+      "aliases": [
+        "flyio"
+      ]
+    },
+    {
+      "name": "Folk",
+      "slug": "folk",
+      "category": "crm",
+      "aliases": []
+    },
+    {
+      "name": "Follow Up Boss",
+      "slug": "follow-up-boss",
+      "category": "Real Estate",
+      "aliases": [
+        "FUB"
+      ]
+    },
+    {
+      "name": "Forecast.app",
+      "slug": "forecast-app",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Fortinet",
+      "slug": "fortinet",
+      "category": "endpoint-security",
+      "aliases": []
+    },
+    {
+      "name": "Framer",
+      "slug": "framer",
+      "category": "website-builders",
+      "aliases": [
+        "framer design"
+      ]
+    },
+    {
+      "name": "FreeAgent",
+      "slug": "freeagent",
+      "category": "accounting",
+      "aliases": []
+    },
+    {
+      "name": "FreeAgent Accounting",
+      "slug": "freeagent-accounting",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Fresha",
+      "slug": "fresha",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "FreshBooks",
+      "slug": "freshbooks",
+      "category": "accounting",
+      "aliases": []
+    },
+    {
+      "name": "Freshchat",
+      "slug": "freshchat",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Freshdesk",
+      "slug": "freshdesk",
+      "category": "customer-support",
+      "aliases": []
+    },
+    {
+      "name": "Freshsales",
+      "slug": "freshsales",
+      "category": "crm",
+      "aliases": []
+    },
+    {
+      "name": "Front",
+      "slug": "front",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "FTP / SFTP",
+      "slug": "ftp-sftp",
+      "category": "Custom",
+      "aliases": []
+    },
+    {
+      "name": "FullStory",
+      "slug": "fullstory",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Function Point",
+      "slug": "function-point",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Function Point X",
+      "slug": "function-point-x",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "FunctionFox",
+      "slug": "functionfox",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Fundy Designer",
+      "slug": "fundy-designer",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "Gamma",
+      "slug": "gamma",
+      "category": "ai-productivity",
+      "aliases": [
+        "gamma app"
+      ]
+    },
+    {
+      "name": "Gate.io",
+      "slug": "gate-io",
+      "category": "crypto-exchanges",
+      "aliases": [
+        "gate io"
+      ]
+    },
+    {
+      "name": "Gem",
+      "slug": "gem",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "GetResponse",
+      "slug": "getresponse",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "Ghost",
+      "slug": "ghost",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "GIMP",
+      "slug": "gimp",
+      "category": "design-tools",
+      "aliases": []
+    },
+    {
+      "name": "GitHub Copilot",
+      "slug": "github-copilot",
+      "category": "ai-coding",
+      "aliases": []
+    },
+    {
+      "name": "GitHub Projects",
+      "slug": "github-projects",
+      "category": "Project Management",
+      "aliases": []
+    },
+    {
+      "name": "GitLab",
+      "slug": "gitlab",
+      "category": "Project Management",
+      "aliases": []
+    },
+    {
+      "name": "Givebutter",
+      "slug": "givebutter",
+      "category": "Nonprofit",
+      "aliases": []
+    },
+    {
+      "name": "Glassnode",
+      "slug": "glassnode",
+      "category": "crypto-analytics",
+      "aliases": []
+    },
+    {
+      "name": "Glide",
+      "slug": "glide",
+      "category": "website-builders",
+      "aliases": [
+        "glide apps"
+      ]
+    },
+    {
+      "name": "Global Shop Solutions",
+      "slug": "global-shop-solutions",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "GlossGenius",
+      "slug": "glossgenius",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Gmail",
+      "slug": "gmail",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "GnuCash",
+      "slug": "gnucash",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "GoCardless",
+      "slug": "gocardless",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Gong",
+      "slug": "gong",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Google Ads",
+      "slug": "google-ads",
+      "category": "Marketing",
+      "aliases": [
+        "AdWords"
+      ]
+    },
+    {
+      "name": "Google AI Studio",
+      "slug": "google-ai-studio",
+      "category": "llm",
+      "aliases": []
+    },
+    {
+      "name": "Google Analytics",
+      "slug": "google-analytics",
+      "category": "Data",
+      "aliases": [
+        "GA4"
+      ]
+    },
+    {
+      "name": "Google Cloud Platform",
+      "slug": "google-cloud-platform",
+      "category": "cloud-hosting",
+      "aliases": [
+        "google cloud"
+      ]
+    },
+    {
+      "name": "Google Cloud Storage",
+      "slug": "google-cloud-storage",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Google Drive",
+      "slug": "google-drive",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Google Forms",
+      "slug": "google-forms",
+      "category": "Forms",
+      "aliases": []
+    },
+    {
+      "name": "Google Gemini",
+      "slug": "google-gemini",
+      "category": "llm",
+      "aliases": [
+        "gemini"
+      ]
+    },
+    {
+      "name": "Google Meet",
+      "slug": "google-meet",
+      "category": "video-conferencing",
+      "aliases": []
+    },
+    {
+      "name": "Google Sheets",
+      "slug": "google-sheets",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Google Voice",
+      "slug": "google-voice",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Google Workspace",
+      "slug": "google-workspace",
+      "category": "Productivity",
+      "aliases": [
+        "Gmail",
+        "Google Sheets",
+        "Google Drive"
+      ]
+    },
+    {
+      "name": "Gorgias",
+      "slug": "gorgias",
+      "category": "customer-support",
+      "aliases": []
+    },
+    {
+      "name": "GorillaDesk",
+      "slug": "gorilladesk",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "GorillaDesk Pest",
+      "slug": "gorilladesk-pest",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "GoTo Meeting",
+      "slug": "goto-meeting",
+      "category": "video-conferencing",
+      "aliases": []
+    },
+    {
+      "name": "Grafana",
+      "slug": "grafana",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Grammarly",
+      "slug": "grammarly",
+      "category": "ai-writing",
+      "aliases": []
+    },
+    {
+      "name": "Granola",
+      "slug": "granola",
+      "category": "ai-meeting",
+      "aliases": [
+        "granola ai"
+      ]
+    },
+    {
+      "name": "Grasshopper",
+      "slug": "grasshopper",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Greenhouse",
+      "slug": "greenhouse",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Greenhouse Harvest",
+      "slug": "greenhouse-harvest",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Greenhouse Onboarding",
+      "slug": "greenhouse-onboarding",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "Grok 2",
+      "slug": "grok-2",
+      "category": "llm",
+      "aliases": []
+    },
+    {
+      "name": "Groq",
+      "slug": "groq",
+      "category": "llm",
+      "aliases": []
+    },
+    {
+      "name": "GrowPath",
+      "slug": "growpath",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Guesty",
+      "slug": "guesty",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "Guidewire",
+      "slug": "guidewire",
+      "category": "Insurance",
+      "aliases": []
+    },
+    {
+      "name": "Gumroad",
+      "slug": "gumroad",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Gusto",
+      "slug": "gusto",
+      "category": "hr-tools",
+      "aliases": []
+    },
+    {
+      "name": "Hailuo AI",
+      "slug": "hailuo-ai",
+      "category": "ai-video",
+      "aliases": []
+    },
+    {
+      "name": "Harvest",
+      "slug": "harvest",
+      "category": "accounting",
+      "aliases": []
+    },
+    {
+      "name": "Harvest Forecast",
+      "slug": "harvest-forecast",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Harvey AI",
+      "slug": "harvey-ai",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "HawkSoft",
+      "slug": "hawksoft",
+      "category": "Insurance",
+      "aliases": []
+    },
+    {
+      "name": "Heap",
+      "slug": "heap",
+      "category": "analytics",
+      "aliases": []
+    },
+    {
+      "name": "Heartland Retail",
+      "slug": "heartland-retail",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Height",
+      "slug": "height",
+      "category": "Project Management",
+      "aliases": []
+    },
+    {
+      "name": "HelloSign",
+      "slug": "hellosign",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "HelloSign Dropbox",
+      "slug": "hellosign-dropbox",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Help Scout",
+      "slug": "help-scout",
+      "category": "customer-support",
+      "aliases": []
+    },
+    {
+      "name": "Hetzner",
+      "slug": "hetzner",
+      "category": "cloud-hosting",
+      "aliases": []
+    },
+    {
+      "name": "Hex",
+      "slug": "hex",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "HeyGen",
+      "slug": "heygen",
+      "category": "ai-video",
+      "aliases": []
+    },
+    {
+      "name": "Hibob",
+      "slug": "hibob",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "HiddenLayer",
+      "slug": "hiddenlayer",
+      "category": "ai-security",
+      "aliases": []
+    },
+    {
+      "name": "HireEZ",
+      "slug": "hireez",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Hive",
+      "slug": "hive",
+      "category": "project-management",
+      "aliases": []
+    },
+    {
+      "name": "HockeyStack",
+      "slug": "hockeystack",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Homebot",
+      "slug": "homebot",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "HoneyBook",
+      "slug": "honeybook",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "Hootsuite",
+      "slug": "hootsuite",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Hostaway",
+      "slug": "hostaway",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "HostGator",
+      "slug": "hostgator",
+      "category": "cloud-hosting",
+      "aliases": []
+    },
+    {
+      "name": "hosting.com",
+      "slug": "hosting-com",
+      "category": "cloud-hosting",
+      "aliases": [
+        "hosting com"
+      ]
+    },
+    {
+      "name": "Hostinger",
+      "slug": "hostinger",
+      "category": "cloud-hosting",
+      "aliases": []
+    },
+    {
+      "name": "Hotjar",
+      "slug": "hotjar",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Hotjar Engage",
+      "slug": "hotjar-engage",
+      "category": "Project Management",
+      "aliases": []
+    },
+    {
+      "name": "Housecall Pro",
+      "slug": "housecall-pro",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "HouseCanary",
+      "slug": "housecanary",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Hubdoc",
+      "slug": "hubdoc",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "HubSpot",
+      "slug": "hubspot",
+      "category": "crm",
+      "aliases": [
+        "HubSpot CRM"
+      ]
+    },
+    {
+      "name": "HubSpot CMS",
+      "slug": "hubspot-cms",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "HubSpot Marketing Hub",
+      "slug": "hubspot-marketing-hub",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Hugging Face",
+      "slug": "hugging-face",
+      "category": "llm",
+      "aliases": []
+    },
+    {
+      "name": "Hunter.io",
+      "slug": "hunter-io",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Huntress",
+      "slug": "huntress",
+      "category": "endpoint-security",
+      "aliases": []
+    },
+    {
+      "name": "Hurdlr",
+      "slug": "hurdlr",
+      "category": "accounting",
+      "aliases": []
+    },
+    {
+      "name": "Hyperise",
+      "slug": "hyperise",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "IBM Apptio",
+      "slug": "ibm-apptio",
+      "category": "finops",
+      "aliases": [
+        "apptio"
+      ]
+    },
+    {
+      "name": "IBM Cloudability",
+      "slug": "ibm-cloudability",
+      "category": "finops",
+      "aliases": [
+        "cloudability"
+      ]
+    },
+    {
+      "name": "IBM Kubecost",
+      "slug": "ibm-kubecost",
+      "category": "finops",
+      "aliases": [
+        "kubecost"
+      ]
+    },
+    {
+      "name": "IBM Turbonomic",
+      "slug": "ibm-turbonomic",
+      "category": "finops",
+      "aliases": [
+        "turbonomic"
+      ]
+    },
+    {
+      "name": "ICE Mortgage Technology",
+      "slug": "ice-mortgage-technology",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "iCIMS",
+      "slug": "icims",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "iCloud Mail",
+      "slug": "icloud-mail",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Ideogram",
+      "slug": "ideogram",
+      "category": "ai-image",
+      "aliases": []
+    },
+    {
+      "name": "IFTTT",
+      "slug": "ifttt",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "Imagen AI",
+      "slug": "imagen-ai",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "iManage",
+      "slug": "imanage",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "ImmigrationTracker",
+      "slug": "immigrationtracker",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Improveit 360",
+      "slug": "improveit-360",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Indeed Hire",
+      "slug": "indeed-hire",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Indy",
+      "slug": "indy",
+      "category": "Professional Services",
+      "aliases": []
+    },
+    {
+      "name": "Indy France",
+      "slug": "indy-france",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Infor",
+      "slug": "infor",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "Infor CloudSuite",
+      "slug": "infor-cloudsuite",
+      "category": "erp",
+      "aliases": [
+        "infor"
+      ]
+    },
+    {
+      "name": "Informatica",
+      "slug": "informatica",
+      "category": "data-observability",
+      "aliases": []
+    },
+    {
+      "name": "Infracost",
+      "slug": "infracost",
+      "category": "finops",
+      "aliases": []
+    },
+    {
+      "name": "Inside Real Estate",
+      "slug": "inside-real-estate",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Insightly",
+      "slug": "insightly",
+      "category": "crm",
+      "aliases": []
+    },
+    {
+      "name": "Insperity",
+      "slug": "insperity",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "Instantly",
+      "slug": "instantly",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Instapage",
+      "slug": "instapage",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Instinct",
+      "slug": "instinct",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Integrately",
+      "slug": "integrately",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "Intercom",
+      "slug": "intercom",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Intercom Fin",
+      "slug": "intercom-fin",
+      "category": "ai-assistants",
+      "aliases": []
+    },
+    {
+      "name": "Internal.io",
+      "slug": "internal-io",
+      "category": "CMS",
+      "aliases": []
+    },
+    {
+      "name": "InVideo AI",
+      "slug": "invideo-ai",
+      "category": "ai-video",
+      "aliases": []
+    },
+    {
+      "name": "IRIS Accounting",
+      "slug": "iris-accounting",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Iris OpenSpace",
+      "slug": "iris-openspace",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Iris Works",
+      "slug": "iris-works",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "Ironclad",
+      "slug": "ironclad",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Iterable",
+      "slug": "iterable",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Jane",
+      "slug": "jane",
+      "category": "Healthcare Practice Software",
+      "aliases": []
+    },
+    {
+      "name": "Jane App",
+      "slug": "jane-app",
+      "category": "Healthcare",
+      "aliases": [
+        "Jane"
+      ]
+    },
+    {
+      "name": "Jasper",
+      "slug": "jasper",
+      "category": "ai-writing",
+      "aliases": []
+    },
+    {
+      "name": "JazzHR",
+      "slug": "jazzhr",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "JetBrains AI Assistant",
+      "slug": "jetbrains-ai-assistant",
+      "category": "ai-coding",
+      "aliases": [
+        "jetbrains ai"
+      ]
+    },
+    {
+      "name": "Jira",
+      "slug": "jira",
+      "category": "project-management",
+      "aliases": []
+    },
+    {
+      "name": "Jirav",
+      "slug": "jirav",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Jitsi Meet",
+      "slug": "jitsi-meet",
+      "category": "video-conferencing",
+      "aliases": [
+        "jitsi"
+      ]
+    },
+    {
+      "name": "Jitterbit",
+      "slug": "jitterbit",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "JobAdder",
+      "slug": "jobadder",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Jobber",
+      "slug": "jobber",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Jobber Plus",
+      "slug": "jobber-plus",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "JobBOSS",
+      "slug": "jobboss",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "JobNimbus",
+      "slug": "jobnimbus",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "JobTread",
+      "slug": "jobtread",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Jobvite",
+      "slug": "jobvite",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Jotform",
+      "slug": "jotform",
+      "category": "Forms",
+      "aliases": []
+    },
+    {
+      "name": "Judge.me",
+      "slug": "judge-me",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "JumpCloud",
+      "slug": "jumpcloud",
+      "category": "iam",
+      "aliases": []
+    },
+    {
+      "name": "Jupiter",
+      "slug": "jupiter",
+      "category": "defi-tools",
+      "aliases": [
+        "jupiter aggregator"
+      ]
+    },
+    {
+      "name": "Juris",
+      "slug": "juris",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "JustCall",
+      "slug": "justcall",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Justworks",
+      "slug": "justworks",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "Kajabi",
+      "slug": "kajabi",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Kantata",
+      "slug": "kantata",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Kareo",
+      "slug": "kareo",
+      "category": "Healthcare",
+      "aliases": [
+        "Tebra"
+      ]
+    },
+    {
+      "name": "Kartra",
+      "slug": "kartra",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "KashFlow",
+      "slug": "kashflow",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Kashoo",
+      "slug": "kashoo",
+      "category": "accounting",
+      "aliases": []
+    },
+    {
+      "name": "Katana",
+      "slug": "katana",
+      "category": "Manufacturing",
+      "aliases": [
+        "Katana MRP"
+      ]
+    },
+    {
+      "name": "Keap",
+      "slug": "keap",
+      "category": "crm",
+      "aliases": [
+        "Infusionsoft"
+      ]
+    },
+    {
+      "name": "Keller Williams Command",
+      "slug": "keller-williams-command",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Ketch",
+      "slug": "ketch",
+      "category": "compliance",
+      "aliases": []
+    },
+    {
+      "name": "Keystone",
+      "slug": "keystone",
+      "category": "crypto-wallets",
+      "aliases": []
+    },
+    {
+      "name": "Kickserv",
+      "slug": "kickserv",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Kimble",
+      "slug": "kimble",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Kimi",
+      "slug": "kimi",
+      "category": "llm",
+      "aliases": []
+    },
+    {
+      "name": "Kimoby",
+      "slug": "kimoby",
+      "category": "Automotive",
+      "aliases": []
+    },
+    {
+      "name": "Kindful",
+      "slug": "kindful",
+      "category": "Nonprofit",
+      "aliases": []
+    },
+    {
+      "name": "Kinsta",
+      "slug": "kinsta",
+      "category": "cloud-hosting",
+      "aliases": []
+    },
+    {
+      "name": "Kit",
+      "slug": "kit",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "Klarna",
+      "slug": "klarna",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Klaviyo",
+      "slug": "klaviyo",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "Klaviyo SMS",
+      "slug": "klaviyo-sms",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Kling AI",
+      "slug": "kling-ai",
+      "category": "ai-image",
+      "aliases": []
+    },
+    {
+      "name": "Knowify",
+      "slug": "knowify",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Koinly",
+      "slug": "koinly",
+      "category": "crypto-tax",
+      "aliases": []
+    },
+    {
+      "name": "Kraken",
+      "slug": "kraken",
+      "category": "crypto-exchanges",
+      "aliases": []
+    },
+    {
+      "name": "Krea AI",
+      "slug": "krea-ai",
+      "category": "ai-image",
+      "aliases": []
+    },
+    {
+      "name": "KuCoin",
+      "slug": "kucoin",
+      "category": "crypto-exchanges",
+      "aliases": []
+    },
+    {
+      "name": "kvCORE",
+      "slug": "kvcore",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Lacework",
+      "slug": "lacework",
+      "category": "cloud-security",
+      "aliases": []
+    },
+    {
+      "name": "Lago",
+      "slug": "lago",
+      "category": "payments",
+      "aliases": [
+        "lago open source"
+      ]
+    },
+    {
+      "name": "Lasso Security",
+      "slug": "lasso-security",
+      "category": "ai-security",
+      "aliases": []
+    },
+    {
+      "name": "LastPass",
+      "slug": "lastpass",
+      "category": "password-managers",
+      "aliases": []
+    },
+    {
+      "name": "Later",
+      "slug": "later",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Lattice",
+      "slug": "lattice",
+      "category": "hr-tools",
+      "aliases": []
+    },
+    {
+      "name": "Launch27",
+      "slug": "launch27",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "LaunchDarkly",
+      "slug": "launchdarkly",
+      "category": "Project Management",
+      "aliases": []
+    },
+    {
+      "name": "LawnPro Software",
+      "slug": "lawnpro-software",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "LawPay",
+      "slug": "lawpay",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Leadpages",
+      "slug": "leadpages",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "LeadPerfection",
+      "slug": "leadperfection",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Leap",
+      "slug": "leap",
+      "category": "Legal",
+      "aliases": [
+        "LEAP Legal"
+      ]
+    },
+    {
+      "name": "Ledger",
+      "slug": "ledger",
+      "category": "crypto-wallets",
+      "aliases": []
+    },
+    {
+      "name": "Legacy database",
+      "slug": "legacy-database",
+      "category": "Custom",
+      "aliases": [
+        "Access database",
+        "SQL Server custom",
+        "MySQL custom"
+      ]
+    },
+    {
+      "name": "Legwork",
+      "slug": "legwork",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Lemlist",
+      "slug": "lemlist",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Lemon Squeezy",
+      "slug": "lemon-squeezy",
+      "category": "payments",
+      "aliases": []
+    },
+    {
+      "name": "LendingPad",
+      "slug": "lendingpad",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Leonardo AI",
+      "slug": "leonardo-ai",
+      "category": "ai-image",
+      "aliases": []
+    },
+    {
+      "name": "Less Annoying CRM",
+      "slug": "less-annoying-crm",
+      "category": "crm",
+      "aliases": []
+    },
+    {
+      "name": "Letta",
+      "slug": "letta",
+      "category": "ai-agents",
+      "aliases": [
+        "letta ai"
+      ]
+    },
+    {
+      "name": "Lever",
+      "slug": "lever",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "LeverTRM",
+      "slug": "levertrm",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "LexisNexis",
+      "slug": "lexisnexis",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Lighthouse 360",
+      "slug": "lighthouse-360",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Lightroom",
+      "slug": "lightroom",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "Lightspeed Restaurant",
+      "slug": "lightspeed-restaurant",
+      "category": "Hospitality",
+      "aliases": [
+        "Lightspeed"
+      ]
+    },
+    {
+      "name": "Lightspeed Retail",
+      "slug": "lightspeed-retail",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Limitless",
+      "slug": "limitless",
+      "category": "ai-productivity",
+      "aliases": [
+        "limitless ai"
+      ]
+    },
+    {
+      "name": "Lindy",
+      "slug": "lindy",
+      "category": "ai-productivity",
+      "aliases": [
+        "lindy ai"
+      ]
+    },
+    {
+      "name": "Linear",
+      "slug": "linear",
+      "category": "project-management",
+      "aliases": []
+    },
+    {
+      "name": "LinkedIn Ads",
+      "slug": "linkedin-ads",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "LinkedIn Recruiter",
+      "slug": "linkedin-recruiter",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "LinkSquares",
+      "slug": "linksquares",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Linnworks",
+      "slug": "linnworks",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "Linode (Akamai Cloud)",
+      "slug": "linode-akamai-cloud",
+      "category": "cloud-hosting",
+      "aliases": [
+        "linode"
+      ]
+    },
+    {
+      "name": "LionDesk",
+      "slug": "liondesk",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "ListReports",
+      "slug": "listreports",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Litera",
+      "slug": "litera",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Litify",
+      "slug": "litify",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Little Green Light",
+      "slug": "little-green-light",
+      "category": "Nonprofit",
+      "aliases": []
+    },
+    {
+      "name": "Little Hotelier",
+      "slug": "little-hotelier",
+      "category": "Hospitality",
+      "aliases": []
+    },
+    {
+      "name": "LiveChat",
+      "slug": "livechat",
+      "category": "customer-support",
+      "aliases": [
+        "livechat inc"
+      ]
+    },
+    {
+      "name": "Livestorm",
+      "slug": "livestorm",
+      "category": "video-conferencing",
+      "aliases": []
+    },
+    {
+      "name": "Llama (Meta)",
+      "slug": "llama-meta",
+      "category": "llm",
+      "aliases": [
+        "llama"
+      ]
+    },
+    {
+      "name": "LMN",
+      "slug": "lmn",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "LMNT",
+      "slug": "lmnt",
+      "category": "ai-voice",
+      "aliases": [
+        "lmnt voice"
+      ]
+    },
+    {
+      "name": "LoanBeam",
+      "slug": "loanbeam",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "LoanBeam Verify",
+      "slug": "loanbeam-verify",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "LoanDepot LOS",
+      "slug": "loandepot-los",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "LoanFactory",
+      "slug": "loanfactory",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "LoanLogics",
+      "slug": "loanlogics",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "LoanOrigination.com",
+      "slug": "loanorigination-com",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "LoanScorecard",
+      "slug": "loanscorecard",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Lofty",
+      "slug": "lofty",
+      "category": "Real Estate",
+      "aliases": [
+        "Chime Lofty"
+      ]
+    },
+    {
+      "name": "Logikcull",
+      "slug": "logikcull",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "LogRocket",
+      "slug": "logrocket",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Logseq",
+      "slug": "logseq",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Looker",
+      "slug": "looker",
+      "category": "Data",
+      "aliases": [
+        "Looker Studio"
+      ]
+    },
+    {
+      "name": "Loom",
+      "slug": "loom",
+      "category": "video-conferencing",
+      "aliases": []
+    },
+    {
+      "name": "Loops",
+      "slug": "loops",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "Loox",
+      "slug": "loox",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Lotus Notes",
+      "slug": "lotus-notes",
+      "category": "Custom",
+      "aliases": []
+    },
+    {
+      "name": "Lucidchart",
+      "slug": "lucidchart",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Luma AI",
+      "slug": "luma-ai",
+      "category": "ai-image",
+      "aliases": []
+    },
+    {
+      "name": "Luminar Neo",
+      "slug": "luminar-neo",
+      "category": "ai-image",
+      "aliases": [
+        "luminar ai"
+      ]
+    },
+    {
+      "name": "Lunacy",
+      "slug": "lunacy",
+      "category": "design-tools",
+      "aliases": []
+    },
+    {
+      "name": "Lusha",
+      "slug": "lusha",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "MacPractice",
+      "slug": "macpractice",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Maestro",
+      "slug": "maestro",
+      "category": "crypto-telegram-bots",
+      "aliases": [
+        "maestro bot"
+      ]
+    },
+    {
+      "name": "Magento",
+      "slug": "magento",
+      "category": "Ecommerce",
+      "aliases": [
+        "Adobe Commerce"
+      ]
+    },
+    {
+      "name": "MaidCentral",
+      "slug": "maidcentral",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Mailchimp",
+      "slug": "mailchimp",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "MailerLite",
+      "slug": "mailerlite",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "Mailjet",
+      "slug": "mailjet",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "Make",
+      "slug": "make",
+      "category": "ai-agents",
+      "aliases": [
+        "make ai",
+        "Integromat"
+      ]
+    },
+    {
+      "name": "Make AI Agents",
+      "slug": "make-ai-agents",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "Manager.io",
+      "slug": "manager-io",
+      "category": "accounting",
+      "aliases": [
+        "manager io"
+      ]
+    },
+    {
+      "name": "Manatal",
+      "slug": "manatal",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Mangomint",
+      "slug": "mangomint",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Mangools",
+      "slug": "mangools",
+      "category": "seo-tools",
+      "aliases": []
+    },
+    {
+      "name": "Manus AI",
+      "slug": "manus-ai",
+      "category": "ai-productivity",
+      "aliases": []
+    },
+    {
+      "name": "Market Leader",
+      "slug": "market-leader",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "MarketMan",
+      "slug": "marketman",
+      "category": "Hospitality",
+      "aliases": []
+    },
+    {
+      "name": "Marketo",
+      "slug": "marketo",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "MarketSharp",
+      "slug": "marketsharp",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Matillion",
+      "slug": "matillion",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Matomo",
+      "slug": "matomo",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Mautic",
+      "slug": "mautic",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Mavenlink",
+      "slug": "mavenlink",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Maxio",
+      "slug": "maxio",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Maxwell",
+      "slug": "maxwell",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Meilisearch",
+      "slug": "meilisearch",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Melio",
+      "slug": "melio",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Mem",
+      "slug": "mem",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Mem AI",
+      "slug": "mem-ai",
+      "category": "ai-productivity",
+      "aliases": [
+        "notion ai standalone"
+      ]
+    },
+    {
+      "name": "Mercury",
+      "slug": "mercury",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "MeridianLink",
+      "slug": "meridianlink",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "MERS",
+      "slug": "mers",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "MessageBird",
+      "slug": "messagebird",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Messari",
+      "slug": "messari",
+      "category": "crypto-analytics",
+      "aliases": []
+    },
+    {
+      "name": "Meta Ads",
+      "slug": "meta-ads",
+      "category": "Marketing",
+      "aliases": [
+        "Facebook Ads",
+        "Instagram Ads"
+      ]
+    },
+    {
+      "name": "Meta AI",
+      "slug": "meta-ai",
+      "category": "llm",
+      "aliases": []
+    },
+    {
+      "name": "Metabase",
+      "slug": "metabase",
+      "category": "analytics",
+      "aliases": []
+    },
+    {
+      "name": "MetaMask",
+      "slug": "metamask",
+      "category": "crypto-wallets",
+      "aliases": []
+    },
+    {
+      "name": "Metaplane",
+      "slug": "metaplane",
+      "category": "data-observability",
+      "aliases": []
+    },
+    {
+      "name": "Mews",
+      "slug": "mews",
+      "category": "Hospitality",
+      "aliases": []
+    },
+    {
+      "name": "mHelpDesk",
+      "slug": "mhelpdesk",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Microsoft 365",
+      "slug": "microsoft-365",
+      "category": "Productivity",
+      "aliases": [
+        "Office 365",
+        "Outlook",
+        "Excel"
+      ]
+    },
+    {
+      "name": "Microsoft Access",
+      "slug": "microsoft-access",
+      "category": "Custom",
+      "aliases": []
+    },
+    {
+      "name": "Microsoft Azure",
+      "slug": "microsoft-azure",
+      "category": "cloud-hosting",
+      "aliases": [
+        "azure"
+      ]
+    },
+    {
+      "name": "Microsoft Bookings",
+      "slug": "microsoft-bookings",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Microsoft Copilot",
+      "slug": "microsoft-copilot",
+      "category": "ai-assistants",
+      "aliases": []
+    },
+    {
+      "name": "Microsoft Dynamics 365",
+      "slug": "microsoft-dynamics-365",
+      "category": "erp",
+      "aliases": [
+        "ms dynamics",
+        "Dynamics 365",
+        "Dynamics"
+      ]
+    },
+    {
+      "name": "Microsoft Entra ID",
+      "slug": "microsoft-entra-id",
+      "category": "iam",
+      "aliases": [
+        "microsoft entra"
+      ]
+    },
+    {
+      "name": "Microsoft Excel Online",
+      "slug": "microsoft-excel-online",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Microsoft Forms",
+      "slug": "microsoft-forms",
+      "category": "Forms",
+      "aliases": []
+    },
+    {
+      "name": "Microsoft Outlook",
+      "slug": "microsoft-outlook",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Microsoft Power Automate",
+      "slug": "microsoft-power-automate",
+      "category": "Automation",
+      "aliases": [
+        "Power Automate"
+      ]
+    },
+    {
+      "name": "Microsoft Purview",
+      "slug": "microsoft-purview",
+      "category": "ai-security",
+      "aliases": []
+    },
+    {
+      "name": "Microsoft Teams",
+      "slug": "microsoft-teams",
+      "category": "video-conferencing",
+      "aliases": [
+        "Teams"
+      ]
+    },
+    {
+      "name": "Midjourney",
+      "slug": "midjourney",
+      "category": "ai-image",
+      "aliases": []
+    },
+    {
+      "name": "Millenium",
+      "slug": "millenium",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Mindbody",
+      "slug": "mindbody",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Mindbody Wellness",
+      "slug": "mindbody-wellness",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Miro",
+      "slug": "miro",
+      "category": "project-management",
+      "aliases": [
+        "miro design"
+      ]
+    },
+    {
+      "name": "Mistral AI",
+      "slug": "mistral-ai",
+      "category": "llm",
+      "aliases": []
+    },
+    {
+      "name": "Mistral Large",
+      "slug": "mistral-large",
+      "category": "llm",
+      "aliases": []
+    },
+    {
+      "name": "Mitchell1",
+      "slug": "mitchell1",
+      "category": "Automotive",
+      "aliases": []
+    },
+    {
+      "name": "Mixpanel",
+      "slug": "mixpanel",
+      "category": "analytics",
+      "aliases": []
+    },
+    {
+      "name": "MLS Grid",
+      "slug": "mls-grid",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Mode",
+      "slug": "mode",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Modento",
+      "slug": "modento",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "monday CRM",
+      "slug": "monday-crm",
+      "category": "crm",
+      "aliases": []
+    },
+    {
+      "name": "monday.com",
+      "slug": "monday-com",
+      "category": "project-management",
+      "aliases": [
+        "monday",
+        "Monday"
+      ]
+    },
+    {
+      "name": "MongoDB Atlas",
+      "slug": "mongodb-atlas",
+      "category": "vector-databases",
+      "aliases": []
+    },
+    {
+      "name": "Monica",
+      "slug": "monica",
+      "category": "ai-productivity",
+      "aliases": [
+        "monica ai"
+      ]
+    },
+    {
+      "name": "Monte Carlo",
+      "slug": "monte-carlo",
+      "category": "data-observability",
+      "aliases": []
+    },
+    {
+      "name": "Moodle",
+      "slug": "moodle",
+      "category": "Education",
+      "aliases": []
+    },
+    {
+      "name": "Moosend",
+      "slug": "moosend",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "Mortgage Cadence",
+      "slug": "mortgage-cadence",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "MortgageBot",
+      "slug": "mortgagebot",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "MortgageHippo",
+      "slug": "mortgagehippo",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Morty",
+      "slug": "morty",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Moxie",
+      "slug": "moxie",
+      "category": "Professional Services",
+      "aliases": []
+    },
+    {
+      "name": "MoxiWorks",
+      "slug": "moxiworks",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Moz",
+      "slug": "moz",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Moz Pro",
+      "slug": "moz-pro",
+      "category": "seo-tools",
+      "aliases": []
+    },
+    {
+      "name": "MRI Software",
+      "slug": "mri-software",
+      "category": "Property Management",
+      "aliases": [
+        "MRI"
+      ]
+    },
+    {
+      "name": "MRPeasy",
+      "slug": "mrpeasy",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "MuleSoft",
+      "slug": "mulesoft",
+      "category": "data-observability",
+      "aliases": []
+    },
+    {
+      "name": "Mural",
+      "slug": "mural",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Murf AI",
+      "slug": "murf-ai",
+      "category": "ai-voice",
+      "aliases": []
+    },
+    {
+      "name": "Mutiny",
+      "slug": "mutiny",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "MyCase",
+      "slug": "mycase",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "MyCase Intake",
+      "slug": "mycase-intake",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "MySQL",
+      "slug": "mysql",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "n8n",
+      "slug": "n8n",
+      "category": "ai-agents",
+      "aliases": []
+    },
+    {
+      "name": "Namecheap",
+      "slug": "namecheap",
+      "category": "cloud-hosting",
+      "aliases": []
+    },
+    {
+      "name": "Namely",
+      "slug": "namely",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "Nansen",
+      "slug": "nansen",
+      "category": "crypto-analytics",
+      "aliases": []
+    },
+    {
+      "name": "nCino",
+      "slug": "ncino",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "NCR Silver",
+      "slug": "ncr-silver",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Needles",
+      "slug": "needles",
+      "category": "Legal",
+      "aliases": [
+        "Needles Case Management"
+      ]
+    },
+    {
+      "name": "Neon",
+      "slug": "neon",
+      "category": "cloud-hosting",
+      "aliases": [
+        "neon db"
+      ]
+    },
+    {
+      "name": "Neon CRM",
+      "slug": "neon-crm",
+      "category": "Nonprofit",
+      "aliases": []
+    },
+    {
+      "name": "NetDocuments",
+      "slug": "netdocuments",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Netlify",
+      "slug": "netlify",
+      "category": "cloud-hosting",
+      "aliases": []
+    },
+    {
+      "name": "NetSuite",
+      "slug": "netsuite",
+      "category": "erp",
+      "aliases": [
+        "Oracle NetSuite"
+      ]
+    },
+    {
+      "name": "New Relic",
+      "slug": "new-relic",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "NexHealth",
+      "slug": "nexhealth",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "NextGen",
+      "slug": "nextgen",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Nextiva",
+      "slug": "nextiva",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Nifty",
+      "slug": "nifty",
+      "category": "project-management",
+      "aliases": [
+        "niftypm"
+      ]
+    },
+    {
+      "name": "Nimble",
+      "slug": "nimble",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Nitro Sign",
+      "slug": "nitro-sign",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "noCRM.io",
+      "slug": "nocrm-io",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "NordPass",
+      "slug": "nordpass",
+      "category": "password-managers",
+      "aliases": []
+    },
+    {
+      "name": "NordVPN",
+      "slug": "nordvpn",
+      "category": "vpn",
+      "aliases": []
+    },
+    {
+      "name": "Notion",
+      "slug": "notion",
+      "category": "project-management",
+      "aliases": []
+    },
+    {
+      "name": "Notion AI",
+      "slug": "notion-ai",
+      "category": "ai-productivity",
+      "aliases": []
+    },
+    {
+      "name": "Novo",
+      "slug": "novo",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Nutshell",
+      "slug": "nutshell",
+      "category": "crm",
+      "aliases": []
+    },
+    {
+      "name": "Observable",
+      "slug": "observable",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Obsidian",
+      "slug": "obsidian",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Odoo",
+      "slug": "odoo",
+      "category": "erp",
+      "aliases": []
+    },
+    {
+      "name": "Odoo Inventory",
+      "slug": "odoo-inventory",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "Odoo Manufacturing",
+      "slug": "odoo-manufacturing",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "Okendo",
+      "slug": "okendo",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Okta",
+      "slug": "okta",
+      "category": "iam",
+      "aliases": []
+    },
+    {
+      "name": "OKX",
+      "slug": "okx",
+      "category": "crypto-exchanges",
+      "aliases": []
+    },
+    {
+      "name": "Olark",
+      "slug": "olark",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Omnisend",
+      "slug": "omnisend",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "OnceHub",
+      "slug": "oncehub",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "OneDrive",
+      "slug": "onedrive",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "OneNote",
+      "slug": "onenote",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "OnePageCRM",
+      "slug": "onepagecrm",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "OneTrust",
+      "slug": "onetrust",
+      "category": "compliance",
+      "aliases": []
+    },
+    {
+      "name": "Open Dental",
+      "slug": "open-dental",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "OpenAI Agents SDK",
+      "slug": "openai-agents-sdk",
+      "category": "ai-agents",
+      "aliases": []
+    },
+    {
+      "name": "OpenAI API",
+      "slug": "openai-api",
+      "category": "llm",
+      "aliases": []
+    },
+    {
+      "name": "OpenCart",
+      "slug": "opencart",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "OpenPhone",
+      "slug": "openphone",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "OpenSearch",
+      "slug": "opensearch",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "OpenTable",
+      "slug": "opentable",
+      "category": "Hospitality",
+      "aliases": []
+    },
+    {
+      "name": "Opera PMS",
+      "slug": "opera-pms",
+      "category": "Hospitality",
+      "aliases": []
+    },
+    {
+      "name": "Optimal Blue",
+      "slug": "optimal-blue",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Optimizely",
+      "slug": "optimizely",
+      "category": "Project Management",
+      "aliases": []
+    },
+    {
+      "name": "Optro",
+      "slug": "optro",
+      "category": "compliance",
+      "aliases": []
+    },
+    {
+      "name": "Oracle CX",
+      "slug": "oracle-cx",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Oracle Database",
+      "slug": "oracle-database",
+      "category": "databases",
+      "aliases": [
+        "oracle db"
+      ]
+    },
+    {
+      "name": "Oracle E-Business Suite",
+      "slug": "oracle-e-business-suite",
+      "category": "Custom",
+      "aliases": []
+    },
+    {
+      "name": "Oracle Fusion Cloud ERP",
+      "slug": "oracle-fusion-cloud-erp",
+      "category": "erp",
+      "aliases": [
+        "oracle erp"
+      ]
+    },
+    {
+      "name": "Orca",
+      "slug": "orca",
+      "category": "dex",
+      "aliases": []
+    },
+    {
+      "name": "Orca Security",
+      "slug": "orca-security",
+      "category": "cloud-security",
+      "aliases": []
+    },
+    {
+      "name": "Ordergroove",
+      "slug": "ordergroove",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Ordoro",
+      "slug": "ordoro",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "Ortho2",
+      "slug": "ortho2",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Ortto",
+      "slug": "ortto",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Otter.ai",
+      "slug": "otter-ai",
+      "category": "ai-productivity",
+      "aliases": [
+        "otter ai"
+      ]
+    },
+    {
+      "name": "Outreach",
+      "slug": "outreach",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Overjet",
+      "slug": "overjet",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "OwnerRez",
+      "slug": "ownerrez",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "Pabbly Connect",
+      "slug": "pabbly-connect",
+      "category": "Automation",
+      "aliases": [
+        "Pabbly"
+      ]
+    },
+    {
+      "name": "Paddle",
+      "slug": "paddle",
+      "category": "payments",
+      "aliases": []
+    },
+    {
+      "name": "PancakeSwap",
+      "slug": "pancakeswap",
+      "category": "dex",
+      "aliases": []
+    },
+    {
+      "name": "PandaDoc",
+      "slug": "pandadoc",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Paperform",
+      "slug": "paperform",
+      "category": "Forms",
+      "aliases": []
+    },
+    {
+      "name": "Pardot",
+      "slug": "pardot",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Pass",
+      "slug": "pass",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "PatientPop",
+      "slug": "patientpop",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Patriot Accounting",
+      "slug": "patriot-accounting",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Patriot Software",
+      "slug": "patriot-software",
+      "category": "accounting",
+      "aliases": [
+        "patriot"
+      ]
+    },
+    {
+      "name": "Paychex",
+      "slug": "paychex",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "Paycom",
+      "slug": "paycom",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "Paylocity",
+      "slug": "paylocity",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "PayPal",
+      "slug": "paypal",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "PayPal Complete Payments",
+      "slug": "paypal-complete-payments",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "PCLaw",
+      "slug": "pclaw",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Pearl AI",
+      "slug": "pearl-ai",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Pendo",
+      "slug": "pendo",
+      "category": "Project Management",
+      "aliases": []
+    },
+    {
+      "name": "Pennylane",
+      "slug": "pennylane",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Penpot",
+      "slug": "penpot",
+      "category": "design-tools",
+      "aliases": []
+    },
+    {
+      "name": "People.ai",
+      "slug": "people-ai",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "PepeBoost",
+      "slug": "pepeboost",
+      "category": "crypto-telegram-bots",
+      "aliases": []
+    },
+    {
+      "name": "Perplexity AI",
+      "slug": "perplexity-ai",
+      "category": "ai-productivity",
+      "aliases": [
+        "perplexity"
+      ]
+    },
+    {
+      "name": "Personio",
+      "slug": "personio",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "PestPac",
+      "slug": "pestpac",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Petty cash custom system",
+      "slug": "petty-cash-custom-system",
+      "category": "Custom",
+      "aliases": [
+        "Custom system",
+        "Legacy system",
+        "In-house system"
+      ]
+    },
+    {
+      "name": "pgvector",
+      "slug": "pgvector",
+      "category": "vector-databases",
+      "aliases": []
+    },
+    {
+      "name": "Phantom",
+      "slug": "phantom",
+      "category": "crypto-wallets",
+      "aliases": [
+        "phantom wallet"
+      ]
+    },
+    {
+      "name": "Phi-3",
+      "slug": "phi-3",
+      "category": "llm",
+      "aliases": [
+        "phi 3 medium"
+      ]
+    },
+    {
+      "name": "Phorest",
+      "slug": "phorest",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Photon",
+      "slug": "photon",
+      "category": "crypto-telegram-bots",
+      "aliases": [
+        "photon sol"
+      ]
+    },
+    {
+      "name": "Pic-Time",
+      "slug": "pic-time",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "Pika",
+      "slug": "pika",
+      "category": "ai-video",
+      "aliases": []
+    },
+    {
+      "name": "Piktochart",
+      "slug": "piktochart",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Pilot",
+      "slug": "pilot",
+      "category": "Accounting",
+      "aliases": [
+        "Pilot.com"
+      ]
+    },
+    {
+      "name": "Pinecone",
+      "slug": "pinecone",
+      "category": "vector-databases",
+      "aliases": []
+    },
+    {
+      "name": "Ping Identity",
+      "slug": "ping-identity",
+      "category": "iam",
+      "aliases": []
+    },
+    {
+      "name": "Pinpoint",
+      "slug": "pinpoint",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Pionex",
+      "slug": "pionex",
+      "category": "crypto-trading-bots",
+      "aliases": []
+    },
+    {
+      "name": "Pipedrive",
+      "slug": "pipedrive",
+      "category": "crm",
+      "aliases": []
+    },
+    {
+      "name": "Pipedrive Leadbooster",
+      "slug": "pipedrive-leadbooster",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Pipeline CRM",
+      "slug": "pipeline-crm",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Pirate Ship",
+      "slug": "pirate-ship",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "Pivotal Tracker",
+      "slug": "pivotal-tracker",
+      "category": "Project Management",
+      "aliases": []
+    },
+    {
+      "name": "Pixieset",
+      "slug": "pixieset",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "Pixlr",
+      "slug": "pixlr",
+      "category": "design-tools",
+      "aliases": []
+    },
+    {
+      "name": "PixVerse",
+      "slug": "pixverse",
+      "category": "ai-video",
+      "aliases": []
+    },
+    {
+      "name": "Planet DDS",
+      "slug": "planet-dds",
+      "category": "Dental",
+      "aliases": [
+        "Denticon"
+      ]
+    },
+    {
+      "name": "Planful",
+      "slug": "planful",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "PlanGrid",
+      "slug": "plangrid",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Plausible",
+      "slug": "plausible",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Plausible Analytics",
+      "slug": "plausible-analytics",
+      "category": "analytics",
+      "aliases": []
+    },
+    {
+      "name": "Pleo",
+      "slug": "pleo",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Plex",
+      "slug": "plex",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "Pocus",
+      "slug": "pocus",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Podia",
+      "slug": "podia",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Polly",
+      "slug": "polly",
+      "category": "Mortgage",
+      "aliases": [
+        "Polly Mortgage"
+      ]
+    },
+    {
+      "name": "PostgreSQL",
+      "slug": "postgresql",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "PostHog",
+      "slug": "posthog",
+      "category": "analytics",
+      "aliases": []
+    },
+    {
+      "name": "Postscript",
+      "slug": "postscript",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Power BI",
+      "slug": "power-bi",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Practice Better",
+      "slug": "practice-better",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Practice Fusion",
+      "slug": "practice-fusion",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "PracticeMaster",
+      "slug": "practicemaster",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "PracticePanther",
+      "slug": "practicepanther",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "PracticePanther Billing",
+      "slug": "practicepanther-billing",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "PracticeWEB",
+      "slug": "practiceweb",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "PracticeWorks",
+      "slug": "practiceworks",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "PrestaShop",
+      "slug": "prestashop",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Prisma Cloud",
+      "slug": "prisma-cloud",
+      "category": "cloud-security",
+      "aliases": []
+    },
+    {
+      "name": "Procore",
+      "slug": "procore",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Procreate",
+      "slug": "procreate",
+      "category": "design-tools",
+      "aliases": []
+    },
+    {
+      "name": "Productboard",
+      "slug": "productboard",
+      "category": "Project Management",
+      "aliases": []
+    },
+    {
+      "name": "Productive",
+      "slug": "productive",
+      "category": "Agency",
+      "aliases": [
+        "Productive.io"
+      ]
+    },
+    {
+      "name": "Projector PSA",
+      "slug": "projector-psa",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Proof",
+      "slug": "proof",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "Propertybase",
+      "slug": "propertybase",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "PropertyRadar",
+      "slug": "propertyradar",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "Propertyware",
+      "slug": "propertyware",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "Proposify",
+      "slug": "proposify",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "ProtonVPN",
+      "slug": "protonvpn",
+      "category": "vpn",
+      "aliases": []
+    },
+    {
+      "name": "ProWritingAid",
+      "slug": "prowritingaid",
+      "category": "ai-writing",
+      "aliases": []
+    },
+    {
+      "name": "Pulse",
+      "slug": "pulse",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Qdrant",
+      "slug": "qdrant",
+      "category": "vector-databases",
+      "aliases": []
+    },
+    {
+      "name": "Qlik Talend",
+      "slug": "qlik-talend",
+      "category": "data-observability",
+      "aliases": [
+        "talend"
+      ]
+    },
+    {
+      "name": "QQCatalyst",
+      "slug": "qqcatalyst",
+      "category": "Insurance",
+      "aliases": []
+    },
+    {
+      "name": "Qualia",
+      "slug": "qualia",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Qualified",
+      "slug": "qualified",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "QuickBooks Desktop",
+      "slug": "quickbooks-desktop",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "QuickBooks Enterprise",
+      "slug": "quickbooks-enterprise",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "QuickBooks Online",
+      "slug": "quickbooks-online",
+      "category": "accounting",
+      "aliases": [
+        "quickbooks",
+        "QBO",
+        "QuickBooks"
+      ]
+    },
+    {
+      "name": "QuickFile",
+      "slug": "quickfile",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "QuillBot",
+      "slug": "quillbot",
+      "category": "ai-writing",
+      "aliases": []
+    },
+    {
+      "name": "Quip",
+      "slug": "quip",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "QUOTESoft",
+      "slug": "quotesoft",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Qwen 2.5",
+      "slug": "qwen-2-5",
+      "category": "llm",
+      "aliases": [
+        "qwen 2 5"
+      ]
+    },
+    {
+      "name": "Qwilr",
+      "slug": "qwilr",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Rabby Wallet",
+      "slug": "rabby-wallet",
+      "category": "crypto-wallets",
+      "aliases": []
+    },
+    {
+      "name": "Railway",
+      "slug": "railway",
+      "category": "cloud-hosting",
+      "aliases": []
+    },
+    {
+      "name": "Raisely",
+      "slug": "raisely",
+      "category": "Nonprofit",
+      "aliases": []
+    },
+    {
+      "name": "Ramp",
+      "slug": "ramp",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "RamQuest",
+      "slug": "ramquest",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Raydium",
+      "slug": "raydium",
+      "category": "dex",
+      "aliases": []
+    },
+    {
+      "name": "rb2b",
+      "slug": "rb2b",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "RE/MAX Ignite",
+      "slug": "re-max-ignite",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Read AI",
+      "slug": "read-ai",
+      "category": "ai-meeting",
+      "aliases": []
+    },
+    {
+      "name": "Real Geeks",
+      "slug": "real-geeks",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Real Green",
+      "slug": "real-green",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Realist",
+      "slug": "realist",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Really Simple Systems",
+      "slug": "really-simple-systems",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "RealPage",
+      "slug": "realpage",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "Realtor.com",
+      "slug": "realtor-com",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Receipt Bank",
+      "slug": "receipt-bank",
+      "category": "Accounting",
+      "aliases": [
+        "Dext"
+      ]
+    },
+    {
+      "name": "Receipt Bank Dext",
+      "slug": "receipt-bank-dext",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "ReCharge",
+      "slug": "recharge",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Recruitee",
+      "slug": "recruitee",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Recruiterbox",
+      "slug": "recruiterbox",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Recurly",
+      "slug": "recurly",
+      "category": "payments",
+      "aliases": []
+    },
+    {
+      "name": "Redash",
+      "slug": "redash",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Redfin Partner",
+      "slug": "redfin-partner",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Redis",
+      "slug": "redis",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "Redis Cloud",
+      "slug": "redis-cloud",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Redis Vector Store",
+      "slug": "redis-vector-store",
+      "category": "vector-databases",
+      "aliases": [
+        "redis vector"
+      ]
+    },
+    {
+      "name": "Reflect",
+      "slug": "reflect",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Relativity",
+      "slug": "relativity",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Relay Financial",
+      "slug": "relay-financial",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Relay.app",
+      "slug": "relay-app",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "Relevance AI",
+      "slug": "relevance-ai",
+      "category": "ai-agents",
+      "aliases": []
+    },
+    {
+      "name": "Remote",
+      "slug": "remote",
+      "category": "hr-tools",
+      "aliases": [
+        "remote com"
+      ]
+    },
+    {
+      "name": "Remote.com",
+      "slug": "remote-com",
+      "category": "Payroll",
+      "aliases": [
+        "Remote"
+      ]
+    },
+    {
+      "name": "Remove.bg",
+      "slug": "remove-bg",
+      "category": "ai-image",
+      "aliases": [
+        "remove bg"
+      ]
+    },
+    {
+      "name": "Render",
+      "slug": "render",
+      "category": "cloud-hosting",
+      "aliases": []
+    },
+    {
+      "name": "Rent Manager",
+      "slug": "rent-manager",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "Rentec Direct",
+      "slug": "rentec-direct",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "Replicate",
+      "slug": "replicate",
+      "category": "llm",
+      "aliases": []
+    },
+    {
+      "name": "Replit AI",
+      "slug": "replit-ai",
+      "category": "ai-coding",
+      "aliases": []
+    },
+    {
+      "name": "Reply.io",
+      "slug": "reply-io",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "ReportGarden",
+      "slug": "reportgarden",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Resemble AI",
+      "slug": "resemble-ai",
+      "category": "ai-voice",
+      "aliases": []
+    },
+    {
+      "name": "Resource Guru",
+      "slug": "resource-guru",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "ResWare",
+      "slug": "resware",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Resy",
+      "slug": "resy",
+      "category": "Hospitality",
+      "aliases": []
+    },
+    {
+      "name": "Retool",
+      "slug": "retool",
+      "category": "cloud-hosting",
+      "aliases": []
+    },
+    {
+      "name": "Revel",
+      "slug": "revel",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "RevenueWell",
+      "slug": "revenuewell",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Rex",
+      "slug": "rex",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Reynolds and Reynolds",
+      "slug": "reynolds-and-reynolds",
+      "category": "Automotive",
+      "aliases": []
+    },
+    {
+      "name": "RingCentral",
+      "slug": "ringcentral",
+      "category": "video-conferencing",
+      "aliases": []
+    },
+    {
+      "name": "Rippling",
+      "slug": "rippling",
+      "category": "hr-tools",
+      "aliases": []
+    },
+    {
+      "name": "Riverside",
+      "slug": "riverside",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Riverside.fm",
+      "slug": "riverside-fm",
+      "category": "video-conferencing",
+      "aliases": [
+        "riverside"
+      ]
+    },
+    {
+      "name": "Roam Research",
+      "slug": "roam-research",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Rocket Matter",
+      "slug": "rocket-matter",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Roofr",
+      "slug": "roofr",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "RoomRaccoon",
+      "slug": "roomraccoon",
+      "category": "Hospitality",
+      "aliases": []
+    },
+    {
+      "name": "Roostify",
+      "slug": "roostify",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Rosy Salon Software",
+      "slug": "rosy-salon-software",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Routable",
+      "slug": "routable",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "RPR",
+      "slug": "rpr",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Runn",
+      "slug": "runn",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Runway",
+      "slug": "runway",
+      "category": "ai-video",
+      "aliases": []
+    },
+    {
+      "name": "Rytr",
+      "slug": "rytr",
+      "category": "ai-writing",
+      "aliases": []
+    },
+    {
+      "name": "SafePal",
+      "slug": "safepal",
+      "category": "crypto-wallets",
+      "aliases": []
+    },
+    {
+      "name": "Sage 200",
+      "slug": "sage-200",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Sage 50",
+      "slug": "sage-50",
+      "category": "Accounting",
+      "aliases": [
+        "Sage"
+      ]
+    },
+    {
+      "name": "Sage Business Cloud",
+      "slug": "sage-business-cloud",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Sage Business Cloud Accounting",
+      "slug": "sage-business-cloud-accounting",
+      "category": "accounting",
+      "aliases": [
+        "sage"
+      ]
+    },
+    {
+      "name": "Sage Intacct",
+      "slug": "sage-intacct",
+      "category": "erp",
+      "aliases": []
+    },
+    {
+      "name": "Sage X3",
+      "slug": "sage-x3",
+      "category": "erp",
+      "aliases": []
+    },
+    {
+      "name": "SailPoint",
+      "slug": "sailpoint",
+      "category": "iam",
+      "aliases": []
+    },
+    {
+      "name": "Salesflare",
+      "slug": "salesflare",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Salesforce",
+      "slug": "salesforce",
+      "category": "crm",
+      "aliases": [
+        "SFDC"
+      ]
+    },
+    {
+      "name": "Salesforce Financial Services Cloud",
+      "slug": "salesforce-financial-services-cloud",
+      "category": "Insurance",
+      "aliases": []
+    },
+    {
+      "name": "Salesforce Real Estate Cloud",
+      "slug": "salesforce-real-estate-cloud",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Salesforce Sales Cloud",
+      "slug": "salesforce-sales-cloud",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Salesforce Service Cloud",
+      "slug": "salesforce-service-cloud",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Salesloft",
+      "slug": "salesloft",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "SalesRabbit",
+      "slug": "salesrabbit",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "SalonIris",
+      "slug": "saloniris",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Sanity",
+      "slug": "sanity",
+      "category": "CMS",
+      "aliases": []
+    },
+    {
+      "name": "Santiment",
+      "slug": "santiment",
+      "category": "crypto-analytics",
+      "aliases": []
+    },
+    {
+      "name": "SAP Business One",
+      "slug": "sap-business-one",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "SAP ECC",
+      "slug": "sap-ecc",
+      "category": "Custom",
+      "aliases": []
+    },
+    {
+      "name": "SAP S/4HANA",
+      "slug": "sap-s-4hana",
+      "category": "erp",
+      "aliases": [
+        "sap s4hana"
+      ]
+    },
+    {
+      "name": "SAP Sales Cloud",
+      "slug": "sap-sales-cloud",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "SavvyCal",
+      "slug": "savvycal",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "ScheduleOnce",
+      "slug": "scheduleonce",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Scoro",
+      "slug": "scoro",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Scoro Projects",
+      "slug": "scoro-projects",
+      "category": "Professional Services",
+      "aliases": []
+    },
+    {
+      "name": "Screaming Frog SEO Spider",
+      "slug": "screaming-frog-seo-spider",
+      "category": "seo-tools",
+      "aliases": [
+        "screaming frog"
+      ]
+    },
+    {
+      "name": "Screencastify",
+      "slug": "screencastify",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "SE Ranking",
+      "slug": "se-ranking",
+      "category": "seo-tools",
+      "aliases": []
+    },
+    {
+      "name": "Secureframe",
+      "slug": "secureframe",
+      "category": "compliance",
+      "aliases": []
+    },
+    {
+      "name": "SeekOut",
+      "slug": "seekout",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Segment",
+      "slug": "segment",
+      "category": "Data",
+      "aliases": [
+        "Twilio Segment"
+      ]
+    },
+    {
+      "name": "SellerCloud",
+      "slug": "sellercloud",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "Sellfy",
+      "slug": "sellfy",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Sellsy",
+      "slug": "sellsy",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Semrush",
+      "slug": "semrush",
+      "category": "seo-tools",
+      "aliases": []
+    },
+    {
+      "name": "Sender",
+      "slug": "sender",
+      "category": "email-marketing",
+      "aliases": []
+    },
+    {
+      "name": "SentinelOne",
+      "slug": "sentinelone",
+      "category": "endpoint-security",
+      "aliases": []
+    },
+    {
+      "name": "Sentora",
+      "slug": "sentora",
+      "category": "crypto-analytics",
+      "aliases": [
+        "intotheblock"
+      ]
+    },
+    {
+      "name": "Sentry",
+      "slug": "sentry",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "ServiceCEO",
+      "slug": "serviceceo",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "ServiceDesk Plus",
+      "slug": "servicedesk-plus",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "ServiceFusion",
+      "slug": "servicefusion",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "ServiceM8",
+      "slug": "servicem8",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "ServiceM8 Plus",
+      "slug": "servicem8-plus",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "ServiceMax",
+      "slug": "servicemax",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "ServiceTitan",
+      "slug": "servicetitan",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "ServiceTitan Phones",
+      "slug": "servicetitan-phones",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Setmore",
+      "slug": "setmore",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "SevenRooms",
+      "slug": "sevenrooms",
+      "category": "Hospitality",
+      "aliases": []
+    },
+    {
+      "name": "Shared network drive",
+      "slug": "shared-network-drive",
+      "category": "Custom",
+      "aliases": []
+    },
+    {
+      "name": "SharePoint",
+      "slug": "sharepoint",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Shepherd Veterinary",
+      "slug": "shepherd-veterinary",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Shift4Shop",
+      "slug": "shift4shop",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "ShipBob",
+      "slug": "shipbob",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "ShipHero",
+      "slug": "shiphero",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "ShipStation",
+      "slug": "shipstation",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "ShootProof",
+      "slug": "shootproof",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "Shop-Ware",
+      "slug": "shop-ware",
+      "category": "Automotive",
+      "aliases": []
+    },
+    {
+      "name": "Shopify",
+      "slug": "shopify",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "Shopify Payments",
+      "slug": "shopify-payments",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Shopify Plus",
+      "slug": "shopify-plus",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Shopify POS",
+      "slug": "shopify-pos",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Shopify Retail",
+      "slug": "shopify-retail",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Shopmonkey",
+      "slug": "shopmonkey",
+      "category": "Automotive",
+      "aliases": []
+    },
+    {
+      "name": "Shoptech E2",
+      "slug": "shoptech-e2",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "Shore",
+      "slug": "shore",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Shortcut",
+      "slug": "shortcut",
+      "category": "project-management",
+      "aliases": []
+    },
+    {
+      "name": "Shortcuts",
+      "slug": "shortcuts",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "ShowingDesk",
+      "slug": "showingdesk",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "ShowingTime",
+      "slug": "showingtime",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "ShowingTime Plus",
+      "slug": "showingtime-plus",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Sierra Interactive",
+      "slug": "sierra-interactive",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "SignNow",
+      "slug": "signnow",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Simple Analytics",
+      "slug": "simple-analytics",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "SimpleNexus",
+      "slug": "simplenexus",
+      "category": "Mortgage",
+      "aliases": [
+        "nCino SimpleNexus"
+      ]
+    },
+    {
+      "name": "SimplePractice",
+      "slug": "simplepractice",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "SimplyBook.me",
+      "slug": "simplybook-me",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Simpro",
+      "slug": "simpro",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Sinch",
+      "slug": "sinch",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "SingleOps",
+      "slug": "singleops",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "SISTRIX",
+      "slug": "sistrix",
+      "category": "seo-tools",
+      "aliases": []
+    },
+    {
+      "name": "SiteGround",
+      "slug": "siteground",
+      "category": "cloud-hosting",
+      "aliases": []
+    },
+    {
+      "name": "SiteMinder",
+      "slug": "siteminder",
+      "category": "Hospitality",
+      "aliases": []
+    },
+    {
+      "name": "Sketch",
+      "slug": "sketch",
+      "category": "design-tools",
+      "aliases": []
+    },
+    {
+      "name": "Skubana",
+      "slug": "skubana",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "SkuVault",
+      "slug": "skuvault",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "Skyslope",
+      "slug": "skyslope",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Skyslope Forms",
+      "slug": "skyslope-forms",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Slack",
+      "slug": "slack",
+      "category": "video-conferencing",
+      "aliases": [
+        "slack huddles"
+      ]
+    },
+    {
+      "name": "SmartAdvocate",
+      "slug": "smartadvocate",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Smartlead",
+      "slug": "smartlead",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "SmartRecruiters",
+      "slug": "smartrecruiters",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Smartrr",
+      "slug": "smartrr",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Smartsheet",
+      "slug": "smartsheet",
+      "category": "project-management",
+      "aliases": []
+    },
+    {
+      "name": "SmartZip",
+      "slug": "smartzip",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Smokeball",
+      "slug": "smokeball",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "SnapLogic",
+      "slug": "snaplogic",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "Snowflake",
+      "slug": "snowflake",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "SOE Exact",
+      "slug": "soe-exact",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "SoftDent",
+      "slug": "softdent",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "SoftPro",
+      "slug": "softpro",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Softr",
+      "slug": "softr",
+      "category": "CMS",
+      "aliases": []
+    },
+    {
+      "name": "Solutionreach",
+      "slug": "solutionreach",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Solutionreach Dental",
+      "slug": "solutionreach-dental",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Sophos",
+      "slug": "sophos",
+      "category": "endpoint-security",
+      "aliases": []
+    },
+    {
+      "name": "Speechify",
+      "slug": "speechify",
+      "category": "ai-voice",
+      "aliases": [
+        "speechify voice"
+      ]
+    },
+    {
+      "name": "Spellbook",
+      "slug": "spellbook",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Spendesk",
+      "slug": "spendesk",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Spline",
+      "slug": "spline",
+      "category": "design-tools",
+      "aliases": []
+    },
+    {
+      "name": "Spotlight Reporting",
+      "slug": "spotlight-reporting",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Sprinto",
+      "slug": "sprinto",
+      "category": "compliance",
+      "aliases": []
+    },
+    {
+      "name": "Sprout Social",
+      "slug": "sprout-social",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "SpyFu",
+      "slug": "spyfu",
+      "category": "seo-tools",
+      "aliases": []
+    },
+    {
+      "name": "Square",
+      "slug": "square",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Square Appointments",
+      "slug": "square-appointments",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Square for Restaurants",
+      "slug": "square-for-restaurants",
+      "category": "Hospitality",
+      "aliases": []
+    },
+    {
+      "name": "Square for Retail",
+      "slug": "square-for-retail",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Square Payroll",
+      "slug": "square-payroll",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "Squarespace",
+      "slug": "squarespace",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "Squarespace Commerce",
+      "slug": "squarespace-commerce",
+      "category": "Ecommerce",
+      "aliases": [
+        "Squarespace"
+      ]
+    },
+    {
+      "name": "Squire",
+      "slug": "squire",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Stable Diffusion",
+      "slug": "stable-diffusion",
+      "category": "ai-image",
+      "aliases": []
+    },
+    {
+      "name": "Stack",
+      "slug": "stack",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "STACK Estimating",
+      "slug": "stack-estimating",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Stacker",
+      "slug": "stacker",
+      "category": "CMS",
+      "aliases": []
+    },
+    {
+      "name": "Stamped.io",
+      "slug": "stamped-io",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Stitch",
+      "slug": "stitch",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Streak",
+      "slug": "streak",
+      "category": "crm",
+      "aliases": [
+        "Streak CRM"
+      ]
+    },
+    {
+      "name": "Strikingly",
+      "slug": "strikingly",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "Stripe",
+      "slug": "stripe",
+      "category": "payments",
+      "aliases": []
+    },
+    {
+      "name": "Stripe Billing",
+      "slug": "stripe-billing",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Stripe Identity",
+      "slug": "stripe-identity",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Stripe Radar",
+      "slug": "stripe-radar",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Stripe Tax",
+      "slug": "stripe-tax",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Structurely",
+      "slug": "structurely",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Studio Ninja",
+      "slug": "studio-ninja",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "StudioCloud",
+      "slug": "studiocloud",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "StudioPlus",
+      "slug": "studioplus",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "Styleseat",
+      "slug": "styleseat",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Substack",
+      "slug": "substack",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "SuccessFactors",
+      "slug": "successfactors",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Successware",
+      "slug": "successware",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Sudowrite",
+      "slug": "sudowrite",
+      "category": "ai-writing",
+      "aliases": []
+    },
+    {
+      "name": "SugarCRM",
+      "slug": "sugarcrm",
+      "category": "crm",
+      "aliases": []
+    },
+    {
+      "name": "Suno",
+      "slug": "suno",
+      "category": "ai-voice",
+      "aliases": []
+    },
+    {
+      "name": "Supabase",
+      "slug": "supabase",
+      "category": "cloud-hosting",
+      "aliases": []
+    },
+    {
+      "name": "Super",
+      "slug": "super",
+      "category": "website-builders",
+      "aliases": [
+        "super so"
+      ]
+    },
+    {
+      "name": "Superset",
+      "slug": "superset",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Surfer SEO",
+      "slug": "surfer-seo",
+      "category": "ai-writing",
+      "aliases": []
+    },
+    {
+      "name": "Surfshark",
+      "slug": "surfshark",
+      "category": "vpn",
+      "aliases": []
+    },
+    {
+      "name": "SurrealDB",
+      "slug": "surrealdb",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "SurveyMonkey",
+      "slug": "surveymonkey",
+      "category": "Forms",
+      "aliases": []
+    },
+    {
+      "name": "SushiSwap",
+      "slug": "sushiswap",
+      "category": "dex",
+      "aliases": []
+    },
+    {
+      "name": "SyncSpider",
+      "slug": "syncspider",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "Synthesia",
+      "slug": "synthesia",
+      "category": "ai-video",
+      "aliases": []
+    },
+    {
+      "name": "Sysdig",
+      "slug": "sysdig",
+      "category": "cloud-security",
+      "aliases": []
+    },
+    {
+      "name": "Syspro",
+      "slug": "syspro",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "Tab32",
+      "slug": "tab32",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Tableau",
+      "slug": "tableau",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Tabnine",
+      "slug": "tabnine",
+      "category": "ai-coding",
+      "aliases": []
+    },
+    {
+      "name": "Tabs3",
+      "slug": "tabs3",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Tailscale",
+      "slug": "tailscale",
+      "category": "iam",
+      "aliases": []
+    },
+    {
+      "name": "Talend",
+      "slug": "talend",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Taleo",
+      "slug": "taleo",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Tally",
+      "slug": "tally",
+      "category": "Forms",
+      "aliases": []
+    },
+    {
+      "name": "Tangem",
+      "slug": "tangem",
+      "category": "crypto-wallets",
+      "aliases": []
+    },
+    {
+      "name": "Targetprocess",
+      "slug": "targetprocess",
+      "category": "Project Management",
+      "aliases": []
+    },
+    {
+      "name": "Tavant",
+      "slug": "tavant",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Tave",
+      "slug": "tave",
+      "category": "Creative",
+      "aliases": []
+    },
+    {
+      "name": "TaxJar",
+      "slug": "taxjar",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Teachable",
+      "slug": "teachable",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Teachable School",
+      "slug": "teachable-school",
+      "category": "Education",
+      "aliases": []
+    },
+    {
+      "name": "Teamtailor",
+      "slug": "teamtailor",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Teamwork",
+      "slug": "teamwork",
+      "category": "project-management",
+      "aliases": [
+        "Teamwork.com"
+      ]
+    },
+    {
+      "name": "Tekmetric",
+      "slug": "tekmetric",
+      "category": "Automotive",
+      "aliases": []
+    },
+    {
+      "name": "Telegram Business",
+      "slug": "telegram-business",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Temenos",
+      "slug": "temenos",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Ten Thousand Feet",
+      "slug": "ten-thousand-feet",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Tenable",
+      "slug": "tenable",
+      "category": "cloud-security",
+      "aliases": []
+    },
+    {
+      "name": "TenantCloud",
+      "slug": "tenantcloud",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "Terminus",
+      "slug": "terminus",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "TheraNest",
+      "slug": "theranest",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "TherapyNotes",
+      "slug": "therapynotes",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Thinkific",
+      "slug": "thinkific",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Thinkific Plus",
+      "slug": "thinkific-plus",
+      "category": "Education",
+      "aliases": []
+    },
+    {
+      "name": "Thomson Reuters HighQ",
+      "slug": "thomson-reuters-highq",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Thumbtack Pro",
+      "slug": "thumbtack-pro",
+      "category": "Home Services",
+      "aliases": [
+        "Thumbtack"
+      ]
+    },
+    {
+      "name": "TiDB",
+      "slug": "tidb",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "Tidio",
+      "slug": "tidio",
+      "category": "ai-assistants",
+      "aliases": [
+        "tidio ai"
+      ]
+    },
+    {
+      "name": "TikTok Ads",
+      "slug": "tiktok-ads",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Tilda",
+      "slug": "tilda",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "Timely",
+      "slug": "timely",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "TimelyApp",
+      "slug": "timelyapp",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "TimeSolv",
+      "slug": "timesolv",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "TimeTrade",
+      "slug": "timetrade",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Tipalti",
+      "slug": "tipalti",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Toast",
+      "slug": "toast",
+      "category": "Hospitality",
+      "aliases": [
+        "Toast POS"
+      ]
+    },
+    {
+      "name": "Todoist",
+      "slug": "todoist",
+      "category": "project-management",
+      "aliases": []
+    },
+    {
+      "name": "Toggl",
+      "slug": "toggl",
+      "category": "Agency Project & Time Software",
+      "aliases": []
+    },
+    {
+      "name": "Toggl Track",
+      "slug": "toggl-track",
+      "category": "Agency",
+      "aliases": [
+        "Toggl"
+      ]
+    },
+    {
+      "name": "Token Terminal",
+      "slug": "token-terminal",
+      "category": "crypto-analytics",
+      "aliases": []
+    },
+    {
+      "name": "TokenTax",
+      "slug": "tokentax",
+      "category": "crypto-tax",
+      "aliases": []
+    },
+    {
+      "name": "Top Producer",
+      "slug": "top-producer",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Topaz Labs AI",
+      "slug": "topaz-labs-ai",
+      "category": "ai-image",
+      "aliases": [
+        "topaz ai"
+      ]
+    },
+    {
+      "name": "Total Expert",
+      "slug": "total-expert",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "TouchBistro",
+      "slug": "touchbistro",
+      "category": "Hospitality",
+      "aliases": []
+    },
+    {
+      "name": "TouchBistro Retail",
+      "slug": "touchbistro-retail",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Tracker",
+      "slug": "tracker",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "TradeGecko",
+      "slug": "tradegecko",
+      "category": "Manufacturing",
+      "aliases": [
+        "QuickBooks Commerce"
+      ]
+    },
+    {
+      "name": "Trader Joe",
+      "slug": "trader-joe",
+      "category": "dex",
+      "aliases": []
+    },
+    {
+      "name": "TradeSanta",
+      "slug": "tradesanta",
+      "category": "crypto-trading-bots",
+      "aliases": []
+    },
+    {
+      "name": "Tradify",
+      "slug": "tradify",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "TransactionDesk",
+      "slug": "transactiondesk",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "TransactionManager",
+      "slug": "transactionmanager",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Transcend",
+      "slug": "transcend",
+      "category": "compliance",
+      "aliases": []
+    },
+    {
+      "name": "Tray.io",
+      "slug": "tray-io",
+      "category": "Automation",
+      "aliases": [
+        "Tray"
+      ]
+    },
+    {
+      "name": "Trellix",
+      "slug": "trellix",
+      "category": "endpoint-security",
+      "aliases": []
+    },
+    {
+      "name": "Trello",
+      "slug": "trello",
+      "category": "project-management",
+      "aliases": []
+    },
+    {
+      "name": "Trezor",
+      "slug": "trezor",
+      "category": "crypto-wallets",
+      "aliases": []
+    },
+    {
+      "name": "TrialWorks",
+      "slug": "trialworks",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Triblio",
+      "slug": "triblio",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "TriNet",
+      "slug": "trinet",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "Trojan",
+      "slug": "trojan",
+      "category": "crypto-telegram-bots",
+      "aliases": [
+        "trojan bot"
+      ]
+    },
+    {
+      "name": "Trust Wallet",
+      "slug": "trust-wallet",
+      "category": "crypto-wallets",
+      "aliases": []
+    },
+    {
+      "name": "TurboTenant",
+      "slug": "turbotenant",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "Turso",
+      "slug": "turso",
+      "category": "databases",
+      "aliases": []
+    },
+    {
+      "name": "Twilio",
+      "slug": "twilio",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Twilio SendGrid",
+      "slug": "twilio-sendgrid",
+      "category": "email-marketing",
+      "aliases": [
+        "sendgrid"
+      ]
+    },
+    {
+      "name": "Twingate",
+      "slug": "twingate",
+      "category": "iam",
+      "aliases": []
+    },
+    {
+      "name": "Typedream",
+      "slug": "typedream",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "Typeform",
+      "slug": "typeform",
+      "category": "Forms",
+      "aliases": []
+    },
+    {
+      "name": "Typesense",
+      "slug": "typesense",
+      "category": "Data",
+      "aliases": []
+    },
+    {
+      "name": "Udio",
+      "slug": "udio",
+      "category": "ai-voice",
+      "aliases": []
+    },
+    {
+      "name": "UKG",
+      "slug": "ukg",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "Ultipro",
+      "slug": "ultipro",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "Unbounce",
+      "slug": "unbounce",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Unicorn Platform",
+      "slug": "unicorn-platform",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "Uniswap",
+      "slug": "uniswap",
+      "category": "dex",
+      "aliases": []
+    },
+    {
+      "name": "Unito",
+      "slug": "unito",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "Unleashed",
+      "slug": "unleashed",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "UPS WorldShip",
+      "slug": "ups-worldship",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "v0 by Vercel",
+      "slug": "v0-by-vercel",
+      "category": "ai-coding",
+      "aliases": [
+        "v0 dev"
+      ]
+    },
+    {
+      "name": "Vagaro",
+      "slug": "vagaro",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Vanta",
+      "slug": "vanta",
+      "category": "compliance",
+      "aliases": []
+    },
+    {
+      "name": "Vantage",
+      "slug": "vantage",
+      "category": "finops",
+      "aliases": []
+    },
+    {
+      "name": "vAuto",
+      "slug": "vauto",
+      "category": "Automotive",
+      "aliases": []
+    },
+    {
+      "name": "Veeqo",
+      "slug": "veeqo",
+      "category": "Manufacturing",
+      "aliases": []
+    },
+    {
+      "name": "Velocify",
+      "slug": "velocify",
+      "category": "Mortgage",
+      "aliases": []
+    },
+    {
+      "name": "Velora",
+      "slug": "velora",
+      "category": "defi-tools",
+      "aliases": []
+    },
+    {
+      "name": "Vend",
+      "slug": "vend",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Venmo Business",
+      "slug": "venmo-business",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Veo 2",
+      "slug": "veo-2",
+      "category": "ai-video",
+      "aliases": []
+    },
+    {
+      "name": "Vercel",
+      "slug": "vercel",
+      "category": "cloud-hosting",
+      "aliases": []
+    },
+    {
+      "name": "Vertafore",
+      "slug": "vertafore",
+      "category": "Insurance",
+      "aliases": []
+    },
+    {
+      "name": "Vertex",
+      "slug": "vertex",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Vetstoria",
+      "slug": "vetstoria",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "VideaHealth",
+      "slug": "videahealth",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "vidIQ AI",
+      "slug": "vidiq-ai",
+      "category": "ai-video",
+      "aliases": []
+    },
+    {
+      "name": "Vidyard",
+      "slug": "vidyard",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "Visme",
+      "slug": "visme",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Voiceflow",
+      "slug": "voiceflow",
+      "category": "ai-assistants",
+      "aliases": [
+        "voiceflow io"
+      ]
+    },
+    {
+      "name": "Volusion",
+      "slug": "volusion",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Vonage",
+      "slug": "vonage",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Vowel",
+      "slug": "vowel",
+      "category": "video-conferencing",
+      "aliases": []
+    },
+    {
+      "name": "Vtiger",
+      "slug": "vtiger",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Vultr",
+      "slug": "vultr",
+      "category": "cloud-hosting",
+      "aliases": []
+    },
+    {
+      "name": "VWO",
+      "slug": "vwo",
+      "category": "Project Management",
+      "aliases": []
+    },
+    {
+      "name": "Walmart Marketplace",
+      "slug": "walmart-marketplace",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Wan Video",
+      "slug": "wan-video",
+      "category": "ai-video",
+      "aliases": []
+    },
+    {
+      "name": "Warmly",
+      "slug": "warmly",
+      "category": "Marketing",
+      "aliases": []
+    },
+    {
+      "name": "Wave",
+      "slug": "wave",
+      "category": "accounting",
+      "aliases": [
+        "Wave Accounting"
+      ]
+    },
+    {
+      "name": "Weave",
+      "slug": "weave",
+      "category": "Dental",
+      "aliases": [
+        "Weave Communications"
+      ]
+    },
+    {
+      "name": "Weaviate",
+      "slug": "weaviate",
+      "category": "vector-databases",
+      "aliases": []
+    },
+    {
+      "name": "Webex by Cisco",
+      "slug": "webex-by-cisco",
+      "category": "video-conferencing",
+      "aliases": [
+        "webex"
+      ]
+    },
+    {
+      "name": "Webflow",
+      "slug": "webflow",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "Webflow CMS",
+      "slug": "webflow-cms",
+      "category": "CMS",
+      "aliases": []
+    },
+    {
+      "name": "Webhook endpoint",
+      "slug": "webhook-endpoint",
+      "category": "Custom",
+      "aliases": []
+    },
+    {
+      "name": "Webnode",
+      "slug": "webnode",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "Weebly",
+      "slug": "weebly",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "Westlaw",
+      "slug": "westlaw",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "WhatsApp Business",
+      "slug": "whatsapp-business",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Whereby",
+      "slug": "whereby",
+      "category": "video-conferencing",
+      "aliases": []
+    },
+    {
+      "name": "Whimsical",
+      "slug": "whimsical",
+      "category": "design-tools",
+      "aliases": []
+    },
+    {
+      "name": "Wise Agent",
+      "slug": "wise-agent",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Wise Business",
+      "slug": "wise-business",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "Wisetack",
+      "slug": "wisetack",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Wix",
+      "slug": "wix",
+      "category": "website-builders",
+      "aliases": []
+    },
+    {
+      "name": "Wix eCommerce",
+      "slug": "wix-ecommerce",
+      "category": "Ecommerce",
+      "aliases": [
+        "Wix"
+      ]
+    },
+    {
+      "name": "Wiz",
+      "slug": "wiz",
+      "category": "cloud-security",
+      "aliases": []
+    },
+    {
+      "name": "WooCommerce",
+      "slug": "woocommerce",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "Woodpecker",
+      "slug": "woodpecker",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "WordPress",
+      "slug": "wordpress",
+      "category": "CMS",
+      "aliases": []
+    },
+    {
+      "name": "WordPress.com",
+      "slug": "wordpress-com",
+      "category": "website-builders",
+      "aliases": [
+        "wordpress"
+      ]
+    },
+    {
+      "name": "Wordtune",
+      "slug": "wordtune",
+      "category": "ai-writing",
+      "aliases": []
+    },
+    {
+      "name": "Workable",
+      "slug": "workable",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Workato",
+      "slug": "workato",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "WorkBright",
+      "slug": "workbright",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "Workday",
+      "slug": "workday",
+      "category": "hr-tools",
+      "aliases": []
+    },
+    {
+      "name": "Workday HCM",
+      "slug": "workday-hcm",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "Workday Recruiting",
+      "slug": "workday-recruiting",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "WorkflowMax",
+      "slug": "workflowmax",
+      "category": "Agency",
+      "aliases": []
+    },
+    {
+      "name": "Workiz",
+      "slug": "workiz",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Worldox",
+      "slug": "worldox",
+      "category": "Legal",
+      "aliases": []
+    },
+    {
+      "name": "Worldpay",
+      "slug": "worldpay",
+      "category": "Payments",
+      "aliases": []
+    },
+    {
+      "name": "WP Engine",
+      "slug": "wp-engine",
+      "category": "cloud-hosting",
+      "aliases": [
+        "wpengine"
+      ]
+    },
+    {
+      "name": "Wrike",
+      "slug": "wrike",
+      "category": "project-management",
+      "aliases": []
+    },
+    {
+      "name": "Writesonic",
+      "slug": "writesonic",
+      "category": "ai-writing",
+      "aliases": []
+    },
+    {
+      "name": "Wufoo",
+      "slug": "wufoo",
+      "category": "Forms",
+      "aliases": []
+    },
+    {
+      "name": "WunderTrading",
+      "slug": "wundertrading",
+      "category": "crypto-trading-bots",
+      "aliases": []
+    },
+    {
+      "name": "Xero",
+      "slug": "xero",
+      "category": "accounting",
+      "aliases": []
+    },
+    {
+      "name": "Xero Payroll",
+      "slug": "xero-payroll",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "Xero Practice Manager",
+      "slug": "xero-practice-manager",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Yahoo Mail",
+      "slug": "yahoo-mail",
+      "category": "Productivity",
+      "aliases": []
+    },
+    {
+      "name": "YAPI",
+      "slug": "yapi",
+      "category": "Dental",
+      "aliases": []
+    },
+    {
+      "name": "Yardi",
+      "slug": "yardi",
+      "category": "Property Management",
+      "aliases": [
+        "Yardi Voyager"
+      ]
+    },
+    {
+      "name": "Ylopo",
+      "slug": "ylopo",
+      "category": "Real Estate",
+      "aliases": []
+    },
+    {
+      "name": "Yotpo",
+      "slug": "yotpo",
+      "category": "Ecommerce",
+      "aliases": []
+    },
+    {
+      "name": "You.com",
+      "slug": "you-com",
+      "category": "ai-productivity",
+      "aliases": [
+        "you com"
+      ]
+    },
+    {
+      "name": "YouCanBook.me",
+      "slug": "youcanbook-me",
+      "category": "Scheduling",
+      "aliases": []
+    },
+    {
+      "name": "Zams",
+      "slug": "zams",
+      "category": "ai-productivity",
+      "aliases": []
+    },
+    {
+      "name": "Zapier",
+      "slug": "zapier",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "Zapier AI",
+      "slug": "zapier-ai",
+      "category": "ai-agents",
+      "aliases": []
+    },
+    {
+      "name": "Zapier Central",
+      "slug": "zapier-central",
+      "category": "Automation",
+      "aliases": []
+    },
+    {
+      "name": "Zapper",
+      "slug": "zapper",
+      "category": "defi-tools",
+      "aliases": []
+    },
+    {
+      "name": "Zed",
+      "slug": "zed",
+      "category": "ai-coding",
+      "aliases": [
+        "zed editor"
+      ]
+    },
+    {
+      "name": "Zendesk",
+      "slug": "zendesk",
+      "category": "customer-support",
+      "aliases": []
+    },
+    {
+      "name": "Zendesk Chat",
+      "slug": "zendesk-chat",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Zendesk Sell",
+      "slug": "zendesk-sell",
+      "category": "crm",
+      "aliases": []
+    },
+    {
+      "name": "Zendesk Support",
+      "slug": "zendesk-support",
+      "category": "Communication",
+      "aliases": []
+    },
+    {
+      "name": "Zenefits",
+      "slug": "zenefits",
+      "category": "Payroll",
+      "aliases": []
+    },
+    {
+      "name": "ZenLedger",
+      "slug": "zenledger",
+      "category": "crypto-tax",
+      "aliases": []
+    },
+    {
+      "name": "ZenMaid",
+      "slug": "zenmaid",
+      "category": "Home Services",
+      "aliases": []
+    },
+    {
+      "name": "Zenoti",
+      "slug": "zenoti",
+      "category": "Healthcare",
+      "aliases": []
+    },
+    {
+      "name": "Zerion",
+      "slug": "zerion",
+      "category": "crypto-portfolio-trackers",
+      "aliases": []
+    },
+    {
+      "name": "Zesty",
+      "slug": "zesty",
+      "category": "finops",
+      "aliases": []
+    },
+    {
+      "name": "Zilliz Cloud",
+      "slug": "zilliz-cloud",
+      "category": "vector-databases",
+      "aliases": [
+        "milvus zilliz"
+      ]
+    },
+    {
+      "name": "Zillow Premier Agent",
+      "slug": "zillow-premier-agent",
+      "category": "Real Estate",
+      "aliases": [
+        "Zillow"
+      ]
+    },
+    {
+      "name": "Zillow Rental Manager",
+      "slug": "zillow-rental-manager",
+      "category": "Property Management",
+      "aliases": []
+    },
+    {
+      "name": "ZipBooks",
+      "slug": "zipbooks",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "ZipRecruiter",
+      "slug": "ziprecruiter",
+      "category": "Recruitment",
+      "aliases": []
+    },
+    {
+      "name": "Zoho Books",
+      "slug": "zoho-books",
+      "category": "accounting",
+      "aliases": []
+    },
+    {
+      "name": "Zoho CRM",
+      "slug": "zoho-crm",
+      "category": "crm",
+      "aliases": [
+        "Zoho",
+        "zoho"
+      ]
+    },
+    {
+      "name": "Zoho Invoice",
+      "slug": "zoho-invoice",
+      "category": "Accounting",
+      "aliases": []
+    },
+    {
+      "name": "Zoho Projects",
+      "slug": "zoho-projects",
+      "category": "project-management",
+      "aliases": []
+    },
+    {
+      "name": "Zoom",
+      "slug": "zoom",
+      "category": "video-conferencing",
+      "aliases": []
+    },
+    {
+      "name": "ZoomInfo",
+      "slug": "zoominfo",
+      "category": "CRM",
+      "aliases": []
+    },
+    {
+      "name": "Zuora",
+      "slug": "zuora",
+      "category": "payments",
+      "aliases": []
+    }
+  ]
+}

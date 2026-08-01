@@ -1,0 +1,373 @@
+{
+  "crms": [
+    {
+      "slug": "capsule",
+      "name": "Capsule CRM",
+      "short": "Capsule",
+      "blurb": "The friendly CRM for small teams who never wanted a CRM that needs its own admin.",
+      "verticals": ["mortgage", "legal", "accounting", "consulting", "agency"]
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "short": "HubSpot",
+      "blurb": "Powerful out of the box, expensive once you outgrow free — worth stitching to the rest of your stack properly.",
+      "verticals": ["mortgage", "legal", "real-estate", "agency", "healthcare"]
+    },
+    {
+      "slug": "pipedrive",
+      "name": "Pipedrive",
+      "short": "Pipedrive",
+      "blurb": "Sales-first, deal-pipeline thinking — made to talk to the operational tools that close the deal.",
+      "verticals": ["mortgage", "real-estate", "recruitment", "manufacturing", "agency"]
+    },
+    {
+      "slug": "zoho",
+      "name": "Zoho CRM",
+      "short": "Zoho",
+      "blurb": "The price-conscious workhorse — ready to plug into the industry tools you already pay for.",
+      "verticals": ["mortgage", "accounting", "real-estate", "healthcare", "manufacturing"]
+    },
+    {
+      "slug": "copper",
+      "name": "Copper",
+      "short": "Copper",
+      "blurb": "Lives inside Google Workspace. Brilliant if you live in Gmail; useless if it doesn't reach your other systems.",
+      "verticals": ["agency", "consulting", "real-estate", "professional-services", "creative-services"]
+    },
+    {
+      "slug": "insightly",
+      "name": "Insightly",
+      "short": "Insightly",
+      "blurb": "Sales plus project delivery in one place — needs proper plumbing to your accounting and ops tools.",
+      "verticals": ["consulting", "legal", "agency", "manufacturing", "project-based-services"]
+    }
+  ],
+
+  "verticals": {
+    "mortgage": {
+      "name": "mortgage",
+      "title": "Mortgage Software",
+      "tools": ["Encompass", "Calyx Point", "LendingPad", "Velocify", "Floify"],
+      "flows": [
+        {
+          "from": "Website lead",
+          "to": "{CRM} → LOS",
+          "body": "A prospect fills out your rate-quote form. We push the contact into {CRM}, score them against your buy box, and create the loan file in your origination system — in seconds, not hours."
+        },
+        {
+          "from": "Loan status",
+          "to": "LOS → {CRM}",
+          "body": "When a file moves from processing to underwriting to clear-to-close, we mirror the status back to {CRM} so the loan officer and assistant always see the same picture."
+        },
+        {
+          "from": "Doc requests",
+          "to": "{CRM} → Borrower",
+          "body": "Missing-doc requests fire automated emails and texts to the borrower with secure upload links — and log the chase activity against the {CRM} record."
+        },
+        {
+          "from": "Closed loan",
+          "to": "{CRM} → Drip + referral ask",
+          "body": "At funding we trigger a closing-gift workflow, a 30-day check-in, an anniversary touch in year one, and a referral ask at month nine. The CRM never forgets."
+        }
+      ]
+    },
+    "legal": {
+      "name": "legal",
+      "title": "Legal Practice Software",
+      "tools": ["Clio", "MyCase", "PracticePanther", "Smokeball"],
+      "flows": [
+        {
+          "from": "Intake form",
+          "to": "{CRM} → Matter",
+          "body": "A potential-client form on your website becomes a contact in {CRM}, a conflict check in your practice-management system, and — if it clears — a new matter, all without your intake person re-typing a thing."
+        },
+        {
+          "from": "Time entries",
+          "to": "Practice mgmt → {CRM}",
+          "body": "Billable activity logged in your practice-management software shows up on the {CRM} contact record, so the partner can see at a glance which clients are warm without leaving their CRM."
+        },
+        {
+          "from": "Trust accounting",
+          "to": "Practice mgmt → Accounting",
+          "body": "Trust deposits, retainer draws, and IOLTA reconciliations flow cleanly to your accounting tool — with the rules your jurisdiction requires baked in."
+        },
+        {
+          "from": "Matter close",
+          "to": "Practice mgmt → {CRM}",
+          "body": "When a matter closes, we update the client record in {CRM}, kick off a satisfaction survey, and add the client to a quarterly newsletter — turning a one-off into a referral source."
+        }
+      ]
+    },
+    "accounting": {
+      "name": "accounting",
+      "title": "Accounting Software",
+      "tools": ["QuickBooks Online", "Xero", "FreshBooks", "Wave"],
+      "flows": [
+        {
+          "from": "Won deal",
+          "to": "{CRM} → Accounting",
+          "body": "When a deal is marked won in {CRM}, we create the invoice in your accounting tool with the right line items, terms, and tax codes — no copy-paste, no typos."
+        },
+        {
+          "from": "Payment received",
+          "to": "Accounting → {CRM}",
+          "body": "When the client pays, the payment date and amount land on the {CRM} record so your salesperson knows the deal is truly closed — not just signed."
+        },
+        {
+          "from": "AR aging",
+          "to": "Accounting → Slack/email",
+          "body": "Overdue invoices trigger a friendly reminder to the client and a heads-up to the account owner in {CRM} — before \"awkward\" turns into \"bad debt.\""
+        },
+        {
+          "from": "Monthly close",
+          "to": "Accounting → Dashboard",
+          "body": "Once your books are closed for the month, the three numbers you actually care about land in your inbox — cash, AR, runway — no dashboard logins required."
+        }
+      ]
+    },
+    "consulting": {
+      "name": "consulting",
+      "title": "Consulting Operations Software",
+      "tools": ["Harvest", "Notion", "Asana", "Calendly"],
+      "flows": [
+        {
+          "from": "SOW signed",
+          "to": "{CRM} → Project",
+          "body": "When a contract is signed in {CRM}, we spin up the project workspace, create the kickoff invoice, and book the first three meetings — in one flow."
+        },
+        {
+          "from": "Time tracked",
+          "to": "Time tool → {CRM}",
+          "body": "Hours logged by your team roll up to the client record in {CRM} — so a partner can see engagement health without opening four tabs."
+        },
+        {
+          "from": "Project milestone",
+          "to": "Project tool → Accounting",
+          "body": "A milestone hit in your project tool fires the invoice with the right line items and terms — retainers, progress billings, completion fees, all handled."
+        },
+        {
+          "from": "Engagement end",
+          "to": "{CRM} → Renewal",
+          "body": "Sixty days before the engagement ends, {CRM} pings the partner to start the renewal conversation — with usage and outcomes summarized for them."
+        }
+      ]
+    },
+    "agency": {
+      "name": "agency",
+      "title": "Agency Project & Time Software",
+      "tools": ["Harvest", "Toggl", "Asana", "ClickUp", "Slack"],
+      "flows": [
+        {
+          "from": "New client",
+          "to": "{CRM} → Project + Slack channel",
+          "body": "A signed client in {CRM} spins up the project, the Slack channel, the shared drive folder, and adds the team — from one click."
+        },
+        {
+          "from": "Time logged",
+          "to": "Time tool → {CRM}",
+          "body": "Hours logged against the client show up as a budget burn on the {CRM} record. AMs see the over-servicing risk before the month closes, not after."
+        },
+        {
+          "from": "Deliverable approved",
+          "to": "Project tool → Accounting",
+          "body": "When the client approves a deliverable in your project tool, the milestone invoice fires automatically and is logged back to {CRM}."
+        },
+        {
+          "from": "Retainer ending",
+          "to": "{CRM} → Renewal sequence",
+          "body": "Sixty days out from retainer end, {CRM} starts the renewal conversation with the AM — with usage, deliverables shipped, and outcomes summarized."
+        }
+      ]
+    },
+    "healthcare": {
+      "name": "healthcare",
+      "title": "Healthcare Practice Software",
+      "tools": ["SimplePractice", "Practice Better", "Jane", "TherapyNotes"],
+      "flows": [
+        {
+          "from": "Website booking",
+          "to": "{CRM} → Practice mgmt",
+          "body": "A prospective patient books online. We create the contact in {CRM}, the appointment in your practice tool, and send the intake forms — in one stream, HIPAA-aware."
+        },
+        {
+          "from": "Visit completed",
+          "to": "Practice mgmt → {CRM}",
+          "body": "Visit notes stay in the clinical system. Visit *fact* (date, type, follow-up due) lands on the {CRM} contact so the front desk can run reminder campaigns without touching PHI."
+        },
+        {
+          "from": "Payment",
+          "to": "Practice mgmt → Accounting",
+          "body": "Co-pays, self-pay charges, and insurance reimbursements flow cleanly to your accounting tool with the right service-code mapping. Your bookkeeper stops chasing you."
+        },
+        {
+          "from": "Recall window",
+          "to": "{CRM} → Patient",
+          "body": "When a patient hits their recall window, {CRM} starts a friendly multi-channel nudge — email, text, mailed card — until they rebook."
+        }
+      ]
+    },
+    "real-estate": {
+      "name": "real estate",
+      "title": "Real Estate Software",
+      "tools": ["Follow Up Boss", "kvCORE", "Top Producer", "BoomTown"],
+      "flows": [
+        {
+          "from": "Portal lead",
+          "to": "{CRM} → Routing",
+          "body": "A lead from Zillow, Realtor.com, or your IDX site lands in {CRM}, routed by zip and price band to the right agent within ninety seconds — not the next morning."
+        },
+        {
+          "from": "Showing booked",
+          "to": "Showing tool → {CRM}",
+          "body": "Showings booked through your platform write back to the {CRM} contact — so an agent picking up a hand-off can see exactly what the buyer has already seen."
+        },
+        {
+          "from": "Listing milestone",
+          "to": "{CRM} → Sellers + email",
+          "body": "Showings count, offer received, under contract, closed — each milestone triggers the seller communication you'd otherwise forget on a busy week."
+        },
+        {
+          "from": "Closing",
+          "to": "{CRM} → Past-client engine",
+          "body": "At closing the client moves to your past-client nurture: closing gift, 30-day check-in, anniversary touch, annual property value report. The referral pipeline runs itself."
+        }
+      ]
+    },
+    "manufacturing": {
+      "name": "manufacturing",
+      "title": "Manufacturing & Inventory Software",
+      "tools": ["Fishbowl", "Katana", "NetSuite", "ShipStation"],
+      "flows": [
+        {
+          "from": "Quote won",
+          "to": "{CRM} → ERP",
+          "body": "When a quote is accepted in {CRM}, we create the sales order in your ERP, kick off the production work order, and reserve the inventory — in one motion."
+        },
+        {
+          "from": "Stock change",
+          "to": "ERP → {CRM}",
+          "body": "Low-stock and back-order events surface against the {CRM} record so your salesperson sees the supply story before the customer call — not during it."
+        },
+        {
+          "from": "Shipment",
+          "to": "Shipping tool → {CRM} + customer",
+          "body": "Shipped orders trigger the tracking email to the customer and log the shipment to {CRM} — so support has the same picture sales does."
+        },
+        {
+          "from": "Reorder trigger",
+          "to": "ERP → {CRM} → Account",
+          "body": "When a customer's typical reorder window hits, {CRM} pings the account owner with a suggested reorder — turning hope into a process."
+        }
+      ]
+    },
+    "recruitment": {
+      "name": "recruitment",
+      "title": "Recruiting & ATS Software",
+      "tools": ["JazzHR", "Workable", "Greenhouse", "BambooHR"],
+      "flows": [
+        {
+          "from": "New job order",
+          "to": "{CRM} → ATS",
+          "body": "A signed client requisition in {CRM} creates the open role in your ATS, the careers-page posting, and a slack-out to your recruiter team — in seconds."
+        },
+        {
+          "from": "Candidate stage",
+          "to": "ATS → {CRM}",
+          "body": "Candidate movement (screen → interview → offer) updates on the client record so the account manager can run a credible status call without bothering the recruiter."
+        },
+        {
+          "from": "Placement",
+          "to": "ATS → Accounting",
+          "body": "A placement fires the placement-fee invoice with the right terms (contingent, retained, guarantee window) and books the revenue to your accounting tool."
+        },
+        {
+          "from": "Guarantee window",
+          "to": "ATS → {CRM}",
+          "body": "When a placement nears the end of its guarantee period, {CRM} pings the AM to start the success conversation — quietly heading off refund risk."
+        }
+      ]
+    },
+    "creative-services": {
+      "name": "creative services",
+      "title": "Creative Services Software",
+      "tools": ["Dubsado", "Honeybook", "17hats", "Studio Ninja"],
+      "flows": [
+        {
+          "from": "Inquiry form",
+          "to": "{CRM} → Studio tool",
+          "body": "A booking inquiry creates the contact in {CRM} and the lead in your studio tool, sends the questionnaire, and books the discovery call — all before the client refreshes the thank-you page."
+        },
+        {
+          "from": "Contract signed",
+          "to": "Studio tool → {CRM}",
+          "body": "A signed contract updates the {CRM} record and triggers your onboarding workflow — welcome email, kickoff invoice, prep guide — without you opening a tab."
+        },
+        {
+          "from": "Project milestone",
+          "to": "Studio tool → Accounting",
+          "body": "Milestones in your studio tool fire payment requests and write to your accounting tool — so cash flow tracks delivery, not memory."
+        },
+        {
+          "from": "Project complete",
+          "to": "{CRM} → Referral ask",
+          "body": "Delivered project triggers a satisfaction note, a review request, and a referral ask at the right moment — turning happy clients into a pipeline."
+        }
+      ]
+    },
+    "professional-services": {
+      "name": "professional services",
+      "title": "Professional Services Software",
+      "tools": ["ServiceTitan", "Harvest", "ClickUp", "Bonsai"],
+      "flows": [
+        {
+          "from": "Engagement signed",
+          "to": "{CRM} → Ops tool",
+          "body": "A signed engagement spins up the project, the deposit invoice, and the kickoff meeting — all wired back to the {CRM} record."
+        },
+        {
+          "from": "Time tracked",
+          "to": "Time tool → {CRM}",
+          "body": "Hours logged against an engagement roll up as budget health on the {CRM} record — partners spot over-servicing before it eats the margin."
+        },
+        {
+          "from": "Deliverable shipped",
+          "to": "Ops tool → Accounting",
+          "body": "A shipped deliverable triggers the milestone invoice and writes the activity to {CRM}. No \"I'll bill them next week\" drift."
+        },
+        {
+          "from": "Engagement end",
+          "to": "{CRM} → Renewal + referral",
+          "body": "Engagement close kicks off a satisfaction loop, a renewal conversation thirty days out, and a referral ask at month two — quietly compounding the book."
+        }
+      ]
+    },
+    "project-based-services": {
+      "name": "project-based services",
+      "title": "Project & Delivery Software",
+      "tools": ["Asana", "Monday.com", "ClickUp", "Notion"],
+      "flows": [
+        {
+          "from": "Project signed",
+          "to": "{CRM} → Project tool",
+          "body": "A signed project in {CRM} spins up the workspace, the task templates, the team assignments, and the kickoff meeting — from one trigger."
+        },
+        {
+          "from": "Task progress",
+          "to": "Project tool → {CRM}",
+          "body": "Project health (on track, at risk, blocked) surfaces on the {CRM} record so the account owner doesn't have to ask the PM for an update every Friday."
+        },
+        {
+          "from": "Milestone",
+          "to": "Project tool → Accounting",
+          "body": "Each milestone fires the invoice with the right terms and writes the activity to {CRM} — so revenue tracks delivery, not memory."
+        },
+        {
+          "from": "Project end",
+          "to": "{CRM} → Phase two",
+          "body": "On project close, {CRM} starts the next-phase conversation — with outcomes and metrics already summarized for the AM."
+        }
+      ]
+    }
+  }
+}

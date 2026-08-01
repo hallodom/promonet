@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bone text-obsidian antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'ss01', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .dark body {
+    @apply bg-obsidian text-bone;
+  }
+
+  ::selection {
+    background: #2540E8;
+    color: #F5F5F2;
+  }
+}
+
+@layer utilities {
+  /* Display = Roboto Slab, with brand letter-spacing rules.
+     ≥40px gets -1% to -2% tracking per the style guide. */
+  .font-display {
+    font-family: 'Roboto Slab', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+  .font-display-tight {
+    letter-spacing: -0.02em;
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgba(245, 245, 242, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(245, 245, 242, 0.045) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .grid-bg-light {
+    background-image:
+      linear-gradient(to right, rgba(10, 10, 15, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(10, 10, 15, 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+
+  .hairline-b {
+    @apply border-b border-obsidian/10 dark:border-bone/10;
+  }
+  .hairline-t {
+    @apply border-t border-obsidian/10 dark:border-bone/10;
+  }
+  .hairline {
+    @apply border border-obsidian/10 dark:border-bone/10;
+  }
+}
+
+/* Reveal-on-scroll: subtle and quick */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+              transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.in,
+  .marquee-track,
+  .progress-line,
+  .scan-line {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Top progress line */
+@keyframes progress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.progress-line {
+  transform-origin: left;
+  animation: progress 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Slow marquee for the tools row */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 60s linear infinite;
+}
+
+/* Subtle status dot pulse */
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.4; }
+}
+.status-pulse {
+  animation: status-pulse 2.4s ease-in-out infinite;
+}
+
+/* Soft butterfly entry */
+@keyframes butterfly-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.butterfly-in {
+  animation: butterfly-in 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+/* Scan-line animation across pipeline rows */
+@keyframes scan {
+  0%   { transform: translateX(-100%); opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+.scan-line {
+  animation: scan 3s ease-in-out infinite;
+}

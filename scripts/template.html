@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Connect {{CRM_NAME}} to {{VERTICAL_TITLE}} | Promonet</title>
+<meta name="description" content="Stitch {{CRM_NAME}} to the {{VERTICAL_NAME}} software you already run on. Fixed monthly price, no dev team required." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="../" class="logo" aria-label="Promonet">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 3 C 10 9, 7 14, 7 18 C 7 24, 11 28, 16 29 C 21 28, 25 24, 25 18 C 25 14, 22 9, 16 3 Z"
+              fill="none" stroke="#0A0A0F" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M16 9 L 16 27" stroke="#0A0A0F" stroke-width="2" stroke-linecap="round"/>
+        <path d="M11 14 L 21 14 M 10 19 L 22 19 M 11 24 L 21 24"
+              stroke="#0A0A0F" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Promonet
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../#how">How it works</a>
+      <a href="./">Integrations</a>
+      <a href="../#pricing">Pricing</a>
+      <a href="../#about">About</a>
+      <a href="../#cta" class="btn">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero connect-hero">
+  <div class="wrap">
+    <span class="eyebrow">{{CRM_SHORT}} × {{VERTICAL_NAME}}</span>
+    <h1>Connect {{CRM_NAME}} to your <span class="accent">{{VERTICAL_NAME}} software</span>.</h1>
+    <p class="lead">
+      We stitch {{CRM_NAME}} to the {{VERTICAL_NAME}} tools you already run
+      on — {{TOOL_LIST}} — so leads, jobs, invoices, and follow-ups stop
+      living in different worlds. Fixed monthly price. No dev team required.
+    </p>
+    <div class="hero-ctas" style="margin-top:24px;">
+      <a href="../#cta" class="btn lg">Book a 20-minute call</a>
+      <a href="../#pricing" class="btn ghost lg">See pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT GETS CONNECTED ============ -->
+<section class="connect-flows">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">What gets connected</span>
+      <h2>The flows that earn their keep.</h2>
+      <p class="lead">
+        Every {{CRM_NAME}} to {{VERTICAL_NAME}} build is a little different, but
+        these are the four data flows that pay for themselves first.
+      </p>
+    </div>
+    <div class="flows">
+      {{FLOWS}}
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="how">
+  <div class="wrap">
+    <div class="how-head">
+      <span class="eyebrow">How it works</span>
+      <h2>We set it up. We maintain it. You forget about us.</h2>
+      <p class="lead">
+        Three weeks from kickoff to live. Then a quiet monthly retainer that
+        keeps it that way — even when {{CRM_SHORT}} or one of the
+        {{VERTICAL_NAME}} tools pushes an API change at 2 a.m. on a Friday.
+      </p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01 — WEEK ONE</div>
+        <h3>A real conversation.</h3>
+        <p>A 45-minute call. We look at your {{CRM_SHORT}} setup, the {{VERTICAL_NAME}} tools you use, and the three flows costing you the most time today.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02 — WEEKS TWO &amp; THREE</div>
+        <h3>We quietly connect things.</h3>
+        <p>We build the bridges between {{CRM_SHORT}} and your {{VERTICAL_NAME}} stack, test them on real data, and walk your team through what changed in plain English.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03 — ONGOING</div>
+        <h3>We keep it humming.</h3>
+        <p>APIs change. Plans get added. Your stack evolves. We watch for it and fix it before you notice. One predictable invoice. No surprise hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RELATED INTEGRATIONS ============ -->
+<section class="related">
+  <div class="wrap">
+    <div class="related-head">
+      <span class="eyebrow">Other integrations for {{CRM_NAME}}</span>
+      <h2>Already running {{CRM_SHORT}}? Here's what else we can connect.</h2>
+    </div>
+    <ul>
+      {{RELATED}}
+    </ul>
+    <a class="back" href="./">← Browse all 30 integrations</a>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="cta">
+  <div class="wrap">
+    <span class="eyebrow">Ready when you are</span>
+    <h2>Let's get {{CRM_SHORT}} talking to your {{VERTICAL_NAME}} stack.</h2>
+    <p>
+      A 20-minute call. No slide deck. We'll ask what's costing you sleep and
+      tell you, honestly, whether we can help.
+    </p>
+    <a href="mailto:hello@promonet.com" class="btn lg">Book a 20-minute call</a>
+    <p style="margin-top:18px;font-size:14px;">
+      Or email us: <a href="mailto:hello@promonet.com">hello@promonet.com</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="../" class="logo" style="margin-bottom:12px;">
+          <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16 3 C 10 9, 7 14, 7 18 C 7 24, 11 28, 16 29 C 21 28, 25 24, 25 18 C 25 14, 22 9, 16 3 Z"
+                  fill="none" stroke="#0A0A0F" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M16 9 L 16 27" stroke="#0A0A0F" stroke-width="2" stroke-linecap="round"/>
+            <path d="M11 14 L 21 14 M 10 19 L 22 19 M 11 24 L 21 24"
+                  stroke="#0A0A0F" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          Promonet
+        </a>
+        <p style="max-width:36ch;margin-top:8px;">
+          Integration as a quiet superpower for small business owners who
+          deserve their evenings back.
+        </p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../#about">About</a></li>
+          <li><a href="#">Manifesto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../#how">How it works</a></li>
+          <li><a href="../#pricing">Pricing</a></li>
+          <li><a href="./">Integrations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="mailto:hello@promonet.com">hello@promonet.com</a></li>
+          <li><a href="#cta">Book a call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Promonet. All rights reserved.</span>
+      <span>Made for owners who deserve their Sunday nights back.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
