@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build:apps": "node scripts/build-apps-catalog.js",
-    "build": "npm run build:apps && tsc -b && vite build && node scripts/generate-seo-files.js && npx playwright install chromium && node scripts/prerender.mjs",
+    "build": "npm run build:apps && tsc -b && vite build && node scripts/generate-seo-files.js && node scripts/prerender.mjs",
     "seo:generate": "node scripts/generate-seo-files.js",
     "seo:prerender": "node scripts/prerender.mjs",
     "start": "node server/index.js",

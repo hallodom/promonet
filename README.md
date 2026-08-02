@@ -43,7 +43,6 @@ Default theme is **light**. Users can toggle dark mode; preference is stored in 
 
 ```bash
 npm install
-npx playwright install chromium   # once, for prerender
 npm run dev
 ```
 
@@ -64,7 +63,7 @@ Build emits (into `public/` and `dist/`):
 - `sitemap.xml` — home, about, pricing, connect, CRM matrix, all connect slugs
 - `llms.txt` / `llms-full.txt` — plain-text digests for AI crawlers
 - `seo-routes.json` — route list for prerender + server 404 checks
-- Prerendered HTML under `dist/<path>/index.html` (Playwright)
+- Prerendered HTML under `dist/<path>/index.html` (static SEO inject at build time)
 
 Per-route `<title>`, meta description, canonical, Open Graph/Twitter, and JSON-LD (Organization, WebSite, FAQ on home, OfferCatalog on pricing, BreadcrumbList on connect pages) via `src/components/Seo.tsx` + `src/lib/seo.ts`.
 
