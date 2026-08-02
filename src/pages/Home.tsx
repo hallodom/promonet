@@ -62,8 +62,8 @@ export default function Home() {
           <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center pt-16 md:pt-24 pb-20 md:pb-28">
             <div className="reveal">
               <h1 className="font-display text-[clamp(48px,7vw,88px)] leading-[1.02] tracking-[-0.02em] text-balance mb-8">
-                Connect your CRM and tools{' '}
-                <span className="text-voltage">— without a dev team.</span>
+                Your software finally{' '}
+                <span className="text-voltage">talking together.</span>
               </h1>
 
               <p className="text-lg md:text-xl leading-[1.55] text-graphite max-w-[520px] mb-10 text-balance">
