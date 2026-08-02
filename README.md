@@ -9,7 +9,8 @@ Marketing site for **Promonet** — integration and automation for small busines
 - [Vite](https://vitejs.dev/) + React 19 + TypeScript
 - Tailwind CSS 3 (brand tokens, class-based dark mode)
 - React Router 7
-- Static build → deploy to Sevalla, Vercel, or any static host
+- Vite SPA + small Node server (`server/index.js`) → Sevalla **Application Hosting**
+- Contact form → Resend (`/api/contact`)
 
 ## Brand
 
@@ -86,4 +87,4 @@ Production output is static files in `dist/`.
 
 ## Contact
 
-Site CTAs use `mailto:hello@promonet.io`.
+Contact modal posts to `/api/contact` (Resend → `hello@promonetconsulting.com`). Requires `RESEND_API_KEY`, `RESEND_FROM`, `CONTACT_TO`.
