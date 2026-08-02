@@ -26,8 +26,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <script>
     (function() {
-      var t = localStorage.getItem('theme');
-      if (t === 'dark') document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('dark');
+      try { localStorage.removeItem('theme'); } catch (e) {}
     })();
   </script>
 </head>

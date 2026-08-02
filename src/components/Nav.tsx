@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
-import ThemeToggle from './ThemeToggle'
 import ContactButton from './ContactButton'
 
 const navLinks = [
@@ -56,7 +55,6 @@ export default function Nav() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <ThemeToggle />
           <ContactButton
             showArrow={false}
             className="hidden sm:inline-flex items-center font-semibold text-[13px] tracking-[0.02em] px-4 py-2.5 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90"
