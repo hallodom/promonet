@@ -7,7 +7,7 @@ export default function TeamSection() {
             <div className="relative aspect-[16/10] overflow-hidden rounded-[4px]">
               <img
                 src="/team-office.jpg"
-                alt="The Promonet team of three smiling in the office"
+                alt="Promonet team that helps small businesses connect CRM and tools"
                 className="absolute inset-0 h-full w-full object-cover object-center"
               />
             </div>

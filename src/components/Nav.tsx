@@ -6,7 +6,7 @@ import ContactButton from './ContactButton'
 
 const navLinks = [
   { to: '/#how', label: 'How it works' },
-  { to: '/connect', label: 'Connect' },
+  { to: '/connect', label: 'Connect tools' },
   { to: '/connect/crm', label: 'Connect your CRM' },
   { to: '/pricing', label: 'Pricing' },
   { to: '/about', label: 'About' },

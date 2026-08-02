@@ -3,20 +3,30 @@ import { ArrowRight } from 'lucide-react'
 import { useReveal } from '@/lib/useReveal'
 import AppSearch from '@/components/AppSearch'
 import AppCatalog from '@/components/AppCatalog'
+import Seo from '@/components/Seo'
 import catalog from '@/data/apps.json'
+import { listSeoRoutes } from '@/lib/seo'
+
+const connectSeo = listSeoRoutes().find((r) => r.path === '/connect')!
 
 export default function ConnectIndex() {
   useReveal()
 
   return (
     <>
+      <Seo
+        title={connectSeo.title}
+        description={connectSeo.description}
+        path="/connect"
+      />
+
       <section className="pt-32 pb-20 border-b border-obsidian/8 dark:border-bone/8">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-voltage mb-6 block reveal">
             Integrations
           </span>
           <h1 className="font-display text-[clamp(40px,7vw,88px)] leading-[1.02] tracking-[-0.02em] mb-8 max-w-[900px] text-balance reveal">
-            Any tool. Connected to the rest.
+            Connect business tools &amp; integrations.
           </h1>
           <p className="text-lg md:text-xl text-graphite max-w-[640px] mb-8 reveal" style={{ transitionDelay: '100ms' }}>
             Search or browse {catalog.count.toLocaleString()} apps — CRMs, accounting, mortgage, legal, dental, real estate, and niche tools. Fixed monthly price. No dev team required.

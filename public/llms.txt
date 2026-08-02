@@ -1,0 +1,26 @@
+# Promonet
+
+> CRM and tool integrations for small businesses.
+
+Promonet helps small business owners connect their CRM to industry software and the rest of their stack — without hiring a full-time development team. Fixed monthly partnerships or one-off builds, with human support.
+
+## Who it's for
+- Small businesses and owners (roughly 5–50 people)
+- Teams that need to connect CRM, accounting, booking, and niche tools
+- Companies that want fixed pricing instead of open-ended hourly agency work
+
+## Key pages
+- [Home](https://promonetconsulting.com/): Connect CRM and business tools for small businesses
+- [Connect tools](https://promonetconsulting.com/connect): Search and browse tools we can connect
+- [Connect your CRM](https://promonetconsulting.com/connect/crm): CRM → industry software matrix
+- [Pricing](https://promonetconsulting.com/pricing): Starter £600/mo, Growth £1,500/mo, One-off £1,000
+- [About](https://promonetconsulting.com/about): Team background and why Promonet exists
+
+## CRMs we commonly connect
+Capsule CRM, HubSpot, Pipedrive, Zoho CRM, Copper, Insightly
+
+## Industry software areas
+Mortgage Software, Legal Practice Software, Accounting Software, Consulting Operations Software, Agency Project & Time Software, Healthcare Practice Software, Real Estate Software, Manufacturing & Inventory Software, Recruiting & ATS Software, Creative Services Software, Professional Services Software, Project & Delivery Software
+
+## Contact
+Email: hello@promonetconsulting.com

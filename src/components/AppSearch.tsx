@@ -74,7 +74,7 @@ export default function AppSearch({ variant = 'full', className }: Props) {
             variant === 'full' ? 'text-2xl md:text-3xl mb-2' : 'text-xl md:text-2xl mb-2',
           )}
         >
-          Get your tools talking to each other. Search it.
+          Search tools we can connect.
         </h3>
         <p className="text-sm text-graphite max-w-[520px]">
           CRMs, accounting, mortgage, legal, dental, real estate, and a few thousand more.

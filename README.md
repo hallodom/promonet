@@ -1,16 +1,16 @@
 # Promonet
 
-Marketing site for **Promonet** — integration and automation for small businesses (roughly 5–50 people). We connect CRMs and industry tools so owners stop copy-pasting between systems.
+Marketing site for **Promonet** — CRM and tool integrations for small businesses (roughly 5–50 people). We connect CRMs and industry tools so owners stop copy-pasting between systems.
 
-**Tagline:** Your software finally talking together.
+**Positioning:** Connect CRM & business tools for small businesses — fixed monthly or one-off pricing, with human support.
 
 ## Stack
 
 - [Vite](https://vitejs.dev/) + React 19 + TypeScript
 - Tailwind CSS 3 (brand tokens, class-based dark mode)
-- React Router 7
-- Vite SPA + small Node server (`server/index.js`) → Sevalla **Application Hosting**
-- Contact form → Resend (`/api/contact`)
+- React Router 7 + `react-helmet-async` (per-route SEO)
+- Node server (`server/index.js`) → **Sevalla Application Hosting**
+- Contact form → **Resend** (`/api/contact`)
 
 ## Brand
 
@@ -32,7 +32,9 @@ Default theme is **light**. Users can toggle dark mode; preference is stored in 
 
 | Route | Purpose |
 | --- | --- |
-| `/` | Home — hero, workflows, how it works, pricing (monthly + one-off), CTA |
+| `/` | Home — hero, workflows, how it works, pricing, FAQ, CTA |
+| `/about` | Team / company |
+| `/pricing` | Starter / Growth / One-off pricing |
 | `/connect` | App search + full catalog (~1,300 tools) |
 | `/connect/crm` | CRM → industry vertical matrix |
 | `/connect/:slug` | Individual integration pages (e.g. `capsule-to-mortgage-software`) |
@@ -41,16 +43,34 @@ Default theme is **light**. Users can toggle dark mode; preference is stored in 
 
 ```bash
 npm install
+npx playwright install chromium   # once, for prerender
 npm run dev
 ```
 
 Dev server: **http://127.0.0.1:3010/** (`vite.config.ts`).
 
 ```bash
-npm run build    # rebuilds app catalog, then TypeScript + Vite
-npm run preview  # serve dist/
+npm run build       # apps catalog → tsc → vite → SEO files → prerender
+npm start           # serve dist/ via server/index.js (PORT, default 8080)
+npm run preview     # vite preview only (no 404/SEO server behaviour)
 npm run build:apps  # refresh src/data/apps.json only
 ```
+
+## SEO & crawler files
+
+Build emits (into `public/` and `dist/`):
+
+- `robots.txt` — allow all, points at sitemap
+- `sitemap.xml` — home, about, pricing, connect, CRM matrix, all connect slugs
+- `llms.txt` / `llms-full.txt` — plain-text digests for AI crawlers
+- `seo-routes.json` — route list for prerender + server 404 checks
+- Prerendered HTML under `dist/<path>/index.html` (Playwright)
+
+Per-route `<title>`, meta description, canonical, Open Graph/Twitter, and JSON-LD (Organization, WebSite, FAQ on home, OfferCatalog on pricing, BreadcrumbList on connect pages) via `src/components/Seo.tsx` + `src/lib/seo.ts`.
+
+Canonical site URL: `https://promonetconsulting.com`. Optional server env `CANONICAL_HOST=promonetconsulting.com` 301s other hosts (e.g. www) to the apex.
+
+Unknown `/connect/:slug` values return **HTTP 404** with `dist/404.html` (not SPA 200).
 
 ## App catalog
 
@@ -69,21 +89,15 @@ Built by [`scripts/build-apps-catalog.js`](scripts/build-apps-catalog.js) from:
 
 CRM × vertical copy lives in [`src/data/matrix.json`](src/data/matrix.json) (and a copy under `scripts/` for the older generator). Edit that file to add CRMs, verticals, or flow copy.
 
-Legacy HTML page generator (optional):
-
-```bash
-node scripts/build-connect-pages.js
-```
-
-The live site uses React routes, not those generated HTML files.
-
-## Deploy
-
-Production output is static files in `dist/`.
+## Deploy (Sevalla Application Hosting)
 
 - **Build command:** `npm run build`
-- **Publish directory:** `dist`
-- SPA fallback: [`vercel.json`](vercel.json) rewrites to `index.html` (configure the same on Sevalla/Netlify if needed)
+- **Start command:** `npm start` (or `node server/index.js`)
+- **Node:** ≥ 20
+- Env vars for contact: `RESEND_API_KEY`, `RESEND_FROM`, `CONTACT_TO`
+- Optional: `CANONICAL_HOST=promonetconsulting.com`, `PORT`
+
+The Node server serves `dist/` (including prerendered routes and SEO files) and handles `/api/contact`.
 
 ## Contact
 

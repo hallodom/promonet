@@ -2,12 +2,22 @@ import { Link } from 'react-router-dom'
 import { ArrowLeft, ArrowUpRight } from 'lucide-react'
 import matrix from '@/data/matrix.json'
 import { useReveal } from '@/lib/useReveal'
+import Seo from '@/components/Seo'
+import { connectSlug, listSeoRoutes } from '@/lib/seo'
+
+const crmSeo = listSeoRoutes().find((r) => r.path === '/connect/crm')!
 
 export default function ConnectCrm() {
   useReveal()
 
   return (
     <>
+      <Seo
+        title={crmSeo.title}
+        description={crmSeo.description}
+        path="/connect/crm"
+      />
+
       <section className="pt-32 pb-20 border-b border-obsidian/8 dark:border-bone/8">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <Link
@@ -21,10 +31,10 @@ export default function ConnectCrm() {
             CRM integrations
           </span>
           <h1 className="font-display text-[clamp(40px,7vw,88px)] leading-[1.02] tracking-[-0.02em] mb-8 max-w-[900px] text-balance reveal">
-            Connect your CRM
+            Connect your CRM to industry tools.
           </h1>
           <p className="text-lg md:text-xl text-graphite max-w-[600px] reveal" style={{ transitionDelay: '100ms' }}>
-            Pick your CRM. We'll show you exactly what we connect it to — and how.
+            Pick your CRM. We&apos;ll show you exactly what we connect it to — and how — for small businesses that need fixed-price integrations.
           </p>
         </div>
       </section>
@@ -48,7 +58,7 @@ export default function ConnectCrm() {
                   {crm.verticals.map((v) => {
                     const vertical = matrix.verticals[v as keyof typeof matrix.verticals]
                     if (!vertical) return null
-                    const slug = `${crm.slug}-to-${v}-software`
+                    const slug = connectSlug(crm.slug, vertical.name)
                     return (
                       <Link
                         key={slug}
@@ -57,7 +67,7 @@ export default function ConnectCrm() {
                       >
                         <div className="flex items-start justify-between gap-3 mb-4">
                           <div className="font-mono text-[11px] uppercase tracking-wider text-graphite">
-                            {crm.short} <span className="text-voltage">→</span> {v.replace(/-/g, ' ')}
+                            {crm.short} <span className="text-voltage">→</span> {vertical.name}
                           </div>
                           <ArrowUpRight
                             size={16}

@@ -1,0 +1,79 @@
+# Promonet — full summary for AI systems
+
+## What Promonet does
+Promonet builds and maintains integrations that connect CRM platforms to other business tools and industry-specific software. The goal is to help small businesses stop re-typing data between systems.
+
+We are not a generic IT helpdesk. We partner with owners like teammates: map the stack, build the connections, document them, and stick around when APIs change or new tools are added.
+
+## Who it is for
+Small businesses and owner-led teams who:
+- Run a CRM plus several other tools that do not sync
+- Cannot justify a full-time integration engineer
+- Want a fixed monthly partnership or a clear one-off price
+
+## What "connect tools" means
+Connecting tools means moving data automatically between systems you already pay for — for example:
+- Website lead → CRM → loan origination / practice management / job management
+- Payments / invoices → accounting
+- Booking software → CRM
+- Status updates mirrored back into the CRM
+
+## CRM platforms
+- Capsule CRM: The friendly CRM for small teams who never wanted a CRM that needs its own admin.
+- HubSpot: Powerful out of the box, expensive once you outgrow free — worth stitching to the rest of your stack properly.
+- Pipedrive: Sales-first, deal-pipeline thinking — made to talk to the operational tools that close the deal.
+- Zoho CRM: The price-conscious workhorse — ready to plug into the industry tools you already pay for.
+- Copper: Lives inside Google Workspace. Brilliant if you live in Gmail; useless if it doesn't reach your other systems.
+- Insightly: Sales plus project delivery in one place — needs proper plumbing to your accounting and ops tools.
+
+## Pricing (GBP)
+- Starter: £600 / month — one CRM + 1 tool, up to 3 flows, monitoring, 24-hour email support
+- Growth: £1,500 / month — one CRM + 4 tools, unlimited flows, priority Slack, quarterly review
+- One-off: £1,000 — one connection end-to-end, one follow-up task, documented handoff
+- Custom: quoted for multi-CRM / complex logic
+
+## How it works
+1. Get-to-know-you call — map tools, sketch flows, fixed quote
+2. Build — typically two to four weeks with monitoring from day one
+3. Run — ongoing maintenance and 24-hour response on partnership plans
+
+## Important URLs
+- https://promonetconsulting.com/
+- https://promonetconsulting.com/about
+- https://promonetconsulting.com/pricing
+- https://promonetconsulting.com/connect
+- https://promonetconsulting.com/connect/crm
+- https://promonetconsulting.com/connect/capsule-to-mortgage-software
+- https://promonetconsulting.com/connect/capsule-to-legal-software
+- https://promonetconsulting.com/connect/capsule-to-accounting-software
+- https://promonetconsulting.com/connect/capsule-to-consulting-software
+- https://promonetconsulting.com/connect/capsule-to-agency-software
+- https://promonetconsulting.com/connect/hubspot-to-mortgage-software
+- https://promonetconsulting.com/connect/hubspot-to-legal-software
+- https://promonetconsulting.com/connect/hubspot-to-real-estate-software
+- https://promonetconsulting.com/connect/hubspot-to-agency-software
+- https://promonetconsulting.com/connect/hubspot-to-healthcare-software
+- https://promonetconsulting.com/connect/pipedrive-to-mortgage-software
+- https://promonetconsulting.com/connect/pipedrive-to-real-estate-software
+- https://promonetconsulting.com/connect/pipedrive-to-recruitment-software
+- https://promonetconsulting.com/connect/pipedrive-to-manufacturing-software
+- https://promonetconsulting.com/connect/pipedrive-to-agency-software
+- https://promonetconsulting.com/connect/zoho-to-mortgage-software
+- https://promonetconsulting.com/connect/zoho-to-accounting-software
+- https://promonetconsulting.com/connect/zoho-to-real-estate-software
+- https://promonetconsulting.com/connect/zoho-to-healthcare-software
+- https://promonetconsulting.com/connect/zoho-to-manufacturing-software
+- https://promonetconsulting.com/connect/copper-to-agency-software
+- https://promonetconsulting.com/connect/copper-to-consulting-software
+- https://promonetconsulting.com/connect/copper-to-real-estate-software
+- https://promonetconsulting.com/connect/copper-to-professional-services-software
+- https://promonetconsulting.com/connect/copper-to-creative-services-software
+- https://promonetconsulting.com/connect/insightly-to-consulting-software
+- https://promonetconsulting.com/connect/insightly-to-legal-software
+- https://promonetconsulting.com/connect/insightly-to-agency-software
+- https://promonetconsulting.com/connect/insightly-to-manufacturing-software
+- https://promonetconsulting.com/connect/insightly-to-project-based-services-software
+
+## Contact
+hello@promonetconsulting.com
+Website: https://promonetconsulting.com

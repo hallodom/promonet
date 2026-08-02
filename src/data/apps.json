@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-21T20:28:14.092Z",
-  "count": 1368,
+  "generatedAt": "2026-08-02T15:34:39.307Z",
+  "count": 1365,
   "source": "ComparEdge CC-BY-4.0 + Promonet niche seeds + matrix tools",
   "apps": [
     {
@@ -1086,14 +1086,6 @@
       "slug": "bullx",
       "category": "crypto-telegram-bots",
       "aliases": []
-    },
-    {
-      "name": "Butter",
-      "slug": "butter",
-      "category": "video-conferencing",
-      "aliases": [
-        "butter video"
-      ]
     },
     {
       "name": "Buttondown",
@@ -3956,7 +3948,7 @@
     {
       "name": "Kling AI",
       "slug": "kling-ai",
-      "category": "ai-image",
+      "category": "ai-video",
       "aliases": []
     },
     {
@@ -4180,14 +4172,6 @@
       "slug": "lightspeed-retail",
       "category": "Ecommerce",
       "aliases": []
-    },
-    {
-      "name": "Limitless",
-      "slug": "limitless",
-      "category": "ai-productivity",
-      "aliases": [
-        "limitless ai"
-      ]
     },
     {
       "name": "Lindy",
@@ -4416,7 +4400,7 @@
     {
       "name": "Luma AI",
       "slug": "luma-ai",
-      "category": "ai-image",
+      "category": "ai-video",
       "aliases": []
     },
     {
@@ -8076,12 +8060,6 @@
       "name": "Vonage",
       "slug": "vonage",
       "category": "Communication",
-      "aliases": []
-    },
-    {
-      "name": "Vowel",
-      "slug": "vowel",
-      "category": "video-conferencing",
       "aliases": []
     },
     {

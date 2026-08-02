@@ -5,6 +5,10 @@ import AppSearch from '@/components/AppSearch'
 import PricingTiers from '@/components/PricingTiers'
 import TeamSection from '@/components/TeamSection'
 import ContactButton from '@/components/ContactButton'
+import Seo from '@/components/Seo'
+import { HOME_FAQS, faqJsonLd, listSeoRoutes } from '@/lib/seo'
+
+const homeSeo = listSeoRoutes().find((r) => r.path === '/')!
 
 const tools = [
   'HubSpot', 'Pipedrive', 'Capsule', 'Zoho', 'Stripe',
@@ -13,11 +17,11 @@ const tools = [
 ]
 
 const pipelines = [
-  { from: 'Stripe', to: 'QuickBooks', label: 'invoice → bookkeeping' },
-  { from: 'Calendly', to: 'HubSpot', label: 'meeting → CRM' },
-  { from: 'Shopify', to: 'Mailchimp', label: 'order → segment' },
-  { from: 'Capsule', to: 'Real Estate', label: 'lead → listing' },
-  { from: 'CRM', to: 'Custom system', label: 'record → sync' },
+  { from: 'Stripe', to: 'QuickBooks', label: 'invoice → bookkeeping', href: '/connect' },
+  { from: 'Calendly', to: 'HubSpot', label: 'meeting → CRM', href: '/connect/crm' },
+  { from: 'Shopify', to: 'Mailchimp', label: 'order → segment', href: '/connect' },
+  { from: 'Capsule', to: 'Real Estate', label: 'lead → listing', href: '/connect/crm' },
+  { from: 'CRM', to: 'Custom system', label: 'record → sync', href: '/connect/crm' },
 ]
 
 const steps = [
@@ -46,20 +50,27 @@ export default function Home() {
 
   return (
     <>
-      {/* ============ HERO ============ */}
+      <Seo
+        title={homeSeo.title}
+        description={homeSeo.description}
+        path="/"
+        jsonLd={[faqJsonLd(HOME_FAQS)]}
+      />
+
       <section className="relative overflow-hidden bg-bone text-obsidian">
         <div className="relative max-w-[1280px] mx-auto px-6 md:px-10">
           <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center pt-16 md:pt-24 pb-20 md:pb-28">
             <div className="reveal">
               <h1 className="font-display text-[clamp(48px,7vw,88px)] leading-[1.02] tracking-[-0.02em] text-balance mb-8">
-                Your software finally{' '}
-                <span className="text-voltage">talking together.</span>
+                Connect your CRM and tools{' '}
+                <span className="text-voltage">— without a dev team.</span>
               </h1>
 
               <p className="text-lg md:text-xl leading-[1.55] text-graphite max-w-[520px] mb-10 text-balance">
-                We partner with you to connect your tools and CRM to the industry
-                software you actually run on for a fixed one off job or monthly on
-                going partnership. No dev team required.
+                Promonet helps small businesses connect CRM, accounting, booking, and
+                industry software for a fixed one-off job or monthly partnership. We
+                help you connect the tools you already run — so data stops living in
+                copy-paste.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
@@ -68,7 +79,13 @@ export default function Home() {
                   to="/connect"
                   className="inline-flex items-center gap-2 font-sans font-semibold text-sm tracking-[0.02em] px-6 py-3.5 border border-obsidian/15 text-obsidian rounded-[4px] hover:border-obsidian/40 transition-colors"
                 >
-                  Browse integrations
+                  Connect tools
+                </Link>
+                <Link
+                  to="/connect/crm"
+                  className="inline-flex items-center gap-2 font-sans font-semibold text-sm tracking-[0.02em] px-6 py-3.5 border border-obsidian/15 text-obsidian rounded-[4px] hover:border-obsidian/40 transition-colors"
+                >
+                  Connect your CRM
                 </Link>
               </div>
 
@@ -79,51 +96,54 @@ export default function Home() {
                 </span>
                 <span className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-imago" />
-                  We build it <em className="not-italic font-medium text-obsidian">and</em> maintain it
+                  Built for small businesses, not enterprise RFPs
                 </span>
               </div>
             </div>
 
             <figure className="relative reveal" style={{ transitionDelay: '120ms' }}>
               <img
-                src="/hero-owner.jpg"
-                alt="Small business owner with a coffee in her workspace"
+                src="/small-business-owner-crm-integrations.jpg"
+                alt="Small business owner whose CRM and tools Promonet helps connect"
                 loading="eager"
                 className="w-full aspect-[4/5] object-cover rounded-[4px] shadow-[0_30px_60px_-20px_rgba(10,10,15,0.18)]"
               />
-              <figcaption className="absolute bottom-5 left-5 bg-bone text-obsidian text-xs font-medium px-3 py-2 rounded-[3px] shadow-sm">
-                we work directly with you the business owner as part of your team
+              <figcaption className="absolute bottom-5 left-5 bg-bone text-obsidian text-xs font-medium px-3 py-2 rounded-[3px] shadow-sm max-w-[240px]">
+                We work directly with you, the business owner, as part of your team
               </figcaption>
             </figure>
           </div>
         </div>
       </section>
 
-      {/* ============ TOOL MARQUEE ============ */}
       <section className="bg-bone text-obsidian py-14 overflow-hidden border-t border-obsidian/8">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10 mb-8 text-center">
           <p className="text-sm text-graphite">
-            We speak the software you already use — fluently.
+            Tools small businesses ask us to connect every week.
           </p>
         </div>
         <div className="mask-fade-x relative">
           <div className="flex gap-14 marquee-track w-max">
             {[...tools, ...tools].map((tool, i) => (
-              <span
+              <Link
                 key={i}
+                to="/connect"
                 className="font-display font-medium text-2xl md:text-3xl text-obsidian/40 hover:text-obsidian transition-colors whitespace-nowrap"
               >
                 {tool}
-              </span>
+              </Link>
             ))}
           </div>
         </div>
         <p className="max-w-[1280px] mx-auto px-6 md:px-10 mt-8 text-center text-sm text-graphite">
-          …and Xero, Shopify, Mailchimp, Clio, Jobber, Dubsado, Honeybook, and a few dozen more.
+          …and Xero, Shopify, Mailchimp, Clio, Jobber, Dubsado, Honeybook, and a few dozen more.{' '}
+          <Link to="/connect" className="text-voltage hover:underline">
+            Browse every tool
+          </Link>
+          .
         </p>
       </section>
 
-      {/* ============ PROBLEM ============ */}
       <section id="about" className="py-28 md:py-40 hairline-b">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10 grid lg:grid-cols-[1fr_1.3fr] gap-16 lg:gap-24">
           <div className="lg:sticky lg:top-32 lg:self-start reveal">
@@ -133,33 +153,45 @@ export default function Home() {
               The Sunday-night problem
             </div>
             <h2 className="font-display text-[clamp(36px,5vw,68px)] leading-[1.05] tracking-[-0.02em] mb-8 text-balance">
-              You bought the tools. They just don't talk.
+              You bought the tools. They still don't connect.
             </h2>
             <p className="text-lg leading-relaxed text-graphite max-w-[440px] mb-8">
-              Most owners we meet run six to twelve tools that don't know each other
-              exist. Data gets re-typed. Decisions run on stale numbers. Sunday night
+              Most small-business owners we meet run six to twelve tools that don't
+              sync. Data gets re-typed. Decisions run on stale numbers. Sunday night
               becomes spreadsheet night.
             </p>
-            <p className="text-lg leading-relaxed text-graphite max-w-[440px]">
-              We're the people who quietly fix that.
+            <p className="text-lg leading-relaxed text-graphite max-w-[440px] mb-8">
+              We're the people who quietly connect the stack — CRM to industry software,
+              and tools to each other.
             </p>
+            <div className="flex flex-wrap gap-4 text-sm font-semibold">
+              <Link to="/connect/crm" className="text-voltage hover:underline">
+                Connect your CRM →
+              </Link>
+              <Link to="/pricing" className="text-voltage hover:underline">
+                See pricing →
+              </Link>
+              <Link to="/about" className="text-voltage hover:underline">
+                About Promonet →
+              </Link>
+            </div>
           </div>
 
-          {/* Live pipeline visual */}
           <div className="reveal" style={{ transitionDelay: '100ms' }}>
             <div className="rounded-[4px] hairline bg-bone dark:bg-surface-1 overflow-hidden">
               <div className="px-5 py-3 hairline-b font-mono text-[11px] uppercase tracking-[0.18em] text-graphite flex items-center justify-between">
                 <span className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-imago status-pulse" />
-                  Workflows talking together
+                  Connected workflows
                 </span>
                 <span>last sync · 12s ago</span>
               </div>
 
               {pipelines.map((p, i) => (
-                <div
+                <Link
                   key={i}
-                  className="relative px-5 md:px-6 py-5 hairline-b last:border-b-0 font-mono text-sm grid grid-cols-[1fr_auto] items-center gap-4 overflow-hidden group"
+                  to={p.href}
+                  className="relative px-5 md:px-6 py-5 hairline-b last:border-b-0 font-mono text-sm grid grid-cols-[1fr_auto] items-center gap-4 overflow-hidden group hover:bg-obsidian/[0.02] dark:hover:bg-bone/[0.03] transition-colors"
                 >
                   <div className="flex items-center gap-3 min-w-0">
                     <span className="text-obsidian dark:text-bone truncate">{p.from}</span>
@@ -176,7 +208,7 @@ export default function Home() {
                     className="absolute inset-y-0 w-24 bg-gradient-to-r from-transparent via-voltage/10 to-transparent scan-line pointer-events-none"
                     style={{ animationDelay: `${i * 0.7}s` }}
                   />
-                </div>
+                </Link>
               ))}
 
               <div className="px-5 py-3 font-mono text-[11px] text-graphite flex items-center justify-between">
@@ -194,7 +226,6 @@ export default function Home() {
 
       <TeamSection />
 
-      {/* ============ HOW IT WORKS ============ */}
       <section id="how" className="py-28 md:py-40 bg-surface-1/30 dark:bg-surface-1 hairline-b">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <div className="max-w-[760px] mb-20 reveal">
@@ -204,7 +235,7 @@ export default function Home() {
               How it works
             </div>
             <h2 className="font-display text-[clamp(36px,5vw,68px)] leading-[1.05] tracking-[-0.02em] text-balance">
-              Three steps. Then it just runs.
+              Three steps. Then your tools stay connected.
             </h2>
           </div>
 
@@ -234,7 +265,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ PRICING ============ */}
       <section id="pricing" className="py-28 md:py-40 hairline-b">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <div className="max-w-[760px] mb-20 reveal">
@@ -244,18 +274,37 @@ export default function Home() {
               Pricing
             </div>
             <h2 className="font-display text-[clamp(36px,5vw,68px)] leading-[1.05] tracking-[-0.02em] mb-6 text-balance">
-              One price. Every month. No "starting at."
+              Simple pricing for CRM &amp; tool integrations.
             </h2>
-            <p className="text-lg text-graphite max-w-[560px]">
-              You'll always know what you're paying. Promise.
+            <p className="text-lg text-graphite max-w-[560px] mb-4">
+              Monthly partnerships or a one-off connection — always a fixed price for
+              small businesses. No "starting at." No hidden hourly fees.
             </p>
+            <Link to="/pricing" className="text-sm font-semibold text-voltage hover:underline">
+              Full pricing details →
+            </Link>
           </div>
 
           <PricingTiers />
         </div>
       </section>
 
-      {/* ============ CTA ============ */}
+      <section className="py-24 md:py-32 hairline-b">
+        <div className="max-w-[860px] mx-auto px-6 md:px-10">
+          <h2 className="font-display text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.02em] mb-10 reveal">
+            Questions small businesses ask before connecting tools
+          </h2>
+          <div className="space-y-6">
+            {HOME_FAQS.map((faq) => (
+              <div key={faq.question} className="reveal border-t border-obsidian/10 dark:border-bone/10 pt-6">
+                <h3 className="font-display text-xl mb-3 tracking-[-0.015em]">{faq.question}</h3>
+                <p className="text-graphite leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section
         id="cta"
         className="relative py-32 md:py-44 bg-obsidian text-bone overflow-hidden"
@@ -270,11 +319,11 @@ export default function Home() {
             <span className="w-6 h-px bg-voltage" />
           </div>
           <h2 className="font-display text-[clamp(40px,7vw,92px)] leading-[1.0] tracking-[-0.02em] mb-8 text-balance">
-            Let's make your software talk.
+            Ready to connect your stack?
           </h2>
           <p className="text-lg md:text-xl text-bone/70 max-w-[560px] mx-auto mb-12 text-balance">
-            Book a 20-minute call. We'll map your tools, sketch the flows, and send
-            you a fixed quote.
+            Tell us which CRM and tools you use. We'll map the flows and send a fixed
+            quote — built for small businesses, not enterprise theatre.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 mb-10">
