@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react'
-import { ArrowRight, Search } from 'lucide-react'
+import { Search } from 'lucide-react'
 import catalog from '@/data/apps.json'
 import { cn } from '@/lib/cn'
+import ContactButton from '@/components/ContactButton'
 
 type AppEntry = {
   name: string
@@ -29,15 +30,6 @@ function scoreMatch(app: AppEntry, q: string): number {
   return 0
 }
 
-function contactHref(appName?: string) {
-  const subject = appName
-    ? `Connect ${appName}`
-    : 'Connect my stack'
-  const body = appName
-    ? `Hi Promonet,\n\nI'd like to connect ${appName} to the rest of my tools.\n\nThanks`
-    : `Hi Promonet,\n\nI'd like to connect a tool that wasn't in your list: \n\nThanks`
-  return `mailto:hello@promonet.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-}
 
 type Props = {
   variant?: 'full' | 'compact'
@@ -145,13 +137,10 @@ export default function AppSearch({ variant = 'full', className }: Props) {
           <p className="text-sm text-graphite mb-5 max-w-[480px]">
             Talk to us about connecting {active.name} to your CRM, accounting, booking software, or the rest of your stack.
           </p>
-          <a
-            href={contactHref(active.name)}
-            className="group inline-flex items-center gap-2 font-semibold text-sm tracking-[0.02em] px-5 py-3 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90 transition-colors"
-          >
-            Talk to us about connecting {active.name}
-            <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
-          </a>
+          <ContactButton
+            message={`I'd like to connect ${active.name} to the rest of my tools.`}
+            className="px-5 py-3 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90"
+          />
         </div>
       )}
 
@@ -163,13 +152,10 @@ export default function AppSearch({ variant = 'full', className }: Props) {
           <p className="text-sm text-graphite mb-5 max-w-[480px]">
             We still connect custom and niche tools. Tell us what you use — we’ll connect it.
           </p>
-          <a
-            href={contactHref(trimmed)}
-            className="group inline-flex items-center gap-2 font-semibold text-sm tracking-[0.02em] px-5 py-3 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90 transition-colors"
-          >
-            Tell us what you use — we’ll connect it
-            <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
-          </a>
+          <ContactButton
+            message={`I'd like to connect ${trimmed} to the rest of my tools.`}
+            className="px-5 py-3 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90"
+          />
         </div>
       )}
     </div>

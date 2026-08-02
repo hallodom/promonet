@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
-import { ArrowRight } from 'lucide-react'
 import catalog from '@/data/apps.json'
 import { cn } from '@/lib/cn'
+import ContactButton from '@/components/ContactButton'
 
 type AppEntry = {
   name: string
@@ -12,11 +12,6 @@ type AppEntry = {
 
 const apps = catalog.apps as AppEntry[]
 
-function contactHref(appName: string) {
-  const subject = `Connect ${appName}`
-  const body = `Hi Promonet,\n\nI'd like to connect ${appName} to the rest of my tools.\n\nThanks`
-  return `mailto:hello@promonet.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-}
 
 export default function AppCatalog() {
   const [category, setCategory] = useState('All')
@@ -86,13 +81,10 @@ export default function AppCatalog() {
           <p className="text-sm text-graphite mb-5 max-w-[480px]">
             Talk to us about connecting {selected.name} to your CRM, accounting, booking software, or the rest of your stack.
           </p>
-          <a
-            href={contactHref(selected.name)}
-            className="group inline-flex items-center gap-2 font-semibold text-sm tracking-[0.02em] px-5 py-3 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90 transition-colors"
-          >
-            Talk to us about connecting {selected.name}
-            <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
-          </a>
+          <ContactButton
+            message={`I'd like to connect ${selected.name} to the rest of my tools.`}
+            className="px-5 py-3 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90"
+          />
         </div>
       )}
 

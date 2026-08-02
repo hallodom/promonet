@@ -19,7 +19,7 @@ export default function Footer() {
           {[
             { title: 'Practice', links: ['Integration', 'Automation', 'Observability', 'Architecture'] },
             { title: 'Company', links: ['About', 'Engineers', 'Journal', 'Careers'] },
-            { title: 'Contact', links: ['hello@promonet.io', '+44 (0)20 0000 0000', 'LinkedIn'] },
+            { title: 'Contact', links: ['hello@promonetconsulting.com', '+44 (0)20 0000 0000', 'LinkedIn'] },
           ].map((col) => (
             <div key={col.title}>
               <h4 className="text-[11px] font-mono uppercase tracking-[0.18em] text-graphite mb-5">

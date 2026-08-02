@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import matrix from '@/data/matrix.json'
 import { useReveal } from '@/lib/useReveal'
+import ContactButton from '@/components/ContactButton'
 
 export default function ConnectPage() {
   useReveal()
@@ -96,13 +97,7 @@ export default function ConnectPage() {
           <p className="text-bone/70 mb-10 max-w-[480px] mx-auto text-lg">
             Book a call. We'll scope your {crm.short} + {vertical.name} integration in 20 minutes.
           </p>
-          <a
-            href="mailto:hello@promonet.io"
-            className="group inline-flex items-center gap-2 font-semibold text-sm tracking-[0.02em] px-7 py-4 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90 transition-colors"
-          >
-            Book a call
-            <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
-          </a>
+          <ContactButton className="px-7 py-4 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90" />
         </div>
       </section>
     </>

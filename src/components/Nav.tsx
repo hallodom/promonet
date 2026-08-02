@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
+import ContactButton from './ContactButton'
 
 const navLinks = [
   { to: '/#how', label: 'How it works' },
   { to: '/connect', label: 'Connect' },
   { to: '/connect/crm', label: 'Connect your CRM' },
-  { to: '/#pricing', label: 'Pricing' },
-  { to: '/#about', label: 'About' },
+  { to: '/pricing', label: 'Pricing' },
+  { to: '/about', label: 'About' },
 ]
 
 export default function Nav() {
@@ -56,12 +57,10 @@ export default function Nav() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <a
-            href="#cta"
-            className="hidden sm:inline-flex items-center font-semibold text-[13px] tracking-[0.02em] px-4 py-2.5 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90 transition-colors"
-          >
-            Book a call
-          </a>
+          <ContactButton
+            showArrow={false}
+            className="hidden sm:inline-flex items-center font-semibold text-[13px] tracking-[0.02em] px-4 py-2.5 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90"
+          />
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden p-2 rounded-md hover:bg-obsidian/5 dark:hover:bg-bone/5 transition-colors"
@@ -84,6 +83,7 @@ export default function Nav() {
                 {l.label}
               </Link>
             ))}
+            <ContactButton className="mt-3 w-full px-4 py-3 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90" />
           </nav>
         </div>
       )}
