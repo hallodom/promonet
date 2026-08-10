@@ -15,7 +15,7 @@ export const pricing: PricingTier[] = [
     price: '£600',
     period: 'month',
     tagline: 'For owners on one CRM plus a couple of tools. On going dev partnership, whatever you need.',
-    features: ['One CRM + 2 tools', 'Monitoring & alerts', 'Email and zoom calls support'],
+    features: ['One CRM + 2 tools', 'Monitoring & alerts', 'Email and zoom calls support, We become your helpful dev team'],
   },
   {
     name: 'Scale-up',
@@ -23,10 +23,10 @@ export const pricing: PricingTier[] = [
     period: 'month',
     tagline: 'When the stack actually runs the business. On going dev partnership, whatever you need.',
     features: [
-      'Two CRMs + 4 tools',
+      'Multiple CRMs + 4 tools',
       'Monitoring & alerts',
       'Priority email and zoom calls support',
-      'Quarterly architecture review',
+      'We become your helpful dev team',
     ],
     featured: true,
   },

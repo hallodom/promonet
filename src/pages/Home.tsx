@@ -30,18 +30,24 @@ const steps = [
     label: 'Map',
     title: 'A get to know you call.',
     body: 'We sketch the flows on a whiteboard, count the integrations, and send you a fixed quote. No "discovery phase." No assessment fee.',
+    illustration: '/illustrations/step-map.png',
+    alt: 'Charcoal sketch of two people talking',
   },
   {
     n: '02',
     label: 'Build',
     title: 'Two to four weeks.',
     body: 'We build, test, document, and connect every flow. Monitoring runs from day one. You see progress in plain English, not Jira.',
+    illustration: '/illustrations/step-build.png',
+    alt: 'Charcoal sketch of a wrench',
   },
   {
     n: '03',
     label: 'Run',
     title: 'It just runs.',
     body: "APIs change, you add tools, you change your mind — it's all in the price. We respond within 24 hours, every time.",
+    illustration: '/illustrations/step-run.png',
+    alt: 'Charcoal sketch of a happy smiling face',
   },
 ]
 
@@ -67,10 +73,8 @@ export default function Home() {
               </h1>
 
               <p className="text-lg md:text-xl leading-[1.55] text-graphite max-w-[520px] mb-10 text-balance">
-                Promonet helps small businesses connect CRM, accounting, booking, and
-                industry software for a fixed one-off job or monthly partnership. We
-                help you connect the tools you already run — so data stops living in
-                copy-paste.
+                We're a small remote first friendly team who help small to medium sized businesses connect CRM, accounting, booking, and
+                industry software for a fixed one-off job or monthly partnership. 
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
@@ -90,13 +94,16 @@ export default function Home() {
               </div>
 
               <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-graphite">
+                <Link
+                  to={{ pathname: '/', hash: 'pricing' }}
+                  className="flex items-center gap-2 hover:text-obsidian transition-colors"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-imago" />
+                  Fixed price — no hourly games
+                </Link>
                 <span className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-imago" />
-                  Fixed monthly price — no hourly games
-                </span>
-                <span className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-imago" />
-                  Built for small businesses, not enterprise RFPs
+                  Built for small businesses, we work directly with you as a friendly team
                 </span>
               </div>
             </div>
@@ -108,9 +115,6 @@ export default function Home() {
                 loading="eager"
                 className="w-full aspect-[4/5] object-cover rounded-[4px] shadow-[0_30px_60px_-20px_rgba(10,10,15,0.18)]"
               />
-              <figcaption className="absolute bottom-5 left-5 bg-bone text-obsidian text-xs font-medium px-3 py-2 rounded-[3px] shadow-sm max-w-[240px]">
-                We work directly with you, the business owner, as part of your team
-              </figcaption>
             </figure>
           </div>
         </div>
@@ -153,7 +157,7 @@ export default function Home() {
               The Sunday-night problem
             </div>
             <h2 className="font-display text-[clamp(36px,5vw,68px)] leading-[1.05] tracking-[-0.02em] mb-8 text-balance">
-              You bought the tools. They still don't connect.
+              You bought the tools but they still don't talk.
             </h2>
             <p className="text-lg leading-relaxed text-graphite max-w-[440px] mb-8">
               Most small-business owners we meet run six to twelve tools that don't
@@ -161,8 +165,7 @@ export default function Home() {
               becomes spreadsheet night.
             </p>
             <p className="text-lg leading-relaxed text-graphite max-w-[440px] mb-8">
-              We're the people who quietly connect the stack — CRM to industry software,
-              and tools to each other.
+              We're the people who quietly connect the tools to each other.
             </p>
             <div className="flex flex-wrap gap-4 text-sm font-semibold">
               <Link to="/connect/crm" className="text-voltage hover:underline">
@@ -259,6 +262,14 @@ export default function Home() {
                   {s.title}
                 </h3>
                 <p className="text-graphite leading-relaxed">{s.body}</p>
+                <div className="mt-10">
+                  <img
+                    src={s.illustration}
+                    alt={s.alt}
+                    loading="lazy"
+                    className="w-full max-w-[220px] h-auto mix-blend-multiply dark:mix-blend-screen dark:invert"
+                  />
+                </div>
               </div>
             ))}
           </div>
@@ -274,11 +285,11 @@ export default function Home() {
               Pricing
             </div>
             <h2 className="font-display text-[clamp(36px,5vw,68px)] leading-[1.05] tracking-[-0.02em] mb-6 text-balance">
-              Simple pricing for CRM &amp; tool integrations.
+              Simple pricing - get in touch and let's get started
             </h2>
             <p className="text-lg text-graphite max-w-[560px] mb-4">
-              Monthly partnerships or a one-off connection — always a fixed price for
-              small businesses. No "starting at." No hidden hourly fees.
+              Monthly partnerships or a one-off project — a simple fixed price for
+              small businesses. No hidden hourly fees.
             </p>
             <Link to="/pricing" className="text-sm font-semibold text-voltage hover:underline">
               Full pricing details →

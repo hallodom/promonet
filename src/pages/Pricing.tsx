@@ -28,18 +28,15 @@ export default function Pricing() {
               Pricing
             </div>
             <h1 className="font-display text-[clamp(40px,7vw,88px)] leading-[1.02] tracking-[-0.02em] mb-6 text-balance">
-              Pricing for CRM &amp; tool integrations.
+              Simple pricing that helps us work with you
             </h1>
             <p className="font-display text-[clamp(22px,3vw,34px)] leading-[1.2] tracking-[-0.015em] text-obsidian dark:text-bone mb-6 max-w-[640px] text-balance">
-              Monthly partnership options — or a one-off connection.
+              Monthly partnership options or a one-off project.
             </p>
-            <p className="text-lg md:text-xl text-graphite max-w-[560px] mb-4">
-              Fixed prices for small businesses that need to connect CRM, accounting,
-              booking, and industry tools. No &quot;starting at.&quot; No hidden hourly fees.
+            <p className="text-lg md:text-xl text-graphite max-w-[560px] mb-4"> No hidden hourly fees.
             </p>
             <p className="text-lg text-graphite max-w-[560px]">
-              Pick a monthly partnership when you want ongoing monitoring and new
-              connections, or book a one-off when you only need one integration done.{' '}
+              Pick a monthly partnership when you want ongoing monitoring and we become your new dev team, or book a one-off when you only need one integration done.{' '}
               <Link to="/connect" className="text-voltage hover:underline font-semibold">
                 Browse tools we connect
               </Link>
