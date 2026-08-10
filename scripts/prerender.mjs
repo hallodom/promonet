@@ -17,8 +17,13 @@ const MATRIX = JSON.parse(
 
 const SITE_URL = 'https://promonetconsulting.com'
 const SITE_NAME = 'Promonet'
-const OG_IMAGE = `${SITE_URL}/og-default.jpg`
 const CONTACT_EMAIL = 'hello@promonetconsulting.com'
+const OG_IMAGE = `${SITE_URL}/og-default.jpg`
+const OG_IMAGE_WIDTH = 1200
+const OG_IMAGE_HEIGHT = 630
+const OG_IMAGE_TYPE = 'image/jpeg'
+const OG_IMAGE_ALT = 'Promonet — CRM and tool integrations for small businesses'
+const SITE_LOGO = `${SITE_URL}/logo.png`
 
 function connectSlug(crmSlug, verticalName) {
   return `${crmSlug}-to-${verticalName.replace(/\s+/g, '-')}-software`
@@ -84,7 +89,7 @@ function listPageMeta() {
           name: 'How much does it cost to connect tools?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Monthly partnerships start at £600. Growth is £1,500 per month. A one-off connection starts at £1,000. Custom work is quoted separately.',
+            text: 'Monthly partnerships start at £600. Scale-up is £1,500 per month. A one-off connection starts at £1,000. Custom work is quoted separately.',
           },
         },
       ],
@@ -112,13 +117,13 @@ function listPageMeta() {
       itemListElement: [
         {
           '@type': 'Offer',
-          name: 'Starter',
+          name: 'Base',
           price: '600',
           priceCurrency: 'GBP',
         },
         {
           '@type': 'Offer',
-          name: 'Growth',
+          name: 'Scale-up',
           price: '1500',
           priceCurrency: 'GBP',
         },
@@ -182,6 +187,8 @@ function organizationJsonLd() {
     name: SITE_NAME,
     url: SITE_URL,
     email: CONTACT_EMAIL,
+    logo: SITE_LOGO,
+    image: OG_IMAGE,
     description:
       'CRM and tool integrations for small businesses. We connect your CRM to industry software and the rest of your stack for a fixed price.',
   }
@@ -225,12 +232,19 @@ function buildHeadTags(meta, routePath) {
 <meta property="og:title" content="${esc(meta.title)}" />
 <meta property="og:description" content="${esc(meta.description)}" />
 <meta property="og:url" content="${esc(url)}" />
-<meta property="og:image" content="${esc(OG_IMAGE)}" />
 <meta property="og:locale" content="en_GB" />
+<link rel="image_src" href="${esc(OG_IMAGE)}" />
+<meta property="og:image" content="${esc(OG_IMAGE)}" />
+<meta property="og:image:secure_url" content="${esc(OG_IMAGE)}" />
+<meta property="og:image:type" content="${esc(OG_IMAGE_TYPE)}" />
+<meta property="og:image:width" content="${OG_IMAGE_WIDTH}" />
+<meta property="og:image:height" content="${OG_IMAGE_HEIGHT}" />
+<meta property="og:image:alt" content="${esc(OG_IMAGE_ALT)}" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="${esc(meta.title)}" />
 <meta name="twitter:description" content="${esc(meta.description)}" />
 <meta name="twitter:image" content="${esc(OG_IMAGE)}" />
+<meta name="twitter:image:alt" content="${esc(OG_IMAGE_ALT)}" />
 <script type="application/ld+json">${JSON.stringify(graph)}</script>
 `.trim()
 }
@@ -324,3 +338,4 @@ function main() {
 }
 
 main()
+

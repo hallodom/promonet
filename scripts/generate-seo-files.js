@@ -95,7 +95,7 @@ Promonet helps small business owners connect their CRM to industry software and 
 - [Home](${SITE_URL}/): Connect CRM and business tools for small businesses
 - [Connect tools](${SITE_URL}/connect): Search and browse tools we can connect
 - [Connect your CRM](${SITE_URL}/connect/crm): CRM → industry software matrix
-- [Pricing](${SITE_URL}/pricing): Starter £600/mo, Growth £1,500/mo, One-off £1,000
+- [Pricing](${SITE_URL}/pricing): Base £600/mo, Scale-up £1,500/mo, One-off £1,000
 - [About](${SITE_URL}/about): Team background and why Promonet exists
 
 ## CRMs we commonly connect
@@ -132,8 +132,8 @@ Connecting tools means moving data automatically between systems you already pay
 ${MATRIX.crms.map((c) => `- ${c.name}: ${c.blurb}`).join('\n')}
 
 ## Pricing (GBP)
-- Starter: £600 / month — one CRM + 1 tool, up to 3 flows, monitoring, 24-hour email support
-- Growth: £1,500 / month — one CRM + 4 tools, unlimited flows, priority Slack, quarterly review
+- Base: £600 / month — one CRM + 1 tool, up to 3 flows, monitoring, 24-hour email support
+- Scale-up: £1,500 / month — one CRM + 4 tools, unlimited flows, priority Slack, quarterly review
 - One-off: £1,000 — one connection end-to-end, one follow-up task, documented handoff
 - Custom: quoted for multi-CRM / complex logic
 

@@ -27,8 +27,8 @@ Connecting tools means moving data automatically between systems you already pay
 - Insightly: Sales plus project delivery in one place — needs proper plumbing to your accounting and ops tools.
 
 ## Pricing (GBP)
-- Starter: £600 / month — one CRM + 1 tool, up to 3 flows, monitoring, 24-hour email support
-- Growth: £1,500 / month — one CRM + 4 tools, unlimited flows, priority Slack, quarterly review
+- Base: £600 / month — one CRM + 1 tool, up to 3 flows, monitoring, 24-hour email support
+- Scale-up: £1,500 / month — one CRM + 4 tools, unlimited flows, priority Slack, quarterly review
 - One-off: £1,000 — one connection end-to-end, one follow-up task, documented handoff
 - Custom: quoted for multi-CRM / complex logic
 
@@ -77,3 +77,4 @@ Connecting tools means moving data automatically between systems you already pay
 ## Contact
 hello@promonetconsulting.com
 Website: https://promonetconsulting.com
+

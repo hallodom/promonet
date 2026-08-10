@@ -34,7 +34,7 @@ Default theme is **light**. Users can toggle dark mode; preference is stored in 
 | --- | --- |
 | `/` | Home — hero, workflows, how it works, pricing, FAQ, CTA |
 | `/about` | Team / company |
-| `/pricing` | Starter / Growth / One-off pricing |
+| `/pricing` | Base / Scale-up / One-off pricing |
 | `/connect` | App search + full catalog (~1,300 tools) |
 | `/connect/crm` | CRM → industry vertical matrix |
 | `/connect/:slug` | Individual integration pages (e.g. `capsule-to-mortgage-software`) |
@@ -101,3 +101,4 @@ The Node server serves `dist/` (including prerendered routes and SEO files) and 
 ## Contact
 
 Contact modal posts to `/api/contact` (Resend → `hello@promonetconsulting.com`). Requires `RESEND_API_KEY`, `RESEND_FROM`, `CONTACT_TO`.
+

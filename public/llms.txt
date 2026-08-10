@@ -13,7 +13,7 @@ Promonet helps small business owners connect their CRM to industry software and 
 - [Home](https://promonetconsulting.com/): Connect CRM and business tools for small businesses
 - [Connect tools](https://promonetconsulting.com/connect): Search and browse tools we can connect
 - [Connect your CRM](https://promonetconsulting.com/connect/crm): CRM → industry software matrix
-- [Pricing](https://promonetconsulting.com/pricing): Starter £600/mo, Growth £1,500/mo, One-off £1,000
+- [Pricing](https://promonetconsulting.com/pricing): Base £600/mo, Scale-up £1,500/mo, One-off £1,000
 - [About](https://promonetconsulting.com/about): Team background and why Promonet exists
 
 ## CRMs we commonly connect
@@ -24,3 +24,4 @@ Mortgage Software, Legal Practice Software, Accounting Software, Consulting Oper
 
 ## Contact
 Email: hello@promonetconsulting.com
+

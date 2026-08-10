@@ -2,8 +2,16 @@ import matrix from '@/data/matrix.json'
 
 export const SITE_URL = 'https://promonetconsulting.com'
 export const SITE_NAME = 'Promonet'
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.jpg`
 export const CONTACT_EMAIL = 'hello@promonetconsulting.com'
+
+/** Default share image for Open Graph / LinkedIn / X / Facebook (1200×630). */
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.jpg`
+export const DEFAULT_OG_IMAGE_WIDTH = 1200
+export const DEFAULT_OG_IMAGE_HEIGHT = 630
+export const DEFAULT_OG_IMAGE_TYPE = 'image/jpeg'
+export const DEFAULT_OG_IMAGE_ALT =
+  'Promonet — CRM and tool integrations for small businesses'
+export const SITE_LOGO = `${SITE_URL}/logo.png`
 
 export type SeoRoute = {
   path: string
@@ -123,6 +131,8 @@ export function organizationJsonLd() {
     name: SITE_NAME,
     url: SITE_URL,
     email: CONTACT_EMAIL,
+    logo: SITE_LOGO,
+    image: DEFAULT_OG_IMAGE,
     description:
       'CRM and tool integrations for small businesses. We connect your CRM to industry software and the rest of your stack for a fixed price.',
     areaServed: ['GB', 'Worldwide'],
@@ -188,14 +198,14 @@ export function offerCatalogJsonLd() {
     itemListElement: [
       {
         '@type': 'Offer',
-        name: 'Starter',
+        name: 'Base',
         price: '600',
         priceCurrency: 'GBP',
         description: 'Monthly CRM + tool integration partnership for small businesses.',
       },
       {
         '@type': 'Offer',
-        name: 'Growth',
+        name: 'Scale-up',
         price: '1500',
         priceCurrency: 'GBP',
         description: 'Monthly partnership with more tools, unlimited flows, and priority support.',
@@ -225,7 +235,7 @@ export const HOME_FAQS = [
   {
     question: 'How much does it cost to connect tools?',
     answer:
-      'Monthly partnerships start at £600. Growth is £1,500 per month. A one-off connection starts at £1,000. Custom work is quoted separately.',
+      'Monthly partnerships start at £600. Scale-up is £1,500 per month. A one-off connection starts at £1,000. Custom work is quoted separately.',
   },
   {
     question: 'How long does a typical integration take?',
