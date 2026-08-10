@@ -22,8 +22,8 @@ export default function TeamSection() {
               We work as though we were part of your team.
             </h2>
             <p className="text-lg leading-relaxed text-graphite mb-5 max-w-[480px]">
-              We're a small team of three — no account managers, no ticket queue.
-              When you hire Promonet, you get us: the same people who map your
+              We're a small team — no account managers, no ticket queue.
+              When you hire us, you get us: the same people who map your
               tools, build the flows, and stick around when something needs a tweak.
             </p>
             <p className="text-lg leading-relaxed text-graphite max-w-[480px]">

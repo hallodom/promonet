@@ -28,8 +28,8 @@ const steps = [
   {
     n: '01',
     label: 'Map',
-    title: 'A get to know you call.',
-    body: 'We sketch the flows on a whiteboard, count the integrations, and send you a fixed quote. No "discovery phase." No assessment fee.',
+    title: 'Get to know you call.',
+    body: 'We sketch the flows on a whiteboard and count the integrations. No assessment fee.',
     illustration: '/illustrations/step-map.png',
     alt: 'Charcoal sketch of two people talking',
   },
@@ -37,7 +37,7 @@ const steps = [
     n: '02',
     label: 'Build',
     title: 'Two to four weeks.',
-    body: 'We build, test, document, and connect every flow. Monitoring runs from day one. You see progress in plain English, not Jira.',
+    body: 'We build, test, document, and connect every flow. Monitoring runs from day one. You see progress in plain English.',
     illustration: '/illustrations/step-build.png',
     alt: 'Charcoal sketch of a wrench',
   },
@@ -45,7 +45,7 @@ const steps = [
     n: '03',
     label: 'Run',
     title: 'It just runs.',
-    body: "APIs change, you add tools, you change your mind — it's all in the price. We respond within 24 hours, every time.",
+    body: "Your tools finally talking together. You get exactly what you paid for.",
     illustration: '/illustrations/step-run.png',
     alt: 'Charcoal sketch of a happy smiling face',
   },
@@ -95,8 +95,17 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-graphite">
                 <Link
-                  to={{ pathname: '/', hash: 'pricing' }}
+                  to={{ pathname: '/', hash: '#pricing' }}
                   className="flex items-center gap-2 hover:text-obsidian transition-colors"
+                  onClick={(e) => {
+                    if (window.location.pathname === '/') {
+                      e.preventDefault()
+                      document
+                        .getElementById('pricing')
+                        ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                      window.history.replaceState(null, '', '/#pricing')
+                    }
+                  }}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-imago" />
                   Fixed price — no hourly games
