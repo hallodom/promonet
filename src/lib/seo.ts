@@ -3,6 +3,8 @@ import matrix from '@/data/matrix.json'
 export const SITE_URL = 'https://promonetconsulting.com'
 export const SITE_NAME = 'Promonet'
 export const CONTACT_EMAIL = 'hello@promonetconsulting.com'
+export const LINKEDIN_URL =
+  'https://www.linkedin.com/company/promonet-consulting/'
 
 /** Default share image for Open Graph / LinkedIn / X / Facebook (1200×630). */
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.jpg`

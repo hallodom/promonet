@@ -5,6 +5,7 @@ import AppSearch from '@/components/AppSearch'
 import PricingTiers from '@/components/PricingTiers'
 import TeamSection from '@/components/TeamSection'
 import ContactButton from '@/components/ContactButton'
+import LinkedInButton from '@/components/LinkedInButton'
 import Seo from '@/components/Seo'
 import { HOME_FAQS, faqJsonLd, listSeoRoutes } from '@/lib/seo'
 
@@ -73,24 +74,19 @@ export default function Home() {
               </h1>
 
               <p className="text-lg md:text-xl leading-[1.55] text-graphite max-w-[520px] mb-10 text-balance">
-                We're a small remote first friendly team who help small to medium sized businesses connect CRM, accounting, booking, and
-                industry software for a fixed one-off job or monthly partnership. 
+                We're a small remote first friendly team who help small to medium sized businesses {' '}
+                <Link to="/connect/crm" className="text-voltage hover:underline">connect CRM
+                </Link>
+                , accounting, booking, and{' '}
+                <Link to="/connect" className="text-voltage hover:underline">
+                  industry software
+                </Link>{' '}
+                for a fixed one-off job or monthly partnership.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
                 <ContactButton className="px-6 py-3.5 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90" />
-                <Link
-                  to="/connect"
-                  className="inline-flex items-center gap-2 font-sans font-semibold text-sm tracking-[0.02em] px-6 py-3.5 border border-obsidian/15 text-obsidian rounded-[4px] hover:border-obsidian/40 transition-colors"
-                >
-                  Connect tools
-                </Link>
-                <Link
-                  to="/connect/crm"
-                  className="inline-flex items-center gap-2 font-sans font-semibold text-sm tracking-[0.02em] px-6 py-3.5 border border-obsidian/15 text-obsidian rounded-[4px] hover:border-obsidian/40 transition-colors"
-                >
-                  Connect your CRM
-                </Link>
+                <LinkedInButton className="px-6 py-3.5 bg-obsidian text-bone rounded-[4px] hover:bg-obsidian/90" />
               </div>
 
               <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-graphite">
@@ -348,6 +344,7 @@ export default function Home() {
 
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             <ContactButton className="px-7 py-4 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90" />
+            <LinkedInButton className="px-7 py-4 bg-bone text-obsidian rounded-[4px] hover:bg-bone/90" />
           </div>
 
           <p className="text-xs font-mono uppercase tracking-[0.18em] text-graphite">

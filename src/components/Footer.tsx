@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
-import { CONTACT_EMAIL } from '@/lib/seo'
+import { CONTACT_EMAIL, LINKEDIN_URL } from '@/lib/seo'
+import LinkedInIcon from '@/components/LinkedInIcon'
+import LinkedInButton from '@/components/LinkedInButton'
 
 export default function Footer() {
   return (
@@ -15,6 +17,15 @@ export default function Footer() {
             <p className="font-display text-2xl md:text-[28px] leading-[1.15] max-w-[360px] tracking-[-0.015em]">
               CRM and tool integrations for small businesses.
             </p>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Promonet on LinkedIn"
+              className="inline-flex mt-6 text-obsidian hover:opacity-70 dark:text-bone transition-opacity"
+            >
+              <LinkedInIcon size={22} />
+            </a>
           </div>
 
           <div>
@@ -74,6 +85,7 @@ export default function Footer() {
               >
                 {CONTACT_EMAIL}
               </a>
+              <LinkedInButton className="self-start px-4 py-2.5 rounded-[4px] bg-obsidian text-bone hover:bg-obsidian/90 dark:bg-bone dark:text-obsidian dark:hover:bg-bone/90" />
             </div>
           </div>
         </div>
