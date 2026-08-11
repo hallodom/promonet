@@ -27,7 +27,7 @@ export default function TeamSection() {
               tools, build the flows, and stick around when something needs a tweak.
             </p>
             <p className="text-lg leading-relaxed text-graphite max-w-[480px]">
-              We partner with you like your own team members. <strong className="font-semibold text-obsidian dark:text-bone">Side by side, as friends, until your software is talking</strong> and your Sundays are free again.
+              We partner with you like your own team members. <strong className="font-semibold text-obsidian">Side by side, as friends, until your software is talking</strong> and your Sundays are free again.
             </p>
           </div>
         </div>

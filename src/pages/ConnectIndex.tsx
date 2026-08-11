@@ -20,7 +20,7 @@ export default function ConnectIndex() {
         path="/connect"
       />
 
-      <section className="pt-32 pb-20 border-b border-obsidian/8 dark:border-bone/8">
+      <section className="pt-32 pb-20 border-b border-obsidian/8">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-voltage mb-6 block reveal">
             Integrations

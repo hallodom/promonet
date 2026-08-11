@@ -180,7 +180,7 @@ export default function Home() {
               becomes spreadsheet night.
             </p>
             <p className="text-lg leading-relaxed text-graphite max-w-[440px] mb-8">
-              <strong className="font-semibold text-obsidian dark:text-bone">We're the people who quietly connect the tools to each other.</strong>
+              <strong className="font-semibold text-obsidian">We're the people who quietly connect the tools to each other.</strong>
             </p>
             <div className="flex flex-wrap gap-4 text-sm font-semibold">
               <Link to="/connect/crm" className="text-voltage hover:underline">
@@ -196,7 +196,7 @@ export default function Home() {
           </div>
 
           <div className="reveal" style={{ transitionDelay: '100ms' }}>
-            <div className="rounded-[4px] hairline bg-bone dark:bg-surface-1 overflow-hidden">
+            <div className="rounded-[4px] hairline bg-bone overflow-hidden">
               <div className="px-5 py-3 hairline-b font-mono text-[11px] uppercase tracking-[0.18em] text-graphite flex items-center justify-between">
                 <span className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-imago status-pulse" />
@@ -209,12 +209,12 @@ export default function Home() {
                 <Link
                   key={i}
                   to={p.href}
-                  className="relative px-5 md:px-6 py-5 hairline-b last:border-b-0 font-mono text-sm grid grid-cols-[1fr_auto] items-center gap-4 overflow-hidden group hover:bg-obsidian/[0.02] dark:hover:bg-bone/[0.03] transition-colors"
+                  className="relative px-5 md:px-6 py-5 hairline-b last:border-b-0 font-mono text-sm grid grid-cols-[1fr_auto] items-center gap-4 overflow-hidden group hover:bg-obsidian/[0.02] transition-colors"
                 >
                   <div className="flex items-center gap-3 min-w-0">
-                    <span className="text-obsidian dark:text-bone truncate">{p.from}</span>
+                    <span className="text-obsidian truncate">{p.from}</span>
                     <ArrowRight size={14} className="text-voltage shrink-0" />
-                    <span className="text-obsidian dark:text-bone truncate">{p.to}</span>
+                    <span className="text-obsidian truncate">{p.to}</span>
                     <span className="hidden md:inline text-graphite truncate">· {p.label}</span>
                   </div>
                   <div className="flex items-center gap-3 shrink-0">
@@ -244,7 +244,7 @@ export default function Home() {
 
       <TeamSection />
 
-      <section id="how" className="py-28 md:py-40 bg-surface-1/30 dark:bg-surface-1 hairline-b">
+      <section id="how" className="py-28 md:py-40 bg-surface-1/30 hairline-b">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <div className="max-w-[760px] mb-20 reveal">
             <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-voltage mb-8 flex items-center gap-3">
@@ -257,11 +257,11 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-px bg-obsidian/10 dark:bg-bone/10 rounded-[4px] overflow-hidden hairline">
+          <div className="grid md:grid-cols-3 gap-px bg-obsidian/10 rounded-[4px] overflow-hidden hairline">
             {steps.map((s, i) => (
               <div
                 key={s.n}
-                className="reveal relative bg-bone dark:bg-obsidian p-8 md:p-10 group hover:bg-bone/60 dark:hover:bg-obsidian/60 transition-colors"
+                className="reveal relative bg-bone p-8 md:p-10 group hover:bg-bone/60 transition-colors"
                 style={{ transitionDelay: `${i * 90}ms` }}
               >
                 <div className="flex items-center justify-between mb-10">
@@ -282,7 +282,7 @@ export default function Home() {
                     src={s.illustration}
                     alt={s.alt}
                     loading="lazy"
-                    className="w-full max-w-[220px] h-auto mix-blend-multiply dark:mix-blend-screen dark:invert"
+                    className="w-full max-w-[220px] h-auto mix-blend-multiply"
                   />
                 </div>
               </div>
@@ -303,7 +303,7 @@ export default function Home() {
               Simple pricing - get in touch and let's get started
             </h2>
             <p className="text-lg text-graphite max-w-[560px] mb-4">
-              <strong className="font-semibold text-obsidian dark:text-bone">Monthly partnerships</strong> or a <strong className="font-semibold text-obsidian dark:text-bone">one-off project</strong> — a simple fixed price for
+              <strong className="font-semibold text-obsidian">Monthly partnerships</strong> or a <strong className="font-semibold text-obsidian">one-off project</strong> — a simple fixed price for
               small businesses. No hidden hourly fees.
             </p>
             <Link to="/pricing" className="text-sm font-semibold text-voltage hover:underline">
@@ -322,7 +322,7 @@ export default function Home() {
           </h2>
           <div className="space-y-6">
             {HOME_FAQS.map((faq) => (
-              <div key={faq.question} className="reveal border-t border-obsidian/10 dark:border-bone/10 pt-6">
+              <div key={faq.question} className="reveal border-t border-obsidian/10 pt-6">
                 <h3 className="font-display text-xl mb-3 tracking-[-0.015em]">{faq.question}</h3>
                 <p className="text-graphite leading-relaxed">{faq.answer}</p>
               </div>

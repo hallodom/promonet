@@ -60,7 +60,7 @@ export default function About() {
             </div>
 
             <div className="reveal space-y-8" style={{ transitionDelay: '80ms' }}>
-              <div className="border-t border-obsidian/10 dark:border-bone/10 pt-6">
+              <div className="border-t border-obsidian/10 pt-6">
                 <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-voltage mb-3">
                   20 years
                 </p>
@@ -69,7 +69,7 @@ export default function About() {
                   part of the stack.
                 </p>
               </div>
-              <div className="border-t border-obsidian/10 dark:border-bone/10 pt-6">
+              <div className="border-t border-obsidian/10 pt-6">
                 <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-voltage mb-3">
                   Low cost
                 </p>
@@ -78,7 +78,7 @@ export default function About() {
                   businesses, not enterprise RFPs.
                 </p>
               </div>
-              <div className="border-t border-obsidian/10 dark:border-bone/10 pt-6">
+              <div className="border-t border-obsidian/10 pt-6">
                 <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-voltage mb-3">
                   Human support
                 </p>

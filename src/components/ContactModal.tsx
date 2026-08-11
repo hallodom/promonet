@@ -91,9 +91,9 @@ export default function ContactModal() {
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="relative w-full sm:max-w-[520px] max-h-[92vh] overflow-y-auto bg-bone dark:bg-surface-1 text-obsidian dark:text-bone rounded-t-[8px] sm:rounded-[4px] shadow-[0_30px_80px_-20px_rgba(10,10,15,0.45)] border border-obsidian/10 dark:border-bone/10"
+        className="relative w-full sm:max-w-[520px] max-h-[92vh] overflow-y-auto bg-bone text-obsidian rounded-t-[8px] sm:rounded-[4px] shadow-[0_30px_80px_-20px_rgba(10,10,15,0.45)] border border-obsidian/10"
       >
-        <div className="flex items-start justify-between gap-4 px-6 md:px-8 pt-6 md:pt-8 pb-4 border-b border-obsidian/8 dark:border-bone/8">
+        <div className="flex items-start justify-between gap-4 px-6 md:px-8 pt-6 md:pt-8 pb-4 border-b border-obsidian/8">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-voltage mb-2">
               Contact us
@@ -105,7 +105,7 @@ export default function ContactModal() {
           <button
             type="button"
             onClick={closeContact}
-            className="p-2 -mr-2 rounded-[4px] text-graphite hover:text-obsidian dark:hover:text-bone hover:bg-obsidian/5 dark:hover:bg-bone/5 transition-colors"
+            className="p-2 -mr-2 rounded-[4px] text-graphite hover:text-obsidian hover:bg-obsidian/5 transition-colors"
             aria-label="Close"
           >
             <X size={18} />
@@ -139,7 +139,7 @@ export default function ContactModal() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full rounded-[4px] border border-obsidian/15 dark:border-bone/15 bg-bone dark:bg-obsidian px-4 py-3 text-sm outline-none focus:border-voltage transition-colors"
+                className="w-full rounded-[4px] border border-obsidian/15 bg-bone px-4 py-3 text-sm outline-none focus:border-voltage transition-colors"
               />
             </label>
 
@@ -154,7 +154,7 @@ export default function ContactModal() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full rounded-[4px] border border-obsidian/15 dark:border-bone/15 bg-bone dark:bg-obsidian px-4 py-3 text-sm outline-none focus:border-voltage transition-colors"
+                className="w-full rounded-[4px] border border-obsidian/15 bg-bone px-4 py-3 text-sm outline-none focus:border-voltage transition-colors"
               />
             </label>
 
@@ -169,7 +169,7 @@ export default function ContactModal() {
                 required
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
-                className="w-full rounded-[4px] border border-obsidian/15 dark:border-bone/15 bg-bone dark:bg-obsidian px-4 py-3 text-sm outline-none focus:border-voltage transition-colors"
+                className="w-full rounded-[4px] border border-obsidian/15 bg-bone px-4 py-3 text-sm outline-none focus:border-voltage transition-colors"
               />
             </label>
 
@@ -183,7 +183,7 @@ export default function ContactModal() {
                 rows={5}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full rounded-[4px] border border-obsidian/15 dark:border-bone/15 bg-bone dark:bg-obsidian px-4 py-3 text-sm outline-none focus:border-voltage transition-colors resize-y min-h-[120px]"
+                className="w-full rounded-[4px] border border-obsidian/15 bg-bone px-4 py-3 text-sm outline-none focus:border-voltage transition-colors resize-y min-h-[120px]"
               />
             </label>
 

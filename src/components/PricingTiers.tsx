@@ -5,7 +5,7 @@ import ContactButton from '@/components/ContactButton'
 export default function PricingTiers() {
   return (
     <>
-      <div className="grid md:grid-cols-3 gap-px bg-obsidian/10 dark:bg-bone/10 rounded-[4px] overflow-hidden hairline">
+      <div className="grid md:grid-cols-3 gap-px bg-obsidian/10 rounded-[4px] overflow-hidden hairline">
         {pricing
           .filter((t) => !t.custom)
           .map((tier, i) => {
@@ -18,7 +18,7 @@ export default function PricingTiers() {
                     ? 'bg-voltage text-bone'
                     : tier.dark
                       ? 'bg-obsidian text-bone'
-                      : 'bg-bone dark:bg-surface-1 text-obsidian dark:text-bone'
+                      : 'bg-bone  text-obsidian '
                 }`}
                 style={{ transitionDelay: `${i * 90}ms` }}
               >
@@ -97,8 +97,8 @@ export default function PricingTiers() {
         .filter((t) => t.custom)
         .map((tier) => (
           <div key={tier.name} className="mt-10 md:mt-14 reveal">
-            <div className="rounded-[4px] border border-obsidian/15 dark:border-bone/15 bg-bone dark:bg-obsidian overflow-hidden">
-              <div className="px-6 md:px-10 py-4 border-b border-obsidian/10 dark:border-bone/10 flex items-center justify-between gap-4">
+            <div className="rounded-[4px] border border-obsidian/15 bg-bone overflow-hidden">
+              <div className="px-6 md:px-10 py-4 border-b border-obsidian/10 flex items-center justify-between gap-4">
                 <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-voltage">
                   Custom
                 </span>

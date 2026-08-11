@@ -29,9 +29,9 @@ export default function Nav() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-bone/80 dark:bg-obsidian/80 backdrop-blur-xl text-obsidian dark:text-bone border-b transition-colors duration-300 ${
+      className={`sticky top-0 z-50 bg-bone/80  backdrop-blur-xl text-obsidian  border-b transition-colors duration-300 ${
         scrolled
-          ? 'border-obsidian/8 dark:border-bone/8'
+          ? 'border-obsidian/8 '
           : 'border-transparent'
       }`}
     >
@@ -47,7 +47,7 @@ export default function Nav() {
             <Link
               key={l.label}
               to={l.to}
-              className="px-3 py-2 rounded-md text-graphite hover:text-obsidian dark:hover:text-bone hover:bg-obsidian/5 dark:hover:bg-bone/5 transition-colors"
+              className="px-3 py-2 rounded-md text-graphite hover:text-obsidian hover:bg-obsidian/5 transition-colors"
             >
               {l.label}
             </Link>
@@ -61,7 +61,7 @@ export default function Nav() {
           />
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden p-2 rounded-md hover:bg-obsidian/5 dark:hover:bg-bone/5 transition-colors"
+            className="md:hidden p-2 rounded-md hover:bg-obsidian/5 transition-colors"
             aria-label="Menu"
           >
             {open ? <X size={20} /> : <Menu size={20} />}
@@ -70,13 +70,13 @@ export default function Nav() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-obsidian/8 dark:border-bone/8 bg-bone dark:bg-obsidian">
+        <div className="md:hidden border-t border-obsidian/8 bg-bone">
           <nav className="px-6 py-6 flex flex-col gap-1">
             {navLinks.map((l) => (
               <Link
                 key={l.label}
                 to={l.to}
-                className="px-3 py-3 rounded-md text-base text-graphite hover:text-obsidian dark:hover:text-bone hover:bg-obsidian/5 dark:hover:bg-bone/5 transition-colors"
+                className="px-3 py-3 rounded-md text-base text-graphite hover:text-obsidian hover:bg-obsidian/5 transition-colors"
               >
                 {l.label}
               </Link>

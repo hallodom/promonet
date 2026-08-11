@@ -18,7 +18,7 @@ export default function ConnectCrm() {
         path="/connect/crm"
       />
 
-      <section className="pt-32 pb-20 border-b border-obsidian/8 dark:border-bone/8">
+      <section className="pt-32 pb-20 border-b border-obsidian/8">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <Link
             to="/connect"
@@ -44,7 +44,7 @@ export default function ConnectCrm() {
           <div className="grid gap-20">
             {matrix.crms.map((crm, ci) => (
               <div key={crm.slug} className="reveal" style={{ transitionDelay: `${ci * 60}ms` }}>
-                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8 pb-6 border-b border-obsidian/8 dark:border-bone/8">
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8 pb-6 border-b border-obsidian/8">
                   <div>
                     <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-graphite mb-3 block">
                       0{ci + 1}
@@ -63,7 +63,7 @@ export default function ConnectCrm() {
                       <Link
                         key={slug}
                         to={`/connect/${slug}`}
-                        className="group flex flex-col p-6 rounded-[4px] border border-obsidian/10 dark:border-bone/10 bg-bone dark:bg-surface-1 hover:border-voltage hover:bg-voltage/[0.02] dark:hover:bg-voltage/5 transition-colors no-underline"
+                        className="group flex flex-col p-6 rounded-[4px] border border-obsidian/10 bg-bone hover:border-voltage hover:bg-voltage/[0.02] transition-colors no-underline"
                       >
                         <div className="flex items-start justify-between gap-3 mb-4">
                           <div className="font-mono text-[11px] uppercase tracking-wider text-graphite">

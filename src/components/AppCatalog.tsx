@@ -84,7 +84,7 @@ export default function AppCatalog() {
               'inline-flex h-9 w-9 items-center justify-center rounded-[4px] border transition-colors',
               view === 'category'
                 ? 'border-voltage bg-voltage text-bone'
-                : 'border-obsidian/10 dark:border-bone/10 text-graphite hover:border-voltage hover:text-voltage',
+                : 'border-obsidian/10 text-graphite hover:border-voltage hover:text-voltage',
             )}
           >
             <LayoutGrid size={16} strokeWidth={1.75} />
@@ -104,7 +104,7 @@ export default function AppCatalog() {
               'inline-flex h-9 w-9 items-center justify-center rounded-[4px] border transition-colors',
               view === 'az'
                 ? 'border-voltage bg-voltage text-bone'
-                : 'border-obsidian/10 dark:border-bone/10 text-graphite hover:border-voltage hover:text-voltage',
+                : 'border-obsidian/10 text-graphite hover:border-voltage hover:text-voltage',
             )}
           >
             <ArrowDownAZ size={16} strokeWidth={1.75} />
@@ -127,7 +127,7 @@ export default function AppCatalog() {
       </div>
 
       {view === 'category' && (
-        <div className="sticky top-20 z-20 -mx-2 px-2 py-3 mb-8 bg-bone/90 dark:bg-obsidian/90 backdrop-blur-xl border-b border-obsidian/8 dark:border-bone/8">
+        <div className="sticky top-20 z-20 -mx-2 px-2 py-3 mb-8 bg-bone/90 backdrop-blur-xl border-b border-obsidian/8">
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => (
               <button
@@ -141,7 +141,7 @@ export default function AppCatalog() {
                   'px-3 py-1.5 rounded-[4px] text-xs font-mono uppercase tracking-wider transition-colors',
                   category === cat
                     ? 'bg-voltage text-bone'
-                    : 'border border-obsidian/10 dark:border-bone/10 text-graphite hover:border-voltage hover:text-voltage',
+                    : 'border border-obsidian/10 text-graphite hover:border-voltage hover:text-voltage',
                 )}
               >
                 {cat}
@@ -152,13 +152,13 @@ export default function AppCatalog() {
       )}
 
       {view === 'az' && (
-        <div className="sticky top-20 z-20 -mx-2 px-2 py-3 mb-8 bg-bone/90 dark:bg-obsidian/90 backdrop-blur-xl border-b border-obsidian/8 dark:border-bone/8">
+        <div className="sticky top-20 z-20 -mx-2 px-2 py-3 mb-8 bg-bone/90 backdrop-blur-xl border-b border-obsidian/8">
           <div className="flex flex-wrap gap-1.5">
             {azGroups.map(([letter]) => (
               <a
                 key={letter}
                 href={`#az-${letter === '#' ? 'other' : letter}`}
-                className="inline-flex h-8 min-w-8 items-center justify-center rounded-[4px] border border-obsidian/10 dark:border-bone/10 px-2 font-mono text-xs text-graphite hover:border-voltage hover:text-voltage transition-colors"
+                className="inline-flex h-8 min-w-8 items-center justify-center rounded-[4px] border border-obsidian/10 px-2 font-mono text-xs text-graphite hover:border-voltage hover:text-voltage transition-colors"
               >
                 {letter}
               </a>
@@ -170,7 +170,7 @@ export default function AppCatalog() {
       {selected && (
         <div
           id="catalog-cta"
-          className="mb-8 p-5 rounded-[4px] bg-voltage/[0.06] dark:bg-voltage/10 border border-voltage/20"
+          className="mb-8 p-5 rounded-[4px] bg-voltage/[0.06] border border-voltage/20"
         >
           <p className="text-sm text-graphite mb-1">We can connect</p>
           <p className="font-display text-xl md:text-2xl tracking-[-0.015em] mb-4">
@@ -201,7 +201,7 @@ export default function AppCatalog() {
         <div className="space-y-10">
           {azGroups.map(([letter, letterApps]) => (
             <section key={letter} id={`az-${letter === '#' ? 'other' : letter}`}>
-              <h3 className="font-mono text-[11px] uppercase tracking-[0.18em] text-voltage mb-4 sticky top-32 bg-bone/90 dark:bg-obsidian/90 backdrop-blur-xl py-2 border-b border-obsidian/8 dark:border-bone/8">
+              <h3 className="font-mono text-[11px] uppercase tracking-[0.18em] text-voltage mb-4 sticky top-32 bg-bone/90 backdrop-blur-xl py-2 border-b border-obsidian/8">
                 {letter}
               </h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
@@ -242,13 +242,13 @@ function ViewTooltip({
           'transition-all duration-200 ease-out',
           'group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100',
           'group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:scale-100',
-          'dark:bg-bone dark:text-obsidian',
+          '',
         )}
       >
         {label}
         <span
           aria-hidden="true"
-          className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-obsidian dark:border-t-bone"
+          className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-obsidian"
         />
       </span>
     </div>
@@ -269,8 +269,8 @@ function AppCard({
       className={cn(
         'group relative text-left p-4 rounded-[4px] border transition-colors',
         selected
-          ? 'border-voltage bg-voltage/[0.06] dark:bg-voltage/10'
-          : 'border-obsidian/10 dark:border-bone/10 bg-bone dark:bg-surface-1 hover:border-voltage/50',
+          ? 'border-voltage bg-voltage/[0.06]'
+          : 'border-obsidian/10 bg-bone hover:border-voltage/50',
       )}
     >
       <button

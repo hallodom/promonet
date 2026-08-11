@@ -6,7 +6,7 @@ import SpamProtectedEmail from '@/components/SpamProtectedEmail'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-obsidian/8 dark:border-bone/8 bg-bone dark:bg-obsidian">
+    <footer className="border-t border-obsidian/8 bg-bone">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10 pt-20 pb-10">
         <div className="grid md:grid-cols-[1.6fr_1fr_1fr_1fr] gap-12 mb-16">
           <div>
@@ -23,7 +23,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Promonet on LinkedIn"
-              className="inline-flex mt-6 text-obsidian hover:opacity-70 dark:text-bone transition-opacity"
+              className="inline-flex mt-6 text-obsidian hover:opacity-70 transition-opacity"
             >
               <LinkedInIcon size={22} />
             </a>
@@ -36,19 +36,19 @@ export default function Footer() {
             <div className="flex flex-col gap-3 text-sm">
               <Link
                 to="/connect"
-                className="text-graphite hover:text-obsidian dark:hover:text-bone transition-colors"
+                className="text-graphite hover:text-obsidian transition-colors"
               >
                 Connect tools
               </Link>
               <Link
                 to="/connect/crm"
-                className="text-graphite hover:text-obsidian dark:hover:text-bone transition-colors"
+                className="text-graphite hover:text-obsidian transition-colors"
               >
                 Connect your CRM
               </Link>
               <Link
                 to="/pricing"
-                className="text-graphite hover:text-obsidian dark:hover:text-bone transition-colors"
+                className="text-graphite hover:text-obsidian transition-colors"
               >
                 Pricing
               </Link>
@@ -62,13 +62,13 @@ export default function Footer() {
             <div className="flex flex-col gap-3 text-sm">
               <Link
                 to="/about"
-                className="text-graphite hover:text-obsidian dark:hover:text-bone transition-colors"
+                className="text-graphite hover:text-obsidian transition-colors"
               >
                 About
               </Link>
               <Link
                 to="/#how"
-                className="text-graphite hover:text-obsidian dark:hover:text-bone transition-colors"
+                className="text-graphite hover:text-obsidian transition-colors"
               >
                 How it works
               </Link>
@@ -80,13 +80,13 @@ export default function Footer() {
               Contact
             </h4>
             <div className="flex flex-col gap-3 text-sm">
-              <SpamProtectedEmail className="text-left text-graphite hover:text-obsidian dark:hover:text-bone transition-colors" />
-              <LinkedInButton className="self-start px-4 py-2.5 rounded-[4px] bg-obsidian text-bone hover:bg-obsidian/90 dark:bg-bone dark:text-obsidian dark:hover:bg-bone/90" />
+              <SpamProtectedEmail className="text-left text-graphite hover:text-obsidian transition-colors" />
+              <LinkedInButton className="self-start px-4 py-2.5 rounded-[4px] bg-obsidian text-bone hover:bg-obsidian/90" />
             </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-obsidian/8 dark:border-bone/8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs font-mono text-graphite">
+        <div className="pt-8 border-t border-obsidian/8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs font-mono text-graphite">
           <span>© {new Date().getFullYear()} Promonet</span>
           <span>Fixed-price CRM &amp; tool integrations</span>
         </div>

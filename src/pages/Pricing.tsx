@@ -30,7 +30,7 @@ export default function Pricing() {
             <h1 className="font-display text-[clamp(40px,7vw,88px)] leading-[1.02] tracking-[-0.02em] mb-6 text-balance">
               Simple pricing that helps us work with you
             </h1>
-            <p className="font-display text-[clamp(22px,3vw,34px)] leading-[1.2] tracking-[-0.015em] text-obsidian dark:text-bone mb-6 max-w-[640px] text-balance">
+            <p className="font-display text-[clamp(22px,3vw,34px)] leading-[1.2] tracking-[-0.015em] text-obsidian mb-6 max-w-[640px] text-balance">
               Monthly partnership options or a one-off project.
             </p>
             <p className="text-lg md:text-xl text-graphite max-w-[560px] mb-4"> No hidden hourly fees.

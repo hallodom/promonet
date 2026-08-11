@@ -5,6 +5,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: light;
   }
 
   body {
@@ -13,10 +14,6 @@
     font-feature-settings: 'ss01', 'cv11';
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-  }
-
-  .dark body {
-    @apply bg-obsidian text-bone;
   }
 
   ::selection {
@@ -61,13 +58,13 @@
   }
 
   .hairline-b {
-    @apply border-b border-obsidian/10 dark:border-bone/10;
+    @apply border-b border-obsidian/10 
   }
   .hairline-t {
-    @apply border-t border-obsidian/10 dark:border-bone/10;
+    @apply border-t border-obsidian/10 
   }
   .hairline {
-    @apply border border-obsidian/10 dark:border-bone/10;
+    @apply border border-obsidian/10 
   }
 }
 

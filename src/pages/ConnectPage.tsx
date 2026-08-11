@@ -65,7 +65,7 @@ export default function ConnectPage() {
         jsonLd={[breadcrumbJsonLd(crumbs)]}
       />
 
-      <section className="pt-32 pb-20 border-b border-obsidian/8 dark:border-bone/8">
+      <section className="pt-32 pb-20 border-b border-obsidian/8">
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <nav
             aria-label="Breadcrumb"
@@ -75,7 +75,7 @@ export default function ConnectPage() {
               <span key={crumb.path} className="inline-flex items-center gap-2">
                 {i > 0 && <span className="text-graphite/40">/</span>}
                 {i === crumbs.length - 1 ? (
-                  <span className="text-obsidian dark:text-bone">{crumb.name}</span>
+                  <span className="text-obsidian">{crumb.name}</span>
                 ) : (
                   <Link
                     to={crumb.path}
@@ -115,7 +115,7 @@ export default function ConnectPage() {
               <ProductLink
                 key={tool}
                 name={tool}
-                className="px-3 py-1.5 text-xs font-mono rounded-[4px] border border-obsidian/10 dark:border-bone/10 bg-bone dark:bg-surface-1 text-graphite"
+                className="px-3 py-1.5 text-xs font-mono rounded-[4px] border border-obsidian/10 bg-bone text-graphite"
               >
                 {tool}
               </ProductLink>
@@ -133,7 +133,7 @@ export default function ConnectPage() {
             {vertical.flows.map((flow, i) => (
               <div
                 key={i}
-                className="reveal group p-7 md:p-8 rounded-[4px] border border-obsidian/10 dark:border-bone/10 bg-bone dark:bg-surface-1 hover:border-voltage/50 transition-colors"
+                className="reveal group p-7 md:p-8 rounded-[4px] border border-obsidian/10 bg-bone hover:border-voltage/50 transition-colors"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className="flex flex-wrap items-center gap-3 mb-4">
@@ -145,7 +145,7 @@ export default function ConnectPage() {
                     {renderCrmReferences(flow.to, crm.name, crm.short)}
                   </span>
                 </div>
-                <p className="text-base leading-relaxed text-obsidian/80 dark:text-bone/80">
+                <p className="text-base leading-relaxed text-obsidian/80">
                   {renderCrmReferences(flow.body, crm.name, crm.short)}
                 </p>
               </div>

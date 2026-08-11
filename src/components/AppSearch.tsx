@@ -61,7 +61,7 @@ export default function AppSearch({ variant = 'full', className }: Props) {
   return (
     <div
       className={cn(
-        'rounded-[4px] border border-obsidian/10 dark:border-bone/10 bg-bone dark:bg-surface-1',
+        'rounded-[4px] border border-obsidian/10 bg-bone',
         variant === 'full' ? 'p-6 md:p-8' : 'p-5 md:p-6',
         className,
       )}
@@ -96,7 +96,7 @@ export default function AppSearch({ variant = 'full', className }: Props) {
             setSelected(null)
           }}
           placeholder="Search any app — HubSpot, Clio, Dentrix…"
-          className="w-full pl-10 pr-4 py-3 rounded-[4px] border border-obsidian/15 dark:border-bone/15 bg-bone dark:bg-obsidian text-obsidian dark:text-bone text-sm placeholder:text-graphite focus:outline-none focus:border-voltage transition-colors"
+          className="w-full pl-10 pr-4 py-3 rounded-[4px] border border-obsidian/15 bg-bone text-obsidian text-sm placeholder:text-graphite focus:outline-none focus:border-voltage transition-colors"
           autoComplete="off"
           spellCheck={false}
         />
@@ -107,15 +107,15 @@ export default function AppSearch({ variant = 'full', className }: Props) {
       </p>
 
       {q.length >= 2 && results.length > 0 && (
-        <ul className="mb-4 border border-obsidian/10 dark:border-bone/10 rounded-[4px] overflow-hidden divide-y divide-obsidian/8 dark:divide-bone/8">
+        <ul className="mb-4 border border-obsidian/10 rounded-[4px] overflow-hidden divide-y divide-obsidian/8">
           {results.map((app) => (
             <li key={app.slug + app.name}>
               <div
                 className={cn(
                   'group relative w-full flex items-center justify-between gap-3 px-4 py-3 text-left text-sm transition-colors',
                   active?.name === app.name
-                    ? 'bg-voltage/8 dark:bg-voltage/15'
-                    : 'hover:bg-obsidian/[0.03] dark:hover:bg-bone/[0.04]',
+                    ? 'bg-voltage/8'
+                    : 'hover:bg-obsidian/[0.03]',
                 )}
               >
                 <button
@@ -137,7 +137,7 @@ export default function AppSearch({ variant = 'full', className }: Props) {
       )}
 
       {active && (
-        <div className="p-5 rounded-[4px] bg-voltage/[0.06] dark:bg-voltage/10 border border-voltage/20">
+        <div className="p-5 rounded-[4px] bg-voltage/[0.06] border border-voltage/20">
           <p className="text-sm text-graphite mb-1">We can connect</p>
           <p className="font-display text-xl md:text-2xl tracking-[-0.015em] mb-4">
             <ProductLink name={active.name}>{active.name}</ProductLink>
@@ -153,7 +153,7 @@ export default function AppSearch({ variant = 'full', className }: Props) {
       )}
 
       {showEmpty && (
-        <div className="p-5 rounded-[4px] border border-obsidian/10 dark:border-bone/10 bg-obsidian/[0.02] dark:bg-bone/[0.03]">
+        <div className="p-5 rounded-[4px] border border-obsidian/10 bg-obsidian/[0.02]">
           <p className="font-display text-lg mb-2 tracking-[-0.015em]">
             Can’t find “{trimmed}”?
           </p>
