@@ -11,7 +11,7 @@ function escapeHtml(value) {
 export async function sendContactEmail(payload) {
   const apiKey = process.env.RESEND_API_KEY
   const from = process.env.RESEND_FROM
-  const to = process.env.CONTACT_TO || 'hello@promonetconsulting.com'
+  const to = process.env.CONTACT_TO || 'eddy@promonetconsulting.com'
 
   if (!apiKey) {
     return { ok: false, error: 'Missing RESEND_API_KEY', status: 500 }

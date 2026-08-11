@@ -84,9 +84,23 @@
   transform: translateY(0);
 }
 
+/* Handwritten hero note: fades in after parent .reveal finishes */
+.hero-handnote {
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.22, 0.8, 0.2, 1);
+  transition-delay: 0s;
+  will-change: opacity;
+}
+.reveal.in .hero-handnote {
+  opacity: 1;
+  transition-delay: 0.85s;
+}
+
+
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal.in,
+  .hero-handnote,
   .marquee-track,
   .progress-line,
   .scan-line {

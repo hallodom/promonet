@@ -4,6 +4,7 @@ import matrix from '@/data/matrix.json'
 import { useReveal } from '@/lib/useReveal'
 import ContactButton from '@/components/ContactButton'
 import Seo from '@/components/Seo'
+import ProductLink from '@/components/ProductLink'
 import {
   breadcrumbJsonLd,
   connectPath,
@@ -36,10 +37,7 @@ export default function ConnectPage() {
     pageMeta?.description ??
     `Connect ${crm.name} to the ${vertical.name} software small businesses already run — fixed monthly price, no in-house dev team required.`
 
-  const toolPreview = vertical.tools.slice(0, 3).join(', ')
-  const intro = `${crm.blurb} For small businesses running ${vertical.title.toLowerCase()} — tools like ${toolPreview}${
-    vertical.tools.length > 3 ? ', and more' : ''
-  } — we connect ${crm.name} so leads, status updates, and handoffs stop living in copy-paste. Fixed monthly partnership or one-off build.`
+  const toolPreview = vertical.tools.slice(0, 3)
 
   const relatedVerticals = crm.verticals
     .map((key) => {
@@ -91,13 +89,22 @@ export default function ConnectPage() {
           </nav>
 
           <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-voltage mb-6 block reveal">
-            {crm.short} → {vertical.title}
+            <ProductLink name={crm.name}>{crm.short}</ProductLink> → {vertical.title}
           </span>
           <h1 className="font-display text-[clamp(36px,6vw,72px)] leading-[1.02] tracking-[-0.02em] mb-8 max-w-[900px] text-balance reveal">
             Connect {crm.name} to {vertical.title}.
           </h1>
           <p className="text-lg text-graphite max-w-[640px] mb-8 reveal" style={{ transitionDelay: '100ms' }}>
-            {intro}{' '}
+            {crm.blurb} For small businesses running {vertical.title.toLowerCase()} — tools like{' '}
+            {toolPreview.map((tool, index) => (
+              <span key={tool}>
+                {index > 0 && (index === toolPreview.length - 1 ? ', and ' : ', ')}
+                <ProductLink name={tool}>{tool}</ProductLink>
+              </span>
+            ))}
+            {vertical.tools.length > 3 ? ', and more' : ''} — we connect{' '}
+            <ProductLink name={crm.name}>{crm.name}</ProductLink> so leads, status updates, and
+            handoffs stop living in copy-paste. Fixed monthly partnership or one-off build.{' '}
             <Link to="/pricing" className="text-voltage hover:underline font-semibold">
               See pricing
             </Link>
@@ -105,12 +112,13 @@ export default function ConnectPage() {
           </p>
           <div className="flex flex-wrap gap-2 reveal" style={{ transitionDelay: '150ms' }}>
             {vertical.tools.map((tool) => (
-              <span
+              <ProductLink
                 key={tool}
+                name={tool}
                 className="px-3 py-1.5 text-xs font-mono rounded-[4px] border border-obsidian/10 dark:border-bone/10 bg-bone dark:bg-surface-1 text-graphite"
               >
                 {tool}
-              </span>
+              </ProductLink>
             ))}
           </div>
         </div>
@@ -134,11 +142,11 @@ export default function ConnectPage() {
                   </span>
                   <ArrowRight size={14} className="text-graphite" />
                   <span className="font-mono text-[11px] uppercase tracking-wider text-graphite">
-                    {flow.to.replace(/\{CRM\}/g, crm.short)}
+                    {renderCrmReferences(flow.to, crm.name, crm.short)}
                   </span>
                 </div>
                 <p className="text-base leading-relaxed text-obsidian/80 dark:text-bone/80">
-                  {flow.body.replace(/\{CRM\}/g, crm.short)}
+                  {renderCrmReferences(flow.body, crm.name, crm.short)}
                 </p>
               </div>
             ))}
@@ -150,14 +158,13 @@ export default function ConnectPage() {
         <section className="py-16 md:py-20 hairline-t">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
             <h2 className="font-display text-2xl md:text-3xl mb-6 tracking-[-0.015em] reveal">
-              Related {crm.name} integrations
+              Related <ProductLink name={crm.name}>{crm.name}</ProductLink> integrations
             </h2>
             <ul className="flex flex-wrap gap-x-6 gap-y-3 text-sm reveal">
               {relatedVerticals.slice(0, 6).map((rel) => (
                 <li key={rel.path}>
-                  <Link to={rel.path} className="text-voltage hover:underline">
-                    Connect {crm.name} to {rel.title}
-                  </Link>
+                  Connect <ProductLink name={crm.name}>{crm.name}</ProductLink> to{' '}
+                  <Link to={rel.path} className="text-voltage hover:underline">{rel.title}</Link>
                 </li>
               ))}
               <li>
@@ -178,16 +185,27 @@ export default function ConnectPage() {
       <section className="py-24 bg-obsidian text-bone hairline-t border-bone/10">
         <div className="max-w-[800px] mx-auto px-6 md:px-10 text-center">
           <h3 className="font-display text-3xl md:text-5xl mb-5 tracking-[-0.02em] text-balance">
-            Ready to connect {crm.short} to your {vertical.name} stack?
+            Ready to connect <ProductLink name={crm.name}>{crm.short}</ProductLink> to your{' '}
+            {vertical.name} stack?
           </h3>
           <p className="text-bone/70 mb-10 max-w-[480px] mx-auto text-lg">
-            Book a call. We&apos;ll scope your {crm.short} + {vertical.name} integration in 20 minutes.
+            Book a call. We&apos;ll scope your <ProductLink name={crm.name}>{crm.short}</ProductLink> +{' '}
+            {vertical.name} integration in 20 minutes.
           </p>
           <ContactButton className="px-7 py-4 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90" />
         </div>
       </section>
     </>
   )
+}
+
+function renderCrmReferences(text: string, crmName: string, crmLabel: string) {
+  return text.split('{CRM}').map((part, index) => (
+    <span key={`${part}-${index}`}>
+      {index > 0 && <ProductLink name={crmName}>{crmLabel}</ProductLink>}
+      {part}
+    </span>
+  ))
 }
 
 function NotFound() {

@@ -3,12 +3,14 @@ import { Search } from 'lucide-react'
 import catalog from '@/data/apps.json'
 import { cn } from '@/lib/cn'
 import ContactButton from '@/components/ContactButton'
+import ProductLink from '@/components/ProductLink'
 
 type AppEntry = {
   name: string
   slug: string
   category: string
   aliases: string[]
+  website?: string
 }
 
 const apps = catalog.apps as AppEntry[]
@@ -108,21 +110,27 @@ export default function AppSearch({ variant = 'full', className }: Props) {
         <ul className="mb-4 border border-obsidian/10 dark:border-bone/10 rounded-[4px] overflow-hidden divide-y divide-obsidian/8 dark:divide-bone/8">
           {results.map((app) => (
             <li key={app.slug + app.name}>
-              <button
-                type="button"
-                onClick={() => setSelected(app)}
+              <div
                 className={cn(
-                  'w-full flex items-center justify-between gap-3 px-4 py-3 text-left text-sm transition-colors',
+                  'group relative w-full flex items-center justify-between gap-3 px-4 py-3 text-left text-sm transition-colors',
                   active?.name === app.name
                     ? 'bg-voltage/8 dark:bg-voltage/15'
                     : 'hover:bg-obsidian/[0.03] dark:hover:bg-bone/[0.04]',
                 )}
               >
-                <span className="font-medium truncate">{app.name}</span>
-                <span className="font-mono text-[10px] uppercase tracking-wider text-graphite shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setSelected(app)}
+                  className="absolute inset-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-voltage"
+                  aria-label={`Ask about connecting ${app.name}`}
+                />
+                <span className="relative z-10 font-medium truncate">
+                  <ProductLink name={app.name} className="relative">{app.name}</ProductLink>
+                </span>
+                <span className="relative pointer-events-none font-mono text-[10px] uppercase tracking-wider text-graphite shrink-0">
                   {app.category}
                 </span>
-              </button>
+              </div>
             </li>
           ))}
         </ul>
@@ -132,7 +140,7 @@ export default function AppSearch({ variant = 'full', className }: Props) {
         <div className="p-5 rounded-[4px] bg-voltage/[0.06] dark:bg-voltage/10 border border-voltage/20">
           <p className="text-sm text-graphite mb-1">We can connect</p>
           <p className="font-display text-xl md:text-2xl tracking-[-0.015em] mb-4">
-            {active.name}
+            <ProductLink name={active.name}>{active.name}</ProductLink>
           </p>
           <p className="text-sm text-graphite mb-5 max-w-[480px]">
             Talk to us about connecting {active.name} to your CRM, accounting, booking software, or the rest of your stack.

@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
-import { CONTACT_EMAIL, LINKEDIN_URL } from '@/lib/seo'
+import { LINKEDIN_URL } from '@/lib/seo'
 import LinkedInIcon from '@/components/LinkedInIcon'
 import LinkedInButton from '@/components/LinkedInButton'
+import SpamProtectedEmail from '@/components/SpamProtectedEmail'
 
 export default function Footer() {
   return (
@@ -79,12 +80,7 @@ export default function Footer() {
               Contact
             </h4>
             <div className="flex flex-col gap-3 text-sm">
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="text-graphite hover:text-obsidian dark:hover:text-bone transition-colors"
-              >
-                {CONTACT_EMAIL}
-              </a>
+              <SpamProtectedEmail className="text-left text-graphite hover:text-obsidian dark:hover:text-bone transition-colors" />
               <LinkedInButton className="self-start px-4 py-2.5 rounded-[4px] bg-obsidian text-bone hover:bg-obsidian/90 dark:bg-bone dark:text-obsidian dark:hover:bg-bone/90" />
             </div>
           </div>

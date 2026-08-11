@@ -21,7 +21,7 @@ const pipelines = [
   { from: 'Stripe', to: 'QuickBooks', label: 'invoice → bookkeeping', href: '/connect' },
   { from: 'Calendly', to: 'HubSpot', label: 'meeting → CRM', href: '/connect/crm' },
   { from: 'Shopify', to: 'Mailchimp', label: 'order → segment', href: '/connect' },
-  { from: 'Capsule', to: 'Real Estate', label: 'lead → listing', href: '/connect/crm' },
+  { from: 'Capsule', to: 'Mortgage Brain', label: 'enquiry → case', href: '/connect/capsule-to-mortgage-software' },
   { from: 'CRM', to: 'Custom system', label: 'record → sync', href: '/connect/crm' },
 ]
 
@@ -120,6 +120,16 @@ export default function Home() {
                 loading="eager"
                 className="w-full aspect-[4/5] object-cover rounded-[4px] shadow-[0_30px_60px_-20px_rgba(10,10,15,0.18)]"
               />
+              <figcaption className="hero-handnote mt-3 w-fit max-w-[min(100%,22rem)] bg-transparent">
+                <img
+                  src="/illustrations/no-more-exporting-handwritten.png"
+                  alt="no more exporting to spreadsheets"
+                  width={1466}
+                  height={159}
+                  className="block h-7 md:h-8 w-auto max-w-full select-none pointer-events-none mix-blend-multiply"
+                  loading="eager"
+                />
+              </figcaption>
             </figure>
           </div>
         </div>
@@ -170,7 +180,7 @@ export default function Home() {
               becomes spreadsheet night.
             </p>
             <p className="text-lg leading-relaxed text-graphite max-w-[440px] mb-8">
-              We're the people who quietly connect the tools to each other.
+              <strong className="font-semibold text-obsidian dark:text-bone">We're the people who quietly connect the tools to each other.</strong>
             </p>
             <div className="flex flex-wrap gap-4 text-sm font-semibold">
               <Link to="/connect/crm" className="text-voltage hover:underline">
@@ -293,7 +303,7 @@ export default function Home() {
               Simple pricing - get in touch and let's get started
             </h2>
             <p className="text-lg text-graphite max-w-[560px] mb-4">
-              Monthly partnerships or a one-off project — a simple fixed price for
+              <strong className="font-semibold text-obsidian dark:text-bone">Monthly partnerships</strong> or a <strong className="font-semibold text-obsidian dark:text-bone">one-off project</strong> — a simple fixed price for
               small businesses. No hidden hourly fees.
             </p>
             <Link to="/pricing" className="text-sm font-semibold text-voltage hover:underline">

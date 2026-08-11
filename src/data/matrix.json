@@ -5,65 +5,109 @@
       "name": "Capsule CRM",
       "short": "Capsule",
       "blurb": "The friendly CRM for small teams who never wanted a CRM that needs its own admin.",
-      "verticals": ["mortgage", "legal", "accounting", "consulting", "agency"]
+      "verticals": [
+        "mortgage",
+        "legal",
+        "accounting",
+        "consulting",
+        "agency"
+      ]
     },
     {
       "slug": "hubspot",
       "name": "HubSpot",
       "short": "HubSpot",
       "blurb": "Powerful out of the box, expensive once you outgrow free — worth stitching to the rest of your stack properly.",
-      "verticals": ["mortgage", "legal", "real-estate", "agency", "healthcare"]
+      "verticals": [
+        "mortgage",
+        "legal",
+        "real-estate",
+        "agency",
+        "healthcare"
+      ]
     },
     {
       "slug": "pipedrive",
       "name": "Pipedrive",
       "short": "Pipedrive",
       "blurb": "Sales-first, deal-pipeline thinking — made to talk to the operational tools that close the deal.",
-      "verticals": ["mortgage", "real-estate", "recruitment", "manufacturing", "agency"]
+      "verticals": [
+        "mortgage",
+        "real-estate",
+        "recruitment",
+        "manufacturing",
+        "agency"
+      ]
     },
     {
       "slug": "zoho",
       "name": "Zoho CRM",
       "short": "Zoho",
       "blurb": "The price-conscious workhorse — ready to plug into the industry tools you already pay for.",
-      "verticals": ["mortgage", "accounting", "real-estate", "healthcare", "manufacturing"]
+      "verticals": [
+        "mortgage",
+        "accounting",
+        "real-estate",
+        "healthcare",
+        "manufacturing"
+      ]
     },
     {
       "slug": "copper",
       "name": "Copper",
       "short": "Copper",
       "blurb": "Lives inside Google Workspace. Brilliant if you live in Gmail; useless if it doesn't reach your other systems.",
-      "verticals": ["agency", "consulting", "real-estate", "professional-services", "creative-services"]
+      "verticals": [
+        "agency",
+        "consulting",
+        "real-estate",
+        "professional-services",
+        "creative-services"
+      ]
     },
     {
       "slug": "insightly",
       "name": "Insightly",
       "short": "Insightly",
       "blurb": "Sales plus project delivery in one place — needs proper plumbing to your accounting and ops tools.",
-      "verticals": ["consulting", "legal", "agency", "manufacturing", "project-based-services"]
+      "verticals": [
+        "consulting",
+        "legal",
+        "agency",
+        "manufacturing",
+        "project-based-services"
+      ]
     }
   ],
-
   "verticals": {
     "mortgage": {
       "name": "mortgage",
       "title": "Mortgage Software",
-      "tools": ["Encompass", "Calyx Point", "LendingPad", "Velocify", "Floify"],
+      "tools": [
+        "Mortgage Brain",
+        "Twenty7tec ADVICE",
+        "Mortgage Magic",
+        "Adviser IQ",
+        "Curvestone",
+        "Model Office",
+        "RegTechPRO",
+        "Twenty7tec RESEARCH"
+      ],
       "flows": [
         {
           "from": "Website lead",
           "to": "{CRM} → LOS",
-          "body": "A prospect fills out your rate-quote form. We push the contact into {CRM}, score them against your buy box, and create the loan file in your origination system — in seconds, not hours."
+          "body": "A prospect completes your enquiry or Decision in Principle form. We push the contact into {CRM}, score them against your criteria, and open the case in your sourcing/advice platform — with an audit trail from the first touch."
         },
         {
-          "from": "Loan status",
-          "to": "LOS → {CRM}",
-          "body": "When a file moves from processing to underwriting to clear-to-close, we mirror the status back to {CRM} so the loan officer and assistant always see the same picture."
+          "from": "Case status",
+          "to": "Advice platform → {CRM}",
+          "body": "When a case moves from fact-find to recommendation to offer to completion, we mirror the status back to {CRM} so advisers and admins always see the same picture — ready for file reviews and Consumer Duty evidence."
         },
         {
           "from": "Doc requests",
           "to": "{CRM} → Borrower",
-          "body": "Missing-doc requests fire automated emails and texts to the borrower with secure upload links — and log the chase activity against the {CRM} record."
+          "body": "Missing-doc requests fire automated emails and texts to the client with secure upload links — and log the chase activity against the {CRM} record for FCA-ready evidence."
         },
         {
           "from": "Closed loan",
@@ -75,7 +119,12 @@
     "legal": {
       "name": "legal",
       "title": "Legal Practice Software",
-      "tools": ["Clio", "MyCase", "PracticePanther", "Smokeball"],
+      "tools": [
+        "Clio",
+        "MyCase",
+        "PracticePanther",
+        "Smokeball"
+      ],
       "flows": [
         {
           "from": "Intake form",
@@ -102,7 +151,12 @@
     "accounting": {
       "name": "accounting",
       "title": "Accounting Software",
-      "tools": ["QuickBooks Online", "Xero", "FreshBooks", "Wave"],
+      "tools": [
+        "QuickBooks Online",
+        "Xero",
+        "FreshBooks",
+        "Wave"
+      ],
       "flows": [
         {
           "from": "Won deal",
@@ -129,7 +183,12 @@
     "consulting": {
       "name": "consulting",
       "title": "Consulting Operations Software",
-      "tools": ["Harvest", "Notion", "Asana", "Calendly"],
+      "tools": [
+        "Harvest",
+        "Notion",
+        "Asana",
+        "Calendly"
+      ],
       "flows": [
         {
           "from": "SOW signed",
@@ -156,7 +215,13 @@
     "agency": {
       "name": "agency",
       "title": "Agency Project & Time Software",
-      "tools": ["Harvest", "Toggl", "Asana", "ClickUp", "Slack"],
+      "tools": [
+        "Harvest",
+        "Toggl",
+        "Asana",
+        "ClickUp",
+        "Slack"
+      ],
       "flows": [
         {
           "from": "New client",
@@ -183,7 +248,12 @@
     "healthcare": {
       "name": "healthcare",
       "title": "Healthcare Practice Software",
-      "tools": ["SimplePractice", "Practice Better", "Jane", "TherapyNotes"],
+      "tools": [
+        "SimplePractice",
+        "Practice Better",
+        "Jane",
+        "TherapyNotes"
+      ],
       "flows": [
         {
           "from": "Website booking",
@@ -210,12 +280,23 @@
     "real-estate": {
       "name": "real estate",
       "title": "Real Estate Software",
-      "tools": ["Follow Up Boss", "kvCORE", "Top Producer", "BoomTown"],
+      "tools": [
+        "Alto",
+        "Reapit",
+        "Street",
+        "Dezrez",
+        "Jupix",
+        "Credas",
+        "SmartSearch",
+        "Landmark Agent AML",
+        "Smart Compliance",
+        "Thirdfort"
+      ],
       "flows": [
         {
           "from": "Portal lead",
           "to": "{CRM} → Routing",
-          "body": "A lead from Zillow, Realtor.com, or your IDX site lands in {CRM}, routed by zip and price band to the right agent within ninety seconds — not the next morning."
+          "body": "A lead from Rightmove, Zoopla, OnTheMarket, or your website lands in {CRM}, routed by area and price band to the right agent within ninety seconds — not the next morning."
         },
         {
           "from": "Showing booked",
@@ -237,7 +318,12 @@
     "manufacturing": {
       "name": "manufacturing",
       "title": "Manufacturing & Inventory Software",
-      "tools": ["Fishbowl", "Katana", "NetSuite", "ShipStation"],
+      "tools": [
+        "Fishbowl",
+        "Katana",
+        "NetSuite",
+        "ShipStation"
+      ],
       "flows": [
         {
           "from": "Quote won",
@@ -264,7 +350,12 @@
     "recruitment": {
       "name": "recruitment",
       "title": "Recruiting & ATS Software",
-      "tools": ["JazzHR", "Workable", "Greenhouse", "BambooHR"],
+      "tools": [
+        "JazzHR",
+        "Workable",
+        "Greenhouse",
+        "BambooHR"
+      ],
       "flows": [
         {
           "from": "New job order",
@@ -291,7 +382,12 @@
     "creative-services": {
       "name": "creative services",
       "title": "Creative Services Software",
-      "tools": ["Dubsado", "Honeybook", "17hats", "Studio Ninja"],
+      "tools": [
+        "Dubsado",
+        "Honeybook",
+        "17hats",
+        "Studio Ninja"
+      ],
       "flows": [
         {
           "from": "Inquiry form",
@@ -318,7 +414,12 @@
     "professional-services": {
       "name": "professional services",
       "title": "Professional Services Software",
-      "tools": ["ServiceTitan", "Harvest", "ClickUp", "Bonsai"],
+      "tools": [
+        "ServiceTitan",
+        "Harvest",
+        "ClickUp",
+        "Bonsai"
+      ],
       "flows": [
         {
           "from": "Engagement signed",
@@ -345,7 +446,12 @@
     "project-based-services": {
       "name": "project-based services",
       "title": "Project & Delivery Software",
-      "tools": ["Asana", "Monday.com", "ClickUp", "Notion"],
+      "tools": [
+        "Asana",
+        "Monday.com",
+        "ClickUp",
+        "Notion"
+      ],
       "flows": [
         {
           "from": "Project signed",

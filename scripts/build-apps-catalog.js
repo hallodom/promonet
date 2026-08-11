@@ -281,23 +281,81 @@ function slugify(name) {
     .replace(/^-|-$/g, '')
 }
 
-function addApp(map, { name, category = 'Software', aliases = [] }) {
+const CATEGORY_ALIASES = {
+  crm: 'CRM',
+}
+
+const EXCLUDED_CATEGORIES = new Set([
+  'iam',
+  'vpn',
+  'cloud-security',
+  'defi-tools',
+  'crypto-wallets',
+  'crypto-trading-bots',
+  'crypto-telegram-bots',
+  'crypto-exchanges',
+  'crypto-analytics',
+  'crypto-tax',
+  'crypto-portfolio-trackers',
+  'dex',
+])
+
+function normalizeCategory(category) {
+  const raw = typeof category === 'string' ? category.trim() : ''
+  if (!raw) return 'Software'
+  return CATEGORY_ALIASES[raw.toLowerCase()] || raw
+}
+
+function addApp(map, { name, category = 'Software', aliases = [], website }) {
   if (!name || typeof name !== 'string') return
   const key = name.trim().toLowerCase()
   if (!key) return
+  const normalizedCategory = normalizeCategory(category)
+  if (EXCLUDED_CATEGORIES.has(normalizedCategory.toLowerCase())) return
   const existing = map.get(key)
   if (existing) {
     const aliasSet = new Set([...(existing.aliases || []), ...aliases])
     existing.aliases = [...aliasSet].filter((a) => a && a.toLowerCase() !== key)
-    if (!existing.category || existing.category === 'Software') existing.category = category
+    existing.category = normalizeCategory(existing.category)
+    if (!existing.category || existing.category === 'Software') existing.category = normalizedCategory
+    if (!existing.website && website) existing.website = website
     return
   }
   map.set(key, {
     name: name.trim(),
     slug: slugify(name.trim()),
-    category,
+    category: normalizedCategory,
     aliases: [...new Set(aliases)].filter((a) => a && a.toLowerCase() !== key),
+    ...(website ? { website } : {}),
   })
+}
+
+async function fetchProductWebsite(slug) {
+  try {
+    const res = await fetch(`${COMPAREDGE_URL}/${encodeURIComponent(slug)}`, {
+      headers: { Accept: 'application/json', 'User-Agent': 'promonet-catalog-builder/1.0' },
+      signal: AbortSignal.timeout(10000),
+    })
+    if (!res.ok) return null
+    const product = await res.json()
+    return typeof product.url === 'string' ? product.url : null
+  } catch {
+    return null
+  }
+}
+
+async function addComparEdgeWebsites(products) {
+  let cursor = 0
+  const workers = Array.from({ length: 12 }, async () => {
+    while (cursor < products.length) {
+      const index = cursor++
+      const product = products[index]
+      if (!product?.slug) continue
+      product.website = await fetchProductWebsite(product.slug)
+    }
+  })
+  await Promise.all(workers)
+  return products
 }
 
 async function fetchComparEdge() {
@@ -310,7 +368,7 @@ async function fetchComparEdge() {
     const data = await res.json()
     const products = data.products || data.tools || []
     console.log(`ComparEdge: fetched ${products.length} products`)
-    return products
+    return await addComparEdgeWebsites(products)
   } catch (err) {
     console.warn(`ComparEdge fetch skipped: ${err.message}`)
     return []
@@ -325,6 +383,12 @@ function loadJson(relPath) {
 
 async function main() {
   const map = new Map()
+  const previousCatalog = loadJson('src/data/apps.json')
+  const previousWebsites = new Map(
+    (previousCatalog?.apps || [])
+      .filter((app) => app.website)
+      .map((app) => [app.name.toLowerCase(), app.website]),
+  )
 
   const comparedge = await fetchComparEdge()
   for (const p of comparedge) {
@@ -333,6 +397,7 @@ async function main() {
       name: p.name,
       category: p.categoryName || p.category || 'Software',
       aliases: p.slug ? [p.slug.replace(/-/g, ' ')] : [],
+      website: p.website || previousWebsites.get(p.name.toLowerCase()),
     })
   }
 
@@ -354,6 +419,17 @@ async function main() {
 
   for (const [name, category] of EXTRA_APPS) {
     addApp(map, { name, category })
+  }
+
+  for (const app of map.values()) {
+    if (!app.website) app.website = previousWebsites.get(app.name.toLowerCase())
+    if (!app.website) delete app.website
+  }
+
+  const websiteOverrides = loadJson('src/data/product-websites.json') || {}
+  for (const app of map.values()) {
+    const website = websiteOverrides[app.name.toLowerCase()]
+    if (website) app.website = website
   }
 
   const apps = [...map.values()].sort((a, b) => a.name.localeCompare(b.name))

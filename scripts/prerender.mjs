@@ -14,6 +14,9 @@ const DIST = path.join(ROOT, 'dist')
 const MATRIX = JSON.parse(
   fs.readFileSync(path.join(ROOT, 'src/data/matrix.json'), 'utf8'),
 )
+const PRODUCT_WEBSITES = JSON.parse(
+  fs.readFileSync(path.join(ROOT, 'src/data/product-websites.json'), 'utf8'),
+)
 
 const SITE_URL = 'https://promonetconsulting.com'
 const SITE_NAME = 'Promonet'
@@ -44,6 +47,12 @@ function esc(s) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
+}
+
+function productLink(name, label = name) {
+  const website = PRODUCT_WEBSITES[name.toLowerCase()]
+  if (!website) return esc(label)
+  return `<a href="${esc(website)}" target="_blank" rel="noreferrer">${esc(label)}</a>`
 }
 
 function loadRoutes() {
@@ -158,15 +167,18 @@ function listPageMeta() {
       const vertical = MATRIX.verticals[key]
       if (!vertical) continue
       const routePath = `/connect/${connectSlug(crm.slug, vertical.name)}`
-      const tools = vertical.tools.slice(0, 3).join(', ')
-      const lead = `${crm.blurb} For small businesses running ${vertical.title.toLowerCase()} — tools like ${tools}${
+      const tools = vertical.tools.slice(0, 3)
+      const linkedTools = tools
+        .map((tool, index) => `${index > 0 ? (index === tools.length - 1 ? ', and ' : ', ') : ''}${productLink(tool)}`)
+        .join('')
+      const leadHtml = `${esc(crm.blurb)} For small businesses running ${esc(vertical.title.toLowerCase())} — tools like ${linkedTools}${
         vertical.tools.length > 3 ? ', and more' : ''
-      } — we connect ${crm.name} so leads, status updates, and handoffs stop living in copy-paste.`
+      } — we connect ${productLink(crm.name)} so leads, status updates, and handoffs stop living in copy-paste.`
       pages.set(routePath, {
         title: pageTitle(`Connect ${crm.name} to ${vertical.title}`),
         description: `Connect ${crm.name} to the ${vertical.name} software small businesses already run — fixed monthly price, no in-house dev team required.`,
         h1: `Connect ${crm.name} to ${vertical.title}.`,
-        lead,
+        leadHtml,
         breadcrumbs: [
           { name: 'Home', path: '/' },
           { name: 'Connect tools', path: '/connect' },
@@ -255,7 +267,7 @@ function buildBodySnippet(meta) {
         .map((c) => `<a href="${esc(c.path)}">${esc(c.name)}</a>`)
         .join(' / ')}</p></nav>`
     : ''
-  return `${crumbs}<h1>${esc(meta.h1)}</h1><p>${esc(meta.lead || meta.description)}</p>`
+  return `${crumbs}<h1>${meta.h1Html || esc(meta.h1)}</h1><p>${meta.leadHtml || esc(meta.lead || meta.description)}</p>`
 }
 
 function replaceOrInsertHead(html, headTags) {
@@ -338,4 +350,3 @@ function main() {
 }
 
 main()
-

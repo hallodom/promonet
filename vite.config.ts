@@ -10,9 +10,9 @@ function contactApiPlugin(env: Record<string, string>): Plugin {
   return {
     name: 'contact-api',
     configureServer(server) {
-      process.env.RESEND_API_KEY ||= env.RESEND_API_KEY
-      process.env.RESEND_FROM ||= env.RESEND_FROM
-      process.env.CONTACT_TO ||= env.CONTACT_TO
+      if (env.RESEND_API_KEY) process.env.RESEND_API_KEY = env.RESEND_API_KEY
+      if (env.RESEND_FROM) process.env.RESEND_FROM = env.RESEND_FROM
+      if (env.CONTACT_TO) process.env.CONTACT_TO = env.CONTACT_TO
 
       server.middlewares.use(async (req, res, next) => {
         if (!req.url?.startsWith('/api/contact')) return next()

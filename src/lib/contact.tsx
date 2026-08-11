@@ -7,7 +7,7 @@ import {
   type ReactNode,
 } from 'react'
 
-export const CONTACT_EMAIL = 'hello@promonetconsulting.com'
+export const CONTACT_EMAIL = 'eddy@promonetconsulting.com'
 
 type ContactContextValue = {
   open: boolean
@@ -44,3 +44,4 @@ export function useContact() {
   if (!ctx) throw new Error('useContact must be used within ContactProvider')
   return ctx
 }
+

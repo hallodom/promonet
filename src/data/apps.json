@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-02T15:40:57.499Z",
-  "count": 1365,
+  "generatedAt": "2026-08-11T00:19:21.904Z",
+  "count": 1293,
   "source": "ComparEdge CC-BY-4.0 + Promonet niche seeds + matrix tools",
   "apps": [
     {
@@ -8,6 +8,14 @@
       "slug": "10000ft",
       "category": "Agency",
       "aliases": []
+    },
+    {
+      "name": "10ninety",
+      "slug": "10ninety",
+      "category": "Real Estate",
+      "aliases": [
+        "10 Ninety"
+      ]
     },
     {
       "name": "10to8",
@@ -19,7 +27,8 @@
       "name": "10Web",
       "slug": "10web",
       "category": "website-builders",
-      "aliases": []
+      "aliases": [],
+      "website": "https://10web.io"
     },
     {
       "name": "15Five",
@@ -31,33 +40,15 @@
       "name": "17hats",
       "slug": "17hats",
       "category": "Creative",
-      "aliases": []
-    },
-    {
-      "name": "1inch",
-      "slug": "1inch",
-      "category": "defi-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.17hats.com/"
     },
     {
       "name": "1Password",
       "slug": "1password",
       "category": "password-managers",
-      "aliases": []
-    },
-    {
-      "name": "1Password Business",
-      "slug": "1password-business",
-      "category": "iam",
-      "aliases": [
-        "1password enterprise"
-      ]
-    },
-    {
-      "name": "3Commas",
-      "slug": "3commas",
-      "category": "crypto-trading-bots",
-      "aliases": []
+      "aliases": [],
+      "website": "https://1password.com"
     },
     {
       "name": "6sense",
@@ -99,7 +90,8 @@
       "name": "ActiveCampaign",
       "slug": "activecampaign",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.activecampaign.com"
     },
     {
       "name": "Acuity Scheduling",
@@ -113,7 +105,8 @@
       "name": "Acumatica",
       "slug": "acumatica",
       "category": "erp",
-      "aliases": []
+      "aliases": [],
+      "website": "https://acumatica.com"
     },
     {
       "name": "Adalo",
@@ -137,25 +130,29 @@
       "name": "Adobe Firefly",
       "slug": "adobe-firefly",
       "category": "ai-image",
-      "aliases": []
+      "aliases": [],
+      "website": "https://firefly.adobe.com"
     },
     {
       "name": "Adobe Illustrator",
       "slug": "adobe-illustrator",
       "category": "design-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.adobe.com/products/illustrator.html"
     },
     {
       "name": "Adobe Photoshop",
       "slug": "adobe-photoshop",
       "category": "design-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.adobe.com/products/photoshop.html"
     },
     {
       "name": "Adobe Podcast",
       "slug": "adobe-podcast",
       "category": "ai-voice",
-      "aliases": []
+      "aliases": [],
+      "website": "https://podcast.adobe.com"
     },
     {
       "name": "Adobe Sign",
@@ -178,6 +175,15 @@
       "aliases": []
     },
     {
+      "name": "Adviser IQ",
+      "slug": "adviser-iq",
+      "category": "Mortgage",
+      "aliases": [
+        "AdviserIQ"
+      ],
+      "website": "https://www.adviseriq.co.uk/"
+    },
+    {
       "name": "Adyen",
       "slug": "adyen",
       "category": "Payments",
@@ -187,7 +193,8 @@
       "name": "Affinity Designer",
       "slug": "affinity-designer",
       "category": "design-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://affinity.serif.com/en-us/designer/"
     },
     {
       "name": "Affirm",
@@ -247,7 +254,8 @@
       "name": "Ahrefs",
       "slug": "ahrefs",
       "category": "seo-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://ahrefs.com"
     },
     {
       "name": "AI21 Studio",
@@ -255,13 +263,15 @@
       "category": "ai-writing",
       "aliases": [
         "ai21 labs"
-      ]
+      ],
+      "website": "https://studio.ai21.com"
     },
     {
       "name": "Aider",
       "slug": "aider",
       "category": "ai-coding",
-      "aliases": []
+      "aliases": [],
+      "website": "https://aider.chat"
     },
     {
       "name": "Airbase",
@@ -285,7 +295,8 @@
       "name": "Airtable",
       "slug": "airtable",
       "category": "project-management",
-      "aliases": []
+      "aliases": [],
+      "website": "https://airtable.com"
     },
     {
       "name": "Akaunting",
@@ -293,13 +304,15 @@
       "category": "accounting",
       "aliases": [
         "money manager"
-      ]
+      ],
+      "website": "https://akaunting.com"
     },
     {
       "name": "Alation",
       "slug": "alation",
       "category": "data-observability",
-      "aliases": []
+      "aliases": [],
+      "website": "https://alation.com"
     },
     {
       "name": "Albato",
@@ -320,22 +333,28 @@
       "aliases": []
     },
     {
-      "name": "Altrady",
-      "slug": "altrady",
-      "category": "crypto-trading-bots",
-      "aliases": []
+      "name": "Alto",
+      "slug": "alto",
+      "category": "Real Estate",
+      "aliases": [
+        "Alto Software",
+        "Alto CRM"
+      ],
+      "website": "https://www.altosoftware.co.uk/"
     },
     {
       "name": "Amazon Nova",
       "slug": "amazon-nova",
       "category": "llm",
-      "aliases": []
+      "aliases": [],
+      "website": "https://aws.amazon.com/ai/nova"
     },
     {
       "name": "Amazon Q Developer",
       "slug": "amazon-q-developer",
       "category": "ai-coding",
-      "aliases": []
+      "aliases": [],
+      "website": "https://aws.amazon.com/q/developer"
     },
     {
       "name": "Amazon S3",
@@ -357,13 +376,15 @@
       "category": "cloud-hosting",
       "aliases": [
         "aws"
-      ]
+      ],
+      "website": "https://aws.amazon.com"
     },
     {
       "name": "Amplitude",
       "slug": "amplitude",
       "category": "analytics",
-      "aliases": []
+      "aliases": [],
+      "website": "https://amplitude.com"
     },
     {
       "name": "Amplitude Experiment",
@@ -395,7 +416,8 @@
       "category": "compliance",
       "aliases": [
         "anecdotes ai"
-      ]
+      ],
+      "website": "https://anecdotes.ai"
     },
     {
       "name": "Angi Ads",
@@ -411,7 +433,8 @@
       "category": "llm",
       "aliases": [
         "claude api"
-      ]
+      ],
+      "website": "https://anthropic.com/api"
     },
     {
       "name": "Apartment Therapy PMS",
@@ -468,12 +491,6 @@
       "aliases": []
     },
     {
-      "name": "Aqua Security",
-      "slug": "aqua-security",
-      "category": "cloud-security",
-      "aliases": []
-    },
-    {
       "name": "Arborgold",
       "slug": "arborgold",
       "category": "Home Services",
@@ -501,7 +518,8 @@
       "name": "Arthur AI",
       "slug": "arthur-ai",
       "category": "ai-security",
-      "aliases": []
+      "aliases": [],
+      "website": "https://arthur.ai"
     },
     {
       "name": "AS400",
@@ -513,7 +531,8 @@
       "name": "Asana",
       "slug": "asana",
       "category": "project-management",
-      "aliases": []
+      "aliases": [],
+      "website": "https://asana.com/"
     },
     {
       "name": "Ashby",
@@ -539,7 +558,8 @@
       "name": "Atlan",
       "slug": "atlan",
       "category": "data-observability",
-      "aliases": []
+      "aliases": [],
+      "website": "https://atlan.com"
     },
     {
       "name": "Attentive",
@@ -550,8 +570,9 @@
     {
       "name": "Attio",
       "slug": "attio",
-      "category": "crm",
-      "aliases": []
+      "category": "CRM",
+      "aliases": [],
+      "website": "https://attio.com"
     },
     {
       "name": "ATTOM",
@@ -563,7 +584,8 @@
       "name": "Augment Code",
       "slug": "augment-code",
       "category": "ai-coding",
-      "aliases": []
+      "aliases": [],
+      "website": "https://augmentcode.com"
     },
     {
       "name": "Auth0",
@@ -593,7 +615,8 @@
       "name": "AutoGPT",
       "slug": "autogpt",
       "category": "ai-agents",
-      "aliases": []
+      "aliases": [],
+      "website": "https://agpt.co"
     },
     {
       "name": "Avail",
@@ -617,13 +640,15 @@
       "name": "Avoma",
       "slug": "avoma",
       "category": "ai-meeting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://avoma.com"
     },
     {
       "name": "AWeber",
       "slug": "aweber",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.aweber.com"
     },
     {
       "name": "AWS AppFlow",
@@ -659,13 +684,8 @@
       "name": "BambooHR",
       "slug": "bamboohr",
       "category": "hr-tools",
-      "aliases": []
-    },
-    {
-      "name": "Banana Gun",
-      "slug": "banana-gun",
-      "category": "crypto-telegram-bots",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.bamboohr.com/"
     },
     {
       "name": "Bandwidth",
@@ -683,7 +703,8 @@
       "name": "Basecamp",
       "slug": "basecamp",
       "category": "project-management",
-      "aliases": []
+      "aliases": [],
+      "website": "https://basecamp.com"
     },
     {
       "name": "Beautiful.ai",
@@ -691,13 +712,15 @@
       "category": "ai-productivity",
       "aliases": [
         "beautiful ai"
-      ]
+      ],
+      "website": "https://beautiful.ai"
     },
     {
       "name": "beehiiv",
       "slug": "beehiiv",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.beehiiv.com"
     },
     {
       "name": "Bench",
@@ -705,7 +728,8 @@
       "category": "accounting",
       "aliases": [
         "Bench Accounting"
-      ]
+      ],
+      "website": "https://bench.co"
     },
     {
       "name": "Benchmark Email",
@@ -726,12 +750,6 @@
       "aliases": []
     },
     {
-      "name": "Beyond Identity",
-      "slug": "beyond-identity",
-      "category": "iam",
-      "aliases": []
-    },
-    {
       "name": "Big Cartel",
       "slug": "big-cartel",
       "category": "Ecommerce",
@@ -747,13 +765,15 @@
       "name": "Bigeye",
       "slug": "bigeye",
       "category": "data-observability",
-      "aliases": []
+      "aliases": [],
+      "website": "https://bigeye.com"
     },
     {
       "name": "BigID",
       "slug": "bigid",
       "category": "compliance",
-      "aliases": []
+      "aliases": [],
+      "website": "https://bigid.com"
     },
     {
       "name": "BigQuery",
@@ -784,34 +804,17 @@
       "aliases": []
     },
     {
-      "name": "Binance",
-      "slug": "binance",
-      "category": "crypto-exchanges",
-      "aliases": []
-    },
-    {
-      "name": "Bitget",
-      "slug": "bitget",
-      "category": "crypto-exchanges",
-      "aliases": []
-    },
-    {
       "name": "Bitrix24",
       "slug": "bitrix24",
       "category": "CRM",
       "aliases": []
     },
     {
-      "name": "Bitsgap",
-      "slug": "bitsgap",
-      "category": "crypto-trading-bots",
-      "aliases": []
-    },
-    {
       "name": "Bitwarden",
       "slug": "bitwarden",
       "category": "password-managers",
-      "aliases": []
+      "aliases": [],
+      "website": "https://bitwarden.com"
     },
     {
       "name": "Black Knight",
@@ -838,18 +841,6 @@
       "aliases": []
     },
     {
-      "name": "Blockpit",
-      "slug": "blockpit",
-      "category": "crypto-tax",
-      "aliases": []
-    },
-    {
-      "name": "Bloom",
-      "slug": "bloom",
-      "category": "crypto-telegram-bots",
-      "aliases": []
-    },
-    {
       "name": "Bloomerang",
       "slug": "bloomerang",
       "category": "Nonprofit",
@@ -865,7 +856,8 @@
       "name": "Bluehost",
       "slug": "bluehost",
       "category": "cloud-hosting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.bluehost.com"
     },
     {
       "name": "Bluevine",
@@ -903,19 +895,15 @@
       "category": "ai-coding",
       "aliases": [
         "bolt new"
-      ]
-    },
-    {
-      "name": "BONKbot",
-      "slug": "bonkbot",
-      "category": "crypto-telegram-bots",
-      "aliases": []
+      ],
+      "website": "https://bolt.new"
     },
     {
       "name": "Bonsai",
       "slug": "bonsai",
       "category": "accounting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.hellobonsai.com/"
     },
     {
       "name": "Book Like A Boss",
@@ -953,7 +941,8 @@
       "category": "ai-assistants",
       "aliases": [
         "botpress io"
-      ]
+      ],
+      "website": "https://botpress.com"
     },
     {
       "name": "Boulevard",
@@ -993,7 +982,8 @@
       "category": "email-marketing",
       "aliases": [
         "Sendinblue"
-      ]
+      ],
+      "website": "https://www.brevo.com"
     },
     {
       "name": "Brex",
@@ -1023,7 +1013,8 @@
       "name": "Browser Use",
       "slug": "browser-use",
       "category": "ai-agents",
-      "aliases": []
+      "aliases": [],
+      "website": "https://browser-use.com"
     },
     {
       "name": "Bubble",
@@ -1031,7 +1022,8 @@
       "category": "website-builders",
       "aliases": [
         "bubble io"
-      ]
+      ],
+      "website": "https://bubble.io"
     },
     {
       "name": "Budibase",
@@ -1073,7 +1065,8 @@
       "name": "BuildShip",
       "slug": "buildship",
       "category": "website-builders",
-      "aliases": []
+      "aliases": [],
+      "website": "https://buildship.com"
     },
     {
       "name": "Bullhorn",
@@ -1082,22 +1075,11 @@
       "aliases": []
     },
     {
-      "name": "BullX",
-      "slug": "bullx",
-      "category": "crypto-telegram-bots",
-      "aliases": []
-    },
-    {
       "name": "Buttondown",
       "slug": "buttondown",
       "category": "email-marketing",
-      "aliases": []
-    },
-    {
-      "name": "Bybit",
-      "slug": "bybit",
-      "category": "crypto-exchanges",
-      "aliases": []
+      "aliases": [],
+      "website": "https://buttondown.com"
     },
     {
       "name": "BytePro",
@@ -1119,13 +1101,15 @@
       "category": "video-conferencing",
       "aliases": [
         "cal video"
-      ]
+      ],
+      "website": "https://cal.com"
     },
     {
       "name": "Calendly",
       "slug": "calendly",
       "category": "Scheduling",
-      "aliases": []
+      "aliases": [],
+      "website": "https://calendly.com/"
     },
     {
       "name": "Calendly Teams",
@@ -1151,19 +1135,22 @@
       "name": "Campaign Monitor",
       "slug": "campaign-monitor",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.campaignmonitor.com"
     },
     {
       "name": "Canva",
       "slug": "canva",
       "category": "design-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.canva.com"
     },
     {
       "name": "Canva AI",
       "slug": "canva-ai",
       "category": "ai-image",
-      "aliases": []
+      "aliases": [],
+      "website": "https://canva.com/ai-image-generator"
     },
     {
       "name": "Canvas LMS",
@@ -1181,7 +1168,8 @@
       "name": "CapCut AI",
       "slug": "capcut-ai",
       "category": "ai-video",
-      "aliases": []
+      "aliases": [],
+      "website": "https://capcut.com"
     },
     {
       "name": "Capsule",
@@ -1192,11 +1180,12 @@
     {
       "name": "Capsule CRM",
       "slug": "capsule-crm",
-      "category": "crm",
+      "category": "CRM",
       "aliases": [
         "capsule",
         "Capsule"
-      ]
+      ],
+      "website": "https://capsulecrm.com/"
     },
     {
       "name": "CapsuleHQ",
@@ -1226,7 +1215,8 @@
       "name": "Carrd",
       "slug": "carrd",
       "category": "website-builders",
-      "aliases": []
+      "aliases": [],
+      "website": "https://carrd.co"
     },
     {
       "name": "Cartesia",
@@ -1234,7 +1224,8 @@
       "category": "ai-voice",
       "aliases": [
         "cartesia ai"
-      ]
+      ],
+      "website": "https://cartesia.ai"
     },
     {
       "name": "Case Status",
@@ -1264,7 +1255,8 @@
       "name": "CAST AI",
       "slug": "cast-ai",
       "category": "finops",
-      "aliases": []
+      "aliases": [],
+      "website": "https://cast.ai"
     },
     {
       "name": "CDK Global",
@@ -1318,13 +1310,15 @@
       "category": "ai-assistants",
       "aliases": [
         "character ai"
-      ]
+      ],
+      "website": "https://character.ai"
     },
     {
       "name": "Chargebee",
       "slug": "chargebee",
       "category": "payments",
-      "aliases": []
+      "aliases": [],
+      "website": "https://chargebee.com"
     },
     {
       "name": "Chatbase",
@@ -1332,13 +1326,15 @@
       "category": "ai-assistants",
       "aliases": [
         "chatbase io"
-      ]
+      ],
+      "website": "https://chatbase.co"
     },
     {
       "name": "ChatGPT",
       "slug": "chatgpt",
       "category": "llm",
-      "aliases": []
+      "aliases": [],
+      "website": "https://chatgpt.com"
     },
     {
       "name": "Chili Piper",
@@ -1364,7 +1360,8 @@
       "name": "Chroma",
       "slug": "chroma",
       "category": "vector-databases",
-      "aliases": []
+      "aliases": [],
+      "website": "https://trychroma.com"
     },
     {
       "name": "Cin7",
@@ -1384,7 +1381,8 @@
       "category": "endpoint-security",
       "aliases": [
         "cisco secure"
-      ]
+      ],
+      "website": "https://cisco.com/secure"
     },
     {
       "name": "Clari",
@@ -1402,7 +1400,8 @@
       "name": "Claude",
       "slug": "claude",
       "category": "llm",
-      "aliases": []
+      "aliases": [],
+      "website": "https://claude.ai"
     },
     {
       "name": "Clay",
@@ -1435,28 +1434,25 @@
       "aliases": []
     },
     {
-      "name": "Clerk",
-      "slug": "clerk",
-      "category": "iam",
-      "aliases": []
-    },
-    {
       "name": "ClickFunnels",
       "slug": "clickfunnels",
       "category": "website-builders",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.clickfunnels.com"
     },
     {
       "name": "ClickHouse",
       "slug": "clickhouse",
       "category": "databases",
-      "aliases": []
+      "aliases": [],
+      "website": "https://clickhouse.com"
     },
     {
       "name": "ClickUp",
       "slug": "clickup",
       "category": "project-management",
-      "aliases": []
+      "aliases": [],
+      "website": "https://clickup.com/"
     },
     {
       "name": "Cline",
@@ -1464,7 +1460,8 @@
       "category": "ai-coding",
       "aliases": [
         "cline ai"
-      ]
+      ],
+      "website": "https://cline.bot"
     },
     {
       "name": "Clio",
@@ -1473,7 +1470,8 @@
       "aliases": [
         "Clio Manage",
         "Clio Grow"
-      ]
+      ],
+      "website": "https://www.clio.com/"
     },
     {
       "name": "Clockify",
@@ -1484,10 +1482,11 @@
     {
       "name": "Close",
       "slug": "close",
-      "category": "crm",
+      "category": "CRM",
       "aliases": [
         "Close.com"
-      ]
+      ],
+      "website": "https://close.com"
     },
     {
       "name": "ClosingCorp",
@@ -1525,7 +1524,8 @@
       "category": "finops",
       "aliases": [
         "cloudhealth"
-      ]
+      ],
+      "website": "https://cloudhealth.vmware.com"
     },
     {
       "name": "CloudSpot",
@@ -1537,13 +1537,15 @@
       "name": "Cloudways",
       "slug": "cloudways",
       "category": "cloud-hosting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.cloudways.com"
     },
     {
       "name": "CloudZero",
       "slug": "cloudzero",
       "category": "finops",
-      "aliases": []
+      "aliases": [],
+      "website": "https://cloudzero.com"
     },
     {
       "name": "Clover",
@@ -1573,7 +1575,8 @@
       "name": "CockroachDB",
       "slug": "cockroachdb",
       "category": "databases",
-      "aliases": []
+      "aliases": [],
+      "website": "https://cockroachlabs.com"
     },
     {
       "name": "CoConstruct",
@@ -1597,69 +1600,29 @@
       "name": "Coda",
       "slug": "coda",
       "category": "project-management",
-      "aliases": []
+      "aliases": [],
+      "website": "https://coda.io"
     },
     {
       "name": "Codeium",
       "slug": "codeium",
       "category": "ai-coding",
-      "aliases": []
+      "aliases": [],
+      "website": "https://windsurf.com"
     },
     {
       "name": "Cohere",
       "slug": "cohere",
       "category": "llm",
-      "aliases": []
-    },
-    {
-      "name": "Coinbase",
-      "slug": "coinbase",
-      "category": "crypto-exchanges",
-      "aliases": []
-    },
-    {
-      "name": "Coinbase Wallet",
-      "slug": "coinbase-wallet",
-      "category": "crypto-wallets",
-      "aliases": []
-    },
-    {
-      "name": "CoinGecko",
-      "slug": "coingecko",
-      "category": "crypto-portfolio-trackers",
-      "aliases": [
-        "coingecko portfolio"
-      ]
-    },
-    {
-      "name": "CoinGlass",
-      "slug": "coinglass",
-      "category": "crypto-analytics",
-      "aliases": []
-    },
-    {
-      "name": "CoinLedger",
-      "slug": "coinledger",
-      "category": "crypto-tax",
-      "aliases": []
-    },
-    {
-      "name": "CoinStats",
-      "slug": "coinstats",
-      "category": "crypto-portfolio-trackers",
-      "aliases": []
-    },
-    {
-      "name": "CoinTracker",
-      "slug": "cointracker",
-      "category": "crypto-tax",
-      "aliases": []
+      "aliases": [],
+      "website": "https://cohere.com"
     },
     {
       "name": "Collibra",
       "slug": "collibra",
       "category": "data-observability",
-      "aliases": []
+      "aliases": [],
+      "website": "https://collibra.com"
     },
     {
       "name": "Comeet",
@@ -1673,7 +1636,8 @@
       "category": "llm",
       "aliases": [
         "command r plus"
-      ]
+      ],
+      "website": "https://cohere.com"
     },
     {
       "name": "Common Room",
@@ -1703,7 +1667,8 @@
       "name": "Composio",
       "slug": "composio",
       "category": "ai-agents",
-      "aliases": []
+      "aliases": [],
+      "website": "https://composio.dev"
     },
     {
       "name": "Concur",
@@ -1723,13 +1688,15 @@
       "category": "ai-productivity",
       "aliases": [
         "consensus ai"
-      ]
+      ],
+      "website": "https://consensus.app"
     },
     {
       "name": "Constant Contact",
       "slug": "constant-contact",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.constantcontact.com"
     },
     {
       "name": "Contentful",
@@ -1754,10 +1721,11 @@
     {
       "name": "Copper",
       "slug": "copper",
-      "category": "crm",
+      "category": "CRM",
       "aliases": [
         "Copper CRM"
-      ]
+      ],
+      "website": "https://www.copper.com/"
     },
     {
       "name": "Copy.ai",
@@ -1765,24 +1733,20 @@
       "category": "ai-writing",
       "aliases": [
         "copy ai"
-      ]
+      ],
+      "website": "https://www.copy.ai"
     },
     {
       "name": "CorelDRAW",
       "slug": "coreldraw",
       "category": "design-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.coreldraw.com"
     },
     {
       "name": "CoreLogic",
       "slug": "corelogic",
       "category": "Real Estate",
-      "aliases": []
-    },
-    {
-      "name": "Cornix",
-      "slug": "cornix",
-      "category": "crypto-trading-bots",
       "aliases": []
     },
     {
@@ -1810,10 +1774,20 @@
       "aliases": []
     },
     {
+      "name": "Credas",
+      "slug": "credas",
+      "category": "Real Estate",
+      "aliases": [
+        "Credas AML"
+      ],
+      "website": "https://www.credas.com/"
+    },
+    {
       "name": "Credo AI",
       "slug": "credo-ai",
       "category": "ai-security",
-      "aliases": []
+      "aliases": [],
+      "website": "https://credo.ai"
     },
     {
       "name": "Crello",
@@ -1825,7 +1799,8 @@
       "name": "CrewAI",
       "slug": "crewai",
       "category": "ai-agents",
-      "aliases": []
+      "aliases": [],
+      "website": "https://crewai.com"
     },
     {
       "name": "Crisp",
@@ -1833,7 +1808,8 @@
       "category": "customer-support",
       "aliases": [
         "crisp chat"
-      ]
+      ],
+      "website": "https://crisp.chat"
     },
     {
       "name": "CrowdStrike",
@@ -1847,26 +1823,13 @@
       "category": "endpoint-security",
       "aliases": [
         "crowdstrike"
-      ]
-    },
-    {
-      "name": "CrowdStrike Falcon Cloud",
-      "slug": "crowdstrike-falcon-cloud",
-      "category": "cloud-security",
-      "aliases": [
-        "crowdstrike falcon"
-      ]
+      ],
+      "website": "https://crowdstrike.com"
     },
     {
       "name": "Crunch",
       "slug": "crunch",
       "category": "Accounting",
-      "aliases": []
-    },
-    {
-      "name": "Cryptohopper",
-      "slug": "cryptohopper",
-      "category": "crypto-trading-bots",
       "aliases": []
     },
     {
@@ -1891,7 +1854,8 @@
       "name": "Cursor",
       "slug": "cursor",
       "category": "ai-coding",
-      "aliases": []
+      "aliases": [],
+      "website": "https://cursor.com"
     },
     {
       "name": "Curve Dental",
@@ -1902,16 +1866,17 @@
       ]
     },
     {
-      "name": "Curve Finance",
-      "slug": "curve-finance",
-      "category": "dex",
-      "aliases": []
-    },
-    {
       "name": "Curve Hero",
       "slug": "curve-hero",
       "category": "Dental",
       "aliases": []
+    },
+    {
+      "name": "Curvestone",
+      "slug": "curvestone",
+      "category": "Mortgage",
+      "aliases": [],
+      "website": "https://www.curvestone.io/"
     },
     {
       "name": "Custom API",
@@ -1950,18 +1915,6 @@
       "aliases": []
     },
     {
-      "name": "CyberArk",
-      "slug": "cyberark",
-      "category": "iam",
-      "aliases": []
-    },
-    {
-      "name": "CyberGhost",
-      "slug": "cyberghost",
-      "category": "vpn",
-      "aliases": []
-    },
-    {
       "name": "Cyclr",
       "slug": "cyclr",
       "category": "Automation",
@@ -1971,7 +1924,8 @@
       "name": "Cynet",
       "slug": "cynet",
       "category": "endpoint-security",
-      "aliases": []
+      "aliases": [],
+      "website": "https://cynet.com"
     },
     {
       "name": "Daily",
@@ -1979,7 +1933,8 @@
       "category": "video-conferencing",
       "aliases": [
         "dailyco"
-      ]
+      ],
+      "website": "https://www.daily.co"
     },
     {
       "name": "DALL-E 3",
@@ -1987,13 +1942,15 @@
       "category": "ai-image",
       "aliases": [
         "dalle"
-      ]
+      ],
+      "website": "https://openai.com/dall-e-3"
     },
     {
       "name": "Dashlane",
       "slug": "dashlane",
       "category": "password-managers",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.dashlane.com"
     },
     {
       "name": "DashThis",
@@ -2005,7 +1962,8 @@
       "name": "Databricks",
       "slug": "databricks",
       "category": "databases",
-      "aliases": []
+      "aliases": [],
+      "website": "https://databricks.com"
     },
     {
       "name": "Databricks AI Search",
@@ -2013,7 +1971,8 @@
       "category": "vector-databases",
       "aliases": [
         "databricks vector"
-      ]
+      ],
+      "website": "https://databricks.com"
     },
     {
       "name": "Datadog",
@@ -2025,7 +1984,8 @@
       "name": "DataRobot",
       "slug": "datarobot",
       "category": "ai-productivity",
-      "aliases": []
+      "aliases": [],
+      "website": "https://datarobot.com"
     },
     {
       "name": "DaySmart Vet",
@@ -2043,7 +2003,8 @@
       "name": "dbt Cloud",
       "slug": "dbt-cloud",
       "category": "data-observability",
-      "aliases": []
+      "aliases": [],
+      "website": "https://getdbt.com"
     },
     {
       "name": "DealerSocket",
@@ -2060,36 +2021,18 @@
       ]
     },
     {
-      "name": "DeBank",
-      "slug": "debank",
-      "category": "crypto-portfolio-trackers",
-      "aliases": []
-    },
-    {
       "name": "Deel",
       "slug": "deel",
       "category": "hr-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://deel.com"
     },
     {
       "name": "DeepSeek",
       "slug": "deepseek",
       "category": "llm",
-      "aliases": []
-    },
-    {
-      "name": "DefiLlama",
-      "slug": "defillama",
-      "category": "defi-tools",
-      "aliases": []
-    },
-    {
-      "name": "Delta",
-      "slug": "delta",
-      "category": "crypto-portfolio-trackers",
-      "aliases": [
-        "delta app"
-      ]
+      "aliases": [],
+      "website": "https://www.deepseek.com"
     },
     {
       "name": "Demandbase",
@@ -2107,7 +2050,8 @@
       "name": "Demio",
       "slug": "demio",
       "category": "video-conferencing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://demio.com"
     },
     {
       "name": "Dental Intelligence",
@@ -2160,16 +2104,11 @@
       "aliases": []
     },
     {
-      "name": "Descope",
-      "slug": "descope",
-      "category": "iam",
-      "aliases": []
-    },
-    {
       "name": "Descript",
       "slug": "descript",
       "category": "ai-video",
-      "aliases": []
+      "aliases": [],
+      "website": "https://descript.com"
     },
     {
       "name": "Devin",
@@ -2177,13 +2116,23 @@
       "category": "ai-agents",
       "aliases": [
         "devin ai"
-      ]
+      ],
+      "website": "https://devin.ai"
     },
     {
       "name": "Dext",
       "slug": "dext",
       "category": "Accounting",
       "aliases": []
+    },
+    {
+      "name": "Dezrez",
+      "slug": "dezrez",
+      "category": "Real Estate",
+      "aliases": [
+        "AgencyPilot"
+      ],
+      "website": "https://www.dezrez.com/"
     },
     {
       "name": "Diagnocat",
@@ -2195,7 +2144,8 @@
       "name": "Dialpad",
       "slug": "dialpad",
       "category": "video-conferencing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.dialpad.com"
     },
     {
       "name": "Dify",
@@ -2203,13 +2153,15 @@
       "category": "ai-agents",
       "aliases": [
         "dify ai"
-      ]
+      ],
+      "website": "https://dify.ai"
     },
     {
       "name": "DigitalOcean",
       "slug": "digitalocean",
       "category": "cloud-hosting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.digitalocean.com"
     },
     {
       "name": "Disco",
@@ -2299,7 +2251,8 @@
       "name": "Drata",
       "slug": "drata",
       "category": "compliance",
-      "aliases": []
+      "aliases": [],
+      "website": "https://drata.com"
     },
     {
       "name": "DrChrono",
@@ -2323,7 +2276,8 @@
       "name": "Drip",
       "slug": "drip",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.drip.com"
     },
     {
       "name": "Dropbox",
@@ -2341,7 +2295,8 @@
       "name": "Dubsado",
       "slug": "dubsado",
       "category": "Creative",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.dubsado.com/"
     },
     {
       "name": "Duck Creek",
@@ -2353,19 +2308,15 @@
       "name": "DuckDB",
       "slug": "duckdb",
       "category": "databases",
-      "aliases": []
+      "aliases": [],
+      "website": "https://duckdb.org"
     },
     {
       "name": "Duda",
       "slug": "duda",
       "category": "website-builders",
-      "aliases": []
-    },
-    {
-      "name": "Dune Analytics",
-      "slug": "dune-analytics",
-      "category": "crypto-analytics",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.duda.co"
     },
     {
       "name": "Duo",
@@ -2374,12 +2325,6 @@
       "aliases": [
         "Duo Security"
       ]
-    },
-    {
-      "name": "dYdX",
-      "slug": "dydx",
-      "category": "dex",
-      "aliases": []
     },
     {
       "name": "E2 Shop System",
@@ -2425,19 +2370,22 @@
       "category": "vector-databases",
       "aliases": [
         "elasticsearch vector"
-      ]
+      ],
+      "website": "https://elastic.co"
     },
     {
       "name": "ElevenLabs",
       "slug": "elevenlabs",
       "category": "ai-voice",
-      "aliases": []
+      "aliases": [],
+      "website": "https://elevenlabs.io"
     },
     {
       "name": "Elicit",
       "slug": "elicit",
       "category": "ai-productivity",
-      "aliases": []
+      "aliases": [],
+      "website": "https://elicit.com"
     },
     {
       "name": "Ellie Mae Compass",
@@ -2502,7 +2450,8 @@
       "name": "Epicor",
       "slug": "epicor",
       "category": "erp",
-      "aliases": []
+      "aliases": [],
+      "website": "https://epicor.com"
     },
     {
       "name": "Etsy",
@@ -2550,14 +2499,6 @@
       ]
     },
     {
-      "name": "Exodus",
-      "slug": "exodus",
-      "category": "crypto-wallets",
-      "aliases": [
-        "exodus wallet"
-      ]
-    },
-    {
       "name": "eXp Collaboration Hub",
       "slug": "exp-collaboration-hub",
       "category": "Real Estate",
@@ -2570,16 +2511,11 @@
       "aliases": []
     },
     {
-      "name": "ExpressVPN",
-      "slug": "expressvpn",
-      "category": "vpn",
-      "aliases": []
-    },
-    {
       "name": "ExtraHop",
       "slug": "extrahop",
       "category": "endpoint-security",
-      "aliases": []
+      "aliases": [],
+      "website": "https://extrahop.com"
     },
     {
       "name": "EZLynx",
@@ -2617,13 +2553,15 @@
       "category": "ai-meeting",
       "aliases": [
         "fathom meeting"
-      ]
+      ],
+      "website": "https://fathom.ai"
     },
     {
       "name": "Fathom Analytics",
       "slug": "fathom-analytics",
       "category": "analytics",
-      "aliases": []
+      "aliases": [],
+      "website": "https://usefathom.com"
     },
     {
       "name": "Fergus",
@@ -2671,7 +2609,8 @@
       "name": "Figma",
       "slug": "figma",
       "category": "design-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.figma.com"
     },
     {
       "name": "FileMaker",
@@ -2703,7 +2642,8 @@
       "category": "ai-productivity",
       "aliases": [
         "fireflies ai"
-      ]
+      ],
+      "website": "https://fireflies.ai"
     },
     {
       "name": "Fishbowl",
@@ -2711,19 +2651,22 @@
       "category": "Manufacturing",
       "aliases": [
         "Fishbowl Inventory"
-      ]
+      ],
+      "website": "https://www.fishbowlinventory.com/"
     },
     {
       "name": "Fivetran",
       "slug": "fivetran",
       "category": "data-observability",
-      "aliases": []
+      "aliases": [],
+      "website": "https://fivetran.com"
     },
     {
       "name": "Flexera",
       "slug": "flexera",
       "category": "finops",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.flexera.com"
     },
     {
       "name": "Float",
@@ -2741,7 +2684,8 @@
       "name": "Flodesk",
       "slug": "flodesk",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://flodesk.com"
     },
     {
       "name": "Floify",
@@ -2753,13 +2697,15 @@
       "name": "Flowise",
       "slug": "flowise",
       "category": "ai-agents",
-      "aliases": []
+      "aliases": [],
+      "website": "https://flowiseai.com"
     },
     {
       "name": "FlutterFlow",
       "slug": "flutterflow",
       "category": "website-builders",
-      "aliases": []
+      "aliases": [],
+      "website": "https://flutterflow.io"
     },
     {
       "name": "Flux",
@@ -2767,7 +2713,8 @@
       "category": "ai-image",
       "aliases": [
         "flux ai"
-      ]
+      ],
+      "website": "https://blackforestlabs.ai"
     },
     {
       "name": "Fly.io",
@@ -2775,13 +2722,15 @@
       "category": "cloud-hosting",
       "aliases": [
         "flyio"
-      ]
+      ],
+      "website": "https://fly.io"
     },
     {
       "name": "Folk",
       "slug": "folk",
-      "category": "crm",
-      "aliases": []
+      "category": "CRM",
+      "aliases": [],
+      "website": "https://www.folk.app"
     },
     {
       "name": "Follow Up Boss",
@@ -2801,7 +2750,8 @@
       "name": "Fortinet",
       "slug": "fortinet",
       "category": "endpoint-security",
-      "aliases": []
+      "aliases": [],
+      "website": "https://fortinet.com"
     },
     {
       "name": "Framer",
@@ -2809,13 +2759,15 @@
       "category": "website-builders",
       "aliases": [
         "framer design"
-      ]
+      ],
+      "website": "https://www.framer.com"
     },
     {
       "name": "FreeAgent",
       "slug": "freeagent",
       "category": "accounting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.freeagent.com"
     },
     {
       "name": "FreeAgent Accounting",
@@ -2833,7 +2785,8 @@
       "name": "FreshBooks",
       "slug": "freshbooks",
       "category": "accounting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.freshbooks.com/"
     },
     {
       "name": "Freshchat",
@@ -2845,13 +2798,15 @@
       "name": "Freshdesk",
       "slug": "freshdesk",
       "category": "customer-support",
-      "aliases": []
+      "aliases": [],
+      "website": "https://freshdesk.com"
     },
     {
       "name": "Freshsales",
       "slug": "freshsales",
-      "category": "crm",
-      "aliases": []
+      "category": "CRM",
+      "aliases": [],
+      "website": "https://www.freshworks.com/crm/sales/"
     },
     {
       "name": "Front",
@@ -2901,15 +2856,8 @@
       "category": "ai-productivity",
       "aliases": [
         "gamma app"
-      ]
-    },
-    {
-      "name": "Gate.io",
-      "slug": "gate-io",
-      "category": "crypto-exchanges",
-      "aliases": [
-        "gate io"
-      ]
+      ],
+      "website": "https://gamma.app"
     },
     {
       "name": "Gem",
@@ -2921,25 +2869,29 @@
       "name": "GetResponse",
       "slug": "getresponse",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.getresponse.com"
     },
     {
       "name": "Ghost",
       "slug": "ghost",
       "category": "website-builders",
-      "aliases": []
+      "aliases": [],
+      "website": "https://ghost.org"
     },
     {
       "name": "GIMP",
       "slug": "gimp",
       "category": "design-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.gimp.org"
     },
     {
       "name": "GitHub Copilot",
       "slug": "github-copilot",
       "category": "ai-coding",
-      "aliases": []
+      "aliases": [],
+      "website": "https://github.com/features/copilot"
     },
     {
       "name": "GitHub Projects",
@@ -2960,18 +2912,13 @@
       "aliases": []
     },
     {
-      "name": "Glassnode",
-      "slug": "glassnode",
-      "category": "crypto-analytics",
-      "aliases": []
-    },
-    {
       "name": "Glide",
       "slug": "glide",
       "category": "website-builders",
       "aliases": [
         "glide apps"
-      ]
+      ],
+      "website": "https://glideapps.com"
     },
     {
       "name": "Global Shop Solutions",
@@ -3021,7 +2968,8 @@
       "name": "Google AI Studio",
       "slug": "google-ai-studio",
       "category": "llm",
-      "aliases": []
+      "aliases": [],
+      "website": "https://aistudio.google.com"
     },
     {
       "name": "Google Analytics",
@@ -3037,7 +2985,8 @@
       "category": "cloud-hosting",
       "aliases": [
         "google cloud"
-      ]
+      ],
+      "website": "https://cloud.google.com"
     },
     {
       "name": "Google Cloud Storage",
@@ -3063,13 +3012,15 @@
       "category": "llm",
       "aliases": [
         "gemini"
-      ]
+      ],
+      "website": "https://gemini.google.com"
     },
     {
       "name": "Google Meet",
       "slug": "google-meet",
       "category": "video-conferencing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://meet.google.com"
     },
     {
       "name": "Google Sheets",
@@ -3097,7 +3048,8 @@
       "name": "Gorgias",
       "slug": "gorgias",
       "category": "customer-support",
-      "aliases": []
+      "aliases": [],
+      "website": "https://gorgias.com"
     },
     {
       "name": "GorillaDesk",
@@ -3115,7 +3067,8 @@
       "name": "GoTo Meeting",
       "slug": "goto-meeting",
       "category": "video-conferencing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.goto.com/meeting"
     },
     {
       "name": "Grafana",
@@ -3127,7 +3080,8 @@
       "name": "Grammarly",
       "slug": "grammarly",
       "category": "ai-writing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.grammarly.com"
     },
     {
       "name": "Granola",
@@ -3135,7 +3089,8 @@
       "category": "ai-meeting",
       "aliases": [
         "granola ai"
-      ]
+      ],
+      "website": "https://granola.ai"
     },
     {
       "name": "Grasshopper",
@@ -3147,7 +3102,8 @@
       "name": "Greenhouse",
       "slug": "greenhouse",
       "category": "Recruitment",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.greenhouse.com/"
     },
     {
       "name": "Greenhouse Harvest",
@@ -3165,13 +3121,15 @@
       "name": "Grok 2",
       "slug": "grok-2",
       "category": "llm",
-      "aliases": []
+      "aliases": [],
+      "website": "https://x.ai/grok"
     },
     {
       "name": "Groq",
       "slug": "groq",
       "category": "llm",
-      "aliases": []
+      "aliases": [],
+      "website": "https://groq.com"
     },
     {
       "name": "GrowPath",
@@ -3201,19 +3159,22 @@
       "name": "Gusto",
       "slug": "gusto",
       "category": "hr-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://gusto.com"
     },
     {
       "name": "Hailuo AI",
       "slug": "hailuo-ai",
       "category": "ai-video",
-      "aliases": []
+      "aliases": [],
+      "website": "https://hailuoai.video"
     },
     {
       "name": "Harvest",
       "slug": "harvest",
       "category": "accounting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.getharvest.com/"
     },
     {
       "name": "Harvest Forecast",
@@ -3237,7 +3198,8 @@
       "name": "Heap",
       "slug": "heap",
       "category": "analytics",
-      "aliases": []
+      "aliases": [],
+      "website": "https://heap.io"
     },
     {
       "name": "Heartland Retail",
@@ -3267,13 +3229,15 @@
       "name": "Help Scout",
       "slug": "help-scout",
       "category": "customer-support",
-      "aliases": []
+      "aliases": [],
+      "website": "https://helpscout.com"
     },
     {
       "name": "Hetzner",
       "slug": "hetzner",
       "category": "cloud-hosting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.hetzner.com"
     },
     {
       "name": "Hex",
@@ -3285,7 +3249,8 @@
       "name": "HeyGen",
       "slug": "heygen",
       "category": "ai-video",
-      "aliases": []
+      "aliases": [],
+      "website": "https://heygen.com"
     },
     {
       "name": "Hibob",
@@ -3297,7 +3262,8 @@
       "name": "HiddenLayer",
       "slug": "hiddenlayer",
       "category": "ai-security",
-      "aliases": []
+      "aliases": [],
+      "website": "https://hiddenlayer.com"
     },
     {
       "name": "HireEZ",
@@ -3309,7 +3275,8 @@
       "name": "Hive",
       "slug": "hive",
       "category": "project-management",
-      "aliases": []
+      "aliases": [],
+      "website": "https://hive.com"
     },
     {
       "name": "HockeyStack",
@@ -3327,7 +3294,8 @@
       "name": "HoneyBook",
       "slug": "honeybook",
       "category": "Creative",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.honeybook.com/"
     },
     {
       "name": "Hootsuite",
@@ -3345,7 +3313,8 @@
       "name": "HostGator",
       "slug": "hostgator",
       "category": "cloud-hosting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.hostgator.com"
     },
     {
       "name": "hosting.com",
@@ -3353,13 +3322,15 @@
       "category": "cloud-hosting",
       "aliases": [
         "hosting com"
-      ]
+      ],
+      "website": "https://www.hosting.com"
     },
     {
       "name": "Hostinger",
       "slug": "hostinger",
       "category": "cloud-hosting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.hostinger.com"
     },
     {
       "name": "Hotjar",
@@ -3394,16 +3365,18 @@
     {
       "name": "HubSpot",
       "slug": "hubspot",
-      "category": "crm",
+      "category": "CRM",
       "aliases": [
         "HubSpot CRM"
-      ]
+      ],
+      "website": "https://www.hubspot.com/"
     },
     {
       "name": "HubSpot CMS",
       "slug": "hubspot-cms",
       "category": "website-builders",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.hubspot.com/products/cms"
     },
     {
       "name": "HubSpot Marketing Hub",
@@ -3415,7 +3388,8 @@
       "name": "Hugging Face",
       "slug": "hugging-face",
       "category": "llm",
-      "aliases": []
+      "aliases": [],
+      "website": "https://huggingface.co"
     },
     {
       "name": "Hunter.io",
@@ -3427,13 +3401,15 @@
       "name": "Huntress",
       "slug": "huntress",
       "category": "endpoint-security",
-      "aliases": []
+      "aliases": [],
+      "website": "https://huntress.com"
     },
     {
       "name": "Hurdlr",
       "slug": "hurdlr",
       "category": "accounting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.hurdlr.com"
     },
     {
       "name": "Hyperise",
@@ -3447,7 +3423,8 @@
       "category": "finops",
       "aliases": [
         "apptio"
-      ]
+      ],
+      "website": "https://apptio.com"
     },
     {
       "name": "IBM Cloudability",
@@ -3455,7 +3432,8 @@
       "category": "finops",
       "aliases": [
         "cloudability"
-      ]
+      ],
+      "website": "https://apptio.com/products/cloudability"
     },
     {
       "name": "IBM Kubecost",
@@ -3463,7 +3441,8 @@
       "category": "finops",
       "aliases": [
         "kubecost"
-      ]
+      ],
+      "website": "https://kubecost.com"
     },
     {
       "name": "IBM Turbonomic",
@@ -3471,7 +3450,8 @@
       "category": "finops",
       "aliases": [
         "turbonomic"
-      ]
+      ],
+      "website": "https://turbonomic.com"
     },
     {
       "name": "ICE Mortgage Technology",
@@ -3495,7 +3475,8 @@
       "name": "Ideogram",
       "slug": "ideogram",
       "category": "ai-image",
-      "aliases": []
+      "aliases": [],
+      "website": "https://ideogram.ai"
     },
     {
       "name": "IFTTT",
@@ -3557,19 +3538,22 @@
       "category": "erp",
       "aliases": [
         "infor"
-      ]
+      ],
+      "website": "https://infor.com"
     },
     {
       "name": "Informatica",
       "slug": "informatica",
       "category": "data-observability",
-      "aliases": []
+      "aliases": [],
+      "website": "https://informatica.com"
     },
     {
       "name": "Infracost",
       "slug": "infracost",
       "category": "finops",
-      "aliases": []
+      "aliases": [],
+      "website": "https://infracost.io"
     },
     {
       "name": "Inside Real Estate",
@@ -3580,8 +3564,9 @@
     {
       "name": "Insightly",
       "slug": "insightly",
-      "category": "crm",
-      "aliases": []
+      "category": "CRM",
+      "aliases": [],
+      "website": "https://www.insightly.com/"
     },
     {
       "name": "Insperity",
@@ -3623,7 +3608,8 @@
       "name": "Intercom Fin",
       "slug": "intercom-fin",
       "category": "ai-assistants",
-      "aliases": []
+      "aliases": [],
+      "website": "https://intercom.com/fin"
     },
     {
       "name": "Internal.io",
@@ -3635,7 +3621,8 @@
       "name": "InVideo AI",
       "slug": "invideo-ai",
       "category": "ai-video",
-      "aliases": []
+      "aliases": [],
+      "website": "https://invideo.io"
     },
     {
       "name": "IRIS Accounting",
@@ -3671,7 +3658,8 @@
       "name": "Jane",
       "slug": "jane",
       "category": "Healthcare Practice Software",
-      "aliases": []
+      "aliases": [],
+      "website": "https://jane.app/"
     },
     {
       "name": "Jane App",
@@ -3685,13 +3673,15 @@
       "name": "Jasper",
       "slug": "jasper",
       "category": "ai-writing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.jasper.ai"
     },
     {
       "name": "JazzHR",
       "slug": "jazzhr",
       "category": "Recruitment",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.jazzhr.com/"
     },
     {
       "name": "JetBrains AI Assistant",
@@ -3699,13 +3689,15 @@
       "category": "ai-coding",
       "aliases": [
         "jetbrains ai"
-      ]
+      ],
+      "website": "https://jetbrains.com/ai"
     },
     {
       "name": "Jira",
       "slug": "jira",
       "category": "project-management",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.atlassian.com/software/jira"
     },
     {
       "name": "Jirav",
@@ -3719,7 +3711,8 @@
       "category": "video-conferencing",
       "aliases": [
         "jitsi"
-      ]
+      ],
+      "website": "https://jitsi.org"
     },
     {
       "name": "Jitterbit",
@@ -3782,18 +3775,11 @@
       "aliases": []
     },
     {
-      "name": "JumpCloud",
-      "slug": "jumpcloud",
-      "category": "iam",
-      "aliases": []
-    },
-    {
-      "name": "Jupiter",
-      "slug": "jupiter",
-      "category": "defi-tools",
-      "aliases": [
-        "jupiter aggregator"
-      ]
+      "name": "Jupix",
+      "slug": "jupix",
+      "category": "Real Estate",
+      "aliases": [],
+      "website": "https://jupix.com/"
     },
     {
       "name": "Juris",
@@ -3849,7 +3835,8 @@
       "name": "Kashoo",
       "slug": "kashoo",
       "category": "accounting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.kashoo.com"
     },
     {
       "name": "Katana",
@@ -3857,15 +3844,17 @@
       "category": "Manufacturing",
       "aliases": [
         "Katana MRP"
-      ]
+      ],
+      "website": "https://katanamrp.com/"
     },
     {
       "name": "Keap",
       "slug": "keap",
-      "category": "crm",
+      "category": "CRM",
       "aliases": [
         "Infusionsoft"
-      ]
+      ],
+      "website": "https://keap.com"
     },
     {
       "name": "Keller Williams Command",
@@ -3877,13 +3866,8 @@
       "name": "Ketch",
       "slug": "ketch",
       "category": "compliance",
-      "aliases": []
-    },
-    {
-      "name": "Keystone",
-      "slug": "keystone",
-      "category": "crypto-wallets",
-      "aliases": []
+      "aliases": [],
+      "website": "https://ketch.com"
     },
     {
       "name": "Kickserv",
@@ -3901,7 +3885,8 @@
       "name": "Kimi",
       "slug": "kimi",
       "category": "llm",
-      "aliases": []
+      "aliases": [],
+      "website": "https://platform.kimi.ai"
     },
     {
       "name": "Kimoby",
@@ -3919,13 +3904,15 @@
       "name": "Kinsta",
       "slug": "kinsta",
       "category": "cloud-hosting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://kinsta.com"
     },
     {
       "name": "Kit",
       "slug": "kit",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://kit.com"
     },
     {
       "name": "Klarna",
@@ -3937,7 +3924,8 @@
       "name": "Klaviyo",
       "slug": "klaviyo",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.klaviyo.com"
     },
     {
       "name": "Klaviyo SMS",
@@ -3949,7 +3937,8 @@
       "name": "Kling AI",
       "slug": "kling-ai",
       "category": "ai-video",
-      "aliases": []
+      "aliases": [],
+      "website": "https://kling.ai"
     },
     {
       "name": "Knowify",
@@ -3958,28 +3947,11 @@
       "aliases": []
     },
     {
-      "name": "Koinly",
-      "slug": "koinly",
-      "category": "crypto-tax",
-      "aliases": []
-    },
-    {
-      "name": "Kraken",
-      "slug": "kraken",
-      "category": "crypto-exchanges",
-      "aliases": []
-    },
-    {
       "name": "Krea AI",
       "slug": "krea-ai",
       "category": "ai-image",
-      "aliases": []
-    },
-    {
-      "name": "KuCoin",
-      "slug": "kucoin",
-      "category": "crypto-exchanges",
-      "aliases": []
+      "aliases": [],
+      "website": "https://krea.ai"
     },
     {
       "name": "kvCORE",
@@ -3988,30 +3960,37 @@
       "aliases": []
     },
     {
-      "name": "Lacework",
-      "slug": "lacework",
-      "category": "cloud-security",
-      "aliases": []
-    },
-    {
       "name": "Lago",
       "slug": "lago",
       "category": "payments",
       "aliases": [
         "lago open source"
-      ]
+      ],
+      "website": "https://getlago.com"
+    },
+    {
+      "name": "Landmark Agent AML",
+      "slug": "landmark-agent-aml",
+      "category": "Real Estate",
+      "aliases": [
+        "Landmark AML",
+        "LandmarkAgent"
+      ],
+      "website": "https://www.landmark.co.uk/products/landmark-agent/"
     },
     {
       "name": "Lasso Security",
       "slug": "lasso-security",
       "category": "ai-security",
-      "aliases": []
+      "aliases": [],
+      "website": "https://lasso.security"
     },
     {
       "name": "LastPass",
       "slug": "lastpass",
       "category": "password-managers",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.lastpass.com"
     },
     {
       "name": "Later",
@@ -4023,7 +4002,8 @@
       "name": "Lattice",
       "slug": "lattice",
       "category": "hr-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://lattice.com"
     },
     {
       "name": "Launch27",
@@ -4070,12 +4050,6 @@
       ]
     },
     {
-      "name": "Ledger",
-      "slug": "ledger",
-      "category": "crypto-wallets",
-      "aliases": []
-    },
-    {
       "name": "Legacy database",
       "slug": "legacy-database",
       "category": "Custom",
@@ -4101,7 +4075,8 @@
       "name": "Lemon Squeezy",
       "slug": "lemon-squeezy",
       "category": "payments",
-      "aliases": []
+      "aliases": [],
+      "website": "https://lemonsqueezy.com"
     },
     {
       "name": "LendingPad",
@@ -4113,13 +4088,15 @@
       "name": "Leonardo AI",
       "slug": "leonardo-ai",
       "category": "ai-image",
-      "aliases": []
+      "aliases": [],
+      "website": "https://leonardo.ai"
     },
     {
       "name": "Less Annoying CRM",
       "slug": "less-annoying-crm",
-      "category": "crm",
-      "aliases": []
+      "category": "CRM",
+      "aliases": [],
+      "website": "https://www.lessannoyingcrm.com"
     },
     {
       "name": "Letta",
@@ -4127,7 +4104,8 @@
       "category": "ai-agents",
       "aliases": [
         "letta ai"
-      ]
+      ],
+      "website": "https://letta.com"
     },
     {
       "name": "Lever",
@@ -4179,13 +4157,15 @@
       "category": "ai-productivity",
       "aliases": [
         "lindy ai"
-      ]
+      ],
+      "website": "https://lindy.ai"
     },
     {
       "name": "Linear",
       "slug": "linear",
       "category": "project-management",
-      "aliases": []
+      "aliases": [],
+      "website": "https://linear.app"
     },
     {
       "name": "LinkedIn Ads",
@@ -4217,7 +4197,8 @@
       "category": "cloud-hosting",
       "aliases": [
         "linode"
-      ]
+      ],
+      "website": "https://www.linode.com"
     },
     {
       "name": "LionDesk",
@@ -4261,13 +4242,15 @@
       "category": "customer-support",
       "aliases": [
         "livechat inc"
-      ]
+      ],
+      "website": "https://livechat.com"
     },
     {
       "name": "Livestorm",
       "slug": "livestorm",
       "category": "video-conferencing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://livestorm.co"
     },
     {
       "name": "Llama (Meta)",
@@ -4275,7 +4258,8 @@
       "category": "llm",
       "aliases": [
         "llama"
-      ]
+      ],
+      "website": "https://www.llama.com"
     },
     {
       "name": "LMN",
@@ -4289,7 +4273,8 @@
       "category": "ai-voice",
       "aliases": [
         "lmnt voice"
-      ]
+      ],
+      "website": "https://lmnt.com"
     },
     {
       "name": "LoanBeam",
@@ -4371,13 +4356,15 @@
       "name": "Loom",
       "slug": "loom",
       "category": "video-conferencing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.loom.com"
     },
     {
       "name": "Loops",
       "slug": "loops",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://loops.so"
     },
     {
       "name": "Loox",
@@ -4401,7 +4388,8 @@
       "name": "Luma AI",
       "slug": "luma-ai",
       "category": "ai-video",
-      "aliases": []
+      "aliases": [],
+      "website": "https://lumalabs.ai"
     },
     {
       "name": "Luminar Neo",
@@ -4409,13 +4397,15 @@
       "category": "ai-image",
       "aliases": [
         "luminar ai"
-      ]
+      ],
+      "website": "https://skylum.com/luminar-neo"
     },
     {
       "name": "Lunacy",
       "slug": "lunacy",
       "category": "design-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://icons8.com/lunacy"
     },
     {
       "name": "Lusha",
@@ -4428,14 +4418,6 @@
       "slug": "macpractice",
       "category": "Dental",
       "aliases": []
-    },
-    {
-      "name": "Maestro",
-      "slug": "maestro",
-      "category": "crypto-telegram-bots",
-      "aliases": [
-        "maestro bot"
-      ]
     },
     {
       "name": "Magento",
@@ -4455,19 +4437,22 @@
       "name": "Mailchimp",
       "slug": "mailchimp",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://mailchimp.com"
     },
     {
       "name": "MailerLite",
       "slug": "mailerlite",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.mailerlite.com"
     },
     {
       "name": "Mailjet",
       "slug": "mailjet",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.mailjet.com"
     },
     {
       "name": "Make",
@@ -4476,7 +4461,8 @@
       "aliases": [
         "make ai",
         "Integromat"
-      ]
+      ],
+      "website": "https://make.com"
     },
     {
       "name": "Make AI Agents",
@@ -4490,7 +4476,8 @@
       "category": "accounting",
       "aliases": [
         "manager io"
-      ]
+      ],
+      "website": "https://www.manager.io"
     },
     {
       "name": "Manatal",
@@ -4508,13 +4495,15 @@
       "name": "Mangools",
       "slug": "mangools",
       "category": "seo-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://mangools.com"
     },
     {
       "name": "Manus AI",
       "slug": "manus-ai",
       "category": "ai-productivity",
-      "aliases": []
+      "aliases": [],
+      "website": "https://manus.im"
     },
     {
       "name": "Market Leader",
@@ -4600,7 +4589,8 @@
       "category": "ai-productivity",
       "aliases": [
         "notion ai standalone"
-      ]
+      ],
+      "website": "https://mem.ai"
     },
     {
       "name": "Mercury",
@@ -4627,12 +4617,6 @@
       "aliases": []
     },
     {
-      "name": "Messari",
-      "slug": "messari",
-      "category": "crypto-analytics",
-      "aliases": []
-    },
-    {
       "name": "Meta Ads",
       "slug": "meta-ads",
       "category": "Marketing",
@@ -4645,25 +4629,22 @@
       "name": "Meta AI",
       "slug": "meta-ai",
       "category": "llm",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.meta.ai"
     },
     {
       "name": "Metabase",
       "slug": "metabase",
       "category": "analytics",
-      "aliases": []
-    },
-    {
-      "name": "MetaMask",
-      "slug": "metamask",
-      "category": "crypto-wallets",
-      "aliases": []
+      "aliases": [],
+      "website": "https://metabase.com"
     },
     {
       "name": "Metaplane",
       "slug": "metaplane",
       "category": "data-observability",
-      "aliases": []
+      "aliases": [],
+      "website": "https://metaplane.dev"
     },
     {
       "name": "Mews",
@@ -4699,7 +4680,8 @@
       "category": "cloud-hosting",
       "aliases": [
         "azure"
-      ]
+      ],
+      "website": "https://azure.microsoft.com"
     },
     {
       "name": "Microsoft Bookings",
@@ -4711,7 +4693,8 @@
       "name": "Microsoft Copilot",
       "slug": "microsoft-copilot",
       "category": "ai-assistants",
-      "aliases": []
+      "aliases": [],
+      "website": "https://copilot.microsoft.com"
     },
     {
       "name": "Microsoft Dynamics 365",
@@ -4721,15 +4704,8 @@
         "ms dynamics",
         "Dynamics 365",
         "Dynamics"
-      ]
-    },
-    {
-      "name": "Microsoft Entra ID",
-      "slug": "microsoft-entra-id",
-      "category": "iam",
-      "aliases": [
-        "microsoft entra"
-      ]
+      ],
+      "website": "https://dynamics.microsoft.com"
     },
     {
       "name": "Microsoft Excel Online",
@@ -4761,7 +4737,8 @@
       "name": "Microsoft Purview",
       "slug": "microsoft-purview",
       "category": "ai-security",
-      "aliases": []
+      "aliases": [],
+      "website": "https://microsoft.com/purview"
     },
     {
       "name": "Microsoft Teams",
@@ -4769,13 +4746,15 @@
       "category": "video-conferencing",
       "aliases": [
         "Teams"
-      ]
+      ],
+      "website": "https://www.microsoft.com/microsoft-teams"
     },
     {
       "name": "Midjourney",
       "slug": "midjourney",
       "category": "ai-image",
-      "aliases": []
+      "aliases": [],
+      "website": "https://midjourney.com"
     },
     {
       "name": "Millenium",
@@ -4801,19 +4780,22 @@
       "category": "project-management",
       "aliases": [
         "miro design"
-      ]
+      ],
+      "website": "https://miro.com"
     },
     {
       "name": "Mistral AI",
       "slug": "mistral-ai",
       "category": "llm",
-      "aliases": []
+      "aliases": [],
+      "website": "https://mistral.ai"
     },
     {
       "name": "Mistral Large",
       "slug": "mistral-large",
       "category": "llm",
-      "aliases": []
+      "aliases": [],
+      "website": "https://mistral.ai"
     },
     {
       "name": "Mitchell1",
@@ -4825,7 +4807,8 @@
       "name": "Mixpanel",
       "slug": "mixpanel",
       "category": "analytics",
-      "aliases": []
+      "aliases": [],
+      "website": "https://mixpanel.com"
     },
     {
       "name": "MLS Grid",
@@ -4840,6 +4823,15 @@
       "aliases": []
     },
     {
+      "name": "Model Office",
+      "slug": "model-office",
+      "category": "Mortgage",
+      "aliases": [
+        "ModelOffice"
+      ],
+      "website": "https://www.model-office.co.uk/"
+    },
+    {
       "name": "Modento",
       "slug": "modento",
       "category": "Dental",
@@ -4848,8 +4840,9 @@
     {
       "name": "monday CRM",
       "slug": "monday-crm",
-      "category": "crm",
-      "aliases": []
+      "category": "CRM",
+      "aliases": [],
+      "website": "https://monday.com/crm"
     },
     {
       "name": "monday.com",
@@ -4858,13 +4851,15 @@
       "aliases": [
         "monday",
         "Monday"
-      ]
+      ],
+      "website": "https://monday.com/"
     },
     {
       "name": "MongoDB Atlas",
       "slug": "mongodb-atlas",
       "category": "vector-databases",
-      "aliases": []
+      "aliases": [],
+      "website": "https://mongodb.com/atlas"
     },
     {
       "name": "Monica",
@@ -4872,13 +4867,15 @@
       "category": "ai-productivity",
       "aliases": [
         "monica ai"
-      ]
+      ],
+      "website": "https://monica.im"
     },
     {
       "name": "Monte Carlo",
       "slug": "monte-carlo",
       "category": "data-observability",
-      "aliases": []
+      "aliases": [],
+      "website": "https://montecarlodata.com"
     },
     {
       "name": "Moodle",
@@ -4890,13 +4887,35 @@
       "name": "Moosend",
       "slug": "moosend",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://moosend.com"
+    },
+    {
+      "name": "Mortgage Brain",
+      "slug": "mortgage-brain",
+      "category": "Mortgage",
+      "aliases": [
+        "Mortgage Brain Hub",
+        "Sourcing Brain",
+        "CRM Brain",
+        "Submissions Brain"
+      ],
+      "website": "https://www.mortgagebrain.com/"
     },
     {
       "name": "Mortgage Cadence",
       "slug": "mortgage-cadence",
       "category": "Mortgage",
       "aliases": []
+    },
+    {
+      "name": "Mortgage Magic",
+      "slug": "mortgage-magic",
+      "category": "Mortgage",
+      "aliases": [
+        "Mortgage Magic CRM"
+      ],
+      "website": "https://mortgage-magic.co.uk/"
     },
     {
       "name": "MortgageBot",
@@ -4938,7 +4957,8 @@
       "name": "Moz Pro",
       "slug": "moz-pro",
       "category": "seo-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://moz.com/pro"
     },
     {
       "name": "MRI Software",
@@ -4958,7 +4978,8 @@
       "name": "MuleSoft",
       "slug": "mulesoft",
       "category": "data-observability",
-      "aliases": []
+      "aliases": [],
+      "website": "https://mulesoft.com"
     },
     {
       "name": "Mural",
@@ -4970,7 +4991,8 @@
       "name": "Murf AI",
       "slug": "murf-ai",
       "category": "ai-voice",
-      "aliases": []
+      "aliases": [],
+      "website": "https://murf.ai"
     },
     {
       "name": "Mutiny",
@@ -4982,7 +5004,8 @@
       "name": "MyCase",
       "slug": "mycase",
       "category": "Legal",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.mycase.com/"
     },
     {
       "name": "MyCase Intake",
@@ -4994,30 +5017,27 @@
       "name": "MySQL",
       "slug": "mysql",
       "category": "databases",
-      "aliases": []
+      "aliases": [],
+      "website": "https://mysql.com"
     },
     {
       "name": "n8n",
       "slug": "n8n",
       "category": "ai-agents",
-      "aliases": []
+      "aliases": [],
+      "website": "https://n8n.io"
     },
     {
       "name": "Namecheap",
       "slug": "namecheap",
       "category": "cloud-hosting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.namecheap.com"
     },
     {
       "name": "Namely",
       "slug": "namely",
       "category": "Payroll",
-      "aliases": []
-    },
-    {
-      "name": "Nansen",
-      "slug": "nansen",
-      "category": "crypto-analytics",
       "aliases": []
     },
     {
@@ -5046,7 +5066,8 @@
       "category": "cloud-hosting",
       "aliases": [
         "neon db"
-      ]
+      ],
+      "website": "https://neon.tech"
     },
     {
       "name": "Neon CRM",
@@ -5064,7 +5085,8 @@
       "name": "Netlify",
       "slug": "netlify",
       "category": "cloud-hosting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.netlify.com"
     },
     {
       "name": "NetSuite",
@@ -5072,7 +5094,8 @@
       "category": "erp",
       "aliases": [
         "Oracle NetSuite"
-      ]
+      ],
+      "website": "https://www.netsuite.com/"
     },
     {
       "name": "New Relic",
@@ -5104,7 +5127,8 @@
       "category": "project-management",
       "aliases": [
         "niftypm"
-      ]
+      ],
+      "website": "https://niftypm.com"
     },
     {
       "name": "Nimble",
@@ -5128,25 +5152,22 @@
       "name": "NordPass",
       "slug": "nordpass",
       "category": "password-managers",
-      "aliases": []
-    },
-    {
-      "name": "NordVPN",
-      "slug": "nordvpn",
-      "category": "vpn",
-      "aliases": []
+      "aliases": [],
+      "website": "https://nordpass.com"
     },
     {
       "name": "Notion",
       "slug": "notion",
       "category": "project-management",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.notion.com/"
     },
     {
       "name": "Notion AI",
       "slug": "notion-ai",
       "category": "ai-productivity",
-      "aliases": []
+      "aliases": [],
+      "website": "https://notion.so/product/ai"
     },
     {
       "name": "Novo",
@@ -5157,8 +5178,9 @@
     {
       "name": "Nutshell",
       "slug": "nutshell",
-      "category": "crm",
-      "aliases": []
+      "category": "CRM",
+      "aliases": [],
+      "website": "https://www.nutshell.com"
     },
     {
       "name": "Observable",
@@ -5176,7 +5198,8 @@
       "name": "Odoo",
       "slug": "odoo",
       "category": "erp",
-      "aliases": []
+      "aliases": [],
+      "website": "https://odoo.com"
     },
     {
       "name": "Odoo Inventory",
@@ -5199,13 +5222,7 @@
     {
       "name": "Okta",
       "slug": "okta",
-      "category": "iam",
-      "aliases": []
-    },
-    {
-      "name": "OKX",
-      "slug": "okx",
-      "category": "crypto-exchanges",
+      "category": "Security",
       "aliases": []
     },
     {
@@ -5218,7 +5235,8 @@
       "name": "Omnisend",
       "slug": "omnisend",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.omnisend.com"
     },
     {
       "name": "OnceHub",
@@ -5248,7 +5266,8 @@
       "name": "OneTrust",
       "slug": "onetrust",
       "category": "compliance",
-      "aliases": []
+      "aliases": [],
+      "website": "https://onetrust.com"
     },
     {
       "name": "Open Dental",
@@ -5260,13 +5279,15 @@
       "name": "OpenAI Agents SDK",
       "slug": "openai-agents-sdk",
       "category": "ai-agents",
-      "aliases": []
+      "aliases": [],
+      "website": "https://openai.com/agents"
     },
     {
       "name": "OpenAI API",
       "slug": "openai-api",
       "category": "llm",
-      "aliases": []
+      "aliases": [],
+      "website": "https://platform.openai.com"
     },
     {
       "name": "OpenCart",
@@ -5284,7 +5305,8 @@
       "name": "OpenSearch",
       "slug": "opensearch",
       "category": "databases",
-      "aliases": []
+      "aliases": [],
+      "website": "https://opensearch.org"
     },
     {
       "name": "OpenTable",
@@ -5314,7 +5336,8 @@
       "name": "Optro",
       "slug": "optro",
       "category": "compliance",
-      "aliases": []
+      "aliases": [],
+      "website": "https://optro.ai"
     },
     {
       "name": "Oracle CX",
@@ -5328,7 +5351,8 @@
       "category": "databases",
       "aliases": [
         "oracle db"
-      ]
+      ],
+      "website": "https://oracle.com/database"
     },
     {
       "name": "Oracle E-Business Suite",
@@ -5342,19 +5366,8 @@
       "category": "erp",
       "aliases": [
         "oracle erp"
-      ]
-    },
-    {
-      "name": "Orca",
-      "slug": "orca",
-      "category": "dex",
-      "aliases": []
-    },
-    {
-      "name": "Orca Security",
-      "slug": "orca-security",
-      "category": "cloud-security",
-      "aliases": []
+      ],
+      "website": "https://oracle.com/erp"
     },
     {
       "name": "Ordergroove",
@@ -5386,7 +5399,8 @@
       "category": "ai-productivity",
       "aliases": [
         "otter ai"
-      ]
+      ],
+      "website": "https://otter.ai"
     },
     {
       "name": "Outreach",
@@ -5418,13 +5432,8 @@
       "name": "Paddle",
       "slug": "paddle",
       "category": "payments",
-      "aliases": []
-    },
-    {
-      "name": "PancakeSwap",
-      "slug": "pancakeswap",
-      "category": "dex",
-      "aliases": []
+      "aliases": [],
+      "website": "https://paddle.com"
     },
     {
       "name": "PandaDoc",
@@ -5468,7 +5477,8 @@
       "category": "accounting",
       "aliases": [
         "patriot"
-      ]
+      ],
+      "website": "https://www.patriotsoftware.com"
     },
     {
       "name": "Paychex",
@@ -5528,7 +5538,8 @@
       "name": "Penpot",
       "slug": "penpot",
       "category": "design-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://penpot.app"
     },
     {
       "name": "People.ai",
@@ -5537,18 +5548,13 @@
       "aliases": []
     },
     {
-      "name": "PepeBoost",
-      "slug": "pepeboost",
-      "category": "crypto-telegram-bots",
-      "aliases": []
-    },
-    {
       "name": "Perplexity AI",
       "slug": "perplexity-ai",
       "category": "ai-productivity",
       "aliases": [
         "perplexity"
-      ]
+      ],
+      "website": "https://perplexity.ai"
     },
     {
       "name": "Personio",
@@ -5576,15 +5582,8 @@
       "name": "pgvector",
       "slug": "pgvector",
       "category": "vector-databases",
-      "aliases": []
-    },
-    {
-      "name": "Phantom",
-      "slug": "phantom",
-      "category": "crypto-wallets",
-      "aliases": [
-        "phantom wallet"
-      ]
+      "aliases": [],
+      "website": "https://github.com/pgvector/pgvector"
     },
     {
       "name": "Phi-3",
@@ -5592,21 +5591,14 @@
       "category": "llm",
       "aliases": [
         "phi 3 medium"
-      ]
+      ],
+      "website": "https://azure.microsoft.com/products/phi"
     },
     {
       "name": "Phorest",
       "slug": "phorest",
       "category": "Healthcare",
       "aliases": []
-    },
-    {
-      "name": "Photon",
-      "slug": "photon",
-      "category": "crypto-telegram-bots",
-      "aliases": [
-        "photon sol"
-      ]
     },
     {
       "name": "Pic-Time",
@@ -5618,7 +5610,8 @@
       "name": "Pika",
       "slug": "pika",
       "category": "ai-video",
-      "aliases": []
+      "aliases": [],
+      "website": "https://pika.art"
     },
     {
       "name": "Piktochart",
@@ -5638,13 +5631,8 @@
       "name": "Pinecone",
       "slug": "pinecone",
       "category": "vector-databases",
-      "aliases": []
-    },
-    {
-      "name": "Ping Identity",
-      "slug": "ping-identity",
-      "category": "iam",
-      "aliases": []
+      "aliases": [],
+      "website": "https://pinecone.io"
     },
     {
       "name": "Pinpoint",
@@ -5653,16 +5641,11 @@
       "aliases": []
     },
     {
-      "name": "Pionex",
-      "slug": "pionex",
-      "category": "crypto-trading-bots",
-      "aliases": []
-    },
-    {
       "name": "Pipedrive",
       "slug": "pipedrive",
-      "category": "crm",
-      "aliases": []
+      "category": "CRM",
+      "aliases": [],
+      "website": "https://www.pipedrive.com/"
     },
     {
       "name": "Pipedrive Leadbooster",
@@ -5698,13 +5681,15 @@
       "name": "Pixlr",
       "slug": "pixlr",
       "category": "design-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://pixlr.com"
     },
     {
       "name": "PixVerse",
       "slug": "pixverse",
       "category": "ai-video",
-      "aliases": []
+      "aliases": [],
+      "website": "https://pixverse.ai"
     },
     {
       "name": "Planet DDS",
@@ -5736,7 +5721,8 @@
       "name": "Plausible Analytics",
       "slug": "plausible-analytics",
       "category": "analytics",
-      "aliases": []
+      "aliases": [],
+      "website": "https://plausible.io"
     },
     {
       "name": "Pleo",
@@ -5774,13 +5760,15 @@
       "name": "PostgreSQL",
       "slug": "postgresql",
       "category": "databases",
-      "aliases": []
+      "aliases": [],
+      "website": "https://postgresql.org"
     },
     {
       "name": "PostHog",
       "slug": "posthog",
       "category": "analytics",
-      "aliases": []
+      "aliases": [],
+      "website": "https://posthog.com"
     },
     {
       "name": "Postscript",
@@ -5798,7 +5786,8 @@
       "name": "Practice Better",
       "slug": "practice-better",
       "category": "Healthcare",
-      "aliases": []
+      "aliases": [],
+      "website": "https://practicebetter.io/"
     },
     {
       "name": "Practice Fusion",
@@ -5816,7 +5805,8 @@
       "name": "PracticePanther",
       "slug": "practicepanther",
       "category": "Legal",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.practicepanther.com/"
     },
     {
       "name": "PracticePanther Billing",
@@ -5843,12 +5833,6 @@
       "aliases": []
     },
     {
-      "name": "Prisma Cloud",
-      "slug": "prisma-cloud",
-      "category": "cloud-security",
-      "aliases": []
-    },
-    {
       "name": "Procore",
       "slug": "procore",
       "category": "Home Services",
@@ -5858,7 +5842,8 @@
       "name": "Procreate",
       "slug": "procreate",
       "category": "design-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://procreate.com"
     },
     {
       "name": "Productboard",
@@ -5911,16 +5896,11 @@
       "aliases": []
     },
     {
-      "name": "ProtonVPN",
-      "slug": "protonvpn",
-      "category": "vpn",
-      "aliases": []
-    },
-    {
       "name": "ProWritingAid",
       "slug": "prowritingaid",
       "category": "ai-writing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://prowritingaid.com"
     },
     {
       "name": "Pulse",
@@ -5932,7 +5912,8 @@
       "name": "Qdrant",
       "slug": "qdrant",
       "category": "vector-databases",
-      "aliases": []
+      "aliases": [],
+      "website": "https://qdrant.tech"
     },
     {
       "name": "Qlik Talend",
@@ -5940,7 +5921,8 @@
       "category": "data-observability",
       "aliases": [
         "talend"
-      ]
+      ],
+      "website": "https://talend.com"
     },
     {
       "name": "QQCatalyst",
@@ -5980,7 +5962,8 @@
         "quickbooks",
         "QBO",
         "QuickBooks"
-      ]
+      ],
+      "website": "https://quickbooks.intuit.com/uk/"
     },
     {
       "name": "QuickFile",
@@ -5992,7 +5975,8 @@
       "name": "QuillBot",
       "slug": "quillbot",
       "category": "ai-writing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://quillbot.com"
     },
     {
       "name": "Quip",
@@ -6012,7 +5996,8 @@
       "category": "llm",
       "aliases": [
         "qwen 2 5"
-      ]
+      ],
+      "website": "https://qwenlm.github.io"
     },
     {
       "name": "Qwilr",
@@ -6021,16 +6006,11 @@
       "aliases": []
     },
     {
-      "name": "Rabby Wallet",
-      "slug": "rabby-wallet",
-      "category": "crypto-wallets",
-      "aliases": []
-    },
-    {
       "name": "Railway",
       "slug": "railway",
       "category": "cloud-hosting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://railway.com"
     },
     {
       "name": "Raisely",
@@ -6051,12 +6031,6 @@
       "aliases": []
     },
     {
-      "name": "Raydium",
-      "slug": "raydium",
-      "category": "dex",
-      "aliases": []
-    },
-    {
       "name": "rb2b",
       "slug": "rb2b",
       "category": "Marketing",
@@ -6072,7 +6046,8 @@
       "name": "Read AI",
       "slug": "read-ai",
       "category": "ai-meeting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://read.ai"
     },
     {
       "name": "Real Geeks",
@@ -6111,6 +6086,16 @@
       "aliases": []
     },
     {
+      "name": "Reapit",
+      "slug": "reapit",
+      "category": "Real Estate",
+      "aliases": [
+        "Reapit Foundations",
+        "Reapit CRM"
+      ],
+      "website": "https://www.reapit.com/"
+    },
+    {
       "name": "Receipt Bank",
       "slug": "receipt-bank",
       "category": "Accounting",
@@ -6146,7 +6131,8 @@
       "name": "Recurly",
       "slug": "recurly",
       "category": "payments",
-      "aliases": []
+      "aliases": [],
+      "website": "https://recurly.com"
     },
     {
       "name": "Redash",
@@ -6164,7 +6150,8 @@
       "name": "Redis",
       "slug": "redis",
       "category": "databases",
-      "aliases": []
+      "aliases": [],
+      "website": "https://redis.io"
     },
     {
       "name": "Redis Cloud",
@@ -6178,13 +6165,24 @@
       "category": "vector-databases",
       "aliases": [
         "redis vector"
-      ]
+      ],
+      "website": "https://redis.io/solutions/vector-search"
     },
     {
       "name": "Reflect",
       "slug": "reflect",
       "category": "Productivity",
       "aliases": []
+    },
+    {
+      "name": "RegTechPRO",
+      "slug": "regtechpro",
+      "category": "Mortgage",
+      "aliases": [
+        "RegTech PRO",
+        "E8 Mortgage"
+      ],
+      "website": "https://www.regtechpro.co.uk/"
     },
     {
       "name": "Relativity",
@@ -6208,7 +6206,8 @@
       "name": "Relevance AI",
       "slug": "relevance-ai",
       "category": "ai-agents",
-      "aliases": []
+      "aliases": [],
+      "website": "https://relevanceai.com"
     },
     {
       "name": "Remote",
@@ -6216,7 +6215,8 @@
       "category": "hr-tools",
       "aliases": [
         "remote com"
-      ]
+      ],
+      "website": "https://remote.com"
     },
     {
       "name": "Remote.com",
@@ -6232,13 +6232,15 @@
       "category": "ai-image",
       "aliases": [
         "remove bg"
-      ]
+      ],
+      "website": "https://remove.bg"
     },
     {
       "name": "Render",
       "slug": "render",
       "category": "cloud-hosting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://render.com"
     },
     {
       "name": "Rent Manager",
@@ -6256,13 +6258,15 @@
       "name": "Replicate",
       "slug": "replicate",
       "category": "llm",
-      "aliases": []
+      "aliases": [],
+      "website": "https://replicate.com"
     },
     {
       "name": "Replit AI",
       "slug": "replit-ai",
       "category": "ai-coding",
-      "aliases": []
+      "aliases": [],
+      "website": "https://replit.com/ai"
     },
     {
       "name": "Reply.io",
@@ -6280,7 +6284,8 @@
       "name": "Resemble AI",
       "slug": "resemble-ai",
       "category": "ai-voice",
-      "aliases": []
+      "aliases": [],
+      "website": "https://resemble.ai"
     },
     {
       "name": "Resource Guru",
@@ -6304,7 +6309,8 @@
       "name": "Retool",
       "slug": "retool",
       "category": "cloud-hosting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://retool.com"
     },
     {
       "name": "Revel",
@@ -6334,13 +6340,15 @@
       "name": "RingCentral",
       "slug": "ringcentral",
       "category": "video-conferencing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.ringcentral.com"
     },
     {
       "name": "Rippling",
       "slug": "rippling",
       "category": "hr-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://rippling.com"
     },
     {
       "name": "Riverside",
@@ -6354,7 +6362,8 @@
       "category": "video-conferencing",
       "aliases": [
         "riverside"
-      ]
+      ],
+      "website": "https://riverside.com"
     },
     {
       "name": "Roam Research",
@@ -6414,19 +6423,15 @@
       "name": "Runway",
       "slug": "runway",
       "category": "ai-video",
-      "aliases": []
+      "aliases": [],
+      "website": "https://runwayml.com"
     },
     {
       "name": "Rytr",
       "slug": "rytr",
       "category": "ai-writing",
-      "aliases": []
-    },
-    {
-      "name": "SafePal",
-      "slug": "safepal",
-      "category": "crypto-wallets",
-      "aliases": []
+      "aliases": [],
+      "website": "https://rytr.me"
     },
     {
       "name": "Sage 200",
@@ -6454,25 +6459,22 @@
       "category": "accounting",
       "aliases": [
         "sage"
-      ]
+      ],
+      "website": "https://www.sage.com/en-us/accounting-software/"
     },
     {
       "name": "Sage Intacct",
       "slug": "sage-intacct",
       "category": "erp",
-      "aliases": []
+      "aliases": [],
+      "website": "https://sage.com/intacct"
     },
     {
       "name": "Sage X3",
       "slug": "sage-x3",
       "category": "erp",
-      "aliases": []
-    },
-    {
-      "name": "SailPoint",
-      "slug": "sailpoint",
-      "category": "iam",
-      "aliases": []
+      "aliases": [],
+      "website": "https://sageintacct.com/products/sage-x3"
     },
     {
       "name": "Salesflare",
@@ -6483,10 +6485,11 @@
     {
       "name": "Salesforce",
       "slug": "salesforce",
-      "category": "crm",
+      "category": "CRM",
       "aliases": [
         "SFDC"
-      ]
+      ],
+      "website": "https://www.salesforce.com"
     },
     {
       "name": "Salesforce Financial Services Cloud",
@@ -6537,12 +6540,6 @@
       "aliases": []
     },
     {
-      "name": "Santiment",
-      "slug": "santiment",
-      "category": "crypto-analytics",
-      "aliases": []
-    },
-    {
       "name": "SAP Business One",
       "slug": "sap-business-one",
       "category": "Manufacturing",
@@ -6560,7 +6557,8 @@
       "category": "erp",
       "aliases": [
         "sap s4hana"
-      ]
+      ],
+      "website": "https://sap.com/s4hana"
     },
     {
       "name": "SAP Sales Cloud",
@@ -6598,7 +6596,8 @@
       "category": "seo-tools",
       "aliases": [
         "screaming frog"
-      ]
+      ],
+      "website": "https://screamingfrog.co.uk/seo-spider"
     },
     {
       "name": "Screencastify",
@@ -6610,13 +6609,15 @@
       "name": "SE Ranking",
       "slug": "se-ranking",
       "category": "seo-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://seranking.com"
     },
     {
       "name": "Secureframe",
       "slug": "secureframe",
       "category": "compliance",
-      "aliases": []
+      "aliases": [],
+      "website": "https://secureframe.com"
     },
     {
       "name": "SeekOut",
@@ -6654,27 +6655,22 @@
       "name": "Semrush",
       "slug": "semrush",
       "category": "seo-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://semrush.com"
     },
     {
       "name": "Sender",
       "slug": "sender",
       "category": "email-marketing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.sender.net"
     },
     {
       "name": "SentinelOne",
       "slug": "sentinelone",
       "category": "endpoint-security",
-      "aliases": []
-    },
-    {
-      "name": "Sentora",
-      "slug": "sentora",
-      "category": "crypto-analytics",
-      "aliases": [
-        "intotheblock"
-      ]
+      "aliases": [],
+      "website": "https://sentinelone.com"
     },
     {
       "name": "Sentry",
@@ -6722,7 +6718,8 @@
       "name": "ServiceTitan",
       "slug": "servicetitan",
       "category": "Home Services",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.servicetitan.com/"
     },
     {
       "name": "ServiceTitan Phones",
@@ -6782,7 +6779,8 @@
       "name": "ShipStation",
       "slug": "shipstation",
       "category": "Manufacturing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.shipstation.com/"
     },
     {
       "name": "ShootProof",
@@ -6800,7 +6798,8 @@
       "name": "Shopify",
       "slug": "shopify",
       "category": "website-builders",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.shopify.com"
     },
     {
       "name": "Shopify Payments",
@@ -6848,7 +6847,8 @@
       "name": "Shortcut",
       "slug": "shortcut",
       "category": "project-management",
-      "aliases": []
+      "aliases": [],
+      "website": "https://shortcut.com"
     },
     {
       "name": "Shortcuts",
@@ -6904,7 +6904,8 @@
       "name": "SimplePractice",
       "slug": "simplepractice",
       "category": "Healthcare",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.simplepractice.com/"
     },
     {
       "name": "SimplyBook.me",
@@ -6934,13 +6935,15 @@
       "name": "SISTRIX",
       "slug": "sistrix",
       "category": "seo-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://sistrix.com"
     },
     {
       "name": "SiteGround",
       "slug": "siteground",
       "category": "cloud-hosting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.siteground.com"
     },
     {
       "name": "SiteMinder",
@@ -6952,7 +6955,8 @@
       "name": "Sketch",
       "slug": "sketch",
       "category": "design-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.sketch.com"
     },
     {
       "name": "Skubana",
@@ -6984,7 +6988,15 @@
       "category": "video-conferencing",
       "aliases": [
         "slack huddles"
-      ]
+      ],
+      "website": "https://slack.com/"
+    },
+    {
+      "name": "Smart Compliance",
+      "slug": "smart-compliance",
+      "category": "Real Estate",
+      "aliases": [],
+      "website": "https://smartcompliance.co.uk/"
     },
     {
       "name": "SmartAdvocate",
@@ -7011,10 +7023,20 @@
       "aliases": []
     },
     {
+      "name": "SmartSearch",
+      "slug": "smartsearch",
+      "category": "Real Estate",
+      "aliases": [
+        "Smart Search AML"
+      ],
+      "website": "https://www.smartsearch.com/"
+    },
+    {
       "name": "Smartsheet",
       "slug": "smartsheet",
       "category": "project-management",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.smartsheet.com"
     },
     {
       "name": "SmartZip",
@@ -7026,7 +7048,8 @@
       "name": "Smokeball",
       "slug": "smokeball",
       "category": "Legal",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.smokeball.com/"
     },
     {
       "name": "SnapLogic",
@@ -7038,7 +7061,8 @@
       "name": "Snowflake",
       "slug": "snowflake",
       "category": "databases",
-      "aliases": []
+      "aliases": [],
+      "website": "https://snowflake.com"
     },
     {
       "name": "SOE Exact",
@@ -7080,7 +7104,8 @@
       "name": "Sophos",
       "slug": "sophos",
       "category": "endpoint-security",
-      "aliases": []
+      "aliases": [],
+      "website": "https://sophos.com"
     },
     {
       "name": "Speechify",
@@ -7088,7 +7113,8 @@
       "category": "ai-voice",
       "aliases": [
         "speechify voice"
-      ]
+      ],
+      "website": "https://speechify.com"
     },
     {
       "name": "Spellbook",
@@ -7106,7 +7132,8 @@
       "name": "Spline",
       "slug": "spline",
       "category": "design-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://spline.design"
     },
     {
       "name": "Spotlight Reporting",
@@ -7118,7 +7145,8 @@
       "name": "Sprinto",
       "slug": "sprinto",
       "category": "compliance",
-      "aliases": []
+      "aliases": [],
+      "website": "https://sprinto.com"
     },
     {
       "name": "Sprout Social",
@@ -7130,7 +7158,8 @@
       "name": "SpyFu",
       "slug": "spyfu",
       "category": "seo-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://spyfu.com"
     },
     {
       "name": "Square",
@@ -7166,7 +7195,8 @@
       "name": "Squarespace",
       "slug": "squarespace",
       "category": "website-builders",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.squarespace.com"
     },
     {
       "name": "Squarespace Commerce",
@@ -7186,7 +7216,8 @@
       "name": "Stable Diffusion",
       "slug": "stable-diffusion",
       "category": "ai-image",
-      "aliases": []
+      "aliases": [],
+      "website": "https://stability.ai"
     },
     {
       "name": "Stack",
@@ -7221,22 +7252,35 @@
     {
       "name": "Streak",
       "slug": "streak",
-      "category": "crm",
+      "category": "CRM",
       "aliases": [
         "Streak CRM"
-      ]
+      ],
+      "website": "https://www.streak.com"
+    },
+    {
+      "name": "Street",
+      "slug": "street",
+      "category": "Real Estate",
+      "aliases": [
+        "Street.co.uk",
+        "Street CRM"
+      ],
+      "website": "https://street.co.uk/"
     },
     {
       "name": "Strikingly",
       "slug": "strikingly",
       "category": "website-builders",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.strikingly.com"
     },
     {
       "name": "Stripe",
       "slug": "stripe",
       "category": "payments",
-      "aliases": []
+      "aliases": [],
+      "website": "https://stripe.com"
     },
     {
       "name": "Stripe Billing",
@@ -7272,7 +7316,8 @@
       "name": "Studio Ninja",
       "slug": "studio-ninja",
       "category": "Creative",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.studioninja.co/"
     },
     {
       "name": "StudioCloud",
@@ -7314,25 +7359,29 @@
       "name": "Sudowrite",
       "slug": "sudowrite",
       "category": "ai-writing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://sudowrite.com"
     },
     {
       "name": "SugarCRM",
       "slug": "sugarcrm",
-      "category": "crm",
-      "aliases": []
+      "category": "CRM",
+      "aliases": [],
+      "website": "https://www.sugarcrm.com"
     },
     {
       "name": "Suno",
       "slug": "suno",
       "category": "ai-voice",
-      "aliases": []
+      "aliases": [],
+      "website": "https://suno.com"
     },
     {
       "name": "Supabase",
       "slug": "supabase",
       "category": "cloud-hosting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://supabase.com"
     },
     {
       "name": "Super",
@@ -7340,7 +7389,8 @@
       "category": "website-builders",
       "aliases": [
         "super so"
-      ]
+      ],
+      "website": "https://super.so"
     },
     {
       "name": "Superset",
@@ -7352,30 +7402,20 @@
       "name": "Surfer SEO",
       "slug": "surfer-seo",
       "category": "ai-writing",
-      "aliases": []
-    },
-    {
-      "name": "Surfshark",
-      "slug": "surfshark",
-      "category": "vpn",
-      "aliases": []
+      "aliases": [],
+      "website": "https://surferseo.com"
     },
     {
       "name": "SurrealDB",
       "slug": "surrealdb",
       "category": "databases",
-      "aliases": []
+      "aliases": [],
+      "website": "https://surrealdb.com"
     },
     {
       "name": "SurveyMonkey",
       "slug": "surveymonkey",
       "category": "Forms",
-      "aliases": []
-    },
-    {
-      "name": "SushiSwap",
-      "slug": "sushiswap",
-      "category": "dex",
       "aliases": []
     },
     {
@@ -7388,13 +7428,8 @@
       "name": "Synthesia",
       "slug": "synthesia",
       "category": "ai-video",
-      "aliases": []
-    },
-    {
-      "name": "Sysdig",
-      "slug": "sysdig",
-      "category": "cloud-security",
-      "aliases": []
+      "aliases": [],
+      "website": "https://synthesia.io"
     },
     {
       "name": "Syspro",
@@ -7418,18 +7453,13 @@
       "name": "Tabnine",
       "slug": "tabnine",
       "category": "ai-coding",
-      "aliases": []
+      "aliases": [],
+      "website": "https://tabnine.com"
     },
     {
       "name": "Tabs3",
       "slug": "tabs3",
       "category": "Legal",
-      "aliases": []
-    },
-    {
-      "name": "Tailscale",
-      "slug": "tailscale",
-      "category": "iam",
       "aliases": []
     },
     {
@@ -7448,12 +7478,6 @@
       "name": "Tally",
       "slug": "tally",
       "category": "Forms",
-      "aliases": []
-    },
-    {
-      "name": "Tangem",
-      "slug": "tangem",
-      "category": "crypto-wallets",
       "aliases": []
     },
     {
@@ -7504,7 +7528,8 @@
       "category": "project-management",
       "aliases": [
         "Teamwork.com"
-      ]
+      ],
+      "website": "https://www.teamwork.com"
     },
     {
       "name": "Tekmetric",
@@ -7531,12 +7556,6 @@
       "aliases": []
     },
     {
-      "name": "Tenable",
-      "slug": "tenable",
-      "category": "cloud-security",
-      "aliases": []
-    },
-    {
       "name": "TenantCloud",
       "slug": "tenantcloud",
       "category": "Property Management",
@@ -7558,7 +7577,8 @@
       "name": "TherapyNotes",
       "slug": "therapynotes",
       "category": "Healthcare",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.therapynotes.com/"
     },
     {
       "name": "Thinkific",
@@ -7571,6 +7591,13 @@
       "slug": "thinkific-plus",
       "category": "Education",
       "aliases": []
+    },
+    {
+      "name": "Thirdfort",
+      "slug": "thirdfort",
+      "category": "Real Estate",
+      "aliases": [],
+      "website": "https://www.thirdfort.com/"
     },
     {
       "name": "Thomson Reuters HighQ",
@@ -7590,7 +7617,8 @@
       "name": "TiDB",
       "slug": "tidb",
       "category": "databases",
-      "aliases": []
+      "aliases": [],
+      "website": "https://pingcap.com"
     },
     {
       "name": "Tidio",
@@ -7598,7 +7626,8 @@
       "category": "ai-assistants",
       "aliases": [
         "tidio ai"
-      ]
+      ],
+      "website": "https://tidio.com"
     },
     {
       "name": "TikTok Ads",
@@ -7610,7 +7639,8 @@
       "name": "Tilda",
       "slug": "tilda",
       "category": "website-builders",
-      "aliases": []
+      "aliases": [],
+      "website": "https://tilda.cc"
     },
     {
       "name": "Timely",
@@ -7654,13 +7684,15 @@
       "name": "Todoist",
       "slug": "todoist",
       "category": "project-management",
-      "aliases": []
+      "aliases": [],
+      "website": "https://todoist.com"
     },
     {
       "name": "Toggl",
       "slug": "toggl",
       "category": "Agency Project & Time Software",
-      "aliases": []
+      "aliases": [],
+      "website": "https://toggl.com/"
     },
     {
       "name": "Toggl Track",
@@ -7669,18 +7701,6 @@
       "aliases": [
         "Toggl"
       ]
-    },
-    {
-      "name": "Token Terminal",
-      "slug": "token-terminal",
-      "category": "crypto-analytics",
-      "aliases": []
-    },
-    {
-      "name": "TokenTax",
-      "slug": "tokentax",
-      "category": "crypto-tax",
-      "aliases": []
     },
     {
       "name": "Top Producer",
@@ -7694,7 +7714,8 @@
       "category": "ai-image",
       "aliases": [
         "topaz ai"
-      ]
+      ],
+      "website": "https://topazlabs.com"
     },
     {
       "name": "Total Expert",
@@ -7729,18 +7750,6 @@
       ]
     },
     {
-      "name": "Trader Joe",
-      "slug": "trader-joe",
-      "category": "dex",
-      "aliases": []
-    },
-    {
-      "name": "TradeSanta",
-      "slug": "tradesanta",
-      "category": "crypto-trading-bots",
-      "aliases": []
-    },
-    {
       "name": "Tradify",
       "slug": "tradify",
       "category": "Home Services",
@@ -7762,7 +7771,8 @@
       "name": "Transcend",
       "slug": "transcend",
       "category": "compliance",
-      "aliases": []
+      "aliases": [],
+      "website": "https://transcend.io"
     },
     {
       "name": "Tray.io",
@@ -7776,19 +7786,15 @@
       "name": "Trellix",
       "slug": "trellix",
       "category": "endpoint-security",
-      "aliases": []
+      "aliases": [],
+      "website": "https://trellix.com"
     },
     {
       "name": "Trello",
       "slug": "trello",
       "category": "project-management",
-      "aliases": []
-    },
-    {
-      "name": "Trezor",
-      "slug": "trezor",
-      "category": "crypto-wallets",
-      "aliases": []
+      "aliases": [],
+      "website": "https://trello.com"
     },
     {
       "name": "TrialWorks",
@@ -7809,20 +7815,6 @@
       "aliases": []
     },
     {
-      "name": "Trojan",
-      "slug": "trojan",
-      "category": "crypto-telegram-bots",
-      "aliases": [
-        "trojan bot"
-      ]
-    },
-    {
-      "name": "Trust Wallet",
-      "slug": "trust-wallet",
-      "category": "crypto-wallets",
-      "aliases": []
-    },
-    {
       "name": "TurboTenant",
       "slug": "turbotenant",
       "category": "Property Management",
@@ -7832,7 +7824,28 @@
       "name": "Turso",
       "slug": "turso",
       "category": "databases",
-      "aliases": []
+      "aliases": [],
+      "website": "https://turso.tech"
+    },
+    {
+      "name": "Twenty7tec ADVICE",
+      "slug": "twenty7tec-advice",
+      "category": "Mortgage",
+      "aliases": [
+        "Twenty7tec",
+        "ADVICE CRM"
+      ],
+      "website": "https://www.twenty7tec.com/"
+    },
+    {
+      "name": "Twenty7tec RESEARCH",
+      "slug": "twenty7tec-research",
+      "category": "Mortgage",
+      "aliases": [
+        "RESEARCH Twenty7tec",
+        "Twenty7tec Sourcing"
+      ],
+      "website": "https://www.twenty7tec.com/"
     },
     {
       "name": "Twilio",
@@ -7846,19 +7859,15 @@
       "category": "email-marketing",
       "aliases": [
         "sendgrid"
-      ]
-    },
-    {
-      "name": "Twingate",
-      "slug": "twingate",
-      "category": "iam",
-      "aliases": []
+      ],
+      "website": "https://sendgrid.com"
     },
     {
       "name": "Typedream",
       "slug": "typedream",
       "category": "website-builders",
-      "aliases": []
+      "aliases": [],
+      "website": "https://typedream.com"
     },
     {
       "name": "Typeform",
@@ -7876,7 +7885,8 @@
       "name": "Udio",
       "slug": "udio",
       "category": "ai-voice",
-      "aliases": []
+      "aliases": [],
+      "website": "https://udio.com"
     },
     {
       "name": "UKG",
@@ -7900,13 +7910,8 @@
       "name": "Unicorn Platform",
       "slug": "unicorn-platform",
       "category": "website-builders",
-      "aliases": []
-    },
-    {
-      "name": "Uniswap",
-      "slug": "uniswap",
-      "category": "dex",
-      "aliases": []
+      "aliases": [],
+      "website": "https://unicornplatform.com"
     },
     {
       "name": "Unito",
@@ -7932,7 +7937,8 @@
       "category": "ai-coding",
       "aliases": [
         "v0 dev"
-      ]
+      ],
+      "website": "https://v0.app"
     },
     {
       "name": "Vagaro",
@@ -7944,13 +7950,15 @@
       "name": "Vanta",
       "slug": "vanta",
       "category": "compliance",
-      "aliases": []
+      "aliases": [],
+      "website": "https://vanta.com"
     },
     {
       "name": "Vantage",
       "slug": "vantage",
       "category": "finops",
-      "aliases": []
+      "aliases": [],
+      "website": "https://vantage.sh"
     },
     {
       "name": "vAuto",
@@ -7971,12 +7979,6 @@
       "aliases": []
     },
     {
-      "name": "Velora",
-      "slug": "velora",
-      "category": "defi-tools",
-      "aliases": []
-    },
-    {
       "name": "Vend",
       "slug": "vend",
       "category": "Ecommerce",
@@ -7992,13 +7994,15 @@
       "name": "Veo 2",
       "slug": "veo-2",
       "category": "ai-video",
-      "aliases": []
+      "aliases": [],
+      "website": "https://deepmind.google/veo"
     },
     {
       "name": "Vercel",
       "slug": "vercel",
       "category": "cloud-hosting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://vercel.com"
     },
     {
       "name": "Vertafore",
@@ -8028,7 +8032,8 @@
       "name": "vidIQ AI",
       "slug": "vidiq-ai",
       "category": "ai-video",
-      "aliases": []
+      "aliases": [],
+      "website": "https://vidiq.com"
     },
     {
       "name": "Vidyard",
@@ -8048,7 +8053,8 @@
       "category": "ai-assistants",
       "aliases": [
         "voiceflow io"
-      ]
+      ],
+      "website": "https://voiceflow.com"
     },
     {
       "name": "Volusion",
@@ -8072,7 +8078,8 @@
       "name": "Vultr",
       "slug": "vultr",
       "category": "cloud-hosting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.vultr.com"
     },
     {
       "name": "VWO",
@@ -8090,7 +8097,8 @@
       "name": "Wan Video",
       "slug": "wan-video",
       "category": "ai-video",
-      "aliases": []
+      "aliases": [],
+      "website": "https://wan.video"
     },
     {
       "name": "Warmly",
@@ -8104,7 +8112,8 @@
       "category": "accounting",
       "aliases": [
         "Wave Accounting"
-      ]
+      ],
+      "website": "https://www.waveapps.com/"
     },
     {
       "name": "Weave",
@@ -8118,7 +8127,8 @@
       "name": "Weaviate",
       "slug": "weaviate",
       "category": "vector-databases",
-      "aliases": []
+      "aliases": [],
+      "website": "https://weaviate.io"
     },
     {
       "name": "Webex by Cisco",
@@ -8126,13 +8136,15 @@
       "category": "video-conferencing",
       "aliases": [
         "webex"
-      ]
+      ],
+      "website": "https://www.webex.com"
     },
     {
       "name": "Webflow",
       "slug": "webflow",
       "category": "website-builders",
-      "aliases": []
+      "aliases": [],
+      "website": "https://webflow.com"
     },
     {
       "name": "Webflow CMS",
@@ -8150,13 +8162,15 @@
       "name": "Webnode",
       "slug": "webnode",
       "category": "website-builders",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.webnode.com"
     },
     {
       "name": "Weebly",
       "slug": "weebly",
       "category": "website-builders",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.weebly.com"
     },
     {
       "name": "Westlaw",
@@ -8174,13 +8188,15 @@
       "name": "Whereby",
       "slug": "whereby",
       "category": "video-conferencing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://whereby.com"
     },
     {
       "name": "Whimsical",
       "slug": "whimsical",
       "category": "design-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://whimsical.com"
     },
     {
       "name": "Wise Agent",
@@ -8204,7 +8220,8 @@
       "name": "Wix",
       "slug": "wix",
       "category": "website-builders",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.wix.com"
     },
     {
       "name": "Wix eCommerce",
@@ -8213,12 +8230,6 @@
       "aliases": [
         "Wix"
       ]
-    },
-    {
-      "name": "Wiz",
-      "slug": "wiz",
-      "category": "cloud-security",
-      "aliases": []
     },
     {
       "name": "WooCommerce",
@@ -8244,19 +8255,22 @@
       "category": "website-builders",
       "aliases": [
         "wordpress"
-      ]
+      ],
+      "website": "https://wordpress.com"
     },
     {
       "name": "Wordtune",
       "slug": "wordtune",
       "category": "ai-writing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://wordtune.com"
     },
     {
       "name": "Workable",
       "slug": "workable",
       "category": "Recruitment",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.workable.com/"
     },
     {
       "name": "Workato",
@@ -8274,7 +8288,8 @@
       "name": "Workday",
       "slug": "workday",
       "category": "hr-tools",
-      "aliases": []
+      "aliases": [],
+      "website": "https://workday.com"
     },
     {
       "name": "Workday HCM",
@@ -8318,19 +8333,22 @@
       "category": "cloud-hosting",
       "aliases": [
         "wpengine"
-      ]
+      ],
+      "website": "https://wpengine.com"
     },
     {
       "name": "Wrike",
       "slug": "wrike",
       "category": "project-management",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.wrike.com"
     },
     {
       "name": "Writesonic",
       "slug": "writesonic",
       "category": "ai-writing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://writesonic.com"
     },
     {
       "name": "Wufoo",
@@ -8339,16 +8357,11 @@
       "aliases": []
     },
     {
-      "name": "WunderTrading",
-      "slug": "wundertrading",
-      "category": "crypto-trading-bots",
-      "aliases": []
-    },
-    {
       "name": "Xero",
       "slug": "xero",
       "category": "accounting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.xero.com/uk/"
     },
     {
       "name": "Xero Payroll",
@@ -8400,7 +8413,8 @@
       "category": "ai-productivity",
       "aliases": [
         "you com"
-      ]
+      ],
+      "website": "https://you.com"
     },
     {
       "name": "YouCanBook.me",
@@ -8412,7 +8426,8 @@
       "name": "Zams",
       "slug": "zams",
       "category": "ai-productivity",
-      "aliases": []
+      "aliases": [],
+      "website": "https://zams.com"
     },
     {
       "name": "Zapier",
@@ -8424,7 +8439,8 @@
       "name": "Zapier AI",
       "slug": "zapier-ai",
       "category": "ai-agents",
-      "aliases": []
+      "aliases": [],
+      "website": "https://zapier.com/ai"
     },
     {
       "name": "Zapier Central",
@@ -8433,24 +8449,20 @@
       "aliases": []
     },
     {
-      "name": "Zapper",
-      "slug": "zapper",
-      "category": "defi-tools",
-      "aliases": []
-    },
-    {
       "name": "Zed",
       "slug": "zed",
       "category": "ai-coding",
       "aliases": [
         "zed editor"
-      ]
+      ],
+      "website": "https://zed.dev"
     },
     {
       "name": "Zendesk",
       "slug": "zendesk",
       "category": "customer-support",
-      "aliases": []
+      "aliases": [],
+      "website": "https://zendesk.com"
     },
     {
       "name": "Zendesk Chat",
@@ -8461,8 +8473,9 @@
     {
       "name": "Zendesk Sell",
       "slug": "zendesk-sell",
-      "category": "crm",
-      "aliases": []
+      "category": "CRM",
+      "aliases": [],
+      "website": "https://www.zendesk.com/sell/"
     },
     {
       "name": "Zendesk Support",
@@ -8474,12 +8487,6 @@
       "name": "Zenefits",
       "slug": "zenefits",
       "category": "Payroll",
-      "aliases": []
-    },
-    {
-      "name": "ZenLedger",
-      "slug": "zenledger",
-      "category": "crypto-tax",
       "aliases": []
     },
     {
@@ -8495,16 +8502,11 @@
       "aliases": []
     },
     {
-      "name": "Zerion",
-      "slug": "zerion",
-      "category": "crypto-portfolio-trackers",
-      "aliases": []
-    },
-    {
       "name": "Zesty",
       "slug": "zesty",
       "category": "finops",
-      "aliases": []
+      "aliases": [],
+      "website": "https://zesty.co"
     },
     {
       "name": "Zilliz Cloud",
@@ -8512,7 +8514,8 @@
       "category": "vector-databases",
       "aliases": [
         "milvus zilliz"
-      ]
+      ],
+      "website": "https://zilliz.com"
     },
     {
       "name": "Zillow Premier Agent",
@@ -8544,16 +8547,18 @@
       "name": "Zoho Books",
       "slug": "zoho-books",
       "category": "accounting",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.zoho.com/books/"
     },
     {
       "name": "Zoho CRM",
       "slug": "zoho-crm",
-      "category": "crm",
+      "category": "CRM",
       "aliases": [
         "Zoho",
         "zoho"
-      ]
+      ],
+      "website": "https://www.zoho.com/crm/"
     },
     {
       "name": "Zoho Invoice",
@@ -8565,13 +8570,15 @@
       "name": "Zoho Projects",
       "slug": "zoho-projects",
       "category": "project-management",
-      "aliases": []
+      "aliases": [],
+      "website": "https://www.zoho.com/projects/"
     },
     {
       "name": "Zoom",
       "slug": "zoom",
       "category": "video-conferencing",
-      "aliases": []
+      "aliases": [],
+      "website": "https://zoom.com"
     },
     {
       "name": "ZoomInfo",
@@ -8583,7 +8590,8 @@
       "name": "Zuora",
       "slug": "zuora",
       "category": "payments",
-      "aliases": []
+      "aliases": [],
+      "website": "https://zuora.com"
     }
   ]
 }

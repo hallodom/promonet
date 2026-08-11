@@ -100,5 +100,5 @@ The Node server serves `dist/` (including prerendered routes and SEO files) and 
 
 ## Contact
 
-Contact modal posts to `/api/contact` (Resend → `hello@promonetconsulting.com`). Requires `RESEND_API_KEY`, `RESEND_FROM`, `CONTACT_TO`.
+Contact modal posts to `/api/contact` (Resend → `eddy@promonetconsulting.com`). Requires `RESEND_API_KEY`, `RESEND_FROM`, `CONTACT_TO`.
 

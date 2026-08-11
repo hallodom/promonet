@@ -19,6 +19,7 @@ export default {
         slab: ['"Roboto Slab"', 'Georgia', 'serif'],
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        hand: ['Caveat', 'Segoe Print', 'Comic Sans MS', 'cursive'],
       },
       letterSpacing: {
         tightest: '-0.02em',
