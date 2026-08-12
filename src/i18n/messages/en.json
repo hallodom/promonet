@@ -1,0 +1,315 @@
+{
+  "nav": {
+    "how": "How it works",
+    "connect": "Connect tools",
+    "connectCrm": "Connect your CRM",
+    "pricing": "Pricing",
+    "about": "About",
+    "menu": "Menu",
+    "contactUs": "Contact Us"
+  },
+  "lang": {
+    "switchToEn": "Switch to English",
+    "switchToEs": "Cambiar a español"
+  },
+  "common": {
+    "contactUs": "Contact Us",
+    "linkedin": "Contact us on LinkedIn",
+    "synced": "synced",
+    "all": "All",
+    "and": "and",
+    "andMore": ", and more"
+  },
+  "footer": {
+    "tagline": "CRM and tool integrations for small businesses.",
+    "connect": "Connect",
+    "connectTools": "Connect tools",
+    "connectCrm": "Connect your CRM",
+    "pricing": "Pricing",
+    "company": "Company",
+    "about": "About",
+    "how": "How it works",
+    "contact": "Contact",
+    "linkedinAria": "Promonet on LinkedIn",
+    "fixedPrice": "Fixed-price CRM & tool integrations"
+  },
+  "contact": {
+    "eyebrow": "Contact us",
+    "title": "Tell us what you want connected.",
+    "closeForm": "Close contact form",
+    "close": "Close",
+    "name": "Name",
+    "email": "Email",
+    "company": "Company name",
+    "messageLabel": "Which tools are you interested in connecting?",
+    "defaultMessage": "I'd like to connect these tools:\n\n",
+    "fillAll": "Please fill in all fields.",
+    "sendFailed": "Failed to send message",
+    "sending": "Sending…",
+    "send": "Send",
+    "sendsTo": "Sends to {{email}}",
+    "sentTitle": "Message sent.",
+    "sentBody": "Thanks — we'll get back to you at {{email}}, usually within 24 hours."
+  },
+  "team": {
+    "eyebrow": "The team",
+    "title": "We work as though we were part of your team.",
+    "p1": "We're a small team — no account managers, no ticket queue. When you hire us, you get us: the same people who map your tools, build the flows, and stick around when something needs a tweak.",
+    "p2Before": "We partner with you like your own team members. ",
+    "p2Strong": "Side by side, as friends, until your software is talking",
+    "p2After": " and your Sundays are free again.",
+    "imageAlt": "Promonet team that helps small businesses connect CRM and tools"
+  },
+  "pricingTiers": {
+    "mostTeams": "Most teams",
+    "project": "Project",
+    "customEyebrow": "Custom",
+    "customBadge": "Built around your stack",
+    "footnote": "All plans · no asterisks · no hidden hourly fees · cancel any time"
+  },
+  "pricingData": {
+    "base": {
+      "name": "Base",
+      "period": "month",
+      "tagline": "For owners on one CRM plus a couple of tools. On going dev partnership, whatever you need.",
+      "features": [
+        "One CRM + 2 tools",
+        "Monitoring & alerts",
+        "Email and zoom calls support, We become your helpful dev team"
+      ]
+    },
+    "scaleup": {
+      "name": "Scale-up",
+      "period": "month",
+      "tagline": "When the stack actually runs the business. On going dev partnership, whatever you need.",
+      "features": [
+        "Multiple CRMs + 4 tools",
+        "Monitoring & alerts",
+        "Priority email and zoom calls support",
+        "We become your helpful dev team"
+      ]
+    },
+    "oneoff": {
+      "name": "One-off",
+      "period": "one-off",
+      "tagline": "One connection that works for you, with one follow-up task.",
+      "features": [
+        "One connection built end-to-end",
+        "One follow-up task included",
+        "Documented handoff",
+        "Fixed price — no retainer",
+        "Email support and zoom calls until you are comfortable with the handoff"
+      ]
+    },
+    "custom": {
+      "name": "Custom",
+      "tagline": "Multi-region, multi-CRM, complex logic.",
+      "features": [
+        "Everything in Scale-up",
+        "Dedicated engineer",
+        "Uptime SLA",
+        "Custom reporting"
+      ]
+    }
+  },
+  "home": {
+    "seoPath": "/",
+    "heroTitleBefore": "Your software finally",
+    "heroTitleAccent": "talking together.",
+    "heroP1": "We're a small remote first friendly team who help small to medium sized businesses ",
+    "heroConnectCrm": "connect CRM",
+    "heroP2": ", accounting, booking, and ",
+    "heroIndustry": "industry software",
+    "heroP3": " for a fixed one-off job or monthly partnership.",
+    "bulletFixed": "Fixed price — no hourly games",
+    "bulletFriendly": "Built for small businesses, we work directly with you as a friendly team",
+    "heroImageAlt": "Small business owner whose CRM and tools Promonet helps connect",
+    "handnoteAlt": "no more exporting to spreadsheets",
+    "marqueeLabel": "Tools small businesses ask us to connect every week.",
+    "marqueeMore": "…and Xero, Shopify, Mailchimp, Clio, Jobber, Dubsado, Honeybook, and a few dozen more.",
+    "browseEvery": "Browse every tool",
+    "aboutEyebrow": "The Sunday-night problem",
+    "aboutTitle": "You bought the tools but they still don't talk.",
+    "aboutP1": "Most small-business owners we meet run six to twelve tools that don't sync. Data gets re-typed. Decisions run on stale numbers. Sunday night becomes spreadsheet night.",
+    "aboutStrong": "We're the people who quietly connect the tools to each other.",
+    "linkConnectCrm": "Connect your CRM →",
+    "linkPricing": "See pricing →",
+    "linkAbout": "About Promonet →",
+    "connectedWorkflows": "Connected workflows",
+    "lastSync": "last sync · 12s ago",
+    "eventsToday": "1,381 events today",
+    "uptime": "99.97% uptime",
+    "pipelineInvoice": "invoice → bookkeeping",
+    "pipelineMeeting": "meeting → CRM",
+    "pipelineOrder": "order → segment",
+    "pipelineEnquiry": "enquiry → case",
+    "pipelineRecord": "record → sync",
+    "howEyebrow": "How it works",
+    "howTitle": "Three steps. Then your tools stay connected.",
+    "step1Label": "Map",
+    "step1Title": "Get to know you call.",
+    "step1Body": "We sketch the flows on a whiteboard and count the integrations. No assessment fee.",
+    "step1Alt": "Charcoal sketch of two people talking",
+    "step2Label": "Build",
+    "step2Title": "Two to four weeks.",
+    "step2Body": "We build, test, document, and connect every flow. Monitoring runs from day one. You see progress in plain English.",
+    "step2Alt": "Charcoal sketch of a wrench",
+    "step3Label": "Run",
+    "step3Title": "It just runs.",
+    "step3Body": "Your tools finally talking together. You get exactly what you paid for.",
+    "step3Alt": "Charcoal sketch of a happy smiling face",
+    "pricingEyebrow": "Pricing",
+    "pricingTitle": "Simple pricing - get in touch and let's get started",
+    "pricingPBefore": "",
+    "pricingMonthly": "Monthly partnerships",
+    "pricingOr": " or a ",
+    "pricingOneOff": "one-off project",
+    "pricingPAfter": " — a simple fixed price for small businesses. No hidden hourly fees.",
+    "pricingFull": "Full pricing details →",
+    "faqTitle": "Questions small businesses ask before connecting tools",
+    "ctaEyebrow": "Get your Sunday nights back",
+    "ctaTitle": "Ready to connect your stack?",
+    "ctaBody": "Tell us which CRM and tools you use. We'll map the flows and send a fixed quote — built for small businesses, not enterprise theatre.",
+    "ctaResponse": "24-hour response, every time"
+  },
+  "faqs": [
+    {
+      "question": "What does Promonet connect?",
+      "answer": "We help small businesses connect CRM platforms like Capsule, HubSpot, Pipedrive, Zoho, Copper, and Insightly to accounting, booking, and industry software — plus many other tools in your stack."
+    },
+    {
+      "question": "Is Promonet for small businesses?",
+      "answer": "Yes. Promonet is built for owners and small teams who need CRM and tool integrations without hiring a full-time development team."
+    },
+    {
+      "question": "How much does it cost to connect tools?",
+      "answer": "Monthly partnerships start at £600. Scale-up is £1,500 per month. A one-off connection starts at £1,000. Custom work is quoted separately."
+    },
+    {
+      "question": "How long does a typical integration take?",
+      "answer": "After a get-to-know-you call and fixed quote, most builds take two to four weeks, then we monitor and maintain the connections."
+    },
+    {
+      "question": "Do I need developers on my team?",
+      "answer": "No. We map, build, document, and maintain the connections for you, with human support when something needs a tweak."
+    }
+  ],
+  "about": {
+    "eyebrow": "About",
+    "title": "Built by people who've lived the connectivity gap.",
+    "p1": "We help small businesses connect CRM and industry tools at a low cost, with genuine human support — so owners stop re-typing data between systems.",
+    "p2": "We're a small team of developers and designers. Over 20 years building some of the leading CRM solutions, we kept seeing the same thing: customers still struggling to connect their CRM to the rest of their tools — and their tools to each other, not just the CRM.",
+    "storyTitle": "We saw a gap. Then we decided to fill it.",
+    "storyP1": "Businesses buy great software, then spend Sunday nights copying data between systems that were never meant to talk. Agencies quote enterprise prices. Support becomes a ticket queue.",
+    "storyP2": "Promonet exists to help small businesses fix that problem — at a low cost, with genuine human support.",
+    "stat1Label": "20 years",
+    "stat1Body": "Building CRM products and watching connectivity stay the unsolved part of the stack.",
+    "stat2Label": "Low cost",
+    "stat2Body": "Fixed monthly partnerships or one-off builds — priced for small businesses, not enterprise RFPs.",
+    "stat3Label": "Human support",
+    "stat3Body": "Real people who know your tools. No account managers. No black-hole ticket queues.",
+    "ctaTitle": "Ready to connect your stack?",
+    "ctaBody": "Tell us which tools you're using. We'll help you connect them — simply, affordably, with humans on the other end."
+  },
+  "pricingPage": {
+    "eyebrow": "Pricing",
+    "title": "Simple pricing that helps us work with you",
+    "subtitle": "Monthly partnership options or a one-off project.",
+    "noHidden": "No hidden hourly fees.",
+    "bodyBefore": "Pick a monthly partnership when you want ongoing monitoring and we become your new dev team, or book a one-off when you only need one integration done.",
+    "browseTools": "Browse tools we connect",
+    "ctaEyebrow": "Get your Sunday nights back",
+    "ctaTitle": "Ready to connect your stack?",
+    "ctaBody": "Book a get-to-know-you call. We'll map your tools, sketch the flows, and send you a fixed quote.",
+    "ctaResponse": "24-hour response, every time"
+  },
+  "connectIndex": {
+    "eyebrow": "Integrations",
+    "title": "Connect business tools & integrations.",
+    "body": "Search or browse {{count}} apps — CRMs, accounting, mortgage, legal, dental, real estate, and niche tools. Fixed monthly price. No dev team required.",
+    "connectCrm": "Connect your CRM"
+  },
+  "connectCrm": {
+    "back": "All integrations",
+    "eyebrow": "CRM integrations",
+    "title": "Connect your CRM to industry tools.",
+    "body": "Pick your CRM. We'll show you exactly what we connect it to — and how — for small businesses that need fixed-price integrations."
+  },
+  "connectPage": {
+    "home": "Home",
+    "connectTools": "Connect tools",
+    "connectCrm": "Connect your CRM",
+    "title": "Connect {{crm}} to {{vertical}}.",
+    "leadBefore": " For small businesses running {{verticalLower}} — tools like ",
+    "leadAfter": " — we connect ",
+    "leadEnd": " so leads, status updates, and handoffs stop living in copy-paste. Fixed monthly partnership or one-off build.",
+    "seePricing": "See pricing",
+    "flowsTitle": "Integration flows",
+    "relatedBefore": "Related ",
+    "relatedAfter": " integrations",
+    "relatedItemBefore": "Connect ",
+    "relatedItemTo": " to ",
+    "allCrm": "All CRM integrations",
+    "pricing": "Pricing",
+    "ctaTitleBefore": "Ready to connect ",
+    "ctaTitleMid": " to your ",
+    "ctaTitleAfter": " stack?",
+    "ctaBodyBefore": "Book a call. We'll scope your ",
+    "ctaBodyMid": " + ",
+    "ctaBodyAfter": " integration in 20 minutes.",
+    "notFoundTitle": "Integration not found",
+    "notFoundSeoTitle": "Integration not found | Promonet",
+    "notFoundDescription": "That CRM integration page could not be found.",
+    "notFoundBody": "We couldn't find that integration page.",
+    "browseAll": "Browse all integrations →",
+    "connectCrmCta": "Connect your CRM →",
+    "metaDescription": "Connect {{crm}} to the {{vertical}} software small businesses already run — fixed monthly price, no in-house dev team required."
+  },
+  "appSearch": {
+    "eyebrow": "Search your stack",
+    "title": "Search tools we can connect.",
+    "subtitle": "CRMs, accounting, mortgage, legal, dental, real estate, and a few thousand more.",
+    "placeholder": "Search any app — HubSpot, Clio, Dentrix…",
+    "searching": "Searching {{count}} apps",
+    "askAbout": "Ask about connecting {{name}}",
+    "weCanConnect": "We can connect",
+    "talkAbout": "Talk to us about connecting {{name}} to your CRM, accounting, booking software, or the rest of your stack.",
+    "message": "I'd like to connect {{name}} to the rest of my tools.",
+    "cantFind": "Can't find “{{query}}”?",
+    "cantFindBody": "We still connect custom and niche tools. Tell us what you use — we'll connect it."
+  },
+  "appCatalog": {
+    "byCategory": "Browse by category",
+    "viewCategory": "View by category",
+    "byAz": "Browse A to Z",
+    "viewAz": "View A to Z",
+    "eyebrow": "Full catalog",
+    "titleCategory": "Browse every tool we can connect",
+    "titleAz": "Browse tools A to Z",
+    "count": "{{filtered}} of {{total}} apps",
+    "weCanConnect": "We can connect",
+    "talkAbout": "Talk to us about connecting {{name}} to your CRM, accounting, booking software, or the rest of your stack.",
+    "message": "I'd like to connect {{name}} to the rest of my tools.",
+    "askAbout": "Ask about connecting {{name}}"
+  },
+  "seo": {
+    "homeTitle": "Connect CRM & Business Tools for Small Businesses",
+    "homeDescription": "Promonet helps small businesses connect CRM, accounting, booking, and industry tools — fixed monthly or one-off pricing, with human support. No dev team required.",
+    "aboutTitle": "About Promonet — CRM Integrations for Small Businesses",
+    "aboutDescription": "We are a small team of developers and designers helping small businesses connect CRM and industry tools at a low cost, with genuine human support.",
+    "pricingTitle": "Pricing for CRM & Tool Integrations",
+    "pricingDescription": "Simple pricing for CRM and tool integrations: monthly partnership options from £600, or a fixed one-off connection from £1,000. No hidden hourly fees.",
+    "connectTitle": "Connect Business Tools & Integrations",
+    "connectDescription": "Search and browse tools we help small businesses connect — CRMs, accounting, booking, and niche industry software. Fixed monthly price.",
+    "connectCrmTitle": "Connect Your CRM to Industry Tools",
+    "connectCrmDescription": "Connect Capsule, HubSpot, Pipedrive, Zoho, Copper, or Insightly to mortgage, legal, dental, real estate, and other industry software.",
+    "connectPageTitle": "Connect {{crm}} to {{vertical}}",
+    "connectPageDescription": "Connect {{crm}} to the {{vertical}} software small businesses already run — fixed monthly price, no in-house dev team required.",
+    "orgDescription": "CRM and tool integrations for small businesses. We connect your CRM to industry software and the rest of your stack for a fixed price.",
+    "ogImageAlt": "Promonet — CRM and tool integrations for small businesses",
+    "offerCatalogName": "Promonet integration pricing",
+    "offerBase": "Monthly CRM + tool integration partnership for small businesses.",
+    "offerScaleup": "Monthly partnership with more tools, unlimited flows, and priority support.",
+    "offerOneOff": "Fixed-price one-off connection build with documented handoff."
+  }
+}

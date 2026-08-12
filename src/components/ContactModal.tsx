@@ -1,11 +1,13 @@
 import { useEffect, useId, useState, type FormEvent } from 'react'
 import { X } from 'lucide-react'
 import { CONTACT_EMAIL, useContact } from '@/lib/contact'
+import { useT } from '@/i18n/LocaleContext'
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
 export default function ContactModal() {
   const { open, closeContact, defaultMessage } = useContact()
+  const t = useT()
   const titleId = useId()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -19,13 +21,10 @@ export default function ContactModal() {
     setName('')
     setEmail('')
     setCompany('')
-    setMessage(
-      defaultMessage ||
-        "I'd like to connect these tools:\n\n",
-    )
+    setMessage(defaultMessage || t('contact.defaultMessage'))
     setStatus('idle')
     setError('')
-  }, [open, defaultMessage])
+  }, [open, defaultMessage, t])
 
   useEffect(() => {
     if (!open) return
@@ -44,7 +43,7 @@ export default function ContactModal() {
   async function onSubmit(e: FormEvent) {
     e.preventDefault()
     if (!name.trim() || !email.trim() || !company.trim() || !message.trim()) {
-      setError('Please fill in all fields.')
+      setError(t('contact.fillAll'))
       setStatus('error')
       return
     }
@@ -66,13 +65,13 @@ export default function ContactModal() {
 
       const data = (await res.json().catch(() => ({}))) as { error?: string }
       if (!res.ok) {
-        throw new Error(data.error || 'Failed to send message')
+        throw new Error(data.error || t('contact.sendFailed'))
       }
 
       setStatus('sent')
     } catch (err) {
       setStatus('error')
-      setError(err instanceof Error ? err.message : 'Failed to send message')
+      setError(err instanceof Error ? err.message : t('contact.sendFailed'))
     }
   }
 
@@ -82,7 +81,7 @@ export default function ContactModal() {
     <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-6">
       <button
         type="button"
-        aria-label="Close contact form"
+        aria-label={t('contact.closeForm')}
         className="absolute inset-0 bg-obsidian/55 backdrop-blur-sm"
         onClick={closeContact}
       />
@@ -96,17 +95,17 @@ export default function ContactModal() {
         <div className="flex items-start justify-between gap-4 px-6 md:px-8 pt-6 md:pt-8 pb-4 border-b border-obsidian/8">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-voltage mb-2">
-              Contact us
+              {t('contact.eyebrow')}
             </p>
             <h2 id={titleId} className="font-display text-2xl md:text-3xl tracking-[-0.02em]">
-              Tell us what you want connected.
+              {t('contact.title')}
             </h2>
           </div>
           <button
             type="button"
             onClick={closeContact}
             className="p-2 -mr-2 rounded-[4px] text-graphite hover:text-obsidian hover:bg-obsidian/5 transition-colors"
-            aria-label="Close"
+            aria-label={t('contact.close')}
           >
             <X size={18} />
           </button>
@@ -114,23 +113,23 @@ export default function ContactModal() {
 
         {status === 'sent' ? (
           <div className="px-6 md:px-8 py-10">
-            <p className="font-display text-2xl tracking-[-0.02em] mb-3">Message sent.</p>
+            <p className="font-display text-2xl tracking-[-0.02em] mb-3">{t('contact.sentTitle')}</p>
             <p className="text-graphite mb-8">
-              Thanks — we'll get back to you at {email || 'your email'}, usually within 24 hours.
+              {t('contact.sentBody', { email: email || 'email' })}
             </p>
             <button
               type="button"
               onClick={closeContact}
               className="inline-flex items-center justify-center font-sans font-semibold text-sm tracking-[0.02em] px-6 py-3.5 rounded-[4px] bg-voltage text-bone hover:bg-voltage/90 transition-colors"
             >
-              Close
+              {t('contact.close')}
             </button>
           </div>
         ) : (
           <form onSubmit={onSubmit} className="px-6 md:px-8 py-6 md:py-8 space-y-5">
             <label className="block">
               <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-graphite mb-2 block">
-                Name
+                {t('contact.name')}
               </span>
               <input
                 type="text"
@@ -145,7 +144,7 @@ export default function ContactModal() {
 
             <label className="block">
               <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-graphite mb-2 block">
-                Email
+                {t('contact.email')}
               </span>
               <input
                 type="email"
@@ -160,7 +159,7 @@ export default function ContactModal() {
 
             <label className="block">
               <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-graphite mb-2 block">
-                Company name
+                {t('contact.company')}
               </span>
               <input
                 type="text"
@@ -175,7 +174,7 @@ export default function ContactModal() {
 
             <label className="block">
               <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-graphite mb-2 block">
-                Which tools are you interested in connecting?
+                {t('contact.messageLabel')}
               </span>
               <textarea
                 name="message"
@@ -196,11 +195,11 @@ export default function ContactModal() {
               disabled={status === 'sending'}
               className="w-full inline-flex items-center justify-center font-sans font-semibold text-sm tracking-[0.02em] py-3.5 rounded-[4px] bg-voltage text-bone hover:bg-voltage/90 disabled:opacity-60 transition-colors"
             >
-              {status === 'sending' ? 'Sending…' : 'Send'}
+              {status === 'sending' ? t('contact.sending') : t('contact.send')}
             </button>
 
             <p className="text-xs font-mono text-graphite text-center">
-              Sends to {CONTACT_EMAIL}
+              {t('contact.sendsTo', { email: CONTACT_EMAIL })}
             </p>
           </form>
         )}

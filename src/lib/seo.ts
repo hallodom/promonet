@@ -1,4 +1,13 @@
-import matrix from '@/data/matrix.json'
+import matrixEn from '@/data/matrix.json'
+import { getMatrix } from '@/data/matrixLocale'
+import en from '@/i18n/messages/en.json'
+import es from '@/i18n/messages/es.json'
+import { DEFAULT_LOCALE, type Locale } from '@/i18n/locales'
+import {
+  connectPagePath,
+  pathFor,
+  toLocalePath,
+} from '@/i18n/paths'
 
 export const SITE_URL = 'https://promonetconsulting.com'
 export const SITE_NAME = 'Promonet'
@@ -15,16 +24,27 @@ export const DEFAULT_OG_IMAGE_ALT =
   'Promonet — CRM and tool integrations for small businesses'
 export const SITE_LOGO = `${SITE_URL}/logo.png`
 
+const catalogs = { en, es } as const
+
 export type SeoRoute = {
   path: string
   title: string
   description: string
   priority?: string
   changefreq?: string
+  locale: Locale
 }
 
-type Crm = (typeof matrix.crms)[number]
-type Vertical = (typeof matrix.verticals)[keyof typeof matrix.verticals]
+type Crm = (typeof matrixEn.crms)[number]
+type Vertical = (typeof matrixEn.verticals)[keyof typeof matrixEn.verticals]
+
+function messages(locale: Locale) {
+  return catalogs[locale]
+}
+
+function interpolate(template: string, vars: Record<string, string>) {
+  return template.replace(/\{\{(\w+)\}\}/g, (_, key: string) => vars[key] ?? '')
+}
 
 export function absoluteUrl(path = '/') {
   if (!path || path === '/') return SITE_URL
@@ -39,11 +59,21 @@ export function connectSlug(crmSlug: string, verticalName: string) {
   return `${crmSlug}-to-${verticalName.replace(/\s+/g, '-')}-software`
 }
 
-export function connectPath(crmSlug: string, verticalName: string) {
-  return `/connect/${connectSlug(crmSlug, verticalName)}`
+export function connectPath(
+  crmSlug: string,
+  verticalName: string,
+  locale: Locale = DEFAULT_LOCALE,
+) {
+  return connectPagePath(connectSlug(crmSlug, verticalName), locale)
 }
 
-export function listConnectPages() {
+export function ogImageAlt(locale: Locale = DEFAULT_LOCALE) {
+  return messages(locale).seo.ogImageAlt
+}
+
+export function listConnectPages(locale: Locale = DEFAULT_LOCALE) {
+  const matrix = getMatrix(locale)
+  const seo = messages(locale).seo
   const pages: Array<{
     path: string
     crm: Crm
@@ -57,14 +87,22 @@ export function listConnectPages() {
     for (const verticalKey of crm.verticals) {
       const vertical = matrix.verticals[verticalKey as keyof typeof matrix.verticals]
       if (!vertical) continue
-      const path = connectPath(crm.slug, vertical.name)
+      const path = connectPath(crm.slug, vertical.name, locale)
       pages.push({
         path,
         crm,
         verticalKey,
         vertical,
-        title: pageTitle(`Connect ${crm.name} to ${vertical.title}`),
-        description: `Connect ${crm.name} to the ${vertical.name} software small businesses already run — fixed monthly price, no in-house dev team required.`,
+        title: pageTitle(
+          interpolate(seo.connectPageTitle, {
+            crm: crm.name,
+            vertical: vertical.title,
+          }),
+        ),
+        description: interpolate(seo.connectPageDescription, {
+          crm: crm.name,
+          vertical: vertical.name,
+        }),
       })
     }
   }
@@ -72,61 +110,77 @@ export function listConnectPages() {
   return pages
 }
 
-export function listSeoRoutes(): SeoRoute[] {
-  const connectPages = listConnectPages().map((p) => ({
-    path: p.path,
-    title: p.title,
-    description: p.description,
-    priority: '0.7',
-    changefreq: 'monthly',
-  }))
+export function listSeoRoutes(locale?: Locale): SeoRoute[] {
+  const locales: Locale[] = locale ? [locale] : ['en', 'es']
+  const routes: SeoRoute[] = []
 
-  return [
-    {
-      path: '/',
-      title: pageTitle('Connect CRM & Business Tools for Small Businesses'),
-      description:
-        'Promonet helps small businesses connect CRM, accounting, booking, and industry tools — fixed monthly or one-off pricing, with human support. No dev team required.',
-      priority: '1.0',
-      changefreq: 'weekly',
-    },
-    {
-      path: '/about',
-      title: pageTitle('About Promonet — CRM Integrations for Small Businesses'),
-      description:
-        'We are a small team of developers and designers helping small businesses connect CRM and industry tools at a low cost, with genuine human support.',
-      priority: '0.6',
+  for (const loc of locales) {
+    const seo = messages(loc).seo
+    const connectPages = listConnectPages(loc).map((p) => ({
+      path: p.path,
+      title: p.title,
+      description: p.description,
+      priority: '0.7',
       changefreq: 'monthly',
-    },
-    {
-      path: '/pricing',
-      title: pageTitle('Pricing for CRM & Tool Integrations'),
-      description:
-        'Simple pricing for CRM and tool integrations: monthly partnership options from £600, or a fixed one-off connection from £1,000. No hidden hourly fees.',
-      priority: '0.8',
-      changefreq: 'monthly',
-    },
-    {
-      path: '/connect',
-      title: pageTitle('Connect Business Tools & Integrations'),
-      description:
-        'Search and browse tools we help small businesses connect — CRMs, accounting, booking, and niche industry software. Fixed monthly price.',
-      priority: '0.9',
-      changefreq: 'weekly',
-    },
-    {
-      path: '/connect/crm',
-      title: pageTitle('Connect Your CRM to Industry Tools'),
-      description:
-        'Connect Capsule, HubSpot, Pipedrive, Zoho, Copper, or Insightly to mortgage, legal, dental, real estate, and other industry software.',
-      priority: '0.9',
-      changefreq: 'weekly',
-    },
-    ...connectPages,
-  ]
+      locale: loc,
+    }))
+
+    routes.push(
+      {
+        path: pathFor('home', loc),
+        title: pageTitle(seo.homeTitle),
+        description: seo.homeDescription,
+        priority: '1.0',
+        changefreq: 'weekly',
+        locale: loc,
+      },
+      {
+        path: pathFor('about', loc),
+        title: pageTitle(seo.aboutTitle),
+        description: seo.aboutDescription,
+        priority: '0.6',
+        changefreq: 'monthly',
+        locale: loc,
+      },
+      {
+        path: pathFor('pricing', loc),
+        title: pageTitle(seo.pricingTitle),
+        description: seo.pricingDescription,
+        priority: '0.8',
+        changefreq: 'monthly',
+        locale: loc,
+      },
+      {
+        path: pathFor('connect', loc),
+        title: pageTitle(seo.connectTitle),
+        description: seo.connectDescription,
+        priority: '0.9',
+        changefreq: 'weekly',
+        locale: loc,
+      },
+      {
+        path: pathFor('connectCrm', loc),
+        title: pageTitle(seo.connectCrmTitle),
+        description: seo.connectCrmDescription,
+        priority: '0.9',
+        changefreq: 'weekly',
+        locale: loc,
+      },
+      ...connectPages,
+    )
+  }
+
+  return routes
 }
 
-export function organizationJsonLd() {
+export function getHomeFaqs(locale: Locale = DEFAULT_LOCALE) {
+  return messages(locale).faqs
+}
+
+/** @deprecated Prefer getHomeFaqs(locale) */
+export const HOME_FAQS = en.faqs
+
+export function organizationJsonLd(locale: Locale = DEFAULT_LOCALE) {
   return {
     '@context': 'https://schema.org',
     '@type': ['Organization', 'ProfessionalService'],
@@ -135,9 +189,8 @@ export function organizationJsonLd() {
     email: CONTACT_EMAIL,
     logo: SITE_LOGO,
     image: DEFAULT_OG_IMAGE,
-    description:
-      'CRM and tool integrations for small businesses. We connect your CRM to industry software and the rest of your stack for a fixed price.',
-    areaServed: ['GB', 'Worldwide'],
+    description: messages(locale).seo.orgDescription,
+    areaServed: ['GB', 'Worldwide', 'ES'],
     serviceType: [
       'CRM integration',
       'Business tool integration',
@@ -192,61 +245,43 @@ export function faqJsonLd(
   }
 }
 
-export function offerCatalogJsonLd() {
+export function offerCatalogJsonLd(locale: Locale = DEFAULT_LOCALE) {
+  const seo = messages(locale).seo
+  const pricing = messages(locale).pricingData
   return {
     '@context': 'https://schema.org',
     '@type': 'OfferCatalog',
-    name: 'Promonet integration pricing',
+    name: seo.offerCatalogName,
     itemListElement: [
       {
         '@type': 'Offer',
-        name: 'Base',
+        name: pricing.base.name,
         price: '600',
         priceCurrency: 'GBP',
-        description: 'Monthly CRM + tool integration partnership for small businesses.',
+        description: seo.offerBase,
       },
       {
         '@type': 'Offer',
-        name: 'Scale-up',
+        name: pricing.scaleup.name,
         price: '1500',
         priceCurrency: 'GBP',
-        description: 'Monthly partnership with more tools, unlimited flows, and priority support.',
+        description: seo.offerScaleup,
       },
       {
         '@type': 'Offer',
-        name: 'One-off',
+        name: pricing.oneoff.name,
         price: '1000',
         priceCurrency: 'GBP',
-        description: 'Fixed-price one-off connection build with documented handoff.',
+        description: seo.offerOneOff,
       },
     ],
   }
 }
 
-export const HOME_FAQS = [
-  {
-    question: 'What does Promonet connect?',
-    answer:
-      'We help small businesses connect CRM platforms like Capsule, HubSpot, Pipedrive, Zoho, Copper, and Insightly to accounting, booking, and industry software — plus many other tools in your stack.',
-  },
-  {
-    question: 'Is Promonet for small businesses?',
-    answer:
-      'Yes. Promonet is built for owners and small teams who need CRM and tool integrations without hiring a full-time development team.',
-  },
-  {
-    question: 'How much does it cost to connect tools?',
-    answer:
-      'Monthly partnerships start at £600. Scale-up is £1,500 per month. A one-off connection starts at £1,000. Custom work is quoted separately.',
-  },
-  {
-    question: 'How long does a typical integration take?',
-    answer:
-      'After a get-to-know-you call and fixed quote, most builds take two to four weeks, then we monitor and maintain the connections.',
-  },
-  {
-    question: 'Do I need developers on my team?',
-    answer:
-      'No. We map, build, document, and maintain the connections for you, with human support when something needs a tweak.',
-  },
-]
+export function hreflangAlternates(path: string) {
+  return {
+    en: absoluteUrl(toLocalePath(path, 'en')),
+    es: absoluteUrl(toLocalePath(path, 'es')),
+    xDefault: absoluteUrl(toLocalePath(path, 'en')),
+  }
+}

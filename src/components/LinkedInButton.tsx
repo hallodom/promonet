@@ -2,16 +2,16 @@ import type { ReactNode } from 'react'
 import { LINKEDIN_URL } from '@/lib/seo'
 import { cn } from '@/lib/cn'
 import LinkedInIcon from '@/components/LinkedInIcon'
+import { useT } from '@/i18n/LocaleContext'
 
 type Props = {
   className?: string
   children?: ReactNode
 }
 
-export default function LinkedInButton({
-  className,
-  children = 'Contact us on LinkedIn',
-}: Props) {
+export default function LinkedInButton({ className, children }: Props) {
+  const t = useT()
+
   return (
     <a
       href={LINKEDIN_URL}
@@ -23,7 +23,7 @@ export default function LinkedInButton({
       )}
     >
       <LinkedInIcon size={16} />
-      {children}
+      {children ?? t('common.linkedin')}
     </a>
   )
 }

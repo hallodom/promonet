@@ -4,6 +4,7 @@ import catalog from '@/data/apps.json'
 import { cn } from '@/lib/cn'
 import ContactButton from '@/components/ContactButton'
 import ProductLink from '@/components/ProductLink'
+import { useLocale } from '@/i18n/LocaleContext'
 
 type AppEntry = {
   name: string
@@ -15,6 +16,7 @@ type AppEntry = {
 
 type ViewMode = 'category' | 'az'
 
+const ALL = '__all__'
 const apps = catalog.apps as AppEntry[]
 
 function displayCategory(category: string) {
@@ -28,24 +30,28 @@ function letterFor(name: string) {
 }
 
 export default function AppCatalog() {
+  const { t, locale } = useLocale()
   const [view, setView] = useState<ViewMode>('category')
-  const [category, setCategory] = useState('All')
+  const [category, setCategory] = useState(ALL)
   const [selected, setSelected] = useState<AppEntry | null>(null)
+  const numberLocale = locale === 'es' ? 'es-ES' : 'en-GB'
 
   const categories = useMemo(() => {
     const set = new Set(apps.map((a) => displayCategory(a.category)).filter(Boolean))
-    return ['All', ...[...set].sort((a, b) => a.localeCompare(b))]
-  }, [])
+    return [ALL, ...[...set].sort((a, b) => a.localeCompare(b, numberLocale))]
+  }, [numberLocale])
 
   const filtered = useMemo(() => {
     const base =
-      view === 'az' || category === 'All'
+      view === 'az' || category === ALL
         ? apps
         : apps.filter((a) => displayCategory(a.category) === category)
 
     if (view !== 'az') return base
-    return [...base].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }))
-  }, [category, view])
+    return [...base].sort((a, b) =>
+      a.name.localeCompare(b.name, numberLocale, { sensitivity: 'base' }),
+    )
+  }, [category, view, numberLocale])
 
   const azGroups = useMemo(() => {
     if (view !== 'az') return []
@@ -71,14 +77,14 @@ export default function AppCatalog() {
   return (
     <div>
       <div className="flex items-center justify-end gap-1 mb-4">
-        <ViewTooltip label="Browse by category">
+        <ViewTooltip label={t('appCatalog.byCategory')}>
           <button
             type="button"
             onClick={() => {
               setView('category')
               setSelected(null)
             }}
-            aria-label="View by category"
+            aria-label={t('appCatalog.viewCategory')}
             aria-pressed={view === 'category'}
             className={cn(
               'inline-flex h-9 w-9 items-center justify-center rounded-[4px] border transition-colors',
@@ -90,15 +96,15 @@ export default function AppCatalog() {
             <LayoutGrid size={16} strokeWidth={1.75} />
           </button>
         </ViewTooltip>
-        <ViewTooltip label="Browse A to Z">
+        <ViewTooltip label={t('appCatalog.byAz')}>
           <button
             type="button"
             onClick={() => {
               setView('az')
-              setCategory('All')
+              setCategory(ALL)
               setSelected(null)
             }}
-            aria-label="View A to Z"
+            aria-label={t('appCatalog.viewAz')}
             aria-pressed={view === 'az'}
             className={cn(
               'inline-flex h-9 w-9 items-center justify-center rounded-[4px] border transition-colors',
@@ -115,14 +121,17 @@ export default function AppCatalog() {
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
         <div>
           <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-voltage mb-3 block">
-            Full catalog
+            {t('appCatalog.eyebrow')}
           </span>
           <h2 className="font-display text-3xl md:text-4xl tracking-[-0.02em]">
-            {view === 'az' ? 'Browse tools A to Z' : 'Browse every tool we can connect'}
+            {view === 'az' ? t('appCatalog.titleAz') : t('appCatalog.titleCategory')}
           </h2>
         </div>
         <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-graphite">
-          {filtered.length.toLocaleString()} of {catalog.count.toLocaleString()} apps
+          {t('appCatalog.count', {
+            filtered: filtered.length.toLocaleString(numberLocale),
+            total: catalog.count.toLocaleString(numberLocale),
+          })}
         </p>
       </div>
 
@@ -144,7 +153,7 @@ export default function AppCatalog() {
                     : 'border border-obsidian/10 text-graphite hover:border-voltage hover:text-voltage',
                 )}
               >
-                {cat}
+                {cat === ALL ? t('common.all') : cat}
               </button>
             ))}
           </div>
@@ -172,15 +181,15 @@ export default function AppCatalog() {
           id="catalog-cta"
           className="mb-8 p-5 rounded-[4px] bg-voltage/[0.06] border border-voltage/20"
         >
-          <p className="text-sm text-graphite mb-1">We can connect</p>
+          <p className="text-sm text-graphite mb-1">{t('appCatalog.weCanConnect')}</p>
           <p className="font-display text-xl md:text-2xl tracking-[-0.015em] mb-4">
             <ProductLink name={selected.name}>{selected.name}</ProductLink>
           </p>
           <p className="text-sm text-graphite mb-5 max-w-[480px]">
-            Talk to us about connecting {selected.name} to your CRM, accounting, booking software, or the rest of your stack.
+            {t('appCatalog.talkAbout', { name: selected.name })}
           </p>
           <ContactButton
-            message={`I'd like to connect ${selected.name} to the rest of my tools.`}
+            message={t('appCatalog.message', { name: selected.name })}
             className="px-5 py-3 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90"
           />
         </div>
@@ -194,6 +203,7 @@ export default function AppCatalog() {
               app={app}
               selected={selected?.name === app.name}
               onSelect={() => setSelected(app)}
+              askLabel={t('appCatalog.askAbout', { name: app.name })}
             />
           ))}
         </div>
@@ -211,6 +221,7 @@ export default function AppCatalog() {
                     app={app}
                     selected={selected?.name === app.name}
                     onSelect={() => setSelected(app)}
+                    askLabel={t('appCatalog.askAbout', { name: app.name })}
                   />
                 ))}
               </div>
@@ -221,7 +232,6 @@ export default function AppCatalog() {
     </div>
   )
 }
-
 
 function ViewTooltip({
   label,
@@ -242,7 +252,6 @@ function ViewTooltip({
           'transition-all duration-200 ease-out',
           'group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100',
           'group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:scale-100',
-          '',
         )}
       >
         {label}
@@ -259,10 +268,12 @@ function AppCard({
   app,
   selected,
   onSelect,
+  askLabel,
 }: {
   app: AppEntry
   selected: boolean
   onSelect: () => void
+  askLabel: string
 }) {
   return (
     <div
@@ -277,7 +288,7 @@ function AppCard({
         type="button"
         onClick={onSelect}
         className="absolute inset-0 rounded-[4px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-voltage"
-        aria-label={`Ask about connecting ${app.name}`}
+        aria-label={askLabel}
       />
       <div className="relative z-10 w-fit max-w-full font-medium text-sm mb-1 truncate">
         <ProductLink name={app.name} className="relative">

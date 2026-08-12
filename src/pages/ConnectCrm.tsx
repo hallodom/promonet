@@ -1,40 +1,44 @@
 import { Link } from 'react-router-dom'
 import { ArrowLeft, ArrowUpRight } from 'lucide-react'
-import matrix from '@/data/matrix.json'
 import { useReveal } from '@/lib/useReveal'
 import Seo from '@/components/Seo'
 import { connectSlug, listSeoRoutes } from '@/lib/seo'
-
-const crmSeo = listSeoRoutes().find((r) => r.path === '/connect/crm')!
+import { getMatrix } from '@/data/matrixLocale'
+import { useLocale } from '@/i18n/LocaleContext'
+import { connectPagePath } from '@/i18n/paths'
 
 export default function ConnectCrm() {
   useReveal()
+  const { t, locale, path } = useLocale()
+  const matrix = getMatrix(locale)
+  const crmPath = path('connectCrm')
+  const crmSeo = listSeoRoutes(locale).find((r) => r.path === crmPath)!
 
   return (
     <>
       <Seo
         title={crmSeo.title}
         description={crmSeo.description}
-        path="/connect/crm"
+        path={crmPath}
       />
 
       <section className="pt-32 pb-20 border-b border-obsidian/8">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <Link
-            to="/connect"
+            to={path('connect')}
             className="inline-flex items-center gap-2 text-sm text-graphite hover:text-voltage transition-colors mb-10 no-underline"
           >
-            <ArrowLeft size={14} /> All integrations
+            <ArrowLeft size={14} /> {t('connectCrm.back')}
           </Link>
 
           <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-voltage mb-6 block reveal">
-            CRM integrations
+            {t('connectCrm.eyebrow')}
           </span>
           <h1 className="font-display text-[clamp(40px,7vw,88px)] leading-[1.02] tracking-[-0.02em] mb-8 max-w-[900px] text-balance reveal">
-            Connect your CRM to industry tools.
+            {t('connectCrm.title')}
           </h1>
           <p className="text-lg md:text-xl text-graphite max-w-[600px] reveal" style={{ transitionDelay: '100ms' }}>
-            Pick your CRM. We&apos;ll show you exactly what we connect it to — and how — for small businesses that need fixed-price integrations.
+            {t('connectCrm.body')}
           </p>
         </div>
       </section>
@@ -62,7 +66,7 @@ export default function ConnectCrm() {
                     return (
                       <Link
                         key={slug}
-                        to={`/connect/${slug}`}
+                        to={connectPagePath(slug, locale)}
                         className="group flex flex-col p-6 rounded-[4px] border border-obsidian/10 bg-bone hover:border-voltage hover:bg-voltage/[0.02] transition-colors no-underline"
                       >
                         <div className="flex items-start justify-between gap-3 mb-4">

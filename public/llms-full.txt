@@ -5,6 +5,10 @@ Promonet builds and maintains integrations that connect CRM platforms to other b
 
 We are not a generic IT helpdesk. We partner with owners like teammates: map the stack, build the connections, document them, and stick around when APIs change or new tools are added.
 
+## Languages
+- English (default): unprefixed URLs
+- Spanish: /es, /es/precios, /es/nosotros, /es/conectar, /es/conectar/crm, /es/conectar/:slug
+
 ## Who it is for
 Small businesses and owner-led teams who:
 - Run a CRM plus several other tools that do not sync
@@ -27,8 +31,8 @@ Connecting tools means moving data automatically between systems you already pay
 - Insightly: Sales plus project delivery in one place — needs proper plumbing to your accounting and ops tools.
 
 ## Pricing (GBP)
-- Base: £600 / month — one CRM + 1 tool, up to 3 flows, monitoring, 24-hour email support
-- Scale-up: £1,500 / month — one CRM + 4 tools, unlimited flows, priority Slack, quarterly review
+- Base: £600 / month — one CRM + tools, monitoring, email and Zoom support
+- Scale-up: £1,500 / month — multiple CRMs + tools, priority support
 - One-off: £1,000 — one connection end-to-end, one follow-up task, documented handoff
 - Custom: quoted for multi-CRM / complex logic
 
@@ -43,36 +47,71 @@ Connecting tools means moving data automatically between systems you already pay
 - https://promonetconsulting.com/pricing
 - https://promonetconsulting.com/connect
 - https://promonetconsulting.com/connect/crm
+- https://promonetconsulting.com/es
+- https://promonetconsulting.com/es/nosotros
+- https://promonetconsulting.com/es/precios
+- https://promonetconsulting.com/es/conectar
+- https://promonetconsulting.com/es/conectar/crm
 - https://promonetconsulting.com/connect/capsule-to-mortgage-software
+- https://promonetconsulting.com/es/conectar/capsule-to-mortgage-software
 - https://promonetconsulting.com/connect/capsule-to-legal-software
+- https://promonetconsulting.com/es/conectar/capsule-to-legal-software
 - https://promonetconsulting.com/connect/capsule-to-accounting-software
+- https://promonetconsulting.com/es/conectar/capsule-to-accounting-software
 - https://promonetconsulting.com/connect/capsule-to-consulting-software
+- https://promonetconsulting.com/es/conectar/capsule-to-consulting-software
 - https://promonetconsulting.com/connect/capsule-to-agency-software
+- https://promonetconsulting.com/es/conectar/capsule-to-agency-software
 - https://promonetconsulting.com/connect/hubspot-to-mortgage-software
+- https://promonetconsulting.com/es/conectar/hubspot-to-mortgage-software
 - https://promonetconsulting.com/connect/hubspot-to-legal-software
+- https://promonetconsulting.com/es/conectar/hubspot-to-legal-software
 - https://promonetconsulting.com/connect/hubspot-to-real-estate-software
+- https://promonetconsulting.com/es/conectar/hubspot-to-real-estate-software
 - https://promonetconsulting.com/connect/hubspot-to-agency-software
+- https://promonetconsulting.com/es/conectar/hubspot-to-agency-software
 - https://promonetconsulting.com/connect/hubspot-to-healthcare-software
+- https://promonetconsulting.com/es/conectar/hubspot-to-healthcare-software
 - https://promonetconsulting.com/connect/pipedrive-to-mortgage-software
+- https://promonetconsulting.com/es/conectar/pipedrive-to-mortgage-software
 - https://promonetconsulting.com/connect/pipedrive-to-real-estate-software
+- https://promonetconsulting.com/es/conectar/pipedrive-to-real-estate-software
 - https://promonetconsulting.com/connect/pipedrive-to-recruitment-software
+- https://promonetconsulting.com/es/conectar/pipedrive-to-recruitment-software
 - https://promonetconsulting.com/connect/pipedrive-to-manufacturing-software
+- https://promonetconsulting.com/es/conectar/pipedrive-to-manufacturing-software
 - https://promonetconsulting.com/connect/pipedrive-to-agency-software
+- https://promonetconsulting.com/es/conectar/pipedrive-to-agency-software
 - https://promonetconsulting.com/connect/zoho-to-mortgage-software
+- https://promonetconsulting.com/es/conectar/zoho-to-mortgage-software
 - https://promonetconsulting.com/connect/zoho-to-accounting-software
+- https://promonetconsulting.com/es/conectar/zoho-to-accounting-software
 - https://promonetconsulting.com/connect/zoho-to-real-estate-software
+- https://promonetconsulting.com/es/conectar/zoho-to-real-estate-software
 - https://promonetconsulting.com/connect/zoho-to-healthcare-software
+- https://promonetconsulting.com/es/conectar/zoho-to-healthcare-software
 - https://promonetconsulting.com/connect/zoho-to-manufacturing-software
+- https://promonetconsulting.com/es/conectar/zoho-to-manufacturing-software
 - https://promonetconsulting.com/connect/copper-to-agency-software
+- https://promonetconsulting.com/es/conectar/copper-to-agency-software
 - https://promonetconsulting.com/connect/copper-to-consulting-software
+- https://promonetconsulting.com/es/conectar/copper-to-consulting-software
 - https://promonetconsulting.com/connect/copper-to-real-estate-software
+- https://promonetconsulting.com/es/conectar/copper-to-real-estate-software
 - https://promonetconsulting.com/connect/copper-to-professional-services-software
+- https://promonetconsulting.com/es/conectar/copper-to-professional-services-software
 - https://promonetconsulting.com/connect/copper-to-creative-services-software
+- https://promonetconsulting.com/es/conectar/copper-to-creative-services-software
 - https://promonetconsulting.com/connect/insightly-to-consulting-software
+- https://promonetconsulting.com/es/conectar/insightly-to-consulting-software
 - https://promonetconsulting.com/connect/insightly-to-legal-software
+- https://promonetconsulting.com/es/conectar/insightly-to-legal-software
 - https://promonetconsulting.com/connect/insightly-to-agency-software
+- https://promonetconsulting.com/es/conectar/insightly-to-agency-software
 - https://promonetconsulting.com/connect/insightly-to-manufacturing-software
+- https://promonetconsulting.com/es/conectar/insightly-to-manufacturing-software
 - https://promonetconsulting.com/connect/insightly-to-project-based-services-software
+- https://promonetconsulting.com/es/conectar/insightly-to-project-based-services-software
 
 ## Contact
 hello@promonetconsulting.com

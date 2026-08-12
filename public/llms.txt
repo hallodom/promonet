@@ -4,17 +4,26 @@
 
 Promonet helps small business owners connect their CRM to industry software and the rest of their stack — without hiring a full-time development team. Fixed monthly partnerships or one-off builds, with human support.
 
+The site is available in English (default) and Spanish under /es paths.
+
 ## Who it's for
 - Small businesses and owners (roughly 5–50 people)
 - Teams that need to connect CRM, accounting, booking, and niche tools
 - Companies that want fixed pricing instead of open-ended hourly agency work
 
-## Key pages
+## Key pages (English)
 - [Home](https://promonetconsulting.com/): Connect CRM and business tools for small businesses
 - [Connect tools](https://promonetconsulting.com/connect): Search and browse tools we can connect
 - [Connect your CRM](https://promonetconsulting.com/connect/crm): CRM → industry software matrix
 - [Pricing](https://promonetconsulting.com/pricing): Base £600/mo, Scale-up £1,500/mo, One-off £1,000
 - [About](https://promonetconsulting.com/about): Team background and why Promonet exists
+
+## Key pages (Spanish)
+- [Inicio](https://promonetconsulting.com/es)
+- [Conectar herramientas](https://promonetconsulting.com/es/conectar)
+- [Conectar tu CRM](https://promonetconsulting.com/es/conectar/crm)
+- [Precios](https://promonetconsulting.com/es/precios)
+- [Nosotros](https://promonetconsulting.com/es/nosotros)
 
 ## CRMs we commonly connect
 Capsule CRM, HubSpot, Pipedrive, Zoho CRM, Copper, Insightly

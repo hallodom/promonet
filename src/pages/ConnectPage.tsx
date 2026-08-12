@@ -1,6 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import matrix from '@/data/matrix.json'
 import { useReveal } from '@/lib/useReveal'
 import ContactButton from '@/components/ContactButton'
 import Seo from '@/components/Seo'
@@ -9,18 +8,23 @@ import {
   breadcrumbJsonLd,
   connectPath,
   listConnectPages,
+  pageTitle,
 } from '@/lib/seo'
+import { getMatrix } from '@/data/matrixLocale'
+import { useLocale } from '@/i18n/LocaleContext'
+import { connectPagePath } from '@/i18n/paths'
 
 export default function ConnectPage() {
   useReveal()
   const { slug } = useParams<{ slug: string }>()
+  const { t, locale, path } = useLocale()
+  const matrix = getMatrix(locale)
 
   const parts = slug?.match(/^(.+?)-to-(.+?)-software$/)
   if (!parts) return <NotFound />
 
   const [, crmSlug, verticalSlug] = parts
   const crm = matrix.crms.find((c) => c.slug === crmSlug)
-  // Resolve by matrix key or by name with spaces → hyphens (matches connectSlug)
   const vertical =
     matrix.verticals[verticalSlug as keyof typeof matrix.verticals] ??
     Object.values(matrix.verticals).find(
@@ -29,13 +33,14 @@ export default function ConnectPage() {
 
   if (!crm || !vertical) return <NotFound />
 
-  const path = `/connect/${slug}`
-  const pageMeta = listConnectPages().find((p) => p.path === path)
+  const pagePath = connectPagePath(slug!, locale)
+  const pageMeta = listConnectPages(locale).find((p) => p.path === pagePath)
   const title =
-    pageMeta?.title ?? `Connect ${crm.name} to ${vertical.title} | Promonet`
+    pageMeta?.title ??
+    pageTitle(t('connectPage.title', { crm: crm.name, vertical: vertical.title }).replace(/\.$/, ''))
   const description =
     pageMeta?.description ??
-    `Connect ${crm.name} to the ${vertical.name} software small businesses already run — fixed monthly price, no in-house dev team required.`
+    t('connectPage.metaDescription', { crm: crm.name, vertical: vertical.name })
 
   const toolPreview = vertical.tools.slice(0, 3)
 
@@ -43,17 +48,17 @@ export default function ConnectPage() {
     .map((key) => {
       const v = matrix.verticals[key as keyof typeof matrix.verticals]
       if (!v) return null
-      const relatedPath = connectPath(crm.slug, v.name)
-      if (relatedPath === path) return null
+      const relatedPath = connectPath(crm.slug, v.name, locale)
+      if (relatedPath === pagePath) return null
       return { title: v.title, path: relatedPath, name: v.name }
     })
     .filter(Boolean) as Array<{ title: string; path: string; name: string }>
 
   const crumbs = [
-    { name: 'Home', path: '/' },
-    { name: 'Connect tools', path: '/connect' },
-    { name: 'Connect your CRM', path: '/connect/crm' },
-    { name: `${crm.name} → ${vertical.title}`, path },
+    { name: t('connectPage.home'), path: path('home') },
+    { name: t('connectPage.connectTools'), path: path('connect') },
+    { name: t('connectPage.connectCrm'), path: path('connectCrm') },
+    { name: `${crm.name} → ${vertical.title}`, path: pagePath },
   ]
 
   return (
@@ -61,7 +66,7 @@ export default function ConnectPage() {
       <Seo
         title={title}
         description={description}
-        path={path}
+        path={pagePath}
         jsonLd={[breadcrumbJsonLd(crumbs)]}
       />
 
@@ -92,21 +97,26 @@ export default function ConnectPage() {
             <ProductLink name={crm.name}>{crm.short}</ProductLink> → {vertical.title}
           </span>
           <h1 className="font-display text-[clamp(36px,6vw,72px)] leading-[1.02] tracking-[-0.02em] mb-8 max-w-[900px] text-balance reveal">
-            Connect {crm.name} to {vertical.title}.
+            {t('connectPage.title', { crm: crm.name, vertical: vertical.title })}
           </h1>
           <p className="text-lg text-graphite max-w-[640px] mb-8 reveal" style={{ transitionDelay: '100ms' }}>
-            {crm.blurb} For small businesses running {vertical.title.toLowerCase()} — tools like{' '}
+            {crm.blurb}
+            {t('connectPage.leadBefore', { verticalLower: vertical.title.toLowerCase() })}
             {toolPreview.map((tool, index) => (
               <span key={tool}>
-                {index > 0 && (index === toolPreview.length - 1 ? ', and ' : ', ')}
+                {index > 0 &&
+                  (index === toolPreview.length - 1
+                    ? `, ${t('common.and')} `
+                    : ', ')}
                 <ProductLink name={tool}>{tool}</ProductLink>
               </span>
             ))}
-            {vertical.tools.length > 3 ? ', and more' : ''} — we connect{' '}
-            <ProductLink name={crm.name}>{crm.name}</ProductLink> so leads, status updates, and
-            handoffs stop living in copy-paste. Fixed monthly partnership or one-off build.{' '}
-            <Link to="/pricing" className="text-voltage hover:underline font-semibold">
-              See pricing
+            {vertical.tools.length > 3 ? t('common.andMore') : ''}
+            {t('connectPage.leadAfter')}
+            <ProductLink name={crm.name}>{crm.name}</ProductLink>
+            {t('connectPage.leadEnd')}{' '}
+            <Link to={path('pricing')} className="text-voltage hover:underline font-semibold">
+              {t('connectPage.seePricing')}
             </Link>
             .
           </p>
@@ -127,7 +137,7 @@ export default function ConnectPage() {
       <section className="py-20 md:py-28">
         <div className="max-w-[1100px] mx-auto px-6 md:px-10">
           <h2 className="font-display text-3xl md:text-4xl mb-12 tracking-[-0.015em] reveal">
-            Integration flows
+            {t('connectPage.flowsTitle')}
           </h2>
           <div className="grid gap-4">
             {vertical.flows.map((flow, i) => (
@@ -158,23 +168,27 @@ export default function ConnectPage() {
         <section className="py-16 md:py-20 hairline-t">
           <div className="max-w-[1100px] mx-auto px-6 md:px-10">
             <h2 className="font-display text-2xl md:text-3xl mb-6 tracking-[-0.015em] reveal">
-              Related <ProductLink name={crm.name}>{crm.name}</ProductLink> integrations
+              {t('connectPage.relatedBefore')}
+              <ProductLink name={crm.name}>{crm.name}</ProductLink>
+              {t('connectPage.relatedAfter')}
             </h2>
             <ul className="flex flex-wrap gap-x-6 gap-y-3 text-sm reveal">
               {relatedVerticals.slice(0, 6).map((rel) => (
                 <li key={rel.path}>
-                  Connect <ProductLink name={crm.name}>{crm.name}</ProductLink> to{' '}
+                  {t('connectPage.relatedItemBefore')}
+                  <ProductLink name={crm.name}>{crm.name}</ProductLink>
+                  {t('connectPage.relatedItemTo')}
                   <Link to={rel.path} className="text-voltage hover:underline">{rel.title}</Link>
                 </li>
               ))}
               <li>
-                <Link to="/connect/crm" className="text-graphite hover:text-voltage hover:underline">
-                  All CRM integrations
+                <Link to={path('connectCrm')} className="text-graphite hover:text-voltage hover:underline">
+                  {t('connectPage.allCrm')}
                 </Link>
               </li>
               <li>
-                <Link to="/pricing" className="text-graphite hover:text-voltage hover:underline">
-                  Pricing
+                <Link to={path('pricing')} className="text-graphite hover:text-voltage hover:underline">
+                  {t('connectPage.pricing')}
                 </Link>
               </li>
             </ul>
@@ -185,12 +199,18 @@ export default function ConnectPage() {
       <section className="py-24 bg-obsidian text-bone hairline-t border-bone/10">
         <div className="max-w-[800px] mx-auto px-6 md:px-10 text-center">
           <h3 className="font-display text-3xl md:text-5xl mb-5 tracking-[-0.02em] text-balance">
-            Ready to connect <ProductLink name={crm.name}>{crm.short}</ProductLink> to your{' '}
-            {vertical.name} stack?
+            {t('connectPage.ctaTitleBefore')}
+            <ProductLink name={crm.name}>{crm.short}</ProductLink>
+            {t('connectPage.ctaTitleMid')}
+            {vertical.name}
+            {t('connectPage.ctaTitleAfter')}
           </h3>
           <p className="text-bone/70 mb-10 max-w-[480px] mx-auto text-lg">
-            Book a call. We&apos;ll scope your <ProductLink name={crm.name}>{crm.short}</ProductLink> +{' '}
-            {vertical.name} integration in 20 minutes.
+            {t('connectPage.ctaBodyBefore')}
+            <ProductLink name={crm.name}>{crm.short}</ProductLink>
+            {t('connectPage.ctaBodyMid')}
+            {vertical.name}
+            {t('connectPage.ctaBodyAfter')}
           </p>
           <ContactButton className="px-7 py-4 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90" />
         </div>
@@ -209,24 +229,25 @@ function renderCrmReferences(text: string, crmName: string, crmLabel: string) {
 }
 
 function NotFound() {
+  const { t, path } = useLocale()
   return (
     <>
       <Seo
-        title="Integration not found | Promonet"
-        description="That CRM integration page could not be found."
-        path="/connect"
+        title={t('connectPage.notFoundSeoTitle')}
+        description={t('connectPage.notFoundDescription')}
+        path={path('connect')}
         noIndex
       />
       <section className="py-32 text-center">
         <div className="max-w-[600px] mx-auto px-6 md:px-10">
-          <h1 className="font-display text-5xl mb-5 tracking-[-0.02em]">Integration not found</h1>
-          <p className="text-graphite mb-10">We couldn&apos;t find that integration page.</p>
+          <h1 className="font-display text-5xl mb-5 tracking-[-0.02em]">{t('connectPage.notFoundTitle')}</h1>
+          <p className="text-graphite mb-10">{t('connectPage.notFoundBody')}</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/connect" className="text-voltage hover:underline font-semibold">
-              Browse all integrations →
+            <Link to={path('connect')} className="text-voltage hover:underline font-semibold">
+              {t('connectPage.browseAll')}
             </Link>
-            <Link to="/connect/crm" className="text-graphite hover:text-voltage hover:underline font-semibold">
-              Connect your CRM →
+            <Link to={path('connectCrm')} className="text-graphite hover:text-voltage hover:underline font-semibold">
+              {t('connectPage.connectCrmCta')}
             </Link>
           </div>
         </div>

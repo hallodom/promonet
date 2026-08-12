@@ -11,8 +11,17 @@ import { spawnSync } from 'node:child_process'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
 const DIST = path.join(ROOT, 'dist')
-const MATRIX = JSON.parse(
+const MATRIX_EN = JSON.parse(
   fs.readFileSync(path.join(ROOT, 'src/data/matrix.json'), 'utf8'),
+)
+const MATRIX_ES = JSON.parse(
+  fs.readFileSync(path.join(ROOT, 'src/data/matrix.es.json'), 'utf8'),
+)
+const MSG_EN = JSON.parse(
+  fs.readFileSync(path.join(ROOT, 'src/i18n/messages/en.json'), 'utf8'),
+)
+const MSG_ES = JSON.parse(
+  fs.readFileSync(path.join(ROOT, 'src/i18n/messages/es.json'), 'utf8'),
 )
 const PRODUCT_WEBSITES = JSON.parse(
   fs.readFileSync(path.join(ROOT, 'src/data/product-websites.json'), 'utf8'),
@@ -25,7 +34,6 @@ const OG_IMAGE = `${SITE_URL}/og-default.jpg`
 const OG_IMAGE_WIDTH = 1200
 const OG_IMAGE_HEIGHT = 630
 const OG_IMAGE_TYPE = 'image/jpeg'
-const OG_IMAGE_ALT = 'Promonet — CRM and tool integrations for small businesses'
 const SITE_LOGO = `${SITE_URL}/logo.png`
 
 function connectSlug(crmSlug, verticalName) {
@@ -55,6 +63,28 @@ function productLink(name, label = name) {
   return `<a href="${esc(website)}" target="_blank" rel="noreferrer">${esc(label)}</a>`
 }
 
+function interpolate(template, vars) {
+  return template.replace(/\{\{(\w+)\}\}/g, (_, key) => vars[key] ?? '')
+}
+
+function toEnPath(p) {
+  if (p === '/es') return '/'
+  if (!p.startsWith('/es')) return p
+  return p
+    .replace(/^\/es\/conectar/, '/connect')
+    .replace(/^\/es\/precios$/, '/pricing')
+    .replace(/^\/es\/nosotros$/, '/about')
+}
+
+function toEsPath(p) {
+  if (p === '/') return '/es'
+  if (p.startsWith('/es')) return p
+  return p
+    .replace(/^\/connect/, '/es/conectar')
+    .replace(/^\/pricing$/, '/es/precios')
+    .replace(/^\/about$/, '/es/nosotros')
+}
+
 function loadRoutes() {
   const routesPath = path.join(DIST, 'seo-routes.json')
   if (!fs.existsSync(routesPath)) {
@@ -63,136 +93,166 @@ function loadRoutes() {
   return JSON.parse(fs.readFileSync(routesPath, 'utf8')).routes || ['/']
 }
 
-function listPageMeta() {
-  const pages = new Map()
+function localeForPath(routePath) {
+  return routePath === '/es' || routePath.startsWith('/es/') ? 'es' : 'en'
+}
 
-  pages.set('/', {
-    title: pageTitle('Connect CRM & Business Tools for Small Businesses'),
-    description:
-      'Promonet helps small businesses connect CRM, accounting, booking, and industry tools — fixed monthly or one-off pricing, with human support. No dev team required.',
-    h1: 'Connect your CRM and tools — without a dev team.',
-    lead:
-      'Promonet helps small businesses connect CRM, accounting, booking, and industry software for a fixed one-off job or monthly partnership.',
+function addStaticPages(pages, locale, msgs, paths) {
+  const seo = msgs.seo
+  pages.set(paths.home, {
+    locale,
+    title: pageTitle(seo.homeTitle),
+    description: seo.homeDescription,
+    h1: msgs.home.heroTitleBefore + ' ' + msgs.home.heroTitleAccent,
+    lead: seo.homeDescription,
+    imageAlt: seo.ogImageAlt,
     jsonLdExtra: {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: 'What does Promonet connect?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'We help small businesses connect CRM platforms like Capsule, HubSpot, Pipedrive, Zoho, Copper, and Insightly to accounting, booking, and industry software — plus many other tools in your stack.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Is Promonet for small businesses?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes. Promonet is built for owners and small teams who need CRM and tool integrations without hiring a full-time development team.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'How much does it cost to connect tools?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Monthly partnerships start at £600. Scale-up is £1,500 per month. A one-off connection starts at £1,000. Custom work is quoted separately.',
-          },
-        },
-      ],
+      mainEntity: msgs.faqs.slice(0, 3).map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
     },
   })
 
-  pages.set('/about', {
-    title: pageTitle('About Promonet — CRM Integrations for Small Businesses'),
-    description:
-      'We are a small team of developers and designers helping small businesses connect CRM and industry tools at a low cost, with genuine human support.',
-    h1: "Built by people who've lived the connectivity gap.",
-    lead: 'We help small businesses connect CRM and industry tools at a low cost, with genuine human support.',
+  pages.set(paths.about, {
+    locale,
+    title: pageTitle(seo.aboutTitle),
+    description: seo.aboutDescription,
+    h1: msgs.about.title,
+    lead: msgs.about.p1,
+    imageAlt: seo.ogImageAlt,
   })
 
-  pages.set('/pricing', {
-    title: pageTitle('Pricing for CRM & Tool Integrations'),
-    description:
-      'Simple pricing for CRM and tool integrations: monthly partnership options from £600, or a fixed one-off connection from £1,000. No hidden hourly fees.',
-    h1: 'Pricing for CRM & tool integrations.',
-    lead: 'Fixed prices for small businesses that need to connect CRM, accounting, booking, and industry tools.',
+  pages.set(paths.pricing, {
+    locale,
+    title: pageTitle(seo.pricingTitle),
+    description: seo.pricingDescription,
+    h1: msgs.pricingPage.title,
+    lead: msgs.pricingPage.subtitle,
+    imageAlt: seo.ogImageAlt,
     jsonLdExtra: {
       '@context': 'https://schema.org',
       '@type': 'OfferCatalog',
-      name: 'Promonet integration pricing',
+      name: seo.offerCatalogName,
       itemListElement: [
-        {
-          '@type': 'Offer',
-          name: 'Base',
-          price: '600',
-          priceCurrency: 'GBP',
-        },
-        {
-          '@type': 'Offer',
-          name: 'Scale-up',
-          price: '1500',
-          priceCurrency: 'GBP',
-        },
-        {
-          '@type': 'Offer',
-          name: 'One-off',
-          price: '1000',
-          priceCurrency: 'GBP',
-        },
+        { '@type': 'Offer', name: msgs.pricingData.base.name, price: '600', priceCurrency: 'GBP' },
+        { '@type': 'Offer', name: msgs.pricingData.scaleup.name, price: '1500', priceCurrency: 'GBP' },
+        { '@type': 'Offer', name: msgs.pricingData.oneoff.name, price: '1000', priceCurrency: 'GBP' },
       ],
     },
   })
 
-  pages.set('/connect', {
-    title: pageTitle('Connect Business Tools & Integrations'),
-    description:
-      'Search and browse tools we help small businesses connect — CRMs, accounting, booking, and niche industry software. Fixed monthly price.',
-    h1: 'Connect business tools & integrations.',
-    lead: 'Search or browse CRMs, accounting, mortgage, legal, dental, real estate, and niche tools. Fixed monthly price. No dev team required.',
+  pages.set(paths.connect, {
+    locale,
+    title: pageTitle(seo.connectTitle),
+    description: seo.connectDescription,
+    h1: msgs.connectIndex.title,
+    lead: seo.connectDescription,
+    imageAlt: seo.ogImageAlt,
   })
 
-  pages.set('/connect/crm', {
-    title: pageTitle('Connect Your CRM to Industry Tools'),
-    description:
-      'Connect Capsule, HubSpot, Pipedrive, Zoho, Copper, or Insightly to mortgage, legal, dental, real estate, and other industry software.',
-    h1: 'Connect your CRM to industry tools.',
-    lead: 'Pick your CRM. We will show you exactly what we connect it to — and how — for small businesses that need fixed-price integrations.',
+  pages.set(paths.connectCrm, {
+    locale,
+    title: pageTitle(seo.connectCrmTitle),
+    description: seo.connectCrmDescription,
+    h1: msgs.connectCrm.title,
+    lead: msgs.connectCrm.body,
+    imageAlt: seo.ogImageAlt,
   })
+}
 
-  for (const crm of MATRIX.crms) {
+function addConnectPages(pages, locale, msgs, matrix, paths) {
+  const seo = msgs.seo
+  const andWord = msgs.common.and
+  const andMore = msgs.common.andMore
+
+  for (const crm of matrix.crms) {
     for (const key of crm.verticals) {
-      const vertical = MATRIX.verticals[key]
+      const vertical = matrix.verticals[key]
       if (!vertical) continue
-      const routePath = `/connect/${connectSlug(crm.slug, vertical.name)}`
+      const slug = connectSlug(crm.slug, vertical.name)
+      const routePath = locale === 'es' ? `/es/conectar/${slug}` : `/connect/${slug}`
       const tools = vertical.tools.slice(0, 3)
       const linkedTools = tools
-        .map((tool, index) => `${index > 0 ? (index === tools.length - 1 ? ', and ' : ', ') : ''}${productLink(tool)}`)
+        .map(
+          (tool, index) =>
+            `${index > 0 ? (index === tools.length - 1 ? `, ${andWord} ` : ', ') : ''}${productLink(tool)}`,
+        )
         .join('')
-      const leadHtml = `${esc(crm.blurb)} For small businesses running ${esc(vertical.title.toLowerCase())} — tools like ${linkedTools}${
-        vertical.tools.length > 3 ? ', and more' : ''
-      } — we connect ${productLink(crm.name)} so leads, status updates, and handoffs stop living in copy-paste.`
+      const leadHtml = `${esc(crm.blurb)}${esc(
+        interpolate(msgs.connectPage.leadBefore, {
+          verticalLower: vertical.title.toLowerCase(),
+        }),
+      )}${linkedTools}${vertical.tools.length > 3 ? esc(andMore) : ''}${esc(
+        msgs.connectPage.leadAfter,
+      )}${productLink(crm.name)}${esc(msgs.connectPage.leadEnd)}`
+
       pages.set(routePath, {
-        title: pageTitle(`Connect ${crm.name} to ${vertical.title}`),
-        description: `Connect ${crm.name} to the ${vertical.name} software small businesses already run — fixed monthly price, no in-house dev team required.`,
-        h1: `Connect ${crm.name} to ${vertical.title}.`,
+        locale,
+        title: pageTitle(
+          interpolate(seo.connectPageTitle, {
+            crm: crm.name,
+            vertical: vertical.title,
+          }),
+        ),
+        description: interpolate(seo.connectPageDescription, {
+          crm: crm.name,
+          vertical: vertical.name,
+        }),
+        h1: interpolate(msgs.connectPage.title, {
+          crm: crm.name,
+          vertical: vertical.title,
+        }),
         leadHtml,
+        imageAlt: seo.ogImageAlt,
         breadcrumbs: [
-          { name: 'Home', path: '/' },
-          { name: 'Connect tools', path: '/connect' },
-          { name: 'Connect your CRM', path: '/connect/crm' },
+          { name: msgs.connectPage.home, path: paths.home },
+          { name: msgs.connectPage.connectTools, path: paths.connect },
+          { name: msgs.connectPage.connectCrm, path: paths.connectCrm },
           { name: `${crm.name} → ${vertical.title}`, path: routePath },
         ],
       })
     }
   }
+}
+
+function listPageMeta() {
+  const pages = new Map()
+
+  addStaticPages(pages, 'en', MSG_EN, {
+    home: '/',
+    about: '/about',
+    pricing: '/pricing',
+    connect: '/connect',
+    connectCrm: '/connect/crm',
+  })
+  addConnectPages(pages, 'en', MSG_EN, MATRIX_EN, {
+    home: '/',
+    connect: '/connect',
+    connectCrm: '/connect/crm',
+  })
+
+  addStaticPages(pages, 'es', MSG_ES, {
+    home: '/es',
+    about: '/es/nosotros',
+    pricing: '/es/precios',
+    connect: '/es/conectar',
+    connectCrm: '/es/conectar/crm',
+  })
+  addConnectPages(pages, 'es', MSG_ES, MATRIX_ES, {
+    home: '/es',
+    connect: '/es/conectar',
+    connectCrm: '/es/conectar/crm',
+  })
 
   return pages
 }
 
-function organizationJsonLd() {
+function organizationJsonLd(locale) {
+  const msgs = locale === 'es' ? MSG_ES : MSG_EN
   return {
     '@context': 'https://schema.org',
     '@type': ['Organization', 'ProfessionalService'],
@@ -201,8 +261,7 @@ function organizationJsonLd() {
     email: CONTACT_EMAIL,
     logo: SITE_LOGO,
     image: OG_IMAGE,
-    description:
-      'CRM and tool integrations for small businesses. We connect your CRM to industry software and the rest of your stack for a fixed price.',
+    description: msgs.seo.orgDescription,
   }
 }
 
@@ -229,8 +288,14 @@ function breadcrumbJsonLd(items) {
 }
 
 function buildHeadTags(meta, routePath) {
+  const locale = meta.locale || localeForPath(routePath)
   const url = absoluteUrl(routePath)
-  const graph = [organizationJsonLd(), websiteJsonLd()]
+  const enHref = absoluteUrl(toEnPath(routePath))
+  const esHref = absoluteUrl(toEsPath(routePath))
+  const ogLocale = locale === 'es' ? 'es_ES' : 'en_GB'
+  const ogAlt = locale === 'es' ? 'en_GB' : 'es_ES'
+  const imageAlt = meta.imageAlt || OG_IMAGE_ALT_DEFAULT(locale)
+  const graph = [organizationJsonLd(locale), websiteJsonLd()]
   if (meta.jsonLdExtra) graph.push(meta.jsonLdExtra)
   if (meta.breadcrumbs) graph.push(breadcrumbJsonLd(meta.breadcrumbs))
 
@@ -239,26 +304,34 @@ function buildHeadTags(meta, routePath) {
 <meta name="description" content="${esc(meta.description)}" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="${esc(url)}" />
+<link rel="alternate" hreflang="en" href="${esc(enHref)}" />
+<link rel="alternate" hreflang="es" href="${esc(esHref)}" />
+<link rel="alternate" hreflang="x-default" href="${esc(enHref)}" />
 <meta property="og:site_name" content="${esc(SITE_NAME)}" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="${esc(meta.title)}" />
 <meta property="og:description" content="${esc(meta.description)}" />
 <meta property="og:url" content="${esc(url)}" />
-<meta property="og:locale" content="en_GB" />
+<meta property="og:locale" content="${ogLocale}" />
+<meta property="og:locale:alternate" content="${ogAlt}" />
 <link rel="image_src" href="${esc(OG_IMAGE)}" />
 <meta property="og:image" content="${esc(OG_IMAGE)}" />
 <meta property="og:image:secure_url" content="${esc(OG_IMAGE)}" />
 <meta property="og:image:type" content="${esc(OG_IMAGE_TYPE)}" />
 <meta property="og:image:width" content="${OG_IMAGE_WIDTH}" />
 <meta property="og:image:height" content="${OG_IMAGE_HEIGHT}" />
-<meta property="og:image:alt" content="${esc(OG_IMAGE_ALT)}" />
+<meta property="og:image:alt" content="${esc(imageAlt)}" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="${esc(meta.title)}" />
 <meta name="twitter:description" content="${esc(meta.description)}" />
 <meta name="twitter:image" content="${esc(OG_IMAGE)}" />
-<meta name="twitter:image:alt" content="${esc(OG_IMAGE_ALT)}" />
+<meta name="twitter:image:alt" content="${esc(imageAlt)}" />
 <script type="application/ld+json">${JSON.stringify(graph)}</script>
 `.trim()
+}
+
+function OG_IMAGE_ALT_DEFAULT(locale) {
+  return locale === 'es' ? MSG_ES.seo.ogImageAlt : MSG_EN.seo.ogImageAlt
 }
 
 function buildBodySnippet(meta) {
@@ -276,6 +349,7 @@ function replaceOrInsertHead(html, headTags) {
   out = out.replace(/<meta[^>]+name=["']description["'][^>]*>/gi, '')
   out = out.replace(/<meta[^>]+name=["']robots["'][^>]*>/gi, '')
   out = out.replace(/<link[^>]+rel=["']canonical["'][^>]*>/gi, '')
+  out = out.replace(/<link[^>]+rel=["']alternate["'][^>]*>/gi, '')
   out = out.replace(/<meta[^>]+property=["']og:[^"']+["'][^>]*>/gi, '')
   out = out.replace(/<meta[^>]+name=["']twitter:[^"']+["'][^>]*>/gi, '')
   out = out.replace(
@@ -339,9 +413,10 @@ function main() {
       console.warn(`skip (no meta): ${route}`)
       continue
     }
+    const lang = meta.locale === 'es' ? 'es-ES' : 'en-GB'
     let html = replaceOrInsertHead(template, buildHeadTags(meta, route))
     html = injectRoot(html, buildBodySnippet(meta))
-    html = html.replace(/<html[^>]*>/, '<html lang="en-GB">')
+    html = html.replace(/<html[^>]*>/, `<html lang="${lang}">`)
     fs.writeFileSync(outFileForRoute(route), html)
     console.log(`prerender ${route} … ok`)
   }

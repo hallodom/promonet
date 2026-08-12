@@ -7,9 +7,9 @@ import TeamSection from '@/components/TeamSection'
 import ContactButton from '@/components/ContactButton'
 import LinkedInButton from '@/components/LinkedInButton'
 import Seo from '@/components/Seo'
-import { HOME_FAQS, faqJsonLd, listSeoRoutes } from '@/lib/seo'
-
-const homeSeo = listSeoRoutes().find((r) => r.path === '/')!
+import { faqJsonLd, getHomeFaqs, listSeoRoutes } from '@/lib/seo'
+import { useLocale } from '@/i18n/LocaleContext'
+import { connectPagePath, homeHashPath } from '@/i18n/paths'
 
 const tools = [
   'HubSpot', 'Pipedrive', 'Capsule', 'Zoho', 'Stripe',
@@ -17,51 +17,55 @@ const tools = [
   'Shopify', 'Mailchimp', 'Slack', 'Notion', 'Asana', 'Airtable',
 ]
 
-const pipelines = [
-  { from: 'Stripe', to: 'QuickBooks', label: 'invoice → bookkeeping', href: '/connect' },
-  { from: 'Calendly', to: 'HubSpot', label: 'meeting → CRM', href: '/connect/crm' },
-  { from: 'Shopify', to: 'Mailchimp', label: 'order → segment', href: '/connect' },
-  { from: 'Capsule', to: 'Mortgage Brain', label: 'enquiry → case', href: '/connect/capsule-to-mortgage-software' },
-  { from: 'CRM', to: 'Custom system', label: 'record → sync', href: '/connect/crm' },
-]
-
-const steps = [
-  {
-    n: '01',
-    label: 'Map',
-    title: 'Get to know you call.',
-    body: 'We sketch the flows on a whiteboard and count the integrations. No assessment fee.',
-    illustration: '/illustrations/step-map.png',
-    alt: 'Charcoal sketch of two people talking',
-  },
-  {
-    n: '02',
-    label: 'Build',
-    title: 'Two to four weeks.',
-    body: 'We build, test, document, and connect every flow. Monitoring runs from day one. You see progress in plain English.',
-    illustration: '/illustrations/step-build.png',
-    alt: 'Charcoal sketch of a wrench',
-  },
-  {
-    n: '03',
-    label: 'Run',
-    title: 'It just runs.',
-    body: "Your tools finally talking together. You get exactly what you paid for.",
-    illustration: '/illustrations/step-run.png',
-    alt: 'Charcoal sketch of a happy smiling face',
-  },
-]
-
 export default function Home() {
   useReveal()
+  const { t, locale, path } = useLocale()
+  const homePath = path('home')
+  const homeSeo = listSeoRoutes(locale).find((r) => r.path === homePath)!
+  const faqs = getHomeFaqs(locale)
+
+  const pipelines = [
+    { from: 'Stripe', to: 'QuickBooks', label: t('home.pipelineInvoice'), href: path('connect') },
+    { from: 'Calendly', to: 'HubSpot', label: t('home.pipelineMeeting'), href: path('connectCrm') },
+    { from: 'Shopify', to: 'Mailchimp', label: t('home.pipelineOrder'), href: path('connect') },
+    { from: 'Capsule', to: 'Mortgage Brain', label: t('home.pipelineEnquiry'), href: connectPagePath('capsule-to-mortgage-software', locale) },
+    { from: 'CRM', to: 'Custom system', label: t('home.pipelineRecord'), href: path('connectCrm') },
+  ]
+
+  const steps = [
+    {
+      n: '01',
+      label: t('home.step1Label'),
+      title: t('home.step1Title'),
+      body: t('home.step1Body'),
+      illustration: '/illustrations/step-map.png',
+      alt: t('home.step1Alt'),
+    },
+    {
+      n: '02',
+      label: t('home.step2Label'),
+      title: t('home.step2Title'),
+      body: t('home.step2Body'),
+      illustration: '/illustrations/step-build.png',
+      alt: t('home.step2Alt'),
+    },
+    {
+      n: '03',
+      label: t('home.step3Label'),
+      title: t('home.step3Title'),
+      body: t('home.step3Body'),
+      illustration: '/illustrations/step-run.png',
+      alt: t('home.step3Alt'),
+    },
+  ]
 
   return (
     <>
       <Seo
         title={homeSeo.title}
         description={homeSeo.description}
-        path="/"
-        jsonLd={[faqJsonLd(HOME_FAQS)]}
+        path={homePath}
+        jsonLd={[faqJsonLd(faqs)]}
       />
 
       <section className="relative overflow-hidden bg-bone text-obsidian">
@@ -69,19 +73,20 @@ export default function Home() {
           <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center pt-16 md:pt-24 pb-20 md:pb-28">
             <div className="reveal">
               <h1 className="font-display text-[clamp(48px,7vw,88px)] leading-[1.02] tracking-[-0.02em] text-balance mb-8">
-                Your software finally{' '}
-                <span className="text-voltage">talking together.</span>
+                {t('home.heroTitleBefore')}{' '}
+                <span className="text-voltage">{t('home.heroTitleAccent')}</span>
               </h1>
 
               <p className="text-lg md:text-xl leading-[1.55] text-graphite max-w-[520px] mb-10 text-balance">
-                We're a small remote first friendly team who help small to medium sized businesses {' '}
-                <Link to="/connect/crm" className="text-voltage hover:underline">connect CRM
+                {t('home.heroP1')}
+                <Link to={path('connectCrm')} className="text-voltage hover:underline">
+                  {t('home.heroConnectCrm')}
                 </Link>
-                , accounting, booking, and{' '}
-                <Link to="/connect" className="text-voltage hover:underline">
-                  industry software
-                </Link>{' '}
-                for a fixed one-off job or monthly partnership.
+                {t('home.heroP2')}
+                <Link to={path('connect')} className="text-voltage hover:underline">
+                  {t('home.heroIndustry')}
+                </Link>
+                {t('home.heroP3')}
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
@@ -91,24 +96,24 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-graphite">
                 <Link
-                  to={{ pathname: '/', hash: '#pricing' }}
+                  to={homeHashPath('pricing', locale)}
                   className="flex items-center gap-2 hover:text-obsidian transition-colors"
                   onClick={(e) => {
-                    if (window.location.pathname === '/') {
+                    if (window.location.pathname === homePath || (homePath === '/' && window.location.pathname === '/')) {
                       e.preventDefault()
                       document
                         .getElementById('pricing')
                         ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                      window.history.replaceState(null, '', '/#pricing')
+                      window.history.replaceState(null, '', homeHashPath('pricing', locale))
                     }
                   }}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-imago" />
-                  Fixed price — no hourly games
+                  {t('home.bulletFixed')}
                 </Link>
                 <span className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-imago" />
-                  Built for small businesses, we work directly with you as a friendly team
+                  {t('home.bulletFriendly')}
                 </span>
               </div>
             </div>
@@ -116,14 +121,14 @@ export default function Home() {
             <figure className="relative reveal" style={{ transitionDelay: '120ms' }}>
               <img
                 src="/small-business-owner-crm-integrations.jpg"
-                alt="Small business owner whose CRM and tools Promonet helps connect"
+                alt={t('home.heroImageAlt')}
                 loading="eager"
                 className="w-full aspect-[4/5] object-cover rounded-[4px] shadow-[0_30px_60px_-20px_rgba(10,10,15,0.18)]"
               />
               <figcaption className="hero-handnote mt-3 w-fit max-w-[min(100%,22rem)] bg-transparent">
                 <img
                   src="/illustrations/no-more-exporting-handwritten.png"
-                  alt="no more exporting to spreadsheets"
+                  alt={t('home.handnoteAlt')}
                   width={1466}
                   height={159}
                   className="block h-7 md:h-8 w-auto max-w-full select-none pointer-events-none mix-blend-multiply"
@@ -138,7 +143,7 @@ export default function Home() {
       <section className="bg-bone text-obsidian py-14 overflow-hidden border-t border-obsidian/8">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10 mb-8 text-center">
           <p className="text-sm text-graphite">
-            Tools small businesses ask us to connect every week.
+            {t('home.marqueeLabel')}
           </p>
         </div>
         <div className="mask-fade-x relative">
@@ -146,7 +151,7 @@ export default function Home() {
             {[...tools, ...tools].map((tool, i) => (
               <Link
                 key={i}
-                to="/connect"
+                to={path('connect')}
                 className="font-display font-medium text-2xl md:text-3xl text-obsidian/40 hover:text-obsidian transition-colors whitespace-nowrap"
               >
                 {tool}
@@ -155,9 +160,9 @@ export default function Home() {
           </div>
         </div>
         <p className="max-w-[1280px] mx-auto px-6 md:px-10 mt-8 text-center text-sm text-graphite">
-          …and Xero, Shopify, Mailchimp, Clio, Jobber, Dubsado, Honeybook, and a few dozen more.{' '}
-          <Link to="/connect" className="text-voltage hover:underline">
-            Browse every tool
+          {t('home.marqueeMore')}{' '}
+          <Link to={path('connect')} className="text-voltage hover:underline">
+            {t('home.browseEvery')}
           </Link>
           .
         </p>
@@ -169,28 +174,26 @@ export default function Home() {
             <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-voltage mb-8 flex items-center gap-3">
               <span className="font-mono">01</span>
               <span className="w-6 h-px bg-voltage" />
-              The Sunday-night problem
+              {t('home.aboutEyebrow')}
             </div>
             <h2 className="font-display text-[clamp(36px,5vw,68px)] leading-[1.05] tracking-[-0.02em] mb-8 text-balance">
-              You bought the tools but they still don't talk.
+              {t('home.aboutTitle')}
             </h2>
             <p className="text-lg leading-relaxed text-graphite max-w-[440px] mb-8">
-              Most small-business owners we meet run six to twelve tools that don't
-              sync. Data gets re-typed. Decisions run on stale numbers. Sunday night
-              becomes spreadsheet night.
+              {t('home.aboutP1')}
             </p>
             <p className="text-lg leading-relaxed text-graphite max-w-[440px] mb-8">
-              <strong className="font-semibold text-obsidian">We're the people who quietly connect the tools to each other.</strong>
+              <strong className="font-semibold text-obsidian">{t('home.aboutStrong')}</strong>
             </p>
             <div className="flex flex-wrap gap-4 text-sm font-semibold">
-              <Link to="/connect/crm" className="text-voltage hover:underline">
-                Connect your CRM →
+              <Link to={path('connectCrm')} className="text-voltage hover:underline">
+                {t('home.linkConnectCrm')}
               </Link>
-              <Link to="/pricing" className="text-voltage hover:underline">
-                See pricing →
+              <Link to={path('pricing')} className="text-voltage hover:underline">
+                {t('home.linkPricing')}
               </Link>
-              <Link to="/about" className="text-voltage hover:underline">
-                About Promonet →
+              <Link to={path('about')} className="text-voltage hover:underline">
+                {t('home.linkAbout')}
               </Link>
             </div>
           </div>
@@ -200,9 +203,9 @@ export default function Home() {
               <div className="px-5 py-3 hairline-b font-mono text-[11px] uppercase tracking-[0.18em] text-graphite flex items-center justify-between">
                 <span className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-imago status-pulse" />
-                  Connected workflows
+                  {t('home.connectedWorkflows')}
                 </span>
-                <span>last sync · 12s ago</span>
+                <span>{t('home.lastSync')}</span>
               </div>
 
               {pipelines.map((p, i) => (
@@ -219,7 +222,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-3 shrink-0">
                     <span className="px-2 py-0.5 rounded-[3px] bg-imago/12 text-imago text-[10px] uppercase tracking-wider">
-                      synced
+                      {t('common.synced')}
                     </span>
                   </div>
                   <div
@@ -230,8 +233,8 @@ export default function Home() {
               ))}
 
               <div className="px-5 py-3 font-mono text-[11px] text-graphite flex items-center justify-between">
-                <span>1,381 events today</span>
-                <span className="text-imago">99.97% uptime</span>
+                <span>{t('home.eventsToday')}</span>
+                <span className="text-imago">{t('home.uptime')}</span>
               </div>
             </div>
 
@@ -250,10 +253,10 @@ export default function Home() {
             <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-voltage mb-8 flex items-center gap-3">
               <span className="font-mono">02</span>
               <span className="w-6 h-px bg-voltage" />
-              How it works
+              {t('home.howEyebrow')}
             </div>
             <h2 className="font-display text-[clamp(36px,5vw,68px)] leading-[1.05] tracking-[-0.02em] text-balance">
-              Three steps. Then your tools stay connected.
+              {t('home.howTitle')}
             </h2>
           </div>
 
@@ -297,17 +300,19 @@ export default function Home() {
             <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-voltage mb-8 flex items-center gap-3">
               <span className="font-mono">03</span>
               <span className="w-6 h-px bg-voltage" />
-              Pricing
+              {t('home.pricingEyebrow')}
             </div>
             <h2 className="font-display text-[clamp(36px,5vw,68px)] leading-[1.05] tracking-[-0.02em] mb-6 text-balance">
-              Simple pricing - get in touch and let's get started
+              {t('home.pricingTitle')}
             </h2>
             <p className="text-lg text-graphite max-w-[560px] mb-4">
-              <strong className="font-semibold text-obsidian">Monthly partnerships</strong> or a <strong className="font-semibold text-obsidian">one-off project</strong> — a simple fixed price for
-              small businesses. No hidden hourly fees.
+              <strong className="font-semibold text-obsidian">{t('home.pricingMonthly')}</strong>
+              {t('home.pricingOr')}
+              <strong className="font-semibold text-obsidian">{t('home.pricingOneOff')}</strong>
+              {t('home.pricingPAfter')}
             </p>
-            <Link to="/pricing" className="text-sm font-semibold text-voltage hover:underline">
-              Full pricing details →
+            <Link to={path('pricing')} className="text-sm font-semibold text-voltage hover:underline">
+              {t('home.pricingFull')}
             </Link>
           </div>
 
@@ -318,10 +323,10 @@ export default function Home() {
       <section className="py-24 md:py-32 hairline-b">
         <div className="max-w-[860px] mx-auto px-6 md:px-10">
           <h2 className="font-display text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[-0.02em] mb-10 reveal">
-            Questions small businesses ask before connecting tools
+            {t('home.faqTitle')}
           </h2>
           <div className="space-y-6">
-            {HOME_FAQS.map((faq) => (
+            {faqs.map((faq) => (
               <div key={faq.question} className="reveal border-t border-obsidian/10 pt-6">
                 <h3 className="font-display text-xl mb-3 tracking-[-0.015em]">{faq.question}</h3>
                 <p className="text-graphite leading-relaxed">{faq.answer}</p>
@@ -341,15 +346,14 @@ export default function Home() {
         <div className="relative max-w-[1000px] mx-auto px-6 md:px-10 text-center reveal">
           <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-voltage mb-8 inline-flex items-center gap-3">
             <span className="w-6 h-px bg-voltage" />
-            Get your Sunday nights back
+            {t('home.ctaEyebrow')}
             <span className="w-6 h-px bg-voltage" />
           </div>
           <h2 className="font-display text-[clamp(40px,7vw,92px)] leading-[1.0] tracking-[-0.02em] mb-8 text-balance">
-            Ready to connect your stack?
+            {t('home.ctaTitle')}
           </h2>
           <p className="text-lg md:text-xl text-bone/70 max-w-[560px] mx-auto mb-12 text-balance">
-            Tell us which CRM and tools you use. We'll map the flows and send a fixed
-            quote — built for small businesses, not enterprise theatre.
+            {t('home.ctaBody')}
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 mb-10">
@@ -358,7 +362,7 @@ export default function Home() {
           </div>
 
           <p className="text-xs font-mono uppercase tracking-[0.18em] text-graphite">
-            24-hour response, every time
+            {t('home.ctaResponse')}
           </p>
         </div>
       </section>

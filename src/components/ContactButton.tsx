@@ -2,6 +2,7 @@ import type { ButtonHTMLAttributes } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/cn'
 import { useContact } from '@/lib/contact'
+import { useT } from '@/i18n/LocaleContext'
 
 type ContactButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   message?: string
@@ -12,12 +13,13 @@ export default function ContactButton({
   message,
   showArrow = true,
   className,
-  children = 'Contact Us',
+  children,
   onClick,
   type = 'button',
   ...props
 }: ContactButtonProps) {
   const { openContact } = useContact()
+  const t = useT()
 
   return (
     <button
@@ -32,7 +34,7 @@ export default function ContactButton({
       }}
       {...props}
     >
-      {children}
+      {children ?? t('common.contactUs')}
       {showArrow && (
         <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
       )}

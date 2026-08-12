@@ -4,6 +4,7 @@ import catalog from '@/data/apps.json'
 import { cn } from '@/lib/cn'
 import ContactButton from '@/components/ContactButton'
 import ProductLink from '@/components/ProductLink'
+import { useLocale } from '@/i18n/LocaleContext'
 
 type AppEntry = {
   name: string
@@ -24,7 +25,6 @@ function scoreMatch(app: AppEntry, q: string): number {
   if (aliases.some((a) => a.startsWith(q))) return 75
   if (name.includes(q)) return 60
   if (aliases.some((a) => a.includes(q))) return 55
-  // loose token match
   const tokens = q.split(/\s+/).filter(Boolean)
   if (tokens.length > 1 && tokens.every((t) => name.includes(t) || aliases.some((a) => a.includes(t)))) {
     return 40
@@ -32,13 +32,13 @@ function scoreMatch(app: AppEntry, q: string): number {
   return 0
 }
 
-
 type Props = {
   variant?: 'full' | 'compact'
   className?: string
 }
 
 export default function AppSearch({ variant = 'full', className }: Props) {
+  const { t, locale } = useLocale()
   const [query, setQuery] = useState('')
   const [selected, setSelected] = useState<AppEntry | null>(null)
 
@@ -50,10 +50,10 @@ export default function AppSearch({ variant = 'full', className }: Props) {
     return apps
       .map((app) => ({ app, score: scoreMatch(app, q) }))
       .filter((r) => r.score > 0)
-      .sort((a, b) => b.score - a.score || a.app.name.localeCompare(b.app.name))
+      .sort((a, b) => b.score - a.score || a.app.name.localeCompare(b.app.name, locale))
       .slice(0, 8)
       .map((r) => r.app)
-  }, [q])
+  }, [q, locale])
 
   const showEmpty = q.length >= 2 && results.length === 0
   const active = selected && (!q || scoreMatch(selected, q) > 0) ? selected : null
@@ -68,7 +68,7 @@ export default function AppSearch({ variant = 'full', className }: Props) {
     >
       <div className={variant === 'full' ? 'mb-6' : 'mb-4'}>
         <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-voltage mb-3 block">
-          Search your stack
+          {t('appSearch.eyebrow')}
         </span>
         <h3
           className={cn(
@@ -76,10 +76,10 @@ export default function AppSearch({ variant = 'full', className }: Props) {
             variant === 'full' ? 'text-2xl md:text-3xl mb-2' : 'text-xl md:text-2xl mb-2',
           )}
         >
-          Search tools we can connect.
+          {t('appSearch.title')}
         </h3>
         <p className="text-sm text-graphite max-w-[520px]">
-          CRMs, accounting, mortgage, legal, dental, real estate, and a few thousand more.
+          {t('appSearch.subtitle')}
         </p>
       </div>
 
@@ -95,7 +95,7 @@ export default function AppSearch({ variant = 'full', className }: Props) {
             setQuery(e.target.value)
             setSelected(null)
           }}
-          placeholder="Search any app — HubSpot, Clio, Dentrix…"
+          placeholder={t('appSearch.placeholder')}
           className="w-full pl-10 pr-4 py-3 rounded-[4px] border border-obsidian/15 bg-bone text-obsidian text-sm placeholder:text-graphite focus:outline-none focus:border-voltage transition-colors"
           autoComplete="off"
           spellCheck={false}
@@ -103,7 +103,7 @@ export default function AppSearch({ variant = 'full', className }: Props) {
       </div>
 
       <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-graphite mb-4">
-        Searching {catalog.count.toLocaleString()} apps
+        {t('appSearch.searching', { count: catalog.count.toLocaleString(locale === 'es' ? 'es-ES' : 'en-GB') })}
       </p>
 
       {q.length >= 2 && results.length > 0 && (
@@ -122,7 +122,7 @@ export default function AppSearch({ variant = 'full', className }: Props) {
                   type="button"
                   onClick={() => setSelected(app)}
                   className="absolute inset-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-voltage"
-                  aria-label={`Ask about connecting ${app.name}`}
+                  aria-label={t('appSearch.askAbout', { name: app.name })}
                 />
                 <span className="relative z-10 font-medium truncate">
                   <ProductLink name={app.name} className="relative">{app.name}</ProductLink>
@@ -138,15 +138,15 @@ export default function AppSearch({ variant = 'full', className }: Props) {
 
       {active && (
         <div className="p-5 rounded-[4px] bg-voltage/[0.06] border border-voltage/20">
-          <p className="text-sm text-graphite mb-1">We can connect</p>
+          <p className="text-sm text-graphite mb-1">{t('appSearch.weCanConnect')}</p>
           <p className="font-display text-xl md:text-2xl tracking-[-0.015em] mb-4">
             <ProductLink name={active.name}>{active.name}</ProductLink>
           </p>
           <p className="text-sm text-graphite mb-5 max-w-[480px]">
-            Talk to us about connecting {active.name} to your CRM, accounting, booking software, or the rest of your stack.
+            {t('appSearch.talkAbout', { name: active.name })}
           </p>
           <ContactButton
-            message={`I'd like to connect ${active.name} to the rest of my tools.`}
+            message={t('appSearch.message', { name: active.name })}
             className="px-5 py-3 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90"
           />
         </div>
@@ -155,13 +155,13 @@ export default function AppSearch({ variant = 'full', className }: Props) {
       {showEmpty && (
         <div className="p-5 rounded-[4px] border border-obsidian/10 bg-obsidian/[0.02]">
           <p className="font-display text-lg mb-2 tracking-[-0.015em]">
-            Can’t find “{trimmed}”?
+            {t('appSearch.cantFind', { query: trimmed })}
           </p>
           <p className="text-sm text-graphite mb-5 max-w-[480px]">
-            We still connect custom and niche tools. Tell us what you use — we’ll connect it.
+            {t('appSearch.cantFindBody')}
           </p>
           <ContactButton
-            message={`I'd like to connect ${trimmed} to the rest of my tools.`}
+            message={t('appSearch.message', { name: trimmed })}
             className="px-5 py-3 bg-voltage text-bone rounded-[4px] hover:bg-voltage/90"
           />
         </div>

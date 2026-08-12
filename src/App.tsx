@@ -17,6 +17,13 @@ export default function App() {
         <Route path="/connect" element={<ConnectIndex />} />
         <Route path="/connect/crm" element={<ConnectCrm />} />
         <Route path="/connect/:slug" element={<ConnectPage />} />
+
+        <Route path="/es" element={<Home />} />
+        <Route path="/es/nosotros" element={<About />} />
+        <Route path="/es/precios" element={<Pricing />} />
+        <Route path="/es/conectar" element={<ConnectIndex />} />
+        <Route path="/es/conectar/crm" element={<ConnectCrm />} />
+        <Route path="/es/conectar/:slug" element={<ConnectPage />} />
       </Route>
     </Routes>
   )

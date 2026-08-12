@@ -1,0 +1,345 @@
+#!/usr/bin/env node
+/**
+ * Builds src/data/matrix.es.json from matrix.json + Spanish overlays.
+ */
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
+const en = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/matrix.json'), 'utf8'))
+
+const crmBlurbs = {
+  capsule:
+    'El CRM amable para equipos pequeños que nunca quisieron un CRM que necesite su propio administrador.',
+  hubspot:
+    'Potente desde el primer día, caro cuando superas el plan gratis — merece coserse bien al resto de tu stack.',
+  pipedrive:
+    'Pensado en ventas y pipeline — hecho para hablar con las herramientas operativas que cierran el trato.',
+  zoho:
+    'El caballo de batalla consciente del precio — listo para enchufarse a las herramientas de tu sector que ya pagas.',
+  copper:
+    'Vive dentro de Google Workspace. Genial si vives en Gmail; inútil si no llega a tus otros sistemas.',
+  insightly:
+    'Ventas más entrega de proyectos en un solo sitio — necesita fontanería de verdad hacia tu contabilidad y ops.',
+}
+
+const verticals = {
+  mortgage: {
+    title: 'Software hipotecario',
+    flows: [
+      {
+        from: 'Lead web',
+        to: '{CRM} → LOS',
+        body: 'Un prospecto completa tu formulario de consulta o Decision in Principle. Empujamos el contacto a {CRM}, lo puntuamos según tus criterios y abrimos el caso en tu plataforma de sourcing/asesoramiento — con rastro de auditoría desde el primer contacto.',
+      },
+      {
+        from: 'Estado del caso',
+        to: 'Plataforma de asesoramiento → {CRM}',
+        body: 'Cuando un caso pasa de fact-find a recomendación, oferta y completion, reflejamos el estado en {CRM} para que asesores y admin vean siempre la misma imagen — listo para revisiones de expediente y evidencia de Consumer Duty.',
+      },
+      {
+        from: 'Petición de docs',
+        to: '{CRM} → Prestario',
+        body: 'Las peticiones de documentación faltante disparan emails y SMS automáticos al cliente con enlaces seguros de subida — y registran el seguimiento en el registro de {CRM} como evidencia lista para la FCA.',
+      },
+      {
+        from: 'Préstamo cerrado',
+        to: '{CRM} → Drip + referral',
+        body: 'Al financiar, lanzamos un flujo de regalo de cierre, un check-in a 30 días, un toque de aniversario en el primer año y una petición de referidos en el mes nueve. El CRM no olvida.',
+      },
+    ],
+  },
+  legal: {
+    title: 'Software de despacho jurídico',
+    flows: [
+      {
+        from: 'Formulario de intake',
+        to: '{CRM} → Matter',
+        body: 'Un formulario de posible cliente en tu web se convierte en un contacto en {CRM}, un conflict check en tu practice management y — si pasa — un matter nuevo, sin que intake vuelva a teclear nada.',
+      },
+      {
+        from: 'Time entries',
+        to: 'Practice mgmt → {CRM}',
+        body: 'La actividad facturable registrada en tu practice management aparece en el contacto de {CRM}, para que el socio vea de un vistazo qué clientes están calientes sin salir del CRM.',
+      },
+      {
+        from: 'Trust accounting',
+        to: 'Practice mgmt → Contabilidad',
+        body: 'Depósitos en trust, draws de retainer y conciliaciones IOLTA fluyen limpiamente a tu herramienta de contabilidad — con las reglas de tu jurisdicción integradas.',
+      },
+      {
+        from: 'Cierre de matter',
+        to: 'Practice mgmt → {CRM}',
+        body: 'Al cerrar un matter, actualizamos el cliente en {CRM}, lanzamos una encuesta de satisfacción y lo añadimos a un newsletter trimestral — convirtiendo un one-off en fuente de referidos.',
+      },
+    ],
+  },
+  accounting: {
+    title: 'Software de contabilidad',
+    flows: [
+      {
+        from: 'Deal ganado',
+        to: '{CRM} → Contabilidad',
+        body: 'Cuando un deal se marca ganado en {CRM}, creamos la factura en tu herramienta de contabilidad con las líneas, términos e impuestos correctos — sin copia-pega ni erratas.',
+      },
+      {
+        from: 'Pago recibido',
+        to: 'Contabilidad → {CRM}',
+        body: 'Cuando el cliente paga, la fecha y el importe llegan al registro de {CRM} para que tu comercial sepa que el deal está realmente cerrado — no solo firmado.',
+      },
+      {
+        from: 'AR aging',
+        to: 'Contabilidad → Slack/email',
+        body: 'Las facturas vencidas disparan un recordatorio amable al cliente y un aviso al account owner en {CRM} — antes de que “incómodo” se convierta en “mala deuda”.',
+      },
+      {
+        from: 'Cierre mensual',
+        to: 'Contabilidad → Dashboard',
+        body: 'Cuando cierras el mes, los tres números que te importan llegan a tu bandeja — caja, AR, runway — sin logins a dashboards.',
+      },
+    ],
+  },
+  consulting: {
+    title: 'Software de operaciones de consulting',
+    flows: [
+      {
+        from: 'SOW firmado',
+        to: '{CRM} → Proyecto',
+        body: 'Al firmar un contrato en {CRM}, levantamos el workspace del proyecto, creamos la factura de kickoff y reservamos las tres primeras reuniones — en un solo flujo.',
+      },
+      {
+        from: 'Tiempo registrado',
+        to: 'Time tool → {CRM}',
+        body: 'Las horas del equipo se agregan al cliente en {CRM} — para que un socio vea la salud del engagement sin abrir cuatro pestañas.',
+      },
+      {
+        from: 'Hito de proyecto',
+        to: 'Project tool → Contabilidad',
+        body: 'Un hito en tu herramienta de proyecto dispara la factura con las líneas y términos correctos — retainers, progress billings, fees de completion, todo cubierto.',
+      },
+      {
+        from: 'Fin del engagement',
+        to: '{CRM} → Renovación',
+        body: 'Sesenta días antes de que termine el engagement, {CRM} avisa al socio para iniciar la conversación de renovación — con uso y resultados resumidos.',
+      },
+    ],
+  },
+  agency: {
+    title: 'Software de proyectos y tiempo para agencias',
+    flows: [
+      {
+        from: 'Cliente nuevo',
+        to: '{CRM} → Proyecto + canal Slack',
+        body: 'Un cliente firmado en {CRM} levanta el proyecto, el canal de Slack, la carpeta compartida y añade al equipo — con un clic.',
+      },
+      {
+        from: 'Tiempo registrado',
+        to: 'Time tool → {CRM}',
+        body: 'Las horas contra el cliente aparecen como quema de presupuesto en {CRM}. Los AMs ven el riesgo de over-servicing antes de que cierre el mes, no después.',
+      },
+      {
+        from: 'Entregable aprobado',
+        to: 'Project tool → Contabilidad',
+        body: 'Cuando el cliente aprueba un entregable en tu project tool, la factura de hito se dispara sola y se registra en {CRM}.',
+      },
+      {
+        from: 'Fin de retainer',
+        to: '{CRM} → Secuencia de renovación',
+        body: 'Sesenta días antes del fin del retainer, {CRM} inicia la conversación de renovación con el AM — con uso, entregables y resultados resumidos.',
+      },
+    ],
+  },
+  healthcare: {
+    title: 'Software de práctica sanitaria',
+    flows: [
+      {
+        from: 'Reserva web',
+        to: '{CRM} → Practice mgmt',
+        body: 'Un paciente potencial reserva online. Creamos el contacto en {CRM}, la cita en tu practice tool y enviamos los formularios de intake — en un solo flujo, consciente de HIPAA.',
+      },
+      {
+        from: 'Visita completada',
+        to: 'Practice mgmt → {CRM}',
+        body: 'Las notas clínicas se quedan en el sistema clínico. El *hecho* de la visita (fecha, tipo, follow-up) llega al contacto de {CRM} para que recepción pueda hacer campañas de recordatorio sin tocar PHI.',
+      },
+      {
+        from: 'Pago',
+        to: 'Practice mgmt → Contabilidad',
+        body: 'Copagos, cargos self-pay y reembolsos de seguros fluyen limpios a tu contabilidad con el mapeo de códigos de servicio correcto. Tu bookkeeper deja de perseguirte.',
+      },
+      {
+        from: 'Ventana de recall',
+        to: '{CRM} → Paciente',
+        body: 'Cuando un paciente entra en su ventana de recall, {CRM} lanza un empujón amable multicanal — email, SMS, tarjeta — hasta que vuelve a reservar.',
+      },
+    ],
+  },
+  'real-estate': {
+    title: 'Software inmobiliario',
+    flows: [
+      {
+        from: 'Lead de portal',
+        to: '{CRM} → Routing',
+        body: 'Un lead de Rightmove, Zoopla, OnTheMarket o tu web llega a {CRM}, enrutado por zona y banda de precio al agente correcto en noventa segundos — no a la mañana siguiente.',
+      },
+      {
+        from: 'Visita reservada',
+        to: 'Showing tool → {CRM}',
+        body: 'Las visitas reservadas en tu plataforma se escriben en el contacto de {CRM} — para que un agente que recoge un hand-off vea exactamente qué ha visto ya el comprador.',
+      },
+      {
+        from: 'Hito de listing',
+        to: '{CRM} → Vendedores + email',
+        body: 'Conteo de visitas, oferta recibida, under contract, cerrado — cada hito dispara la comunicación al vendedor que de otro modo olvidarías en una semana ajetreada.',
+      },
+      {
+        from: 'Cierre',
+        to: '{CRM} → Motor de clientes pasados',
+        body: 'Al cerrar, el cliente pasa a tu nurture de clientes pasados: regalo de cierre, check-in a 30 días, toque de aniversario, informe anual de valor. El pipeline de referidos se mueve solo.',
+      },
+    ],
+  },
+  manufacturing: {
+    title: 'Software de fabricación e inventario',
+    flows: [
+      {
+        from: 'Cotización ganada',
+        to: '{CRM} → ERP',
+        body: 'Cuando se acepta una cotización en {CRM}, creamos la sales order en tu ERP, lanzamos la orden de producción y reservamos inventario — en un solo movimiento.',
+      },
+      {
+        from: 'Cambio de stock',
+        to: 'ERP → {CRM}',
+        body: 'Eventos de low-stock y back-order aparecen en el registro de {CRM} para que tu comercial vea la historia de supply antes de la llamada al cliente — no durante ella.',
+      },
+      {
+        from: 'Envío',
+        to: 'Shipping tool → {CRM} + cliente',
+        body: 'Los pedidos enviados disparan el email de tracking al cliente y registran el envío en {CRM} — para que soporte tenga la misma imagen que ventas.',
+      },
+      {
+        from: 'Trigger de reorder',
+        to: 'ERP → {CRM} → Cuenta',
+        body: 'Cuando llega la ventana típica de reorder de un cliente, {CRM} avisa al account owner con un reorder sugerido — convirtiendo la esperanza en proceso.',
+      },
+    ],
+  },
+  recruitment: {
+    title: 'Software de recruiting y ATS',
+    flows: [
+      {
+        from: 'Nueva job order',
+        to: '{CRM} → ATS',
+        body: 'Una requisición firmada en {CRM} crea el rol abierto en tu ATS, la publicación en careers y un aviso a tu equipo de recruiters — en segundos.',
+      },
+      {
+        from: 'Etapa del candidato',
+        to: 'ATS → {CRM}',
+        body: 'El movimiento del candidato (screen → interview → offer) se actualiza en el registro del cliente para que el AM pueda hacer una status call creíble sin molestar al recruiter.',
+      },
+      {
+        from: 'Placement',
+        to: 'ATS → Contabilidad',
+        body: 'Un placement dispara la factura de fee con los términos correctos (contingent, retained, guarantee window) y contabiliza el revenue en tu herramienta de contabilidad.',
+      },
+      {
+        from: 'Ventana de guarantee',
+        to: 'ATS → {CRM}',
+        body: 'Cuando un placement se acerca al fin de su periodo de guarantee, {CRM} avisa al AM para iniciar la conversación de éxito — anticipando el riesgo de refund.',
+      },
+    ],
+  },
+  'creative-services': {
+    title: 'Software de servicios creativos',
+    flows: [
+      {
+        from: 'Formulario de consulta',
+        to: '{CRM} → Studio tool',
+        body: 'Una consulta de booking crea el contacto en {CRM} y el lead en tu studio tool, envía el cuestionario y reserva la discovery call — antes de que el cliente refresque la thank-you page.',
+      },
+      {
+        from: 'Contrato firmado',
+        to: 'Studio tool → {CRM}',
+        body: 'Un contrato firmado actualiza {CRM} y dispara tu onboarding — email de bienvenida, factura de kickoff, guía de prep — sin abrir una pestaña.',
+      },
+      {
+        from: 'Hito de proyecto',
+        to: 'Studio tool → Contabilidad',
+        body: 'Los hitos en tu studio tool disparan peticiones de pago y escriben en tu contabilidad — para que el cash flow siga a la entrega, no a la memoria.',
+      },
+      {
+        from: 'Proyecto completo',
+        to: '{CRM} → Pedido de referidos',
+        body: 'El proyecto entregado dispara una nota de satisfacción, una petición de review y un pedido de referidos en el momento justo — convirtiendo clientes felices en pipeline.',
+      },
+    ],
+  },
+  'professional-services': {
+    title: 'Software de servicios profesionales',
+    flows: [
+      {
+        from: 'Engagement firmado',
+        to: '{CRM} → Ops tool',
+        body: 'Un engagement firmado levanta el proyecto, la factura de depósito y la reunión de kickoff — todo cableado de vuelta al registro de {CRM}.',
+      },
+      {
+        from: 'Tiempo registrado',
+        to: 'Time tool → {CRM}',
+        body: 'Las horas contra un engagement se agregan como salud de presupuesto en {CRM} — los socios detectan over-servicing antes de que se coma el margen.',
+      },
+      {
+        from: 'Entregable enviado',
+        to: 'Ops tool → Contabilidad',
+        body: 'Un entregable enviado dispara la factura de hito y escribe la actividad en {CRM}. Sin “lo facturo la semana que viene”.',
+      },
+      {
+        from: 'Fin del engagement',
+        to: '{CRM} → Renovación + referidos',
+        body: 'El cierre del engagement lanza un loop de satisfacción, una conversación de renovación a treinta días y un pedido de referidos en el mes dos — haciendo crecer el libro en silencio.',
+      },
+    ],
+  },
+  'project-based-services': {
+    title: 'Software de proyectos y entrega',
+    flows: [
+      {
+        from: 'Proyecto firmado',
+        to: '{CRM} → Project tool',
+        body: 'Un proyecto firmado en {CRM} levanta el workspace, las plantillas de tareas, las asignaciones del equipo y la reunión de kickoff — desde un solo trigger.',
+      },
+      {
+        from: 'Progreso de tareas',
+        to: 'Project tool → {CRM}',
+        body: 'La salud del proyecto (on track, at risk, blocked) aparece en {CRM} para que el account owner no tenga que pedir un update al PM cada viernes.',
+      },
+      {
+        from: 'Hito',
+        to: 'Project tool → Contabilidad',
+        body: 'Cada hito dispara la factura con los términos correctos y escribe la actividad en {CRM} — para que el revenue siga a la entrega, no a la memoria.',
+      },
+      {
+        from: 'Fin de proyecto',
+        to: '{CRM} → Fase dos',
+        body: 'Al cerrar el proyecto, {CRM} inicia la conversación de siguiente fase — con outcomes y métricas ya resumidos para el AM.',
+      },
+    ],
+  },
+}
+
+const out = structuredClone(en)
+
+for (const crm of out.crms) {
+  if (crmBlurbs[crm.slug]) crm.blurb = crmBlurbs[crm.slug]
+}
+
+for (const [key, overlay] of Object.entries(verticals)) {
+  const v = out.verticals[key]
+  if (!v) continue
+  v.title = overlay.title
+  v.flows = overlay.flows
+}
+
+const dest = path.join(ROOT, 'src/data/matrix.es.json')
+fs.writeFileSync(dest, JSON.stringify(out, null, 2) + '\n')
+console.log('wrote', dest)

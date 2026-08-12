@@ -1,0 +1,315 @@
+{
+  "nav": {
+    "how": "Cómo funciona",
+    "connect": "Conectar herramientas",
+    "connectCrm": "Conectar tu CRM",
+    "pricing": "Precios",
+    "about": "Nosotros",
+    "menu": "Menú",
+    "contactUs": "Contáctanos"
+  },
+  "lang": {
+    "switchToEn": "Switch to English",
+    "switchToEs": "Cambiar a español"
+  },
+  "common": {
+    "contactUs": "Contáctanos",
+    "linkedin": "Contáctanos en LinkedIn",
+    "synced": "sincronizado",
+    "all": "Todos",
+    "and": "y",
+    "andMore": " y más"
+  },
+  "footer": {
+    "tagline": "Integraciones de CRM y herramientas para pequeñas empresas.",
+    "connect": "Conectar",
+    "connectTools": "Conectar herramientas",
+    "connectCrm": "Conectar tu CRM",
+    "pricing": "Precios",
+    "company": "Empresa",
+    "about": "Nosotros",
+    "how": "Cómo funciona",
+    "contact": "Contacto",
+    "linkedinAria": "Promonet en LinkedIn",
+    "fixedPrice": "Integraciones de CRM y herramientas a precio fijo"
+  },
+  "contact": {
+    "eyebrow": "Contáctanos",
+    "title": "Cuéntanos qué quieres conectar.",
+    "closeForm": "Cerrar formulario de contacto",
+    "close": "Cerrar",
+    "name": "Nombre",
+    "email": "Email",
+    "company": "Nombre de la empresa",
+    "messageLabel": "¿Qué herramientas te interesa conectar?",
+    "defaultMessage": "Me gustaría conectar estas herramientas:\n\n",
+    "fillAll": "Por favor, completa todos los campos.",
+    "sendFailed": "No se pudo enviar el mensaje",
+    "sending": "Enviando…",
+    "send": "Enviar",
+    "sendsTo": "Se envía a {{email}}",
+    "sentTitle": "Mensaje enviado.",
+    "sentBody": "Gracias — te responderemos en {{email}}, normalmente en 24 horas."
+  },
+  "team": {
+    "eyebrow": "El equipo",
+    "title": "Trabajamos como si fuéramos parte de tu equipo.",
+    "p1": "Somos un equipo pequeño — sin gestores de cuenta, sin cola de tickets. Cuando nos contratas, nos tienes a nosotros: las mismas personas que mapean tus herramientas, construyen los flujos y se quedan cuando hace falta un ajuste.",
+    "p2Before": "Nos asociamos contigo como miembros de tu propio equipo. ",
+    "p2Strong": "Codo a codo, como amigos, hasta que tu software se comunique",
+    "p2After": " y tus domingos vuelvan a ser tuyos.",
+    "imageAlt": "Equipo de Promonet que ayuda a pequeñas empresas a conectar CRM y herramientas"
+  },
+  "pricingTiers": {
+    "mostTeams": "La mayoría",
+    "project": "Proyecto",
+    "customEyebrow": "A medida",
+    "customBadge": "Diseñado para tu stack",
+    "footnote": "Todos los planes · sin asteriscos · sin tarifas horarias ocultas · cancela cuando quieras"
+  },
+  "pricingData": {
+    "base": {
+      "name": "Base",
+      "period": "mes",
+      "tagline": "Para dueños con un CRM y un par de herramientas. Partnership de desarrollo continuo, lo que necesites.",
+      "features": [
+        "Un CRM + 2 herramientas",
+        "Monitorización y alertas",
+        "Soporte por email y llamadas Zoom; somos tu equipo de desarrollo"
+      ]
+    },
+    "scaleup": {
+      "name": "Scale-up",
+      "period": "mes",
+      "tagline": "Cuando el stack realmente dirige el negocio. Partnership de desarrollo continuo, lo que necesites.",
+      "features": [
+        "Varios CRM + 4 herramientas",
+        "Monitorización y alertas",
+        "Soporte prioritario por email y Zoom",
+        "Somos tu equipo de desarrollo"
+      ]
+    },
+    "oneoff": {
+      "name": "Puntual",
+      "period": "único",
+      "tagline": "Una conexión que funciona, con una tarea de seguimiento.",
+      "features": [
+        "Una conexión de extremo a extremo",
+        "Una tarea de seguimiento incluida",
+        "Entrega documentada",
+        "Precio fijo — sin retainer",
+        "Soporte por email y Zoom hasta que te sientas cómodo con la entrega"
+      ]
+    },
+    "custom": {
+      "name": "A medida",
+      "tagline": "Multi-región, multi-CRM, lógica compleja.",
+      "features": [
+        "Todo lo de Scale-up",
+        "Ingeniero dedicado",
+        "SLA de disponibilidad",
+        "Informes personalizados"
+      ]
+    }
+  },
+  "home": {
+    "seoPath": "/es",
+    "heroTitleBefore": "Tu software por fin",
+    "heroTitleAccent": "hablando entre sí.",
+    "heroP1": "Somos un equipo pequeño, remoto y cercano que ayuda a pymes a ",
+    "heroConnectCrm": "conectar el CRM",
+    "heroP2": ", contabilidad, reservas y ",
+    "heroIndustry": "software sectorial",
+    "heroP3": " con un proyecto puntual a precio fijo o una partnership mensual.",
+    "bulletFixed": "Precio fijo — sin juegos por horas",
+    "bulletFriendly": "Hecho para pymes: trabajamos contigo directamente, como un equipo cercano",
+    "heroImageAlt": "Dueño de pequeña empresa cuyo CRM y herramientas Promonet ayuda a conectar",
+    "handnoteAlt": "no más exportaciones a hojas de cálculo",
+    "marqueeLabel": "Herramientas que las pymes nos piden conectar cada semana.",
+    "marqueeMore": "…y Xero, Shopify, Mailchimp, Clio, Jobber, Dubsado, Honeybook, y varias docenas más.",
+    "browseEvery": "Ver todas las herramientas",
+    "aboutEyebrow": "El problema del domingo por la noche",
+    "aboutTitle": "Compraste las herramientas, pero siguen sin hablarse.",
+    "aboutP1": "La mayoría de dueños de pymes que conocemos usan de seis a doce herramientas que no se sincronizan. Se vuelve a teclear datos. Se decide con números desfasados. El domingo por la noche se convierte en noche de hojas de cálculo.",
+    "aboutStrong": "Somos quienes conectan las herramientas entre sí, en silencio.",
+    "linkConnectCrm": "Conectar tu CRM →",
+    "linkPricing": "Ver precios →",
+    "linkAbout": "Sobre Promonet →",
+    "connectedWorkflows": "Flujos conectados",
+    "lastSync": "última sync · hace 12s",
+    "eventsToday": "1.381 eventos hoy",
+    "uptime": "99,97% uptime",
+    "pipelineInvoice": "factura → contabilidad",
+    "pipelineMeeting": "reunión → CRM",
+    "pipelineOrder": "pedido → segmento",
+    "pipelineEnquiry": "consulta → caso",
+    "pipelineRecord": "registro → sync",
+    "howEyebrow": "Cómo funciona",
+    "howTitle": "Tres pasos. Luego tus herramientas siguen conectadas.",
+    "step1Label": "Mapear",
+    "step1Title": "Llamada para conocernos.",
+    "step1Body": "Dibujamos los flujos en una pizarra y contamos las integraciones. Sin coste de evaluación.",
+    "step1Alt": "Boceto a carboncillo de dos personas hablando",
+    "step2Label": "Construir",
+    "step2Title": "De dos a cuatro semanas.",
+    "step2Body": "Construimos, probamos, documentamos y conectamos cada flujo. La monitorización arranca desde el primer día. Ves el progreso en lenguaje claro.",
+    "step2Alt": "Boceto a carboncillo de una llave inglesa",
+    "step3Label": "Operar",
+    "step3Title": "Simplemente funciona.",
+    "step3Body": "Tus herramientas por fin hablando entre sí. Recibes exactamente lo que pagaste.",
+    "step3Alt": "Boceto a carboncillo de una cara sonriente",
+    "pricingEyebrow": "Precios",
+    "pricingTitle": "Precios simples — escríbenos y empecemos",
+    "pricingPBefore": "",
+    "pricingMonthly": "Partnerships mensuales",
+    "pricingOr": " o un ",
+    "pricingOneOff": "proyecto puntual",
+    "pricingPAfter": " — un precio fijo sencillo para pymes. Sin tarifas horarias ocultas.",
+    "pricingFull": "Detalles completos de precios →",
+    "faqTitle": "Preguntas que las pymes hacen antes de conectar herramientas",
+    "ctaEyebrow": "Recupera tus domingos por la noche",
+    "ctaTitle": "¿Listo para conectar tu stack?",
+    "ctaBody": "Cuéntanos qué CRM y herramientas usas. Mapearemos los flujos y te enviaremos un presupuesto fijo — pensado para pymes, no para teatro enterprise.",
+    "ctaResponse": "Respuesta en 24 horas, siempre"
+  },
+  "faqs": [
+    {
+      "question": "¿Qué conecta Promonet?",
+      "answer": "Ayudamos a pymes a conectar plataformas CRM como Capsule, HubSpot, Pipedrive, Zoho, Copper e Insightly con contabilidad, reservas y software sectorial — además de muchas otras herramientas de tu stack."
+    },
+    {
+      "question": "¿Promonet es para pequeñas empresas?",
+      "answer": "Sí. Promonet está pensado para dueños y equipos pequeños que necesitan integraciones de CRM y herramientas sin contratar un equipo de desarrollo a tiempo completo."
+    },
+    {
+      "question": "¿Cuánto cuesta conectar herramientas?",
+      "answer": "Las partnerships mensuales empiezan en £600. Scale-up es £1.500 al mes. Una conexión puntual empieza en £1.000. El trabajo a medida se presupuesta aparte."
+    },
+    {
+      "question": "¿Cuánto tarda una integración típica?",
+      "answer": "Tras una llamada para conocernos y un presupuesto fijo, la mayoría de builds tardan de dos a cuatro semanas; luego monitorizamos y mantenemos las conexiones."
+    },
+    {
+      "question": "¿Necesito desarrolladores en mi equipo?",
+      "answer": "No. Nosotros mapeamos, construimos, documentamos y mantenemos las conexiones por ti, con soporte humano cuando hace falta un ajuste."
+    }
+  ],
+  "about": {
+    "eyebrow": "Nosotros",
+    "title": "Hecho por gente que ha vivido el vacío de conectividad.",
+    "p1": "Ayudamos a pymes a conectar CRM y herramientas sectoriales a bajo coste, con soporte humano de verdad — para que dejen de volver a teclear datos entre sistemas.",
+    "p2": "Somos un equipo pequeño de desarrolladores y diseñadores. Tras más de 20 años construyendo algunas de las principales soluciones CRM, veíamos siempre lo mismo: clientes aún luchando por conectar su CRM con el resto de herramientas — y las herramientas entre sí, no solo con el CRM.",
+    "storyTitle": "Vimos un vacío. Y decidimos llenarlo.",
+    "storyP1": "Las empresas compran buen software y luego pasan los domingos por la noche copiando datos entre sistemas que nunca debían hablarse. Las agencias cotizan precios enterprise. El soporte se convierte en una cola de tickets.",
+    "storyP2": "Promonet existe para ayudar a las pymes a resolver ese problema — a bajo coste, con soporte humano de verdad.",
+    "stat1Label": "20 años",
+    "stat1Body": "Construyendo productos CRM y viendo que la conectividad sigue siendo la parte sin resolver del stack.",
+    "stat2Label": "Bajo coste",
+    "stat2Body": "Partnerships mensuales fijas o builds puntuales — precios para pymes, no para RFPs enterprise.",
+    "stat3Label": "Soporte humano",
+    "stat3Body": "Personas reales que conocen tus herramientas. Sin gestores de cuenta. Sin colas de tickets que se tragan todo.",
+    "ctaTitle": "¿Listo para conectar tu stack?",
+    "ctaBody": "Cuéntanos qué herramientas usas. Te ayudaremos a conectarlas — de forma sencilla, asequible, con humanos al otro lado."
+  },
+  "pricingPage": {
+    "eyebrow": "Precios",
+    "title": "Precios simples que nos permiten trabajar contigo",
+    "subtitle": "Opciones de partnership mensual o un proyecto puntual.",
+    "noHidden": "Sin tarifas horarias ocultas.",
+    "bodyBefore": "Elige una partnership mensual si quieres monitorización continua y que seamos tu nuevo equipo de desarrollo, o reserva un proyecto puntual si solo necesitas una integración.",
+    "browseTools": "Ver herramientas que conectamos",
+    "ctaEyebrow": "Recupera tus domingos por la noche",
+    "ctaTitle": "¿Listo para conectar tu stack?",
+    "ctaBody": "Reserva una llamada para conocernos. Mapearemos tus herramientas, dibujaremos los flujos y te enviaremos un presupuesto fijo.",
+    "ctaResponse": "Respuesta en 24 horas, siempre"
+  },
+  "connectIndex": {
+    "eyebrow": "Integraciones",
+    "title": "Conectar herramientas de negocio e integraciones.",
+    "body": "Busca o explora {{count}} apps — CRM, contabilidad, hipotecas, legal, dental, inmobiliaria y herramientas de nicho. Precio mensual fijo. Sin equipo de desarrollo.",
+    "connectCrm": "Conectar tu CRM"
+  },
+  "connectCrm": {
+    "back": "Todas las integraciones",
+    "eyebrow": "Integraciones CRM",
+    "title": "Conecta tu CRM a herramientas sectoriales.",
+    "body": "Elige tu CRM. Te mostramos exactamente a qué lo conectamos — y cómo — para pymes que necesitan integraciones a precio fijo."
+  },
+  "connectPage": {
+    "home": "Inicio",
+    "connectTools": "Conectar herramientas",
+    "connectCrm": "Conectar tu CRM",
+    "title": "Conectar {{crm}} con {{vertical}}.",
+    "leadBefore": " Para pymes que usan {{verticalLower}} — herramientas como ",
+    "leadAfter": " — conectamos ",
+    "leadEnd": " para que leads, estados y traspasos dejen de vivir en el copia-pega. Partnership mensual fija o build puntual.",
+    "seePricing": "Ver precios",
+    "flowsTitle": "Flujos de integración",
+    "relatedBefore": "Integraciones relacionadas de ",
+    "relatedAfter": "",
+    "relatedItemBefore": "Conectar ",
+    "relatedItemTo": " con ",
+    "allCrm": "Todas las integraciones CRM",
+    "pricing": "Precios",
+    "ctaTitleBefore": "¿Listo para conectar ",
+    "ctaTitleMid": " a tu stack de ",
+    "ctaTitleAfter": "?",
+    "ctaBodyBefore": "Reserva una llamada. Definiremos tu integración ",
+    "ctaBodyMid": " + ",
+    "ctaBodyAfter": " en 20 minutos.",
+    "notFoundTitle": "Integración no encontrada",
+    "notFoundSeoTitle": "Integración no encontrada | Promonet",
+    "notFoundDescription": "No se pudo encontrar esa página de integración CRM.",
+    "notFoundBody": "No encontramos esa página de integración.",
+    "browseAll": "Ver todas las integraciones →",
+    "connectCrmCta": "Conectar tu CRM →",
+    "metaDescription": "Conecta {{crm}} con el software de {{vertical}} que ya usan las pymes — precio mensual fijo, sin equipo de desarrollo interno."
+  },
+  "appSearch": {
+    "eyebrow": "Busca tu stack",
+    "title": "Busca herramientas que podemos conectar.",
+    "subtitle": "CRM, contabilidad, hipotecas, legal, dental, inmobiliaria y unos cuantos miles más.",
+    "placeholder": "Busca cualquier app — HubSpot, Clio, Dentrix…",
+    "searching": "Buscando en {{count}} apps",
+    "askAbout": "Preguntar por conectar {{name}}",
+    "weCanConnect": "Podemos conectar",
+    "talkAbout": "Háblanos de conectar {{name}} a tu CRM, contabilidad, reservas o el resto de tu stack.",
+    "message": "Me gustaría conectar {{name}} al resto de mis herramientas.",
+    "cantFind": "¿No encuentras “{{query}}”?",
+    "cantFindBody": "También conectamos herramientas a medida y de nicho. Cuéntanos qué usas — lo conectamos."
+  },
+  "appCatalog": {
+    "byCategory": "Explorar por categoría",
+    "viewCategory": "Ver por categoría",
+    "byAz": "Explorar de A a Z",
+    "viewAz": "Ver de A a Z",
+    "eyebrow": "Catálogo completo",
+    "titleCategory": "Explora cada herramienta que podemos conectar",
+    "titleAz": "Explorar herramientas de A a Z",
+    "count": "{{filtered}} de {{total}} apps",
+    "weCanConnect": "Podemos conectar",
+    "talkAbout": "Háblanos de conectar {{name}} a tu CRM, contabilidad, reservas o el resto de tu stack.",
+    "message": "Me gustaría conectar {{name}} al resto de mis herramientas.",
+    "askAbout": "Preguntar por conectar {{name}}"
+  },
+  "seo": {
+    "homeTitle": "Conectar CRM y herramientas de negocio para pymes",
+    "homeDescription": "Promonet ayuda a pymes a conectar CRM, contabilidad, reservas y herramientas sectoriales — precio mensual o puntual fijo, con soporte humano. Sin equipo de desarrollo.",
+    "aboutTitle": "Sobre Promonet — Integraciones CRM para pymes",
+    "aboutDescription": "Somos un equipo pequeño de desarrolladores y diseñadores que ayudan a pymes a conectar CRM y herramientas sectoriales a bajo coste, con soporte humano de verdad.",
+    "pricingTitle": "Precios de integraciones CRM y herramientas",
+    "pricingDescription": "Precios simples para integraciones CRM y herramientas: partnerships mensuales desde £600, o una conexión puntual fija desde £1.000. Sin tarifas horarias ocultas.",
+    "connectTitle": "Conectar herramientas de negocio e integraciones",
+    "connectDescription": "Busca y explora herramientas que ayudamos a conectar a pymes — CRM, contabilidad, reservas y software sectorial de nicho. Precio mensual fijo.",
+    "connectCrmTitle": "Conecta tu CRM a herramientas sectoriales",
+    "connectCrmDescription": "Conecta Capsule, HubSpot, Pipedrive, Zoho, Copper o Insightly con software de hipotecas, legal, dental, inmobiliaria y otros sectores.",
+    "connectPageTitle": "Conectar {{crm}} con {{vertical}}",
+    "connectPageDescription": "Conecta {{crm}} con el software de {{vertical}} que ya usan las pymes — precio mensual fijo, sin equipo de desarrollo interno.",
+    "orgDescription": "Integraciones de CRM y herramientas para pymes. Conectamos tu CRM con software sectorial y el resto de tu stack a un precio fijo.",
+    "ogImageAlt": "Promonet — Integraciones de CRM y herramientas para pymes",
+    "offerCatalogName": "Precios de integración Promonet",
+    "offerBase": "Partnership mensual de integración CRM + herramientas para pymes.",
+    "offerScaleup": "Partnership mensual con más herramientas, flujos ilimitados y soporte prioritario.",
+    "offerOneOff": "Build puntual de una conexión a precio fijo con entrega documentada."
+  }
+}

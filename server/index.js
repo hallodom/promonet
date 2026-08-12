@@ -106,8 +106,8 @@ function sendFile(res, filePath, status = 200) {
 function serveStatic(req, res) {
   const urlPath = req.url?.split('?')[0] || '/'
 
-  // Unknown /connect/:slug → real HTTP 404 (not SPA 200)
-  const connectMatch = urlPath.match(/^\/connect\/([^/]+)\/?$/)
+  // Unknown /connect/:slug or /es/conectar/:slug → real HTTP 404 (not SPA 200)
+  const connectMatch = urlPath.match(/^\/(?:es\/conectar|connect)\/([^/]+)\/?$/)
   if (connectMatch && connectMatch[1] !== 'crm') {
     const slugs = loadConnectSlugs()
     if (slugs.size > 0 && !slugs.has(connectMatch[1])) {

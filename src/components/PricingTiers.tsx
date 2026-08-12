@@ -1,18 +1,24 @@
 import { Check } from 'lucide-react'
-import { pricing } from '@/data/pricing'
+import { getPricing } from '@/data/pricing'
 import ContactButton from '@/components/ContactButton'
+import { useLocale } from '@/i18n/LocaleContext'
 
 export default function PricingTiers() {
+  const { locale, t } = useLocale()
+  const pricing = getPricing(locale)
+
   return (
     <>
-      <div className="grid md:grid-cols-3 gap-px bg-obsidian/10 rounded-[4px] overflow-hidden hairline">
+      {/* overflow-clip (not hidden): avoids IntersectionObserver + transform
+          reveal bugs that left the one-off card stuck at opacity: 0 */}
+      <div className="grid md:grid-cols-3 gap-px bg-obsidian/10 rounded-[4px] hairline overflow-clip">
         {pricing
-          .filter((t) => !t.custom)
+          .filter((tier) => !tier.custom)
           .map((tier, i) => {
             const inverted = Boolean(tier.featured || tier.dark)
             return (
               <div
-                key={tier.name}
+                key={tier.id}
                 className={`reveal relative p-8 md:p-10 ${
                   tier.featured
                     ? 'bg-voltage text-bone'
@@ -32,12 +38,12 @@ export default function PricingTiers() {
                   </span>
                   {tier.featured && (
                     <span className="font-mono text-[10px] uppercase tracking-wider bg-bone text-voltage px-2 py-1 rounded-[2px]">
-                      Most teams
+                      {t('pricingTiers.mostTeams')}
                     </span>
                   )}
                   {tier.dark && (
                     <span className="font-mono text-[10px] uppercase tracking-wider bg-bone/10 text-bone px-2 py-1 rounded-[2px]">
-                      Project
+                      {t('pricingTiers.project')}
                     </span>
                   )}
                 </div>
@@ -94,16 +100,16 @@ export default function PricingTiers() {
       </div>
 
       {pricing
-        .filter((t) => t.custom)
+        .filter((tier) => tier.custom)
         .map((tier) => (
-          <div key={tier.name} className="mt-10 md:mt-14 reveal">
+          <div key={tier.id} className="mt-10 md:mt-14 reveal">
             <div className="rounded-[4px] border border-obsidian/15 bg-bone overflow-hidden">
               <div className="px-6 md:px-10 py-4 border-b border-obsidian/10 flex items-center justify-between gap-4">
                 <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-voltage">
-                  Custom
+                  {t('pricingTiers.customEyebrow')}
                 </span>
                 <span className="font-mono text-[10px] uppercase tracking-wider text-graphite">
-                  Built around your stack
+                  {t('pricingTiers.customBadge')}
                 </span>
               </div>
               <div className="p-6 md:p-10 grid md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-center">
@@ -135,7 +141,7 @@ export default function PricingTiers() {
         ))}
 
       <p className="mt-8 text-sm text-graphite font-mono">
-        All plans · no asterisks · no hidden hourly fees · cancel any time
+        {t('pricingTiers.footnote')}
       </p>
     </>
   )

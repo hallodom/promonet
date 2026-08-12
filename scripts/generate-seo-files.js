@@ -20,20 +20,35 @@ function connectSlug(crmSlug, verticalName) {
 }
 
 function listRoutes() {
-  const routes = [
+  const enBase = [
     { path: '/', priority: '1.0', changefreq: 'weekly' },
     { path: '/about', priority: '0.6', changefreq: 'monthly' },
     { path: '/pricing', priority: '0.8', changefreq: 'monthly' },
     { path: '/connect', priority: '0.9', changefreq: 'weekly' },
     { path: '/connect/crm', priority: '0.9', changefreq: 'weekly' },
   ]
+  const esBase = [
+    { path: '/es', priority: '1.0', changefreq: 'weekly' },
+    { path: '/es/nosotros', priority: '0.6', changefreq: 'monthly' },
+    { path: '/es/precios', priority: '0.8', changefreq: 'monthly' },
+    { path: '/es/conectar', priority: '0.9', changefreq: 'weekly' },
+    { path: '/es/conectar/crm', priority: '0.9', changefreq: 'weekly' },
+  ]
+
+  const routes = [...enBase, ...esBase]
 
   for (const crm of MATRIX.crms) {
     for (const key of crm.verticals) {
       const vertical = MATRIX.verticals[key]
       if (!vertical) continue
+      const slug = connectSlug(crm.slug, vertical.name)
       routes.push({
-        path: `/connect/${connectSlug(crm.slug, vertical.name)}`,
+        path: `/connect/${slug}`,
+        priority: '0.7',
+        changefreq: 'monthly',
+      })
+      routes.push({
+        path: `/es/conectar/${slug}`,
         priority: '0.7',
         changefreq: 'monthly',
       })
@@ -60,17 +75,43 @@ Allow: /
 Sitemap: ${SITE_URL}/sitemap.xml
 `
 
+function toEnPath(p) {
+  if (p === '/es') return '/'
+  if (!p.startsWith('/es')) return p
+  return p
+    .replace(/^\/es\/conectar/, '/connect')
+    .replace(/^\/es\/precios$/, '/pricing')
+    .replace(/^\/es\/nosotros$/, '/about')
+}
+
+function toEsPath(p) {
+  if (p === '/') return '/es'
+  if (p.startsWith('/es')) return p
+  return p
+    .replace(/^\/connect/, '/es/conectar')
+    .replace(/^\/pricing$/, '/es/precios')
+    .replace(/^\/about$/, '/es/nosotros')
+}
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${routes
-  .map(
-    (r) => `  <url>
-    <loc>${SITE_URL}${r.path === '/' ? '/' : r.path}</loc>
+  .map((r) => {
+    const loc = r.path === '/' ? '/' : r.path
+    const enPath = toEnPath(r.path)
+    const esPath = toEsPath(r.path)
+    const enHref = `${SITE_URL}${enPath === '/' ? '/' : enPath}`
+    const esHref = `${SITE_URL}${esPath}`
+    return `  <url>
+    <loc>${SITE_URL}${loc}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${r.changefreq}</changefreq>
     <priority>${r.priority}</priority>
-  </url>`,
-  )
+    <xhtml:link rel="alternate" hreflang="en" href="${enHref}"/>
+    <xhtml:link rel="alternate" hreflang="es" href="${esHref}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${enHref}"/>
+  </url>`
+  })
   .join('\n')}
 </urlset>
 `
@@ -86,17 +127,26 @@ const llms = `# Promonet
 
 Promonet helps small business owners connect their CRM to industry software and the rest of their stack — without hiring a full-time development team. Fixed monthly partnerships or one-off builds, with human support.
 
+The site is available in English (default) and Spanish under /es paths.
+
 ## Who it's for
 - Small businesses and owners (roughly 5–50 people)
 - Teams that need to connect CRM, accounting, booking, and niche tools
 - Companies that want fixed pricing instead of open-ended hourly agency work
 
-## Key pages
+## Key pages (English)
 - [Home](${SITE_URL}/): Connect CRM and business tools for small businesses
 - [Connect tools](${SITE_URL}/connect): Search and browse tools we can connect
 - [Connect your CRM](${SITE_URL}/connect/crm): CRM → industry software matrix
 - [Pricing](${SITE_URL}/pricing): Base £600/mo, Scale-up £1,500/mo, One-off £1,000
 - [About](${SITE_URL}/about): Team background and why Promonet exists
+
+## Key pages (Spanish)
+- [Inicio](${SITE_URL}/es)
+- [Conectar herramientas](${SITE_URL}/es/conectar)
+- [Conectar tu CRM](${SITE_URL}/es/conectar/crm)
+- [Precios](${SITE_URL}/es/precios)
+- [Nosotros](${SITE_URL}/es/nosotros)
 
 ## CRMs we commonly connect
 ${crmList}
@@ -115,6 +165,10 @@ Promonet builds and maintains integrations that connect CRM platforms to other b
 
 We are not a generic IT helpdesk. We partner with owners like teammates: map the stack, build the connections, document them, and stick around when APIs change or new tools are added.
 
+## Languages
+- English (default): unprefixed URLs
+- Spanish: /es, /es/precios, /es/nosotros, /es/conectar, /es/conectar/crm, /es/conectar/:slug
+
 ## Who it is for
 Small businesses and owner-led teams who:
 - Run a CRM plus several other tools that do not sync
@@ -132,8 +186,8 @@ Connecting tools means moving data automatically between systems you already pay
 ${MATRIX.crms.map((c) => `- ${c.name}: ${c.blurb}`).join('\n')}
 
 ## Pricing (GBP)
-- Base: £600 / month — one CRM + 1 tool, up to 3 flows, monitoring, 24-hour email support
-- Scale-up: £1,500 / month — one CRM + 4 tools, unlimited flows, priority Slack, quarterly review
+- Base: £600 / month — one CRM + tools, monitoring, email and Zoom support
+- Scale-up: £1,500 / month — multiple CRMs + tools, priority support
 - One-off: £1,000 — one connection end-to-end, one follow-up task, documented handoff
 - Custom: quoted for multi-CRM / complex logic
 
@@ -155,14 +209,25 @@ writeBoth('sitemap.xml', sitemap)
 writeBoth('llms.txt', llms)
 writeBoth('llms-full.txt', llmsFull)
 
-// Also emit a routes JSON for prerender + server 404 checks
 const routesJson = JSON.stringify(
   {
     siteUrl: SITE_URL,
     routes: routes.map((r) => r.path),
-    connectSlugs: routes
-      .filter((r) => r.path.startsWith('/connect/') && r.path !== '/connect/crm')
-      .map((r) => r.path.replace('/connect/', '')),
+    connectSlugs: [
+      ...new Set(
+        routes
+          .filter(
+            (r) =>
+              (r.path.startsWith('/connect/') && r.path !== '/connect/crm') ||
+              (r.path.startsWith('/es/conectar/') && r.path !== '/es/conectar/crm'),
+          )
+          .map((r) =>
+            r.path
+              .replace('/es/conectar/', '')
+              .replace('/connect/', ''),
+          ),
+      ),
+    ],
   },
   null,
   2,
