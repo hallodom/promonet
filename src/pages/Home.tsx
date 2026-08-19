@@ -12,10 +12,25 @@ import { useLocale } from '@/i18n/LocaleContext'
 import { connectPagePath, homeHashPath } from '@/i18n/paths'
 
 const tools = [
-  'HubSpot', 'Pipedrive', 'Capsule', 'Zoho', 'Stripe',
-  'Calendly', 'Xero', 'Clio', 'Jobber', 'Dubsado', 'Honeybook',
-  'Shopify', 'Mailchimp', 'Slack', 'Notion', 'Asana', 'Airtable',
-]
+  { name: 'HubSpot', logo: '/tool-logos/hubspot.svg' },
+  { name: 'Pipedrive', logo: '/tool-logos/pipedrive.svg', wordmark: true },
+  { name: 'Capsule', logo: '/tool-logos/capsule.svg' },
+  { name: 'Mortgage Brain', logo: '/tool-logos/mortgage-brain.svg', wordmark: true, wide: true },
+  { name: 'Zoho', logo: '/tool-logos/zoho.svg' },
+  { name: 'Stripe', logo: '/tool-logos/stripe.svg' },
+  { name: 'Calendly', logo: '/tool-logos/calendly.svg' },
+  { name: 'Xero', logo: '/tool-logos/xero.svg' },
+  { name: 'Clio', logo: '/tool-logos/clio.svg', wordmark: true },
+  { name: 'Jobber', logo: '/tool-logos/jobber.svg', wordmark: true },
+  { name: 'Dubsado', logo: '/tool-logos/dubsado.svg', wordmark: true },
+  { name: 'HoneyBook', logo: '/tool-logos/honeybook.svg', wordmark: true },
+  { name: 'Shopify', logo: '/tool-logos/shopify.svg' },
+  { name: 'Mailchimp', logo: '/tool-logos/mailchimp.svg' },
+  { name: 'Slack', logo: '/tool-logos/slack.svg' },
+  { name: 'Notion', logo: '/tool-logos/notion.svg' },
+  { name: 'Asana', logo: '/tool-logos/asana.svg' },
+  { name: 'Airtable', logo: '/tool-logos/airtable.svg' },
+] as const
 
 export default function Home() {
   useReveal()
@@ -152,9 +167,20 @@ export default function Home() {
               <Link
                 key={i}
                 to={path('connect')}
-                className="font-display font-medium text-2xl md:text-3xl text-obsidian/40 hover:text-obsidian transition-colors whitespace-nowrap"
+                aria-label={tool.name}
+                className="group flex items-center gap-3 font-display font-medium text-2xl md:text-3xl text-obsidian/40 hover:text-obsidian transition-colors whitespace-nowrap"
               >
-                {tool}
+                <img
+                  src={tool.logo}
+                  alt=""
+                  aria-hidden="true"
+                  className={`object-contain opacity-40 group-hover:opacity-100 transition-opacity ${
+                    'wordmark' in tool
+                      ? `h-7 md:h-8 w-auto ${'wide' in tool ? 'max-w-[11rem]' : 'max-w-[9rem]'}`
+                      : 'h-7 w-7 md:h-8 md:w-8'
+                  }`}
+                />
+                {!('wordmark' in tool) && <span>{tool.name}</span>}
               </Link>
             ))}
           </div>
