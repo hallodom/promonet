@@ -4,6 +4,7 @@ import { useReveal } from '@/lib/useReveal'
 import AppSearch from '@/components/AppSearch'
 import PricingTiers from '@/components/PricingTiers'
 import TeamSection from '@/components/TeamSection'
+import AiAgentsSection from '@/components/AiAgentsSection'
 import ContactButton from '@/components/ContactButton'
 import LinkedInButton from '@/components/LinkedInButton'
 import Seo from '@/components/Seo'
@@ -272,6 +273,8 @@ export default function Home() {
       </section>
 
       <TeamSection />
+
+      <AiAgentsSection />
 
       <section id="how" className="py-28 md:py-40 bg-surface-1/30 hairline-b">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">

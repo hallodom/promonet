@@ -60,6 +60,22 @@
     "p2After": " y tus domingos vuelvan a ser tuyos.",
     "imageAlt": "Equipo de Promonet que ayuda a pequeñas empresas a conectar CRM y herramientas"
   },
+  "aiAgents": {
+    "eyebrow": "Tu equipo de IA",
+    "title": "Crea el equipo que te gustaría contratar con IA.",
+    "intro": "Si el dinero no fuera un problema, ¿qué tareas delegarías primero? Empieza por los puestos que necesitas y encuentra agentes de IA independientes que puedan encargarse de esas tareas.",
+    "body": "Te ayudamos a identificar el trabajo, elegir los agentes adecuados y darles instrucciones como a nuevos miembros del equipo. Cada uno recibe una función clara, las herramientas necesarias y un seguimiento acordado, para que puedas delegar y revisar los resultados.",
+    "cta": "Encuentra mi equipo de IA",
+    "contactMessage": "Me gustaría recibir ayuda para identificar agentes de IA independientes a los que delegar tareas. Los primeros puestos para los que contrataría son:\n\n",
+    "rolesLabel": "¿A quién contratarías primero?",
+    "socialTitle": "Gestor de redes sociales",
+    "socialBody": "Planifica tu calendario de redes sociales, programa publicaciones aprobadas y sigue la interacción en tus canales.",
+    "salesTitle": "Asistente de ventas",
+    "salesBody": "Encuentra nuevos contactos comerciales, investiga clientes potenciales, prepara mensajes y redacta seguimientos para que los apruebes.",
+    "contentTitle": "Asistente de contenidos",
+    "contentBody": "Planifica tus publicaciones y convierte tus ideas en primeros borradores con tu estilo.",
+    "note": "Empieza por un puesto. Define las instrucciones, decide qué necesita tu aprobación y amplía el equipo desde ahí."
+  },
   "pricingTiers": {
     "mostTeams": "La mayoría",
     "project": "Proyecto",
@@ -71,9 +87,9 @@
     "base": {
       "name": "Base",
       "period": "mes",
-      "tagline": "Para dueños con un CRM y un par de herramientas. Partnership de desarrollo continuo, lo que necesites.",
+      "tagline": "Conectamos el CRM que ya usas con otras dos de tus herramientas, con desarrollo y soporte continuos para que sigan funcionando juntas.",
       "features": [
-        "Un CRM + 2 herramientas",
+        "Conecta tu CRM actual con 2 herramientas",
         "Monitorización y alertas",
         "Soporte por email y llamadas Zoom; somos tu equipo de desarrollo"
       ]
@@ -81,9 +97,9 @@
     "scaleup": {
       "name": "Scale-up",
       "period": "mes",
-      "tagline": "Cuando el stack realmente dirige el negocio. Partnership de desarrollo continuo, lo que necesites.",
+      "tagline": "Conectamos tus CRM actuales y otras cuatro herramientas, con desarrollo y soporte continuos a medida que crece tu negocio.",
       "features": [
-        "Varios CRM + 4 herramientas",
+        "Conecta tus CRM actuales con 4 herramientas",
         "Monitorización y alertas",
         "Soporte prioritario por email y Zoom",
         "Somos tu equipo de desarrollo"
@@ -103,7 +119,7 @@
     },
     "custom": {
       "name": "A medida",
-      "tagline": "Multi-región, multi-CRM, lógica compleja.",
+      "tagline": "Integraciones complejas entre regiones y los CRM que ya usas.",
       "features": [
         "Todo lo de Scale-up",
         "Ingeniero dedicado",
@@ -166,7 +182,7 @@
     "pricingOneOff": "proyecto puntual",
     "pricingPAfter": " — un precio fijo sencillo para pymes. Sin tarifas horarias ocultas.",
     "pricingFull": "Detalles completos de precios →",
-    "faqTitle": "Preguntas que las pymes hacen antes de conectar herramientas",
+    "faqTitle": "Tus preguntas sobre integraciones y agentes de IA",
     "ctaEyebrow": "Recupera tus domingos por la noche",
     "ctaTitle": "¿Listo para conectar tu stack?",
     "ctaBody": "Cuéntanos qué CRM y herramientas usas. Mapearemos los flujos y te enviaremos un presupuesto fijo — pensado para pymes, no para teatro enterprise.",
@@ -175,11 +191,19 @@
   "faqs": [
     {
       "question": "¿Qué conecta Promonet?",
-      "answer": "Ayudamos a pymes a conectar plataformas CRM como Capsule, HubSpot, Pipedrive, Zoho, Copper e Insightly con contabilidad, reservas y software sectorial — además de muchas otras herramientas de tu stack."
+      "answer": "Ayudamos a pymes a conectar el CRM que ya usan, como Capsule, HubSpot, Pipedrive, Zoho, Copper o Insightly, con contabilidad, reservas y software sectorial. También conectamos otras herramientas de negocio directamente entre sí; no hace falta que intervenga un CRM."
+    },
+    {
+      "question": "¿Nos vais a crear un CRM nuevo?",
+      "answer": "Nuestros planes de integración conectan y dan soporte al CRM y las herramientas que ya usas. Conservas tu software actual y nosotros creamos las conexiones para que la información pase entre sistemas sin tener que copiarla y pegarla repetidamente."
+    },
+    {
+      "question": "¿Podéis conectar una herramienta que no aparece en la web?",
+      "answer": "Cuéntanos qué herramienta usas y qué quieres que haga. Revisamos su API u otras opciones de integración y confirmamos qué es posible antes de presupuestar. Algunas herramientas tienen restricciones de acceso o requieren un plan de suscripción concreto."
     },
     {
       "question": "¿Promonet es para pequeñas empresas?",
-      "answer": "Sí. Promonet está pensado para dueños y equipos pequeños que necesitan integraciones de CRM y herramientas sin contratar un equipo de desarrollo a tiempo completo."
+      "answer": "Sí. Trabajamos con dueños y equipos pequeños que quieren conectar sus herramientas actuales o encontrar agentes de IA para delegar tareas concretas. Puedes empezar con una conexión o una función de IA."
     },
     {
       "question": "¿Cuánto cuesta conectar herramientas?",
@@ -187,11 +211,47 @@
     },
     {
       "question": "¿Cuánto tarda una integración típica?",
-      "answer": "Tras una llamada para conocernos y un presupuesto fijo, la mayoría de builds tardan de dos a cuatro semanas; luego monitorizamos y mantenemos las conexiones."
+      "answer": "Tras una llamada para conocernos y un presupuesto fijo, la mayoría de las integraciones tardan de dos a cuatro semanas. El plazo depende de las herramientas, los accesos y la complejidad del trabajo; acordamos el alcance y el calendario antes de empezar."
+    },
+    {
+      "question": "¿Qué soporte recibimos después de activar una integración?",
+      "answer": "Las colaboraciones mensuales incluyen monitorización continua, alertas y soporte para las conexiones acordadas. Un proyecto puntual incluye una entrega documentada, una tarea de seguimiento y soporte para ayudarte a familiarizarte con la integración. Cualquier mantenimiento adicional se acuerda por separado."
     },
     {
       "question": "¿Necesito desarrolladores en mi equipo?",
-      "answer": "No. Nosotros mapeamos, construimos, documentamos y mantenemos las conexiones por ti, con soporte humano cuando hace falta un ajuste."
+      "answer": "No. Nos encargamos del trabajo técnico y explicamos la configuración con claridad. Tú aportas tu conocimiento del negocio, las herramientas que usas y las tareas para las que necesitas ayuda."
+    },
+    {
+      "question": "¿Qué es un agente de IA independiente?",
+      "answer": "Piensa en un agente de IA como un compañero de software con una función definida. Según sus capacidades y el acceso que le concedas, puede realizar tareas, usar herramientas conectadas e informarte de los resultados. Te ayudamos a elegir agentes adecuados y a dar a cada uno instrucciones claras, límites y una forma de revisar su trabajo."
+    },
+    {
+      "question": "¿Qué tareas podría delegar en un equipo de IA?",
+      "answer": "Por ejemplo, planificar redes sociales, programar publicaciones aprobadas, encontrar nuevos contactos comerciales, investigar clientes potenciales, redactar mensajes y seguimientos, y convertir tus ideas en contenidos. Empezamos por tareas repetibles con un resultado claro y fáciles de revisar."
+    },
+    {
+      "question": "¿Cómo decidís qué agentes de IA necesito?",
+      "answer": "Revisamos las tareas que te ocupan la semana y a quién contratarías si el presupuesto no fuera un límite. Después relacionamos las tareas adecuadas con las capacidades de los agentes, tus herramientas y tu presupuesto. Empieza por una función y una tarea pequeña, revisa los resultados y amplía el equipo cuando resulte útil."
+    },
+    {
+      "question": "¿Los agentes de IA pueden trabajar solos y sigo teniendo el control?",
+      "answer": "Los agentes pueden realizar las tareas acordadas de forma independiente cuando sus herramientas y permisos lo permiten. Definimos qué pueden hacer, cuándo deben informarte y qué acciones requieren tu aprobación, como publicar en redes o enviar mensajes comerciales. Revisas los resultados y puedes cambiar las instrucciones; el trabajo de la IA sigue necesitando criterio humano."
+    },
+    {
+      "question": "¿Los agentes de IA pueden trabajar con mi CRM y mis herramientas actuales?",
+      "answer": "Sí, cuando sean compatibles. Revisamos las opciones de integración del agente y de cada herramienta, y acordamos qué información necesita y qué acciones puede realizar. Si no existe una conexión directa, explicamos las alternativas y las limitaciones antes de empezar."
+    },
+    {
+      "question": "¿Cuánto cuesta configurar agentes de IA?",
+      "answer": "Definimos y presupuestamos la selección de agentes, su configuración y cualquier soporte continuo según las funciones y tareas que necesitas. Los precios de integración anteriores corresponden a conectar herramientas de negocio. Confirmamos nuestros honorarios y cualquier coste de suscripción o uso del proveedor antes de que te comprometas."
+    },
+    {
+      "question": "¿Qué acceso necesitará una integración o un agente de IA?",
+      "answer": "Depende de la tarea. Acordamos qué cuentas y datos hacen falta, usamos los permisos disponibles en cada herramienta para limitar el acceso al trabajo y decidimos qué acciones requieren aprobación. Explicamos las limitaciones de acceso antes de configurar nada para que puedas decidir qué conectar."
+    },
+    {
+      "question": "¿Qué debo preparar para la primera conversación?",
+      "answer": "Una lista de las herramientas que usas, las tareas que repites y lo que más te gustaría delegar. No necesitas una especificación técnica ni haber elegido una plataforma de IA. Te ayudamos a convertir esa lista en un primer paso práctico y un presupuesto claro."
     }
   ],
   "about": {

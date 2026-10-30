@@ -60,6 +60,22 @@
     "p2After": " and your Sundays are free again.",
     "imageAlt": "Promonet team that helps small businesses connect CRM and tools"
   },
+  "aiAgents": {
+    "eyebrow": "Your AI team",
+    "title": "Build the team you wish you could hire with AI.",
+    "intro": "If money were no object, which jobs would you hand over first? Start with the roles you need, then find independent AI agents that can take those tasks off your plate.",
+    "body": "We help you identify the work, choose suitable agents, and brief them like new team members. Each gets a clear job, the tools it needs, and agreed check-ins, so you can delegate work and review the results.",
+    "cta": "Find my AI team",
+    "contactMessage": "I'd like help identifying independent AI agents to take tasks off my plate. The roles I'd hire for first are:\n\n",
+    "rolesLabel": "Who would you hire first?",
+    "socialTitle": "Social media manager",
+    "socialBody": "Plan your social calendar, schedule approved posts, and track engagement across your channels.",
+    "salesTitle": "Sales assistant",
+    "salesBody": "Find new leads, research prospects, prepare outreach, and draft follow-ups for you to approve.",
+    "contentTitle": "Content assistant",
+    "contentBody": "Plan your posts and turn your ideas into first drafts in your voice.",
+    "note": "Start with one role. Set the brief, decide what needs your approval, and build from there."
+  },
   "pricingTiers": {
     "mostTeams": "Most teams",
     "project": "Project",
@@ -71,9 +87,9 @@
     "base": {
       "name": "Base",
       "period": "month",
-      "tagline": "For owners on one CRM plus a couple of tools. On going dev partnership, whatever you need.",
+      "tagline": "We connect the CRM you already use to two of your other tools, with ongoing development and support to keep them working together.",
       "features": [
-        "One CRM + 2 tools",
+        "Connect your existing CRM to 2 tools",
         "Monitoring & alerts",
         "Email and zoom calls support, We become your helpful dev team"
       ]
@@ -81,9 +97,9 @@
     "scaleup": {
       "name": "Scale-up",
       "period": "month",
-      "tagline": "When the stack actually runs the business. On going dev partnership, whatever you need.",
+      "tagline": "We connect your existing CRMs and four other tools, with ongoing development and support as your business grows.",
       "features": [
-        "Multiple CRMs + 4 tools",
+        "Connect your existing CRMs to 4 tools",
         "Monitoring & alerts",
         "Priority email and zoom calls support",
         "We become your helpful dev team"
@@ -103,7 +119,7 @@
     },
     "custom": {
       "name": "Custom",
-      "tagline": "Multi-region, multi-CRM, complex logic.",
+      "tagline": "Complex integrations across regions and the CRMs you already use.",
       "features": [
         "Everything in Scale-up",
         "Dedicated engineer",
@@ -166,7 +182,7 @@
     "pricingOneOff": "one-off project",
     "pricingPAfter": " — a simple fixed price for small businesses. No hidden hourly fees.",
     "pricingFull": "Full pricing details →",
-    "faqTitle": "Questions small businesses ask before connecting tools",
+    "faqTitle": "Your questions about integrations and AI agents",
     "ctaEyebrow": "Get your Sunday nights back",
     "ctaTitle": "Ready to connect your stack?",
     "ctaBody": "Tell us which CRM and tools you use. We'll map the flows and send a fixed quote — built for small businesses, not enterprise theatre.",
@@ -175,11 +191,19 @@
   "faqs": [
     {
       "question": "What does Promonet connect?",
-      "answer": "We help small businesses connect CRM platforms like Capsule, HubSpot, Pipedrive, Zoho, Copper, and Insightly to accounting, booking, and industry software — plus many other tools in your stack."
+      "answer": "We help small businesses connect the CRM they already use, such as Capsule, HubSpot, Pipedrive, Zoho, Copper, or Insightly, to accounting, booking, and industry software. We also connect other business tools directly to each other; a CRM does not have to be involved."
+    },
+    {
+      "question": "Are you building us a new CRM?",
+      "answer": "Our integration plans connect and support the CRM and tools you already use. You keep your existing software, and we build the connections so information moves between systems without repeated copying and pasting."
+    },
+    {
+      "question": "Can you connect a tool that is not listed on the site?",
+      "answer": "Tell us which tool you use and what you want it to do. We check the available API or other integration options and confirm what is possible before quoting. Some tools have access restrictions or require a particular subscription plan."
     },
     {
       "question": "Is Promonet for small businesses?",
-      "answer": "Yes. Promonet is built for owners and small teams who need CRM and tool integrations without hiring a full-time development team."
+      "answer": "Yes. We work with owners and small teams who want their existing tools connected or help finding AI agents to take on specific tasks. You can start with one connection or one AI role."
     },
     {
       "question": "How much does it cost to connect tools?",
@@ -187,11 +211,47 @@
     },
     {
       "question": "How long does a typical integration take?",
-      "answer": "After a get-to-know-you call and fixed quote, most builds take two to four weeks, then we monitor and maintain the connections."
+      "answer": "After a get-to-know-you call and fixed quote, most integration builds take two to four weeks. Timing depends on the tools, access, and complexity of the work; we agree the scope and schedule before starting."
+    },
+    {
+      "question": "What support do we get after an integration goes live?",
+      "answer": "Monthly partnerships include ongoing monitoring, alerts, and support for the agreed connections. A one-off project includes a documented handover, one follow-up task, and support to help you get comfortable with it. We agree any further maintenance separately."
     },
     {
       "question": "Do I need developers on my team?",
-      "answer": "No. We map, build, document, and maintain the connections for you, with human support when something needs a tweak."
+      "answer": "No. We handle the technical work and explain the setup in plain English. You bring your knowledge of the business, the tools you use, and the tasks you want help with."
+    },
+    {
+      "question": "What is an independent AI agent?",
+      "answer": "Think of an AI agent as a software teammate with a defined job. Depending on its capabilities and the access you give it, it can work through tasks, use connected tools, and report back. We help you choose suitable agents and give each one a clear brief, boundaries, and a way to check its work."
+    },
+    {
+      "question": "What tasks could an AI team take off my plate?",
+      "answer": "Examples include planning social media, scheduling approved posts, finding new leads, researching prospects, drafting outreach and follow-ups, and turning your ideas into content. We start with repeatable tasks that have a clear outcome and are easy for you to review."
+    },
+    {
+      "question": "How do you decide which AI agents I need?",
+      "answer": "We look at the jobs taking up your week and the people you would hire if budget were no constraint. Then we match suitable tasks to agent capabilities, your tools, and your budget. Start with one role and a small task, review the results, and expand when it is useful."
+    },
+    {
+      "question": "Can AI agents work independently, and do I stay in control?",
+      "answer": "Agents can carry out agreed tasks independently where their tools and permissions allow. We define what they can do, when they should report back, and which actions need your approval, such as publishing posts or sending outreach. You review the results and can change the brief; AI output still needs human judgement."
+    },
+    {
+      "question": "Can AI agents work with my existing CRM and tools?",
+      "answer": "Where supported, yes. We check the agent and each tool's integration options, then agree what information it needs and what actions it can take. If a direct connection is unavailable, we explain the alternatives and limitations before starting."
+    },
+    {
+      "question": "How much does an AI-agent setup cost?",
+      "answer": "We scope and quote AI-agent selection, setup, and any ongoing support around the roles and tasks you need. The integration prices above are for connecting business tools. We confirm our fee and any provider subscription or usage costs before you commit."
+    },
+    {
+      "question": "What access will an integration or AI agent need?",
+      "answer": "It depends on the task. We agree which accounts and data are needed, use the permissions available in each tool to limit access to the job, and decide which actions require approval. We explain any access limitations before setup so you can decide what to connect."
+    },
+    {
+      "question": "What should I bring to the first conversation?",
+      "answer": "A list of the tools you use, the jobs you repeat, and what you would most like off your plate. You do not need a technical specification or a chosen AI platform. We help turn that list into a practical first step and a clear quote."
     }
   ],
   "about": {

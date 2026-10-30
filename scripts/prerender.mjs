@@ -109,7 +109,7 @@ function addStaticPages(pages, locale, msgs, paths) {
     jsonLdExtra: {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: msgs.faqs.slice(0, 3).map((faq) => ({
+      mainEntity: msgs.faqs.map((faq) => ({
         '@type': 'Question',
         name: faq.question,
         acceptedAnswer: { '@type': 'Answer', text: faq.answer },
