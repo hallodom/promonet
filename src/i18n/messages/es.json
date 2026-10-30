@@ -239,7 +239,7 @@
     },
     {
       "question": "¿Los agentes de IA pueden trabajar con mi CRM y mis herramientas actuales?",
-      "answer": "Sí, cuando sean compatibles. Revisamos las opciones de integración del agente y de cada herramienta, y acordamos qué información necesita y qué acciones puede realizar. Si no existe una conexión directa, explicamos las alternativas y las limitaciones antes de empezar."
+      "answer": "Sí. Los agentes con sus propios ordenadores y navegadores pueden usar tu CRM y tus herramientas actuales a través de las mismas pantallas que usa tu equipo, incluso sin una API o una integración directa. Acordamos a qué información puede acceder cada agente y qué acciones puede realizar, lo configuramos y comprobamos el flujo de trabajo en tus herramientas."
     },
     {
       "question": "¿Cuánto cuesta configurar agentes de IA?",

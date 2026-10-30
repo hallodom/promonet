@@ -40,9 +40,18 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-[1280px] mx-auto px-6 md:px-10 h-16 md:h-20 flex items-center justify-between">
-        <Link to={path('home')} className="no-underline shrink-0">
-          <span className="font-display text-xl tracking-[-0.015em]">
-            Promonet<span className="text-emergence">.</span>
+        <Link to={path('home')} aria-label="Promonet" className="no-underline shrink-0">
+          <span aria-hidden="true" className="brand-wordmark font-display text-xl tracking-[-0.015em]">
+            {'Promonet'.split('').map((letter, index) => (
+              <span
+                key={index}
+                className="brand-wordmark-letter"
+                style={{ animationDelay: `${100 + index * 65}ms` }}
+              >
+                {letter}
+              </span>
+            ))}
+            <span className="brand-wordmark-dot bg-emergence" />
           </span>
         </Link>
 

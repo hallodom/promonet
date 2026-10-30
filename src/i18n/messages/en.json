@@ -239,7 +239,7 @@
     },
     {
       "question": "Can AI agents work with my existing CRM and tools?",
-      "answer": "Where supported, yes. We check the agent and each tool's integration options, then agree what information it needs and what actions it can take. If a direct connection is unavailable, we explain the alternatives and limitations before starting."
+      "answer": "Yes. Agents with their own computers and browsers can use your existing CRM and tools through the same screens your team uses, even without an API or direct integration. We agree what information each agent can access and what actions it can take, then set it up and check the workflow in your tools."
     },
     {
       "question": "How much does an AI-agent setup cost?",

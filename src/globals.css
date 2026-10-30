@@ -68,6 +68,53 @@
   }
 }
 
+/* Header wordmark: a single entrance; transforms reserve the final layout. */
+.brand-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.brand-wordmark-letter {
+  display: inline-block;
+  transform-origin: 50% 100%;
+}
+
+.brand-wordmark-dot {
+  display: inline-block;
+  width: 0.17em;
+  height: 0.17em;
+  margin-left: 0.045em;
+  border-radius: 50%;
+  transform-origin: 50% 100%;
+}
+
+@keyframes wordmark-letter-in {
+  0% { opacity: 0; transform: translateY(0.7em) rotate(-6deg) scale(0.94); }
+  55% { opacity: 1; transform: translateY(-0.13em) rotate(1deg) scale(1.02); }
+  78% { transform: translateY(0.04em) rotate(0deg) scale(1); }
+  100% { opacity: 1; transform: none; }
+}
+
+@keyframes wordmark-dot-in {
+  0% { opacity: 0; transform: translateY(-1.8em) scale(0.85, 1.15); }
+  15% { opacity: 1; }
+  48% { transform: translateY(0) scale(1.2, 0.75); }
+  68% { transform: translateY(-0.35em) scale(0.95, 1.05); }
+  85% { transform: translateY(0) scale(1.06, 0.94); }
+  100% { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .brand-wordmark-letter {
+    animation: wordmark-letter-in 640ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .brand-wordmark-dot {
+    animation: wordmark-dot-in 640ms cubic-bezier(0.33, 0, 0.2, 1) 1320ms both;
+  }
+}
+
 /* Reveal-on-scroll: subtle and quick */
 .reveal {
   opacity: 0;
