@@ -352,6 +352,12 @@
     "message": "I'd like to connect {{name}} to the rest of my tools.",
     "askAbout": "Ask about connecting {{name}}"
   },
+  "notFound": {
+    "title": "Page not found",
+    "seoTitle": "Page not found | Promonet",
+    "description": "That page could not be found.",
+    "body": "That page could not be found."
+  },
   "seo": {
     "homeTitle": "Connect CRM & Business Tools for Small Businesses",
     "homeDescription": "Promonet helps small businesses connect CRM, accounting, booking, and industry tools — fixed monthly or one-off pricing, with human support. No dev team required.",
