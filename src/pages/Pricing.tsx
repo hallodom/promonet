@@ -51,7 +51,7 @@ export default function Pricing() {
 
       <section className="py-20 md:py-28 hairline-b">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
-          <PricingTiers />
+          <PricingTiers headingLevel="h2" />
         </div>
       </section>
 
