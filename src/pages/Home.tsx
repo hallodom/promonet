@@ -13,24 +13,24 @@ import { useLocale } from '@/i18n/LocaleContext'
 import { connectPagePath, homeHashPath } from '@/i18n/paths'
 
 const tools = [
-  { name: 'HubSpot', logo: '/tool-logos/hubspot.svg' },
-  { name: 'Pipedrive', logo: '/tool-logos/pipedrive.svg', wordmark: true },
-  { name: 'Capsule', logo: '/tool-logos/capsule.svg' },
-  { name: 'Mortgage Brain', logo: '/tool-logos/mortgage-brain.svg', wordmark: true, wide: true },
-  { name: 'Zoho', logo: '/tool-logos/zoho.svg' },
-  { name: 'Stripe', logo: '/tool-logos/stripe.svg' },
-  { name: 'Calendly', logo: '/tool-logos/calendly.svg' },
-  { name: 'Xero', logo: '/tool-logos/xero.svg' },
-  { name: 'Clio', logo: '/tool-logos/clio.svg', wordmark: true },
-  { name: 'Jobber', logo: '/tool-logos/jobber.svg', wordmark: true },
-  { name: 'Dubsado', logo: '/tool-logos/dubsado.svg', wordmark: true },
-  { name: 'HoneyBook', logo: '/tool-logos/honeybook.svg', wordmark: true },
-  { name: 'Shopify', logo: '/tool-logos/shopify.svg' },
-  { name: 'Mailchimp', logo: '/tool-logos/mailchimp.svg' },
-  { name: 'Slack', logo: '/tool-logos/slack.svg' },
-  { name: 'Notion', logo: '/tool-logos/notion.svg' },
-  { name: 'Asana', logo: '/tool-logos/asana.svg' },
-  { name: 'Airtable', logo: '/tool-logos/airtable.svg' },
+  { name: 'HubSpot', logo: '/tool-logos/hubspot.svg', width: 24, height: 24 },
+  { name: 'Pipedrive', logo: '/tool-logos/pipedrive.svg', width: 121, height: 26, wordmark: true },
+  { name: 'Capsule', logo: '/tool-logos/capsule.svg', width: 202, height: 193 },
+  { name: 'Mortgage Brain', logo: '/tool-logos/mortgage-brain.svg', width: 876, height: 116, wordmark: true, wide: true },
+  { name: 'Zoho', logo: '/tool-logos/zoho.svg', width: 24, height: 24 },
+  { name: 'Stripe', logo: '/tool-logos/stripe.svg', width: 24, height: 24 },
+  { name: 'Calendly', logo: '/tool-logos/calendly.svg', width: 24, height: 24 },
+  { name: 'Xero', logo: '/tool-logos/xero.svg', width: 24, height: 24 },
+  { name: 'Clio', logo: '/tool-logos/clio.svg', width: 362, height: 123, wordmark: true },
+  { name: 'Jobber', logo: '/tool-logos/jobber.svg', width: 540, height: 89, wordmark: true },
+  { name: 'Dubsado', logo: '/tool-logos/dubsado.svg', width: 1346, height: 192, wordmark: true },
+  { name: 'HoneyBook', logo: '/tool-logos/honeybook.svg', width: 1090, height: 128, wordmark: true },
+  { name: 'Shopify', logo: '/tool-logos/shopify.svg', width: 24, height: 24 },
+  { name: 'Mailchimp', logo: '/tool-logos/mailchimp.svg', width: 24, height: 24 },
+  { name: 'Slack', logo: '/tool-logos/slack.svg', width: 24, height: 24 },
+  { name: 'Notion', logo: '/tool-logos/notion.svg', width: 24, height: 24 },
+  { name: 'Asana', logo: '/tool-logos/asana.svg', width: 24, height: 24 },
+  { name: 'Airtable', logo: '/tool-logos/airtable.svg', width: 24, height: 24 },
 ] as const
 
 export default function Home() {
@@ -134,22 +134,37 @@ export default function Home() {
               </div>
             </div>
 
-            <figure className="relative reveal" style={{ transitionDelay: '120ms' }}>
-              <img
-                src="/small-business-owner-crm-integrations.jpg"
-                alt={t('home.heroImageAlt')}
-                loading="eager"
-                className="w-full aspect-[4/5] object-cover rounded-[4px] shadow-[0_30px_60px_-20px_rgba(10,10,15,0.18)]"
-              />
-              <figcaption className="hero-handnote mt-3 w-fit max-w-[min(100%,22rem)] bg-transparent">
-                <img
-                  src="/illustrations/no-more-exporting-handwritten.png"
-                  alt={t('home.handnoteAlt')}
-                  width={1466}
-                  height={159}
-                  className="block h-7 md:h-8 w-auto max-w-full select-none pointer-events-none mix-blend-multiply"
-                  loading="eager"
+            <figure className="relative reveal" style={{ transitionDelay: '120ms', animationDelay: '120ms' }}>
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet="/small-business-owner-crm-integrations-640.webp 640w, /small-business-owner-crm-integrations-800.webp 800w, /small-business-owner-crm-integrations-1200.webp 1200w"
+                  sizes="(min-width: 1280px) 560px, (min-width: 1024px) 45vw, 100vw"
                 />
+                <img
+                  src="/small-business-owner-crm-integrations.jpg"
+                  alt={t('home.heroImageAlt')}
+                  width={1200}
+                  height={1798}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="w-full aspect-[4/5] object-cover rounded-[4px] shadow-[0_30px_60px_-20px_rgba(10,10,15,0.18)]"
+                />
+              </picture>
+              <figcaption className="hero-handnote mt-3 w-fit max-w-[min(100%,22rem)] bg-transparent">
+                <picture>
+                  <source type="image/webp" srcSet="/illustrations/no-more-exporting-handwritten-733.webp" />
+                  <img
+                    src="/illustrations/no-more-exporting-handwritten.png"
+                    alt={t('home.handnoteAlt')}
+                    width={1466}
+                    height={159}
+                    className="block h-7 md:h-8 w-auto max-w-full select-none pointer-events-none mix-blend-multiply"
+                    loading="eager"
+                    decoding="async"
+                  />
+                </picture>
               </figcaption>
             </figure>
           </div>
@@ -175,6 +190,8 @@ export default function Home() {
                   src={tool.logo}
                   alt=""
                   aria-hidden="true"
+                  width={tool.width}
+                  height={tool.height}
                   className={`object-contain opacity-40 group-hover:opacity-100 transition-opacity ${
                     'wordmark' in tool
                       ? `h-7 md:h-8 w-auto ${'wide' in tool ? 'max-w-[11rem]' : 'max-w-[9rem]'}`
@@ -310,12 +327,18 @@ export default function Home() {
                 </h3>
                 <p className="text-graphite leading-relaxed">{s.body}</p>
                 <div className="mt-10">
-                  <img
-                    src={s.illustration}
-                    alt={s.alt}
-                    loading="lazy"
-                    className="w-full max-w-[220px] h-auto mix-blend-multiply"
-                  />
+                  <picture>
+                    <source type="image/webp" srcSet={s.illustration.replace(/\.png$/, '-440.webp')} />
+                    <img
+                      src={s.illustration}
+                      alt={s.alt}
+                      width={800}
+                      height={800}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full max-w-[220px] h-auto mix-blend-multiply"
+                    />
+                  </picture>
                 </div>
               </div>
             ))}

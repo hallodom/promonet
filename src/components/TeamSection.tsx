@@ -9,11 +9,22 @@ export default function TeamSection() {
         <div className="grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-20 items-center">
           <div className="reveal order-2 lg:order-1">
             <div className="relative aspect-[16/10] overflow-hidden rounded-[4px]">
-              <img
-                src="/team-office.jpg"
-                alt={t('team.imageAlt')}
-                className="absolute inset-0 h-full w-full object-cover object-center"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet="/team-office-640.webp 640w, /team-office-960.webp 960w, /team-office-1536.webp 1536w"
+                  sizes="(min-width: 1280px) 640px, (min-width: 1024px) 52vw, 100vw"
+                />
+                <img
+                  src="/team-office.jpg"
+                  alt={t('team.imageAlt')}
+                  width={1536}
+                  height={1024}
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover object-center"
+                />
+              </picture>
             </div>
           </div>
 
