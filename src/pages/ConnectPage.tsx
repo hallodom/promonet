@@ -99,7 +99,7 @@ export default function ConnectPage() {
           <h1 className="font-display text-[clamp(36px,6vw,72px)] leading-[1.02] tracking-[-0.02em] mb-8 max-w-[900px] text-balance reveal">
             {t('connectPage.title', { crm: crm.name, vertical: vertical.title })}
           </h1>
-          <p className="text-lg text-graphite max-w-[640px] mb-8 reveal" style={{ transitionDelay: '100ms' }}>
+          <p className="text-lg text-graphite max-w-[640px] mb-8 reveal" style={{ transitionDelay: '100ms', animationDelay: '100ms' }}>
             {crm.blurb}
             {t('connectPage.leadBefore', { verticalLower: vertical.title.toLowerCase() })}
             {toolPreview.map((tool, index) => (
@@ -120,7 +120,7 @@ export default function ConnectPage() {
             </Link>
             .
           </p>
-          <div className="flex flex-wrap gap-2 reveal" style={{ transitionDelay: '150ms' }}>
+          <div className="flex flex-wrap gap-2 reveal" style={{ transitionDelay: '150ms', animationDelay: '150ms' }}>
             {vertical.tools.map((tool) => (
               <ProductLink
                 key={tool}
