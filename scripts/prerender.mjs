@@ -67,6 +67,63 @@ function attr(tag, name) {
   return tag.match(new RegExp(`\\s${name}="([^"]*)"`, 'i'))?.[1]
 }
 
+function decodeEntities(text) {
+  return text
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(Number(dec)))
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+}
+
+function visibleText(body) {
+  return decodeEntities(
+    body
+      .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
+      .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
+      .replace(/<[^>]+>/g, ' '),
+  ).replace(/\s+/g, ' ')
+}
+
+/** Every FAQPage question in JSON-LD must also be a visible question on the page. */
+function auditFaqPage(body) {
+  const problems = []
+  const text = visibleText(body)
+  for (const [, json] of body.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    const nodes = [JSON.parse(json)].flat()
+    for (const node of nodes.filter((n) => n['@type'] === 'FAQPage')) {
+      for (const q of node.mainEntity || []) {
+        if (!text.includes(q.name)) problems.push(`FAQPage question not visible on page: ${q.name}`)
+      }
+    }
+  }
+  return problems
+}
+
+/** llms.txt / llms-full.txt must list every connect page with its rendered <title>. */
+function auditLlmsConnectLinks(titlesByRoute) {
+  const problems = []
+  const connectRoutes = [...titlesByRoute.keys()].filter((r) =>
+    /^\/(connect|es\/conectar)\/(?!crm$)[^/]+$/.test(r),
+  )
+  for (const file of ['llms.txt', 'llms-full.txt']) {
+    const txt = fs.readFileSync(path.join(DIST, file), 'utf8')
+    const listed = new Map()
+    for (const [, title, url] of txt.matchAll(/^- \[([^\]]+)\]\((https:\/\/promonetconsulting\.com\/[^)]*)\)$/gm)) {
+      listed.set(url.replace('https://promonetconsulting.com', ''), title)
+    }
+    for (const route of connectRoutes) {
+      const expected = titlesByRoute.get(route)
+      if (!listed.has(route)) problems.push(`${file}: missing integration page ${route}`)
+      else if (listed.get(route) !== expected) {
+        problems.push(`${file}: title for ${route} is "${listed.get(route)}", page <title> is "${expected}"`)
+      }
+    }
+  }
+  return problems
+}
+
 function audit(route, headTags, body, { expectIndexable }) {
   const problems = []
   const warnings = []
@@ -91,6 +148,7 @@ function audit(route, headTags, body, { expectIndexable }) {
     }
     if (!find((t) => attr(t, 'name') === 'twitter:card').length) problems.push('missing twitter:card')
     if (!body.includes('application/ld+json')) problems.push('missing JSON-LD')
+    problems.push(...auditFaqPage(body))
   }
 
   const h1Count = (body.match(/<h1\b/g) || []).length
@@ -123,6 +181,7 @@ async function main() {
 
   let failed = 0
   const seen = { titles: new Map(), descriptions: new Map() }
+  const titlesByRoute = new Map()
 
   const renderPage = (url, lang, expectIndexable) => {
     const { html: appHtml } = render(url)
@@ -130,6 +189,7 @@ async function main() {
     const { problems, warnings } = audit(url, headTags, body, { expectIndexable })
     if (expectIndexable) {
       const title = headTags.find((t) => t.startsWith('<title'))
+      if (title) titlesByRoute.set(url, decodeEntities(title.replace(/<[^>]+>/g, '')))
       const desc = headTags.find((t) => attr(t, 'name') === 'description')
       for (const [map, value] of [[seen.titles, title], [seen.descriptions, desc && attr(desc, 'content')]]) {
         if (!value) continue
@@ -159,6 +219,10 @@ async function main() {
     fs.mkdirSync(path.dirname(outFile), { recursive: true })
     fs.writeFileSync(outFile, html)
   }
+
+  const llmsProblems = auditLlmsConnectLinks(titlesByRoute)
+  for (const p of llmsProblems) console.error(`  FAIL ${p}`)
+  if (llmsProblems.length) failed += 1
 
   if (failed) throw new Error(`prerender: ${failed} route(s) failed SEO checks`)
   console.log(`Prerendered ${routes.length} routes + ${NOT_FOUND_PAGES.length} not-found pages (SSR)`)

@@ -68,9 +68,11 @@ Build emits (into `public/` and `dist/`):
 
 `npm run build:ssr` bundles `src/entry-server.tsx`; `scripts/prerender.mjs` then renders every route in `seo-routes.json` with the real app and writes `dist/<path>/index.html` — full page markup plus that route's `<title>`, description, robots, canonical, hreflang, Open Graph/Twitter tags (lifted into `<head>`) and JSON-LD. The client hydrates that markup (`src/main.tsx`). It also writes `dist/404.html` and `dist/es/404.html`.
 
-The prerender fails the build if an indexable route is missing its title, description, canonical, OG/Twitter tags or JSON-LD, and warns on pages without exactly one `<h1>`, images without `alt`, or duplicate titles/descriptions.
+The prerender fails the build if an indexable route is missing its title, description, canonical, OG/Twitter tags or JSON-LD, if a FAQPage question in JSON-LD is not visible on the page, or if `llms.txt` / `llms-full.txt` do not list every integration page with its rendered `<title>`. It warns on pages without exactly one `<h1>`, images without `alt`, or duplicate titles/descriptions.
 
-Per-route tags and JSON-LD (Organization/ProfessionalService, WebSite, FAQPage on home, OfferCatalog on pricing, BreadcrumbList on connect pages) come from `src/components/Seo.tsx` + `src/lib/seo.ts`.
+`.reveal` blocks only start hidden under `html.reveal-js`, which the inline script in `index.html` sets when JavaScript, IntersectionObserver and motion are all available, so the prerendered HTML is fully visible without JS. The first section of each page animates in with CSS alone (so it registers as LCP).
+
+Per-route tags and JSON-LD (Organization/ProfessionalService, WebSite, FAQPage on home — the first three integration FAQs only, OfferCatalog on pricing, BreadcrumbList on connect pages) come from `src/components/Seo.tsx` + `src/lib/seo.ts`.
 
 ### Server behaviour (`server/index.js`)
 

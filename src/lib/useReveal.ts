@@ -14,7 +14,8 @@ function reveal(el: HTMLElement) {
 }
 
 /**
- * Fade/slide elements with `.reveal` into view.
+ * Fade/slide elements with `.reveal` into view. The hidden start state only
+ * applies under `html.reveal-js` (set by the inline script in index.html).
  * Re-binds on pathname so locale switches (`/` ↔ `/es`) don't leave
  * cards stuck at opacity: 0 after ScrollToTop / remount races.
  */
@@ -22,6 +23,9 @@ export function useReveal() {
   const { pathname } = useLocation()
 
   useEffect(() => {
+    // Cancels the failsafe in index.html that un-hides content if the app never boots.
+    document.documentElement.classList.add('reveal-ready')
+
     const pending = () =>
       Array.from(document.querySelectorAll<HTMLElement>('.reveal:not(.in)'))
 

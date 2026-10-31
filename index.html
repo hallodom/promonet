@@ -17,12 +17,24 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" />
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
-    <style>.reveal, .hero-handnote { opacity: 1 !important; transform: none !important; }</style>
   </noscript>
   <script>
     (function() {
-      document.documentElement.classList.remove('dark');
+      var root = document.documentElement;
+      root.classList.remove('dark');
       try { localStorage.removeItem('theme'); } catch (e) {}
+
+      // Scroll-reveal content starts hidden only when the reveal will actually run
+      // (see .reveal-js in src/globals.css). Without JS, IntersectionObserver or
+      // with reduced motion, the prerendered content is simply visible. If the app
+      // never boots (useReveal sets .reveal-ready), drop the hidden state.
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if ('IntersectionObserver' in window && !reduce) {
+        root.classList.add('reveal-js');
+        setTimeout(function() {
+          if (!root.classList.contains('reveal-ready')) root.classList.remove('reveal-js');
+        }, 4000);
+      }
     })();
   </script>
 </head>

@@ -9,15 +9,44 @@ import { spawnSync } from 'node:child_process'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
-const MATRIX = JSON.parse(
-  fs.readFileSync(path.join(ROOT, 'src/data/matrix.json'), 'utf8'),
-)
+const readJson = (rel) => JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8'))
+const MATRIX = readJson('src/data/matrix.json')
+const MATRIX_ES = readJson('src/data/matrix.es.json')
+const MESSAGES = {
+  en: readJson('src/i18n/messages/en.json'),
+  es: readJson('src/i18n/messages/es.json'),
+}
 
 const SITE_URL = 'https://promonetconsulting.com'
+const SITE_NAME = 'Promonet'
 const CONTACT_EMAIL = 'hello@promonetconsulting.com'
 
 function connectSlug(crmSlug, verticalName) {
   return `${crmSlug}-to-${verticalName.replace(/\s+/g, '-')}-software`
+}
+
+// Same title derivation as listConnectPages() / pageTitle() in src/lib/seo.ts;
+// prerender.mjs fails the build if these drift from the rendered <title>s.
+function pageTitle(title) {
+  return title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`
+}
+
+function connectPageLinks(locale) {
+  const matrix = locale === 'es' ? MATRIX_ES : MATRIX
+  const template = MESSAGES[locale].seo.connectPageTitle
+  const base = locale === 'es' ? '/es/conectar' : '/connect'
+  const links = []
+  for (const crm of matrix.crms) {
+    for (const key of crm.verticals) {
+      const vertical = matrix.verticals[key]
+      if (!vertical) continue
+      const title = pageTitle(
+        template.replace(/\{\{(\w+)\}\}/g, (_, k) => ({ crm: crm.name, vertical: vertical.title })[k] ?? ''),
+      )
+      links.push(`- [${title}](${SITE_URL}${base}/${connectSlug(crm.slug, vertical.name)})`)
+    }
+  }
+  return links.join('\n')
 }
 
 // Source files whose last commit date is used as <lastmod> for each page type.
@@ -175,6 +204,24 @@ ${routes
 </urlset>
 `
 
+// AI-agent summary: quoted from the home page "Your AI team" section and AI FAQs
+// in en.json only, so it never says more than the visible site does.
+const AI = MESSAGES.en.aiAgents
+const AI_FAQS = MESSAGES.en.faqs.filter((f) => /\bAI\b/.test(f.question))
+const AI_COST_FAQ = AI_FAQS.find((f) => /cost/i.test(f.question))
+if (!AI_FAQS.length || !AI_COST_FAQ) throw new Error('en.json: AI-agent FAQs not found')
+const aiRoles = ['social', 'sales', 'content']
+  .map((key) => `- ${AI[`${key}Title`]}: ${AI[`${key}Body`]}`)
+  .join('\n')
+const aiSummary = `${AI.intro}
+
+${AI.body}
+
+Example roles:
+${aiRoles}
+
+${AI.note}`
+
 const crmList = MATRIX.crms.map((c) => c.name).join(', ')
 const verticalList = Object.values(MATRIX.verticals)
   .map((v) => v.title)
@@ -207,11 +254,24 @@ The site is available in English (default) and Spanish under /es paths.
 - [Precios](${SITE_URL}/es/precios)
 - [Nosotros](${SITE_URL}/es/nosotros)
 
+## AI agents
+Details: ${SITE_URL}/#ai-agents
+
+${aiSummary}
+
+${AI_COST_FAQ.question} ${AI_COST_FAQ.answer}
+
 ## CRMs we commonly connect
 ${crmList}
 
 ## Industry software areas
 ${verticalList}
+
+## Integration pages (English)
+${connectPageLinks('en')}
+
+## Integration pages (Spanish)
+${connectPageLinks('es')}
 
 ## Contact
 Email: ${CONTACT_EMAIL}
@@ -254,6 +314,20 @@ ${MATRIX.crms.map((c) => `- ${c.name}: ${c.blurb}`).join('\n')}
 1. Get-to-know-you call — map tools, sketch flows, fixed quote
 2. Build — typically two to four weeks with monitoring from day one
 3. Run — ongoing maintenance and 24-hour response on partnership plans
+
+## AI agents
+Details: ${SITE_URL}/#ai-agents
+
+${aiSummary}
+
+### AI-agent questions
+${AI_FAQS.map((f) => `Q: ${f.question}\nA: ${f.answer}`).join('\n\n')}
+
+## Integration pages (English)
+${connectPageLinks('en')}
+
+## Integration pages (Spanish)
+${connectPageLinks('es')}
 
 ## Important URLs
 ${routes.map((r) => `- ${SITE_URL}${r.path === '/' ? '/' : r.path}`).join('\n')}

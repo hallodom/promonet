@@ -177,6 +177,15 @@ export function getHomeFaqs(locale: Locale = DEFAULT_LOCALE) {
   return messages(locale).faqs
 }
 
+/**
+ * FAQs exposed as FAQPage structured data: only the leading integration
+ * questions. The AI-agent Q&A further down the list stays in visible markup only,
+ * so keep integration FAQs first in the `faqs` message arrays.
+ */
+export function getHomeFaqStructuredData(locale: Locale = DEFAULT_LOCALE) {
+  return getHomeFaqs(locale).slice(0, 3)
+}
+
 /** @deprecated Prefer getHomeFaqs(locale) */
 export const HOME_FAQS = en.faqs
 
