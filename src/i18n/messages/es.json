@@ -352,6 +352,12 @@
     "message": "Me gustaría conectar {{name}} al resto de mis herramientas.",
     "askAbout": "Preguntar por conectar {{name}}"
   },
+  "notFound": {
+    "title": "Página no encontrada",
+    "seoTitle": "Página no encontrada | Promonet",
+    "description": "No se pudo encontrar esa página.",
+    "body": "No se pudo encontrar esa página."
+  },
   "seo": {
     "homeTitle": "Conectar CRM y herramientas de negocio para pymes",
     "homeDescription": "Promonet ayuda a pymes a conectar CRM, contabilidad, reservas y herramientas sectoriales — precio mensual o puntual fijo, con soporte humano. Sin equipo de desarrollo.",

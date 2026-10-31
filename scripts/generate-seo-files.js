@@ -5,6 +5,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { spawnSync } from 'node:child_process'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
@@ -19,20 +20,65 @@ function connectSlug(crmSlug, verticalName) {
   return `${crmSlug}-to-${verticalName.replace(/\s+/g, '-')}-software`
 }
 
+// Source files whose last commit date is used as <lastmod> for each page type.
+const SHARED_SOURCES = [
+  'src/components',
+  'src/i18n',
+  'src/lib',
+  'src/App.tsx',
+  'index.html',
+]
+const PAGE_SOURCES = {
+  home: ['src/pages/Home.tsx', 'src/data/pricing.ts', 'public/illustrations'],
+  about: ['src/pages/About.tsx'],
+  pricing: ['src/pages/Pricing.tsx', 'src/data/pricing.ts'],
+  connect: ['src/pages/ConnectIndex.tsx', 'src/data/apps.json'],
+  connectCrm: ['src/pages/ConnectCrm.tsx', 'src/data/matrix.json', 'src/data/matrix.es.json'],
+  connectPage: [
+    'src/pages/ConnectPage.tsx',
+    'src/data/matrix.json',
+    'src/data/matrix.es.json',
+    'src/data/product-websites.json',
+  ],
+}
+
+function gitLastModified(paths) {
+  const result = spawnSync('git', ['log', '-1', '--format=%cs', '--', ...paths], {
+    cwd: ROOT,
+    encoding: 'utf8',
+  })
+  const date = result.status === 0 ? result.stdout.trim() : ''
+  return /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : null
+}
+
+/** Previous <lastmod> values, used when the build runs without git history. */
+function previousLastmods() {
+  const map = new Map()
+  try {
+    const xml = fs.readFileSync(path.join(ROOT, 'public/sitemap.xml'), 'utf8')
+    for (const m of xml.matchAll(/<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g)) {
+      map.set(m[1], m[2])
+    }
+  } catch {
+    // no previous sitemap
+  }
+  return map
+}
+
 function listRoutes() {
   const enBase = [
-    { path: '/', priority: '1.0', changefreq: 'weekly' },
-    { path: '/about', priority: '0.6', changefreq: 'monthly' },
-    { path: '/pricing', priority: '0.8', changefreq: 'monthly' },
-    { path: '/connect', priority: '0.9', changefreq: 'weekly' },
-    { path: '/connect/crm', priority: '0.9', changefreq: 'weekly' },
+    { path: '/', priority: '1.0', changefreq: 'weekly', page: 'home' },
+    { path: '/about', priority: '0.6', changefreq: 'monthly', page: 'about' },
+    { path: '/pricing', priority: '0.8', changefreq: 'monthly', page: 'pricing' },
+    { path: '/connect', priority: '0.9', changefreq: 'weekly', page: 'connect' },
+    { path: '/connect/crm', priority: '0.9', changefreq: 'weekly', page: 'connectCrm' },
   ]
   const esBase = [
-    { path: '/es', priority: '1.0', changefreq: 'weekly' },
-    { path: '/es/nosotros', priority: '0.6', changefreq: 'monthly' },
-    { path: '/es/precios', priority: '0.8', changefreq: 'monthly' },
-    { path: '/es/conectar', priority: '0.9', changefreq: 'weekly' },
-    { path: '/es/conectar/crm', priority: '0.9', changefreq: 'weekly' },
+    { path: '/es', priority: '1.0', changefreq: 'weekly', page: 'home' },
+    { path: '/es/nosotros', priority: '0.6', changefreq: 'monthly', page: 'about' },
+    { path: '/es/precios', priority: '0.8', changefreq: 'monthly', page: 'pricing' },
+    { path: '/es/conectar', priority: '0.9', changefreq: 'weekly', page: 'connect' },
+    { path: '/es/conectar/crm', priority: '0.9', changefreq: 'weekly', page: 'connectCrm' },
   ]
 
   const routes = [...enBase, ...esBase]
@@ -46,11 +92,13 @@ function listRoutes() {
         path: `/connect/${slug}`,
         priority: '0.7',
         changefreq: 'monthly',
+        page: 'connectPage',
       })
       routes.push({
         path: `/es/conectar/${slug}`,
         priority: '0.7',
         changefreq: 'monthly',
+        page: 'connectPage',
       })
     }
   }
@@ -67,10 +115,21 @@ function writeBoth(relPath, content) {
 }
 
 const routes = listRoutes()
-const today = new Date().toISOString().slice(0, 10)
+const previous = previousLastmods()
+const lastmodByPage = Object.fromEntries(
+  Object.entries(PAGE_SOURCES).map(([page, sources]) => [
+    page,
+    gitLastModified([...sources, ...SHARED_SOURCES]),
+  ]),
+)
+
+function lastmodFor(route) {
+  return lastmodByPage[route.page] ?? previous.get(`${SITE_URL}${route.path}`) ?? null
+}
 
 const robots = `User-agent: *
 Allow: /
+Disallow: /api/
 
 Sitemap: ${SITE_URL}/sitemap.xml
 `
@@ -102,9 +161,9 @@ ${routes
     const esPath = toEsPath(r.path)
     const enHref = `${SITE_URL}${enPath === '/' ? '/' : enPath}`
     const esHref = `${SITE_URL}${esPath}`
+    const lastmod = lastmodFor(r)
     return `  <url>
-    <loc>${SITE_URL}${loc}</loc>
-    <lastmod>${today}</lastmod>
+    <loc>${SITE_URL}${loc}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
     <changefreq>${r.changefreq}</changefreq>
     <priority>${r.priority}</priority>
     <xhtml:link rel="alternate" hreflang="en" href="${enHref}"/>

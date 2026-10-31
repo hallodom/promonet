@@ -47,7 +47,7 @@ function interpolate(template: string, vars: Record<string, string>) {
 }
 
 export function absoluteUrl(path = '/') {
-  if (!path || path === '/') return SITE_URL
+  if (!path || path === '/') return `${SITE_URL}/`
   return `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`
 }
 
@@ -180,15 +180,25 @@ export function getHomeFaqs(locale: Locale = DEFAULT_LOCALE) {
 /** @deprecated Prefer getHomeFaqs(locale) */
 export const HOME_FAQS = en.faqs
 
+export const ORGANIZATION_ID = `${SITE_URL}/#organization`
+export const WEBSITE_ID = `${SITE_URL}/#website`
+
 export function organizationJsonLd(locale: Locale = DEFAULT_LOCALE) {
   return {
     '@context': 'https://schema.org',
     '@type': ['Organization', 'ProfessionalService'],
+    '@id': ORGANIZATION_ID,
     name: SITE_NAME,
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
     email: CONTACT_EMAIL,
-    logo: SITE_LOGO,
+    logo: {
+      '@type': 'ImageObject',
+      url: SITE_LOGO,
+      width: 512,
+      height: 512,
+    },
     image: DEFAULT_OG_IMAGE,
+    sameAs: [LINKEDIN_URL],
     description: messages(locale).seo.orgDescription,
     areaServed: ['GB', 'Worldwide', 'ES'],
     serviceType: [
@@ -208,8 +218,11 @@ export function websiteJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': WEBSITE_ID,
     name: SITE_NAME,
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
+    inLanguage: ['en-GB', 'es-ES'],
+    publisher: { '@id': ORGANIZATION_ID },
   }
 }
 

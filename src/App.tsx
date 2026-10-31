@@ -6,6 +6,7 @@ import ConnectIndex from './pages/ConnectIndex'
 import ConnectCrm from './pages/ConnectCrm'
 import ConnectPage from './pages/ConnectPage'
 import Pricing from './pages/Pricing'
+import NotFound from './pages/NotFound'
 
 export default function App() {
   return (
@@ -24,6 +25,8 @@ export default function App() {
         <Route path="/es/conectar" element={<ConnectIndex />} />
         <Route path="/es/conectar/crm" element={<ConnectCrm />} />
         <Route path="/es/conectar/:slug" element={<ConnectPage />} />
+
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   )

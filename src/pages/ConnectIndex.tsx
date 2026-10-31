@@ -31,10 +31,10 @@ export default function ConnectIndex() {
           <h1 className="font-display text-[clamp(40px,7vw,88px)] leading-[1.02] tracking-[-0.02em] mb-8 max-w-[900px] text-balance reveal">
             {t('connectIndex.title')}
           </h1>
-          <p className="text-lg md:text-xl text-graphite max-w-[640px] mb-8 reveal" style={{ transitionDelay: '100ms' }}>
+          <p className="text-lg md:text-xl text-graphite max-w-[640px] mb-8 reveal" style={{ transitionDelay: '100ms', animationDelay: '100ms' }}>
             {t('connectIndex.body', { count })}
           </p>
-          <div className="reveal mb-10" style={{ transitionDelay: '120ms' }}>
+          <div className="reveal mb-10" style={{ transitionDelay: '120ms', animationDelay: '120ms' }}>
             <Link
               to={path('connectCrm')}
               className="group inline-flex items-center gap-2 font-semibold text-sm tracking-[0.02em] text-voltage hover:underline"
@@ -43,7 +43,7 @@ export default function ConnectIndex() {
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
-          <div className="reveal" style={{ transitionDelay: '150ms' }}>
+          <div className="reveal" style={{ transitionDelay: '150ms', animationDelay: '150ms' }}>
             <AppSearch />
           </div>
         </div>
