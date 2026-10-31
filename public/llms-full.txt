@@ -41,6 +41,106 @@ Connecting tools means moving data automatically between systems you already pay
 2. Build — typically two to four weeks with monitoring from day one
 3. Run — ongoing maintenance and 24-hour response on partnership plans
 
+## AI agents
+Details: https://promonetconsulting.com/#ai-agents
+
+If money were no object, which jobs would you hand over first? Start with the roles you need, then find independent AI agents that can take those tasks off your plate.
+
+We help you identify the work, choose suitable agents, and brief them like new team members. Each gets a clear job, the tools it needs, and agreed check-ins, so you can delegate work and review the results.
+
+Example roles:
+- Social media manager: Plan your social calendar, schedule approved posts, and track engagement across your channels.
+- Sales assistant: Find new leads, research prospects, prepare outreach, and draft follow-ups for you to approve.
+- Content assistant: Plan your posts and turn your ideas into first drafts in your voice.
+
+Start with one role. Set the brief, decide what needs your approval, and build from there.
+
+### AI-agent questions
+Q: What is an independent AI agent?
+A: Think of an AI agent as a software teammate with a defined job. Depending on its capabilities and the access you give it, it can work through tasks, use connected tools, and report back. We help you choose suitable agents and give each one a clear brief, boundaries, and a way to check its work.
+
+Q: What tasks could an AI team take off my plate?
+A: Examples include planning social media, scheduling approved posts, finding new leads, researching prospects, drafting outreach and follow-ups, and turning your ideas into content. We start with repeatable tasks that have a clear outcome and are easy for you to review.
+
+Q: How do you decide which AI agents I need?
+A: We look at the jobs taking up your week and the people you would hire if budget were no constraint. Then we match suitable tasks to agent capabilities, your tools, and your budget. Start with one role and a small task, review the results, and expand when it is useful.
+
+Q: Can AI agents work independently, and do I stay in control?
+A: Agents can carry out agreed tasks independently where their tools and permissions allow. We define what they can do, when they should report back, and which actions need your approval, such as publishing posts or sending outreach. You review the results and can change the brief; AI output still needs human judgement.
+
+Q: Can AI agents work with my existing CRM and tools?
+A: Yes. Agents with their own computers and browsers can use your existing CRM and tools through the same screens your team uses, even without an API or direct integration. We agree what information each agent can access and what actions it can take, then set it up and check the workflow in your tools.
+
+Q: How much does an AI-agent setup cost?
+A: We scope and quote AI-agent selection, setup, and any ongoing support around the roles and tasks you need. The integration prices above are for connecting business tools. We confirm our fee and any provider subscription or usage costs before you commit.
+
+Q: What access will an integration or AI agent need?
+A: It depends on the task. We agree which accounts and data are needed, use the permissions available in each tool to limit access to the job, and decide which actions require approval. We explain any access limitations before setup so you can decide what to connect.
+
+## Integration pages (English)
+- [Connect Capsule CRM to Mortgage Software | Promonet](https://promonetconsulting.com/connect/capsule-to-mortgage-software)
+- [Connect Capsule CRM to Legal Practice Software | Promonet](https://promonetconsulting.com/connect/capsule-to-legal-software)
+- [Connect Capsule CRM to Accounting Software | Promonet](https://promonetconsulting.com/connect/capsule-to-accounting-software)
+- [Connect Capsule CRM to Consulting Operations Software | Promonet](https://promonetconsulting.com/connect/capsule-to-consulting-software)
+- [Connect Capsule CRM to Agency Project & Time Software | Promonet](https://promonetconsulting.com/connect/capsule-to-agency-software)
+- [Connect HubSpot to Mortgage Software | Promonet](https://promonetconsulting.com/connect/hubspot-to-mortgage-software)
+- [Connect HubSpot to Legal Practice Software | Promonet](https://promonetconsulting.com/connect/hubspot-to-legal-software)
+- [Connect HubSpot to Real Estate Software | Promonet](https://promonetconsulting.com/connect/hubspot-to-real-estate-software)
+- [Connect HubSpot to Agency Project & Time Software | Promonet](https://promonetconsulting.com/connect/hubspot-to-agency-software)
+- [Connect HubSpot to Healthcare Practice Software | Promonet](https://promonetconsulting.com/connect/hubspot-to-healthcare-software)
+- [Connect Pipedrive to Mortgage Software | Promonet](https://promonetconsulting.com/connect/pipedrive-to-mortgage-software)
+- [Connect Pipedrive to Real Estate Software | Promonet](https://promonetconsulting.com/connect/pipedrive-to-real-estate-software)
+- [Connect Pipedrive to Recruiting & ATS Software | Promonet](https://promonetconsulting.com/connect/pipedrive-to-recruitment-software)
+- [Connect Pipedrive to Manufacturing & Inventory Software | Promonet](https://promonetconsulting.com/connect/pipedrive-to-manufacturing-software)
+- [Connect Pipedrive to Agency Project & Time Software | Promonet](https://promonetconsulting.com/connect/pipedrive-to-agency-software)
+- [Connect Zoho CRM to Mortgage Software | Promonet](https://promonetconsulting.com/connect/zoho-to-mortgage-software)
+- [Connect Zoho CRM to Accounting Software | Promonet](https://promonetconsulting.com/connect/zoho-to-accounting-software)
+- [Connect Zoho CRM to Real Estate Software | Promonet](https://promonetconsulting.com/connect/zoho-to-real-estate-software)
+- [Connect Zoho CRM to Healthcare Practice Software | Promonet](https://promonetconsulting.com/connect/zoho-to-healthcare-software)
+- [Connect Zoho CRM to Manufacturing & Inventory Software | Promonet](https://promonetconsulting.com/connect/zoho-to-manufacturing-software)
+- [Connect Copper to Agency Project & Time Software | Promonet](https://promonetconsulting.com/connect/copper-to-agency-software)
+- [Connect Copper to Consulting Operations Software | Promonet](https://promonetconsulting.com/connect/copper-to-consulting-software)
+- [Connect Copper to Real Estate Software | Promonet](https://promonetconsulting.com/connect/copper-to-real-estate-software)
+- [Connect Copper to Professional Services Software | Promonet](https://promonetconsulting.com/connect/copper-to-professional-services-software)
+- [Connect Copper to Creative Services Software | Promonet](https://promonetconsulting.com/connect/copper-to-creative-services-software)
+- [Connect Insightly to Consulting Operations Software | Promonet](https://promonetconsulting.com/connect/insightly-to-consulting-software)
+- [Connect Insightly to Legal Practice Software | Promonet](https://promonetconsulting.com/connect/insightly-to-legal-software)
+- [Connect Insightly to Agency Project & Time Software | Promonet](https://promonetconsulting.com/connect/insightly-to-agency-software)
+- [Connect Insightly to Manufacturing & Inventory Software | Promonet](https://promonetconsulting.com/connect/insightly-to-manufacturing-software)
+- [Connect Insightly to Project & Delivery Software | Promonet](https://promonetconsulting.com/connect/insightly-to-project-based-services-software)
+
+## Integration pages (Spanish)
+- [Conectar Capsule CRM con Software hipotecario | Promonet](https://promonetconsulting.com/es/conectar/capsule-to-mortgage-software)
+- [Conectar Capsule CRM con Software de despacho jurídico | Promonet](https://promonetconsulting.com/es/conectar/capsule-to-legal-software)
+- [Conectar Capsule CRM con Software de contabilidad | Promonet](https://promonetconsulting.com/es/conectar/capsule-to-accounting-software)
+- [Conectar Capsule CRM con Software de operaciones de consulting | Promonet](https://promonetconsulting.com/es/conectar/capsule-to-consulting-software)
+- [Conectar Capsule CRM con Software de proyectos y tiempo para agencias | Promonet](https://promonetconsulting.com/es/conectar/capsule-to-agency-software)
+- [Conectar HubSpot con Software hipotecario | Promonet](https://promonetconsulting.com/es/conectar/hubspot-to-mortgage-software)
+- [Conectar HubSpot con Software de despacho jurídico | Promonet](https://promonetconsulting.com/es/conectar/hubspot-to-legal-software)
+- [Conectar HubSpot con Software inmobiliario | Promonet](https://promonetconsulting.com/es/conectar/hubspot-to-real-estate-software)
+- [Conectar HubSpot con Software de proyectos y tiempo para agencias | Promonet](https://promonetconsulting.com/es/conectar/hubspot-to-agency-software)
+- [Conectar HubSpot con Software de práctica sanitaria | Promonet](https://promonetconsulting.com/es/conectar/hubspot-to-healthcare-software)
+- [Conectar Pipedrive con Software hipotecario | Promonet](https://promonetconsulting.com/es/conectar/pipedrive-to-mortgage-software)
+- [Conectar Pipedrive con Software inmobiliario | Promonet](https://promonetconsulting.com/es/conectar/pipedrive-to-real-estate-software)
+- [Conectar Pipedrive con Software de recruiting y ATS | Promonet](https://promonetconsulting.com/es/conectar/pipedrive-to-recruitment-software)
+- [Conectar Pipedrive con Software de fabricación e inventario | Promonet](https://promonetconsulting.com/es/conectar/pipedrive-to-manufacturing-software)
+- [Conectar Pipedrive con Software de proyectos y tiempo para agencias | Promonet](https://promonetconsulting.com/es/conectar/pipedrive-to-agency-software)
+- [Conectar Zoho CRM con Software hipotecario | Promonet](https://promonetconsulting.com/es/conectar/zoho-to-mortgage-software)
+- [Conectar Zoho CRM con Software de contabilidad | Promonet](https://promonetconsulting.com/es/conectar/zoho-to-accounting-software)
+- [Conectar Zoho CRM con Software inmobiliario | Promonet](https://promonetconsulting.com/es/conectar/zoho-to-real-estate-software)
+- [Conectar Zoho CRM con Software de práctica sanitaria | Promonet](https://promonetconsulting.com/es/conectar/zoho-to-healthcare-software)
+- [Conectar Zoho CRM con Software de fabricación e inventario | Promonet](https://promonetconsulting.com/es/conectar/zoho-to-manufacturing-software)
+- [Conectar Copper con Software de proyectos y tiempo para agencias | Promonet](https://promonetconsulting.com/es/conectar/copper-to-agency-software)
+- [Conectar Copper con Software de operaciones de consulting | Promonet](https://promonetconsulting.com/es/conectar/copper-to-consulting-software)
+- [Conectar Copper con Software inmobiliario | Promonet](https://promonetconsulting.com/es/conectar/copper-to-real-estate-software)
+- [Conectar Copper con Software de servicios profesionales | Promonet](https://promonetconsulting.com/es/conectar/copper-to-professional-services-software)
+- [Conectar Copper con Software de servicios creativos | Promonet](https://promonetconsulting.com/es/conectar/copper-to-creative-services-software)
+- [Conectar Insightly con Software de operaciones de consulting | Promonet](https://promonetconsulting.com/es/conectar/insightly-to-consulting-software)
+- [Conectar Insightly con Software de despacho jurídico | Promonet](https://promonetconsulting.com/es/conectar/insightly-to-legal-software)
+- [Conectar Insightly con Software de proyectos y tiempo para agencias | Promonet](https://promonetconsulting.com/es/conectar/insightly-to-agency-software)
+- [Conectar Insightly con Software de fabricación e inventario | Promonet](https://promonetconsulting.com/es/conectar/insightly-to-manufacturing-software)
+- [Conectar Insightly con Software de proyectos y entrega | Promonet](https://promonetconsulting.com/es/conectar/insightly-to-project-based-services-software)
+
 ## Important URLs
 - https://promonetconsulting.com/
 - https://promonetconsulting.com/about

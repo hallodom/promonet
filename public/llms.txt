@@ -25,11 +25,91 @@ The site is available in English (default) and Spanish under /es paths.
 - [Precios](https://promonetconsulting.com/es/precios)
 - [Nosotros](https://promonetconsulting.com/es/nosotros)
 
+## AI agents
+Details: https://promonetconsulting.com/#ai-agents
+
+If money were no object, which jobs would you hand over first? Start with the roles you need, then find independent AI agents that can take those tasks off your plate.
+
+We help you identify the work, choose suitable agents, and brief them like new team members. Each gets a clear job, the tools it needs, and agreed check-ins, so you can delegate work and review the results.
+
+Example roles:
+- Social media manager: Plan your social calendar, schedule approved posts, and track engagement across your channels.
+- Sales assistant: Find new leads, research prospects, prepare outreach, and draft follow-ups for you to approve.
+- Content assistant: Plan your posts and turn your ideas into first drafts in your voice.
+
+Start with one role. Set the brief, decide what needs your approval, and build from there.
+
+How much does an AI-agent setup cost? We scope and quote AI-agent selection, setup, and any ongoing support around the roles and tasks you need. The integration prices above are for connecting business tools. We confirm our fee and any provider subscription or usage costs before you commit.
+
 ## CRMs we commonly connect
 Capsule CRM, HubSpot, Pipedrive, Zoho CRM, Copper, Insightly
 
 ## Industry software areas
 Mortgage Software, Legal Practice Software, Accounting Software, Consulting Operations Software, Agency Project & Time Software, Healthcare Practice Software, Real Estate Software, Manufacturing & Inventory Software, Recruiting & ATS Software, Creative Services Software, Professional Services Software, Project & Delivery Software
+
+## Integration pages (English)
+- [Connect Capsule CRM to Mortgage Software | Promonet](https://promonetconsulting.com/connect/capsule-to-mortgage-software)
+- [Connect Capsule CRM to Legal Practice Software | Promonet](https://promonetconsulting.com/connect/capsule-to-legal-software)
+- [Connect Capsule CRM to Accounting Software | Promonet](https://promonetconsulting.com/connect/capsule-to-accounting-software)
+- [Connect Capsule CRM to Consulting Operations Software | Promonet](https://promonetconsulting.com/connect/capsule-to-consulting-software)
+- [Connect Capsule CRM to Agency Project & Time Software | Promonet](https://promonetconsulting.com/connect/capsule-to-agency-software)
+- [Connect HubSpot to Mortgage Software | Promonet](https://promonetconsulting.com/connect/hubspot-to-mortgage-software)
+- [Connect HubSpot to Legal Practice Software | Promonet](https://promonetconsulting.com/connect/hubspot-to-legal-software)
+- [Connect HubSpot to Real Estate Software | Promonet](https://promonetconsulting.com/connect/hubspot-to-real-estate-software)
+- [Connect HubSpot to Agency Project & Time Software | Promonet](https://promonetconsulting.com/connect/hubspot-to-agency-software)
+- [Connect HubSpot to Healthcare Practice Software | Promonet](https://promonetconsulting.com/connect/hubspot-to-healthcare-software)
+- [Connect Pipedrive to Mortgage Software | Promonet](https://promonetconsulting.com/connect/pipedrive-to-mortgage-software)
+- [Connect Pipedrive to Real Estate Software | Promonet](https://promonetconsulting.com/connect/pipedrive-to-real-estate-software)
+- [Connect Pipedrive to Recruiting & ATS Software | Promonet](https://promonetconsulting.com/connect/pipedrive-to-recruitment-software)
+- [Connect Pipedrive to Manufacturing & Inventory Software | Promonet](https://promonetconsulting.com/connect/pipedrive-to-manufacturing-software)
+- [Connect Pipedrive to Agency Project & Time Software | Promonet](https://promonetconsulting.com/connect/pipedrive-to-agency-software)
+- [Connect Zoho CRM to Mortgage Software | Promonet](https://promonetconsulting.com/connect/zoho-to-mortgage-software)
+- [Connect Zoho CRM to Accounting Software | Promonet](https://promonetconsulting.com/connect/zoho-to-accounting-software)
+- [Connect Zoho CRM to Real Estate Software | Promonet](https://promonetconsulting.com/connect/zoho-to-real-estate-software)
+- [Connect Zoho CRM to Healthcare Practice Software | Promonet](https://promonetconsulting.com/connect/zoho-to-healthcare-software)
+- [Connect Zoho CRM to Manufacturing & Inventory Software | Promonet](https://promonetconsulting.com/connect/zoho-to-manufacturing-software)
+- [Connect Copper to Agency Project & Time Software | Promonet](https://promonetconsulting.com/connect/copper-to-agency-software)
+- [Connect Copper to Consulting Operations Software | Promonet](https://promonetconsulting.com/connect/copper-to-consulting-software)
+- [Connect Copper to Real Estate Software | Promonet](https://promonetconsulting.com/connect/copper-to-real-estate-software)
+- [Connect Copper to Professional Services Software | Promonet](https://promonetconsulting.com/connect/copper-to-professional-services-software)
+- [Connect Copper to Creative Services Software | Promonet](https://promonetconsulting.com/connect/copper-to-creative-services-software)
+- [Connect Insightly to Consulting Operations Software | Promonet](https://promonetconsulting.com/connect/insightly-to-consulting-software)
+- [Connect Insightly to Legal Practice Software | Promonet](https://promonetconsulting.com/connect/insightly-to-legal-software)
+- [Connect Insightly to Agency Project & Time Software | Promonet](https://promonetconsulting.com/connect/insightly-to-agency-software)
+- [Connect Insightly to Manufacturing & Inventory Software | Promonet](https://promonetconsulting.com/connect/insightly-to-manufacturing-software)
+- [Connect Insightly to Project & Delivery Software | Promonet](https://promonetconsulting.com/connect/insightly-to-project-based-services-software)
+
+## Integration pages (Spanish)
+- [Conectar Capsule CRM con Software hipotecario | Promonet](https://promonetconsulting.com/es/conectar/capsule-to-mortgage-software)
+- [Conectar Capsule CRM con Software de despacho jurídico | Promonet](https://promonetconsulting.com/es/conectar/capsule-to-legal-software)
+- [Conectar Capsule CRM con Software de contabilidad | Promonet](https://promonetconsulting.com/es/conectar/capsule-to-accounting-software)
+- [Conectar Capsule CRM con Software de operaciones de consulting | Promonet](https://promonetconsulting.com/es/conectar/capsule-to-consulting-software)
+- [Conectar Capsule CRM con Software de proyectos y tiempo para agencias | Promonet](https://promonetconsulting.com/es/conectar/capsule-to-agency-software)
+- [Conectar HubSpot con Software hipotecario | Promonet](https://promonetconsulting.com/es/conectar/hubspot-to-mortgage-software)
+- [Conectar HubSpot con Software de despacho jurídico | Promonet](https://promonetconsulting.com/es/conectar/hubspot-to-legal-software)
+- [Conectar HubSpot con Software inmobiliario | Promonet](https://promonetconsulting.com/es/conectar/hubspot-to-real-estate-software)
+- [Conectar HubSpot con Software de proyectos y tiempo para agencias | Promonet](https://promonetconsulting.com/es/conectar/hubspot-to-agency-software)
+- [Conectar HubSpot con Software de práctica sanitaria | Promonet](https://promonetconsulting.com/es/conectar/hubspot-to-healthcare-software)
+- [Conectar Pipedrive con Software hipotecario | Promonet](https://promonetconsulting.com/es/conectar/pipedrive-to-mortgage-software)
+- [Conectar Pipedrive con Software inmobiliario | Promonet](https://promonetconsulting.com/es/conectar/pipedrive-to-real-estate-software)
+- [Conectar Pipedrive con Software de recruiting y ATS | Promonet](https://promonetconsulting.com/es/conectar/pipedrive-to-recruitment-software)
+- [Conectar Pipedrive con Software de fabricación e inventario | Promonet](https://promonetconsulting.com/es/conectar/pipedrive-to-manufacturing-software)
+- [Conectar Pipedrive con Software de proyectos y tiempo para agencias | Promonet](https://promonetconsulting.com/es/conectar/pipedrive-to-agency-software)
+- [Conectar Zoho CRM con Software hipotecario | Promonet](https://promonetconsulting.com/es/conectar/zoho-to-mortgage-software)
+- [Conectar Zoho CRM con Software de contabilidad | Promonet](https://promonetconsulting.com/es/conectar/zoho-to-accounting-software)
+- [Conectar Zoho CRM con Software inmobiliario | Promonet](https://promonetconsulting.com/es/conectar/zoho-to-real-estate-software)
+- [Conectar Zoho CRM con Software de práctica sanitaria | Promonet](https://promonetconsulting.com/es/conectar/zoho-to-healthcare-software)
+- [Conectar Zoho CRM con Software de fabricación e inventario | Promonet](https://promonetconsulting.com/es/conectar/zoho-to-manufacturing-software)
+- [Conectar Copper con Software de proyectos y tiempo para agencias | Promonet](https://promonetconsulting.com/es/conectar/copper-to-agency-software)
+- [Conectar Copper con Software de operaciones de consulting | Promonet](https://promonetconsulting.com/es/conectar/copper-to-consulting-software)
+- [Conectar Copper con Software inmobiliario | Promonet](https://promonetconsulting.com/es/conectar/copper-to-real-estate-software)
+- [Conectar Copper con Software de servicios profesionales | Promonet](https://promonetconsulting.com/es/conectar/copper-to-professional-services-software)
+- [Conectar Copper con Software de servicios creativos | Promonet](https://promonetconsulting.com/es/conectar/copper-to-creative-services-software)
+- [Conectar Insightly con Software de operaciones de consulting | Promonet](https://promonetconsulting.com/es/conectar/insightly-to-consulting-software)
+- [Conectar Insightly con Software de despacho jurídico | Promonet](https://promonetconsulting.com/es/conectar/insightly-to-legal-software)
+- [Conectar Insightly con Software de proyectos y tiempo para agencias | Promonet](https://promonetconsulting.com/es/conectar/insightly-to-agency-software)
+- [Conectar Insightly con Software de fabricación e inventario | Promonet](https://promonetconsulting.com/es/conectar/insightly-to-manufacturing-software)
+- [Conectar Insightly con Software de proyectos y entrega | Promonet](https://promonetconsulting.com/es/conectar/insightly-to-project-based-services-software)
 
 ## Contact
 Email: hello@promonetconsulting.com
