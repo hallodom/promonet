@@ -8,7 +8,7 @@ import AiAgentsSection from '@/components/AiAgentsSection'
 import ContactButton from '@/components/ContactButton'
 import LinkedInButton from '@/components/LinkedInButton'
 import Seo from '@/components/Seo'
-import { faqJsonLd, getHomeFaqs, listSeoRoutes } from '@/lib/seo'
+import { faqJsonLd, getHomeFaqStructuredData, getHomeFaqs, listSeoRoutes } from '@/lib/seo'
 import { useLocale } from '@/i18n/LocaleContext'
 import { connectPagePath, homeHashPath } from '@/i18n/paths'
 
@@ -81,7 +81,7 @@ export default function Home() {
         title={homeSeo.title}
         description={homeSeo.description}
         path={homePath}
-        jsonLd={[faqJsonLd(faqs)]}
+        jsonLd={[faqJsonLd(getHomeFaqStructuredData(locale))]}
       />
 
       <section className="relative overflow-hidden bg-bone text-obsidian">
