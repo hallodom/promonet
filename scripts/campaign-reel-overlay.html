@@ -39,8 +39,8 @@ const G={
     inn(lt,.2,()=>card(110,920,860,400,()=>{txt('YOUR FREE 30-MINUTE AI EVALUATION',150,958,22,C.blue,700,MONO)
       items.forEach((s,i)=>inn(lt,1.2+i*.8,()=>{const y=1010+i*96;rr(150,y,780,80,18,'#f4f6fa');dot(198,y+40,24,lt>1.5+i*.8?C.greenSoft:'#e6e9ef');if(lt>1.5+i*.8)tick(185,y+29,C.green,.9);txt(s,240,y+22,34,C.ink,800)},.35,20))}))},
   apart:tools.bind(null,'apart'),copying:tools.bind(null,'copying'),connect:tools.bind(null,'connect'),
-  price(lt){inn(lt,3.0,()=>card(110,960,860,330,()=>{txt('WHY SO AFFORDABLE? AI MAKES BUILDING FASTER.',150,996,20,C.blue,700,MONO);txt('Simple connections from',150,1046,32,C.muted,600);txt('£350',150,1088,118,C.blue,800,SLAB);txt('total',440,1150,38,C.muted,600)
-    txt('Incl. any VAT · fixed quote after a feasibility check',150,1238,22,C.muted,500)}))},
+  price(lt){const p=T.price;inn(lt,p.at,()=>card(110,960,860,330,()=>{txt(p.eyebrow,150,996,20,C.blue,700,MONO);txt(p.label,150,1046,32,C.muted,600);txt(p.amount,150,1088,118,C.blue,800,SLAB);if(p.suffix)txt(p.suffix,440,1150,38,C.muted,600)
+    txt(p.note,150,1238,22,C.muted,500)}))},
   none(){},
 }
 function icon(k,x,y){c.save();c.strokeStyle=C.ink;c.lineWidth=6;c.lineJoin=c.lineCap='round'
@@ -70,8 +70,11 @@ function captions(t){
 function endCard(t){const e=T.endCard,p=ease((t-T.endCardAt)/.6);if(p<=0)return
   c.save();c.translate(0,(1-p)*900);const y=840
   c.fillStyle='#f5f5f2f2';c.beginPath();c.roundRect(40,y,1000,1000,44);c.fill()
-  txt(e.eyebrow,100,y+70,24,C.blue,700,MONO);e.title.split('\n').forEach((l,i)=>txt(l,96,y+120+i*112,104,C.ink,800,SLAB))
-  const sy=y+120+e.title.split('\n').length*112+28;txt(e.sub,100,sy,40,C.muted,600)
+  txt(e.eyebrow,100,y+70,24,C.blue,700,MONO)
+  // Title shrinks to fit the card (880px) if a line is long.
+  const tl=e.title.split('\n');font(104,800,SLAB);const ts=Math.min(104,Math.floor(104*880/Math.max(...tl.map(l=>c.measureText(l).width)))),lh=Math.round(ts*1.08)
+  tl.forEach((l,i)=>txt(l,96,y+120+i*lh,ts,C.ink,800,SLAB))
+  const sy=y+120+tl.length*lh+28;txt(e.sub,100,sy,40,C.muted,600)
   shadow(()=>rr(100,sy+90,880,120,60,C.blue));txt(e.cta+'  →',540,sy+128,44,C.white,800,SANS,'center');txt(e.url,540,sy+246,32,C.ink,700,SANS,'center')
   e.note.forEach((l,i)=>txt(l,540,sy+310+i*32,21,C.muted,500,SANS,'center'));c.restore()}
 

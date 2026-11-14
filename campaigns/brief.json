@@ -65,6 +65,18 @@
           "prompt": "A sunny, beautifully planted English back garden with a stone path, lavender and a wooden bench. In the foreground a phone on a garden table lights up quietly beside a mug of tea, while in the soft-focus background a man in an olive-green quarter-zip jumper kneels relaxed, planting flowers. Gentle breeze moves the plants. Slow rack focus from the phone to the gardener."
         }
       ]
+    },
+    "connect_tools_24s": {
+      "note": "24-second re-cut of connect_tools from feedback: says 'Promonet will help you connect', no mention of AI, fixed price £300 (no 'from'). Reuses the b1–b4 Veo footage; new voiceover lines. The original connect_tools reel is kept unchanged.",
+      "path": "/connect-your-tools",
+      "url": "promonetconsulting.com/connect-your-tools",
+      "targetSeconds": 24,
+      "shots": [
+        { "id": "c1", "clip": "b1", "vo": "Do your tools talk to each other?", "overlay": "apart" },
+        { "id": "c2", "clip": "b2", "vo": "Or are you copying the same details, again and again?", "overlay": "copying" },
+        { "id": "c3", "clip": "b3", "vo": "Promonet will help you connect them, so the work flows on its own.", "overlay": "connect" },
+        { "id": "c4", "clip": "b4", "vo": "Fixed price, three hundred pounds. Book your free call.", "overlay": "price" }
+      ]
     }
   },
   "claims": [

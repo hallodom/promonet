@@ -23,13 +23,24 @@ const brief = JSON.parse(await fs.readFile(path.join(root, 'campaigns/brief.json
 
 const END = {
   ai_ready: { hold: 3.2, card: { eyebrow: 'FREE · 30 MINUTES · NO OBLIGATION', title: 'Are you\nAI-ready?', sub: 'Book your free AI evaluation call.', cta: 'Book your free call', url: 'promonetconsulting.com/ai-ready', note: ['We can’t guarantee AI recommendations.', 'Illustrative scenes. People shown are AI-generated.'] } },
-  connect_tools: { hold: 3.0, card: { eyebrow: 'REAL PEOPLE · HANDS-ON HELP', title: 'Get your tools\ntalking.', sub: 'Simple connections from £350.', cta: 'Book your free call', url: 'promonetconsulting.com/connect-your-tools', note: ['£350 total incl. any VAT. Fixed quote after feasibility check.', 'Third-party costs separate. AI-generated people.'] } },
+  connect_tools: {
+    hold: 3.0,
+    price: { at: 3.0, eyebrow: 'WHY SO AFFORDABLE? AI MAKES BUILDING FASTER.', label: 'Simple connections from', amount: '£350', suffix: 'total', note: 'Incl. any VAT · fixed quote after a feasibility check' },
+    card: { eyebrow: 'REAL PEOPLE · HANDS-ON HELP', title: 'Get your tools\ntalking.', sub: 'Simple connections from £350.', cta: 'Book your free call', url: 'promonetconsulting.com/connect-your-tools', note: ['£350 total incl. any VAT. Fixed quote after feasibility check.', 'Third-party costs separate. AI-generated people.'] },
+  },
+  // Feedback re-cut: 24s, no mention of AI, fixed £300. A copy; connect_tools above is unchanged.
+  connect_tools_24s: {
+    target: 24, minHold: 1.8, variant: true, music: 'connect_tools', endCardPhrase: 'Book your free call',
+    price: { at: 0.8, eyebrow: 'ONE SIMPLE CONNECTION', label: 'Fixed price', amount: '£300', suffix: '', note: 'Third-party subscriptions separate' },
+    card: { eyebrow: 'REAL PEOPLE · HANDS-ON HELP', title: 'Promonet will help\nyou connect.', sub: 'One simple connection. Fixed price £300.', cta: 'Book your free call', url: 'promonetconsulting.com/connect-your-tools', note: ['Fixed price for one simple connection. Third-party costs separate.', 'Illustrative scenes; people shown are digitally generated.'] },
+  },
 }
+const clipOf = (s) => s.clip ?? s.id
 
 const run = (cmd, a) => { const r = spawnSync(cmd, a, { encoding: 'utf8', maxBuffer: 64 << 20 }); if (r.status !== 0) throw new Error(`${cmd} ${a.join(' ')}\n${r.stderr}`); return r.stdout + r.stderr }
 const dur = (f) => Number(run('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', f]).trim())
 const pauses = (f) => { const o = run('ffmpeg', ['-hide_banner', '-i', f, '-af', 'silencedetect=n=-40dB:d=0.15', '-f', 'null', '-']); const s = [...o.matchAll(/silence_start: ([\d.]+)/g)].map((m) => +m[1]), e = [...o.matchAll(/silence_end: ([\d.]+)/g)].map((m) => +m[1]); return s.map((x, i) => (x + (e[i] ?? x)) / 2) }
-const show = (s) => s.replace(/three hundred and fifty pounds/g, '£350').replace(/thirty-minute/g, '30-minute')
+const show = (s) => s.replace(/three hundred and fifty pounds/g, '£350').replace(/three hundred pounds/g, '£300').replace(/thirty-minute/g, '30-minute')
 
 // Trim the ends, cap long pauses and speed up 5% so each line fits its 8-second shot.
 function tightVo(id) {
@@ -54,22 +65,27 @@ function timeline(id) {
   let start = 0, voAt = LEAD
   camp.shots.forEach((s, i) => {
     const f = tightVo(s.id), d = dur(f), last = i === camp.shots.length - 1
-    const stop = voAt + d + (last ? end.hold : GAP)
-    shots.push({ id: s.id, overlay: s.overlay, start, end: stop, speed: Math.max(1, (stop - start) / CLIP) })
+    // The last shot holds for the end card; a variant with a target length stretches that hold to hit it exactly.
+    let stop = voAt + d + (last ? end.hold ?? end.minHold : GAP)
+    if (last && end.target) { if (end.target < stop) throw new Error(`${id}: voiceover needs ${stop.toFixed(2)}s, over the ${end.target}s target`); stop = end.target }
+    shots.push({ id: s.id, clip: clipOf(s), overlay: s.overlay, start, end: stop, speed: Math.max(1, (stop - start) / CLIP) })
     vo.push({ file: f, at: voAt, text: s.vo, d, ps: pauses(f) })
     start = stop; voAt = stop + 0.12
   })
   const all = vo.flatMap((v) => chunks(v.text, v.at, v.d, v.ps))
   const lastVo = vo.at(-1)
-  return { id, shots, vo, chunks: all, duration: shots.at(-1).end, endCardAt: lastVo.at + lastVo.d + 0.2, endCard: end.card }
+  // Optionally bring the end card in as the spoken call to action starts.
+  const ctaChunk = end.endCardPhrase && all.find((k) => k.text.startsWith(end.endCardPhrase))
+  const endCardAt = ctaChunk ? ctaChunk.start - 0.1 : lastVo.at + lastVo.d + 0.2
+  return { id, shots, vo, chunks: all, duration: shots.at(-1).end, endCardAt, endCard: end.card, price: end.price, music: end.music ?? id, variant: !!end.variant }
 }
 
 // Ambient (Veo) + voiceover + ducked music, loudness-normalised.
 function mix(tl, file) {
   const n = tl.shots.length, inputs = [], parts = []
-  tl.shots.forEach((s, i) => { inputs.push('-i', path.join(src, `${s.id}.mp4`)); const d = s.end - s.start; parts.push(`[${i}:a]atrim=0:${Math.min(CLIP, d / s.speed)},asetpts=PTS-STARTPTS${s.speed > 1 ? `,atempo=${(1 / s.speed).toFixed(4)}` : ''},aresample=48000,aformat=channel_layouts=stereo,apad=whole_dur=${d.toFixed(3)},atrim=0:${d.toFixed(3)},volume=${MUTE_AMBIENT.has(s.id) ? 0 : 0.22}[amb${i}]`) })
+  tl.shots.forEach((s, i) => { inputs.push('-i', path.join(src, `${s.clip}.mp4`)); const d = s.end - s.start; parts.push(`[${i}:a]atrim=0:${Math.min(CLIP, d / s.speed)},asetpts=PTS-STARTPTS${s.speed > 1 ? `,atempo=${(1 / s.speed).toFixed(4)}` : ''},aresample=48000,aformat=channel_layouts=stereo,apad=whole_dur=${d.toFixed(3)},atrim=0:${d.toFixed(3)},volume=${MUTE_AMBIENT.has(s.clip) ? 0 : 0.22}[amb${i}]`) })
   tl.vo.forEach((v, i) => { inputs.push('-i', v.file); parts.push(`[${n + i}:a]aformat=channel_layouts=stereo,adelay=${Math.round(v.at * 1000)}:all=1[v${i}]`) })
-  inputs.push('-i', path.join(src, `${tl.id}-music.mp3`)); const m = n + tl.vo.length
+  inputs.push('-i', path.join(src, `${tl.music}-music.mp3`)); const m = n + tl.vo.length
   parts.push(`${tl.shots.map((_, i) => `[amb${i}]`).join('')}concat=n=${n}:v=0:a=1[amb]`)
   parts.push(`${tl.vo.map((_, i) => `[v${i}]`).join('')}amix=inputs=${tl.vo.length}:normalize=0,apad=whole_dur=${tl.duration}[vo]`, '[vo]asplit[voA][voB]')
   parts.push(`[${m}:a]atrim=0:${tl.duration},aformat=channel_layouts=stereo,aresample=48000,volume=0.4,afade=t=in:d=0.3,afade=t=out:st=${tl.duration - 1.6}:d=1.6[mus]`, '[mus][voA]sidechaincompress=threshold=0.04:ratio=5:attack=25:release=350[duck]')
@@ -94,7 +110,7 @@ try {
     const tl = timeline(id)
     await fs.writeFile(path.join(work, `${id}-timeline.json`), JSON.stringify(tl, null, 2))
     console.log(`${id}: ${tl.duration.toFixed(2)}s · shots ${tl.shots.map((s) => `${s.id} ${(s.end - s.start).toFixed(1)}s${s.speed > 1 ? ` (x${s.speed.toFixed(2)} slower)` : ''}`).join(', ')}`)
-    const inputs = tl.shots.flatMap((s) => ['-i', path.join(src, `${s.id}.mp4`)])
+    const inputs = tl.shots.flatMap((s) => ['-i', path.join(src, `${s.clip}.mp4`)])
     if (preview) {
       await page.evaluate((t) => window.init(t), { ...tl, captions: true })
       const times = [...tl.shots.map((s) => s.start + (s.end - s.start) * 0.62), tl.duration - 0.3]
@@ -126,6 +142,7 @@ try {
     run('ffmpeg', ['-y', '-v', 'error', '-i', reel, '-vf', 'scale=720:1280', '-c:v', 'libx264', '-preset', 'slow', '-crf', '25', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', path.join(pub, `${id}-reel.mp4`)])
     run('ffmpeg', ['-y', '-v', 'error', '-ss', '1.6', '-i', path.join(out, `${id}-reel-clean.mp4`), '-frames:v', '1', '-vf', 'scale=720:1280', '-q:v', '4', path.join(pub, `${id}-poster.jpg`)])
     await fs.copyFile(path.join(out, `${id}.vtt`), path.join(pub, `${id}.vtt`))
+    if (tl.variant) continue // variants reuse the original shots, so no new page loops
     for (const s of tl.shots) run('ffmpeg', ['-y', '-v', 'error', '-i', path.join(src, `${s.id}.mp4`), '-an', '-t', '7.5', '-vf', 'scale=720:1280,fps=24', '-c:v', 'libx264', '-preset', 'slow', '-crf', '27', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', path.join(pub, 'loops', `${s.id}.mp4`)])
     for (const s of tl.shots) run('ffmpeg', ['-y', '-v', 'error', '-ss', '1', '-i', path.join(src, `${s.id}.mp4`), '-frames:v', '1', '-vf', 'scale=720:1280', '-q:v', '5', path.join(pub, 'loops', `${s.id}.jpg`)])
   }
