@@ -7,6 +7,7 @@ import ConnectCrm from './pages/ConnectCrm'
 import ConnectPage from './pages/ConnectPage'
 import Pricing from './pages/Pricing'
 import NotFound from './pages/NotFound'
+import Campaign from './pages/Campaign'
 
 export default function App() {
   return (
@@ -18,6 +19,8 @@ export default function App() {
         <Route path="/connect" element={<ConnectIndex />} />
         <Route path="/connect/crm" element={<ConnectCrm />} />
         <Route path="/connect/:slug" element={<ConnectPage />} />
+        <Route path="/ai-ready" element={<Campaign key="ai_ready" id="ai_ready" />} />
+        <Route path="/connect-your-tools" element={<Campaign key="connect_tools" id="connect_tools" />} />
 
         <Route path="/es" element={<Home />} />
         <Route path="/es/nosotros" element={<About />} />

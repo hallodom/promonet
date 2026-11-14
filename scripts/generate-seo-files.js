@@ -69,6 +69,7 @@ const PAGE_SOURCES = {
     'src/data/matrix.es.json',
     'src/data/product-websites.json',
   ],
+  campaign: ['src/pages/Campaign.tsx', 'src/data/campaigns.ts', 'public/campaigns'],
 }
 
 function gitLastModified(paths) {
@@ -101,6 +102,9 @@ function listRoutes() {
     { path: '/pricing', priority: '0.8', changefreq: 'monthly', page: 'pricing' },
     { path: '/connect', priority: '0.9', changefreq: 'weekly', page: 'connect' },
     { path: '/connect/crm', priority: '0.9', changefreq: 'weekly', page: 'connectCrm' },
+    // English-only campaign landing pages (no Spanish alternate).
+    { path: '/ai-ready', priority: '0.7', changefreq: 'monthly', page: 'campaign', englishOnly: true },
+    { path: '/connect-your-tools', priority: '0.7', changefreq: 'monthly', page: 'campaign', englishOnly: true },
   ]
   const esBase = [
     { path: '/es', priority: '1.0', changefreq: 'weekly', page: 'home' },
@@ -195,8 +199,8 @@ ${routes
     <loc>${SITE_URL}${loc}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
     <changefreq>${r.changefreq}</changefreq>
     <priority>${r.priority}</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="${enHref}"/>
-    <xhtml:link rel="alternate" hreflang="es" href="${esHref}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${enHref}"/>${r.englishOnly ? '' : `
+    <xhtml:link rel="alternate" hreflang="es" href="${esHref}"/>`}
     <xhtml:link rel="alternate" hreflang="x-default" href="${enHref}"/>
   </url>`
   })

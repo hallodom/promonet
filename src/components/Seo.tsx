@@ -26,6 +26,8 @@ type SeoProps = {
   type?: 'website' | 'article'
   jsonLd?: Array<Record<string, unknown> | object>
   noIndex?: boolean
+  /** English-only pages (campaign landing pages) have no Spanish alternate. */
+  englishOnly?: boolean
 }
 
 export default function Seo({
@@ -40,6 +42,7 @@ export default function Seo({
   type = 'website',
   jsonLd = [],
   noIndex = false,
+  englishOnly = false,
 }: SeoProps) {
   const { locale } = useLocale()
   const url = absoluteUrl(path)
@@ -61,7 +64,7 @@ export default function Seo({
       )}
       {!noIndex && <link rel="canonical" href={url} />}
       {!noIndex && <link rel="alternate" hrefLang="en" href={alts.en} />}
-      {!noIndex && <link rel="alternate" hrefLang="es" href={alts.es} />}
+      {!noIndex && !englishOnly && <link rel="alternate" hrefLang="es" href={alts.es} />}
       {!noIndex && <link rel="alternate" hrefLang="x-default" href={alts.xDefault} />}
       <link rel="image_src" href={image} />
 

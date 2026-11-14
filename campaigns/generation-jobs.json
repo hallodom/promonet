@@ -1,0 +1,34 @@
+{
+  "budgetCredits": 450,
+  "balanceBefore": 840.08,
+  "video": {
+    "model": "veo3_1 veo-3-1-fast, quality high, 8s, 9:16 (768x1344 output), text-to-video",
+    "note": "Batch call was interrupted client-side but all 8 jobs had been submitted (256 credits). IDs recovered from generation history; nothing resubmitted.",
+    "a1": "29ce888f-608f-43e3-99ae-d89f4cc06a07",
+    "a2": "9e8a95ae-e9ec-47b2-b422-73b1efbdb658",
+    "a3": "454b215a-5316-4588-9dad-d09914daaf99",
+    "a4": "f12cdcf4-a150-485b-8af1-fe4d3fa8a85b",
+    "b1": "07a39a4d-058f-46b2-922b-d0b913819562",
+    "b2": "4fba765b-04d0-493c-8846-405bf0a6c790",
+    "b3": "85aef5ea-0136-46c0-ae93-daec3396058f",
+    "b4": "91cfedb4-343e-4399-83e4-7d6a9261d072"
+  },
+  "voiceover": {
+    "model": "seed_audio, preset voice Vera 0c51919f-0756-5f8d-8169-026a339d8fd7",
+    "a1": "c1bfed31-f35e-4c58-badd-52fd819b6b63",
+    "a2": "394ff930-11cd-4b7f-99bf-467cb6f66e40",
+    "a3": "74bd341f-fc43-4a6f-9204-365813aeba2f",
+    "a4": "f0d7013b-2109-43ce-ab87-92fd96809276",
+    "b1": "8b79f37c-a803-49eb-a1b0-d6df4c662385",
+    "b2": "6e4a4e20-0792-48bb-b3ff-e03411d02f21",
+    "b3": "8ddb1381-afc9-4621-893e-80610e2d550e",
+    "b4": "f13d5d3b-ebdb-4e9a-8533-7590f5892ee1"
+  },
+  "music": {
+    "model": "elevenlabs_music_v2_5, 34s instrumental",
+    "ai_ready": "486bfb74-bb63-4b32-8fef-0c4b62a9cb8b",
+    "connect_tools": "90c7fe3b-0dec-4044-b80c-1879407aabb7"
+  },
+  "sourceFiles": "campaigns/source/ is gitignored. Re-download any job's result via the Higgsfield MCP (show_generation_by_ids / jobs_wait) using the IDs above.",
+  "spend": { "video": 256, "voiceoverAndMusic": 14.5, "totalCredits": 270.5, "balanceAfter": 569.58, "budget": 450 }
+}

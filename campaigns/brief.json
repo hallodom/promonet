@@ -1,0 +1,75 @@
+{
+  "created": "2026-11-14",
+  "approach": "Video-first. Every shot is Veo 3.1 text-to-video (no stills, no start frames). Vera stock voiceover, instrumental music, Veo ambient sound underneath.",
+  "budgetCredits": 450,
+  "video": { "model": "veo3_1", "variant": "veo-3-1-fast", "quality": "high", "duration": 8, "aspect_ratio": "9:16" },
+  "voice": { "model": "seed_audio", "voice_type": "preset", "voice_id": "0c51919f-0756-5f8d-8169-026a339d8fd7", "name": "Vera" },
+  "styleSuffix": "Shot on a cinema camera, natural UK daylight, warm grounded colour grade, shallow depth of field, realistic people and hands, documentary feel. Vertical 9:16 framing. No on-screen text, captions, logos, watermarks or readable screen content. No dialogue and no music; natural ambient room sound only.",
+  "campaigns": {
+    "ai_ready": {
+      "path": "/ai-ready",
+      "url": "promonetconsulting.com/ai-ready",
+      "shots": [
+        {
+          "id": "a1",
+          "vo": "Are you AI-ready? More customers now ask AI to recommend a local business.",
+          "overlay": "chat",
+          "prompt": "Evening in a cosy UK living room. A woman in her late twenties in a cream knitted jumper sits on a sofa, lifts her phone and quietly speaks a question into it, then looks at the screen as an answer appears, its glow lighting her face. Slow push-in from a medium shot to a close-up. Lamp light, plants, blue cushions."
+        },
+        {
+          "id": "a2",
+          "vo": "But can AI bots actually find your website, and understand what you do?",
+          "overlay": "scan",
+          "prompt": "Inside a small independent bicycle repair workshop in a UK town, bikes hanging on the wall and tools on a pegboard. A woman in her early forties with dark-blonde hair tied back, wearing a navy work apron over a grey t-shirt, leans over a laptop on her wooden workbench and scrolls, her expression turning thoughtful and slightly concerned. Laptop screen angled away from camera. Slow handheld drift towards her, soft window light."
+        },
+        {
+          "id": "a3",
+          "vo": "We're Promonet. In a free thirty-minute call, we'll check what AI bots can see.",
+          "overlay": "checks",
+          "prompt": "A friendly man in his mid-thirties with short brown hair and light stubble, wearing a cobalt-blue crewneck jumper, sits at a tidy home-office desk with plants and a bookshelf behind him. He is on a video call on his laptop, smiling warmly, nodding and explaining something with relaxed hand gestures. Laptop screen not visible. Locked-off camera with a very gentle push-in, bright daylight."
+        },
+        {
+          "id": "a4",
+          "vo": "Then you get three clear next steps. Real people. No obligation.",
+          "overlay": "none",
+          "prompt": "Golden late-afternoon light on a UK high street. Outside a small independent bicycle shop with a dark green painted shopfront and a bicycle leaning by the window, a customer pushes open the shop door and steps inside as the bell swings. Passers-by walk past softly out of focus. Slow cinematic pull-back revealing the street. No readable signage."
+        }
+      ]
+    },
+    "connect_tools": {
+      "path": "/connect-your-tools",
+      "url": "promonetconsulting.com/connect-your-tools",
+      "shots": [
+        {
+          "id": "b1",
+          "vo": "Do your tools talk to each other? Or are you copying the same details, again and again?",
+          "overlay": "apart",
+          "prompt": "A British-Indian man in his early fifties with short greying hair and a neat grey beard, wearing an olive-green quarter-zip jumper, sits at a cluttered desk in a converted garage office covered in garden-design drawings and yellow sticky notes. He looks at his phone, types on his laptop, looks back at the phone, then rubs his forehead and sighs. Side window daylight, slow push-in."
+        },
+        {
+          "id": "b2",
+          "vo": "Inbox to spreadsheet to CRM. When your tools don't talk, you become the connection.",
+          "overlay": "copying",
+          "prompt": "Extreme close-up of a man's hands at a wooden desk: one hand holds a phone, the other types on a laptop keyboard, then peels off a yellow sticky note and sticks it on the laptop edge beside many others. A highlighter and printed garden plans on the desk. Screens out of focus. Shallow depth of field, locked camera, repetitive rhythm."
+        },
+        {
+          "id": "b3",
+          "vo": "We connect them, hands-on and working directly with you, so the work flows on its own.",
+          "overlay": "connect",
+          "prompt": "A focused, friendly man in his mid-thirties with short brown hair and light stubble, wearing a cobalt-blue crewneck jumper, works at a laptop in a bright home office, then draws three boxes joined by arrows in a paper notebook and gives a small satisfied nod and smile. Laptop screen not visible. Slow lateral camera slide, plants and bookshelf behind."
+        },
+        {
+          "id": "b4",
+          "vo": "AI makes building software faster, so simple connections start from three hundred and fifty pounds.",
+          "overlay": "price",
+          "prompt": "A sunny, beautifully planted English back garden with a stone path, lavender and a wooden bench. In the foreground a phone on a garden table lights up quietly beside a mug of tea, while in the soft-focus background a man in an olive-green quarter-zip jumper kneels relaxed, planting flowers. Gentle breeze moves the plants. Slow rack focus from the phone to the gardener."
+        }
+      ]
+    }
+  },
+  "claims": [
+    "No guarantee that AI services will recommend or rank a business.",
+    "£350 is a 'from' price, total including any applicable VAT; fixed quote after a feasibility check; third-party costs separate.",
+    "People shown are AI-generated and illustrative, not Promonet staff or clients."
+  ]
+}

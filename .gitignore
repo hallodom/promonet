@@ -8,3 +8,8 @@ dist/
 tsconfig.tsbuildinfo
 .vite/
 dist-ssr/
+
+# Campaign media working files (sources re-downloadable via campaigns/generation-jobs.json)
+campaigns/source/
+campaigns/work/
+campaigns/output/
