@@ -207,7 +207,7 @@
     },
     {
       "question": "How much does it cost to connect tools?",
-      "answer": "Monthly partnerships start at £600. Scale-up is £1,500 per month. A one-off connection starts at £1,000. Custom work is quoted separately."
+      "answer": "A simple connection starter begins at £350 total, including any applicable VAT, for one qualifying one-way workflow. Third-party costs are separate and we confirm a fixed quote after checking feasibility. Monthly partnerships start at £600; Scale-up is £1,500 per month. Our broader one-off connection starts at £1,000. Custom work is quoted separately."
     },
     {
       "question": "How long does a typical integration take?",
@@ -215,7 +215,7 @@
     },
     {
       "question": "What support do we get after an integration goes live?",
-      "answer": "Monthly partnerships include ongoing monitoring, alerts, and support for the agreed connections. A one-off project includes a documented handover, one follow-up task, and support to help you get comfortable with it. We agree any further maintenance separately."
+      "answer": "The simple connection starter includes a short handover and 14 days of fixes for faults in the agreed workflow. Monthly partnerships include ongoing monitoring, alerts, and support for the agreed connections. A broader one-off project includes a documented handover, one follow-up task, and support to help you get comfortable with it. We agree any further maintenance separately."
     },
     {
       "question": "Do I need developers on my team?",
@@ -358,7 +358,7 @@
     "aboutTitle": "About Promonet — CRM Integrations for Small Businesses",
     "aboutDescription": "We are a small team of developers and designers helping small businesses connect CRM and industry tools at a low cost, with genuine human support.",
     "pricingTitle": "Pricing for CRM & Tool Integrations",
-    "pricingDescription": "Simple pricing for CRM and tool integrations: monthly partnership options from £600, or a fixed one-off connection from £1,000. No hidden hourly fees.",
+    "pricingDescription": "Simple connection starters from £350 total, monthly partnerships from £600, and broader one-off integrations from £1,000. Clear scope and fixed quotes.",
     "connectTitle": "Connect Business Tools & Integrations",
     "connectDescription": "Search and browse tools we help small businesses connect — CRMs, accounting, booking, and niche industry software. Fixed monthly price.",
     "connectCrmTitle": "Connect Your CRM to Industry Tools",

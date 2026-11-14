@@ -2,6 +2,7 @@ import matrixEn from '@/data/matrix.json'
 import { getMatrix } from '@/data/matrixLocale'
 import en from '@/i18n/messages/en.json'
 import es from '@/i18n/messages/es.json'
+import campaigns from '@/data/campaigns.json'
 import { DEFAULT_LOCALE, type Locale } from '@/i18n/locales'
 import {
   connectPagePath,
@@ -170,6 +171,12 @@ export function listSeoRoutes(locale?: Locale): SeoRoute[] {
     )
   }
 
+  if (!locale || locale === 'en') {
+    routes.push(...Object.values(campaigns).map((campaign) => ({
+      path: campaign.path, title: campaign.title, description: campaign.description,
+      locale: 'en' as const, priority: '0.8', changefreq: 'monthly',
+    })))
+  }
   return routes
 }
 
@@ -253,6 +260,12 @@ export function offerCatalogJsonLd(locale: Locale = DEFAULT_LOCALE) {
     '@type': 'OfferCatalog',
     name: seo.offerCatalogName,
     itemListElement: [
+      ...(locale === 'en' ? [{
+        '@type': 'Offer', name: 'Simple connection starter',
+        url: absoluteUrl('/connect-your-tools'),
+        priceSpecification: { '@type': 'PriceSpecification', minPrice: 350, priceCurrency: 'GBP', valueAddedTaxIncluded: true },
+        description: campaigns.connect_tools.faqs[0].answer,
+      }] : []),
       {
         '@type': 'Offer',
         name: pricing.base.name,
@@ -279,6 +292,9 @@ export function offerCatalogJsonLd(locale: Locale = DEFAULT_LOCALE) {
 }
 
 export function hreflangAlternates(path: string) {
+  if (Object.values(campaigns).some((campaign) => campaign.path === path)) {
+    return { en: absoluteUrl(path), es: undefined, xDefault: absoluteUrl(path) }
+  }
   return {
     en: absoluteUrl(toLocalePath(path, 'en')),
     es: absoluteUrl(toLocalePath(path, 'es')),

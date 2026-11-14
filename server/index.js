@@ -75,7 +75,7 @@ async function handleContact(req, res) {
     }
     return sendJson(res, 200, { ok: true, id: result.id })
   } catch (err) {
-    return sendJson(res, 500, {
+    return sendJson(res, err?.status || 500, {
       error: err instanceof Error ? err.message : 'Server error',
     })
   }

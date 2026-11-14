@@ -7,3 +7,9 @@ dist/
 !.env.example
 tsconfig.tsbuildinfo
 .vite/
+artifacts/campaign-qa/
+campaigns/production/*/edit-segment-*.mp4
+campaigns/production/*/edit-overlay-*.png
+campaigns/production/*/edit-segments.txt
+
+campaigns/v2/work/

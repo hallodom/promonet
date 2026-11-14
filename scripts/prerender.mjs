@@ -28,6 +28,7 @@ const PRODUCT_WEBSITES = JSON.parse(
 )
 
 const SITE_URL = 'https://promonetconsulting.com'
+const CAMPAIGNS = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/campaigns.json'), 'utf8'))
 const SITE_NAME = 'Promonet'
 const CONTACT_EMAIL = 'hello@promonetconsulting.com'
 const OG_IMAGE = `${SITE_URL}/og-default.jpg`
@@ -131,13 +132,14 @@ function addStaticPages(pages, locale, msgs, paths) {
     title: pageTitle(seo.pricingTitle),
     description: seo.pricingDescription,
     h1: msgs.pricingPage.title,
-    lead: msgs.pricingPage.subtitle,
+    lead: locale === 'en' ? `${msgs.pricingPage.subtitle} Simple connection starters from £350 total, including applicable VAT; final fixed quote after a feasibility check. Third-party costs separate.` : msgs.pricingPage.subtitle,
     imageAlt: seo.ogImageAlt,
     jsonLdExtra: {
       '@context': 'https://schema.org',
       '@type': 'OfferCatalog',
       name: seo.offerCatalogName,
       itemListElement: [
+        ...(locale === 'en' ? [{ '@type': 'Offer', name: 'Simple connection starter', url: `${SITE_URL}/connect-your-tools`, priceSpecification: { '@type': 'PriceSpecification', minPrice: 350, priceCurrency: 'GBP', valueAddedTaxIncluded: true }, description: CAMPAIGNS.connect_tools.faqs[0].answer }] : []),
         { '@type': 'Offer', name: msgs.pricingData.base.name, price: '600', priceCurrency: 'GBP' },
         { '@type': 'Offer', name: msgs.pricingData.scaleup.name, price: '1500', priceCurrency: 'GBP' },
         { '@type': 'Offer', name: msgs.pricingData.oneoff.name, price: '1000', priceCurrency: 'GBP' },
@@ -221,6 +223,14 @@ function addConnectPages(pages, locale, msgs, matrix, paths) {
 
 function listPageMeta() {
   const pages = new Map()
+  for (const [id, campaign] of Object.entries(CAMPAIGNS)) {
+    pages.set(campaign.path, {
+      ...campaign, campaign, locale: 'en', englishOnly: true,
+      h1: campaign.headline, lead: campaign.intro,
+      image: `${SITE_URL}/campaigns/v2/${id}-og.jpg`,
+      jsonLdExtra: { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: campaign.faqs.map(({ question, answer }) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) },
+    })
+  }
 
   addStaticPages(pages, 'en', MSG_EN, {
     home: '/',
@@ -295,6 +305,7 @@ function buildHeadTags(meta, routePath) {
   const ogLocale = locale === 'es' ? 'es_ES' : 'en_GB'
   const ogAlt = locale === 'es' ? 'en_GB' : 'es_ES'
   const imageAlt = meta.imageAlt || OG_IMAGE_ALT_DEFAULT(locale)
+  const image = meta.image || OG_IMAGE
   const graph = [organizationJsonLd(locale), websiteJsonLd()]
   if (meta.jsonLdExtra) graph.push(meta.jsonLdExtra)
   if (meta.breadcrumbs) graph.push(breadcrumbJsonLd(meta.breadcrumbs))
@@ -305,7 +316,7 @@ function buildHeadTags(meta, routePath) {
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="${esc(url)}" />
 <link rel="alternate" hreflang="en" href="${esc(enHref)}" />
-<link rel="alternate" hreflang="es" href="${esc(esHref)}" />
+${meta.englishOnly ? '' : `<link rel="alternate" hreflang="es" href="${esc(esHref)}" />`}
 <link rel="alternate" hreflang="x-default" href="${esc(enHref)}" />
 <meta property="og:site_name" content="${esc(SITE_NAME)}" />
 <meta property="og:type" content="website" />
@@ -313,10 +324,10 @@ function buildHeadTags(meta, routePath) {
 <meta property="og:description" content="${esc(meta.description)}" />
 <meta property="og:url" content="${esc(url)}" />
 <meta property="og:locale" content="${ogLocale}" />
-<meta property="og:locale:alternate" content="${ogAlt}" />
-<link rel="image_src" href="${esc(OG_IMAGE)}" />
-<meta property="og:image" content="${esc(OG_IMAGE)}" />
-<meta property="og:image:secure_url" content="${esc(OG_IMAGE)}" />
+${meta.englishOnly ? '' : `<meta property="og:locale:alternate" content="${ogAlt}" />`}
+<link rel="image_src" href="${esc(image)}" />
+<meta property="og:image" content="${esc(image)}" />
+<meta property="og:image:secure_url" content="${esc(image)}" />
 <meta property="og:image:type" content="${esc(OG_IMAGE_TYPE)}" />
 <meta property="og:image:width" content="${OG_IMAGE_WIDTH}" />
 <meta property="og:image:height" content="${OG_IMAGE_HEIGHT}" />
@@ -324,7 +335,7 @@ function buildHeadTags(meta, routePath) {
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="${esc(meta.title)}" />
 <meta name="twitter:description" content="${esc(meta.description)}" />
-<meta name="twitter:image" content="${esc(OG_IMAGE)}" />
+<meta name="twitter:image" content="${esc(image)}" />
 <meta name="twitter:image:alt" content="${esc(imageAlt)}" />
 <script type="application/ld+json">${JSON.stringify(graph)}</script>
 `.trim()
@@ -335,6 +346,11 @@ function OG_IMAGE_ALT_DEFAULT(locale) {
 }
 
 function buildBodySnippet(meta) {
+  if (meta.campaign) {
+    const c = meta.campaign
+    const starter = c.path === '/connect-your-tools' ? '<h2>Simple connection starter: from £350 total</h2><p>Including any applicable VAT. One simple, one-way workflow between two tools with suitable existing integration access. Setup, testing, handover and 14 days of fixes for faults in the agreed workflow. Final fixed quote after checking feasibility. Third-party subscriptions separate; larger work and ongoing monitoring quoted separately.</p>' : ''
+    return `<main><h1>${esc(c.headline)}</h1><p>${esc(c.intro)}</p><h2>${esc(c.problemTitle)}</h2><p>${esc(c.problemBody)}</p><h2>${esc(c.valueTitle)}</h2><p>${esc(c.valueBody)}</p><h2>${esc(c.offerTitle)}</h2><p>${esc(c.offerBody)}</p>${starter}${c.benefits.map(({ title, body }) => `<h3>${esc(title)}</h3><p>${esc(body)}</p>`).join('')}<h2>A small business, helping small businesses</h2><p>Over 20 years building CRM solutions, now applied to practical AI adoption and connected tools. Real people, hands-on, working directly with you.</p>${c.faqs.map(({ question, answer }) => `<h3>${esc(question)}</h3><p>${esc(answer)}</p>`).join('')}<h2>${esc(c.cta)}</h2><p>Request a free 30-minute call using the form when JavaScript is enabled, or email <a href="mailto:hello@promonetconsulting.com">hello@promonetconsulting.com</a> with your name, business and ${c.path === '/ai-ready' ? 'website address' : 'tools and repetitive task'}.</p></main>`
+  }
   const crumbs = meta.breadcrumbs
     ? `<nav aria-label="Breadcrumb"><p>${meta.breadcrumbs
         .map((c) => `<a href="${esc(c.path)}">${esc(c.name)}</a>`)
@@ -350,6 +366,7 @@ function replaceOrInsertHead(html, headTags) {
   out = out.replace(/<meta[^>]+name=["']robots["'][^>]*>/gi, '')
   out = out.replace(/<link[^>]+rel=["']canonical["'][^>]*>/gi, '')
   out = out.replace(/<link[^>]+rel=["']alternate["'][^>]*>/gi, '')
+  out = out.replace(/<link[^>]+rel=["']image_src["'][^>]*>/gi, '')
   out = out.replace(/<meta[^>]+property=["']og:[^"']+["'][^>]*>/gi, '')
   out = out.replace(/<meta[^>]+name=["']twitter:[^"']+["'][^>]*>/gi, '')
   out = out.replace(

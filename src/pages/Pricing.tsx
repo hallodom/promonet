@@ -3,6 +3,7 @@ import { useReveal } from '@/lib/useReveal'
 import PricingTiers from '@/components/PricingTiers'
 import TeamSection from '@/components/TeamSection'
 import ContactButton from '@/components/ContactButton'
+import StarterOffer from '@/components/StarterOffer'
 import Seo from '@/components/Seo'
 import { listSeoRoutes, offerCatalogJsonLd } from '@/lib/seo'
 import { useLocale } from '@/i18n/LocaleContext'
@@ -51,6 +52,7 @@ export default function Pricing() {
 
       <section className="py-20 md:py-28 hairline-b">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          {locale === 'en' && <StarterOffer />}
           <PricingTiers />
         </div>
       </section>
