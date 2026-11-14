@@ -31,8 +31,10 @@ const END = {
   // Feedback re-cut: 24s, no mention of AI, fixed £300. A copy; connect_tools above is unchanged.
   connect_tools_24s: {
     target: 24, minHold: 1.8, variant: true, music: 'connect_tools', endCardPhrase: 'Book your free call',
+    // Feedback: music clearly audible throughout — higher level, gentle ducking under the voice.
+    mix: { music: 0.65, duckRatio: 3, duckThreshold: 0.05, fadeOut: 0.8 }, // music ~4.5 dB under the voice (was ~9)
     price: { at: 0.8, eyebrow: 'ONE SIMPLE CONNECTION', label: 'Fixed price', amount: '£300', suffix: '', note: 'Third-party subscriptions separate' },
-    card: { eyebrow: 'REAL PEOPLE · HANDS-ON HELP', title: 'Promonet will help\nyou connect.', sub: 'One simple connection. Fixed price £300.', cta: 'Book your free call', url: 'promonetconsulting.com/connect-your-tools', note: ['Fixed price for one simple connection. Third-party costs separate.', 'Illustrative scenes; people shown are digitally generated.'] },
+    card: { style: 'clean', badge: 'public/badges/uk-small-business-2026.png', eyebrow: 'REAL PEOPLE · HANDS-ON HELP', title: 'Promonet will help\nyou connect.', sub: 'One simple connection. Fixed price £300.', cta: 'Book your free call', url: 'promonetconsulting.com/connect-your-tools', note: ['Fixed price for one simple connection. Third-party costs separate.', 'Illustrative scenes; people shown are digitally generated.'] },
   },
 }
 const clipOf = (s) => s.clip ?? s.id
@@ -77,18 +79,18 @@ function timeline(id) {
   // Optionally bring the end card in as the spoken call to action starts.
   const ctaChunk = end.endCardPhrase && all.find((k) => k.text.startsWith(end.endCardPhrase))
   const endCardAt = ctaChunk ? ctaChunk.start - 0.1 : lastVo.at + lastVo.d + 0.2
-  return { id, shots, vo, chunks: all, duration: shots.at(-1).end, endCardAt, endCard: end.card, price: end.price, music: end.music ?? id, variant: !!end.variant }
+  return { id, shots, vo, chunks: all, duration: shots.at(-1).end, endCardAt, endCard: end.card, price: end.price, music: end.music ?? id, mixOpts: { music: 0.4, duckRatio: 5, duckThreshold: 0.04, fadeOut: 1.6, ...end.mix }, variant: !!end.variant }
 }
 
 // Ambient (Veo) + voiceover + ducked music, loudness-normalised.
 function mix(tl, file) {
-  const n = tl.shots.length, inputs = [], parts = []
+  const n = tl.shots.length, inputs = [], parts = [], o = tl.mixOpts
   tl.shots.forEach((s, i) => { inputs.push('-i', path.join(src, `${s.clip}.mp4`)); const d = s.end - s.start; parts.push(`[${i}:a]atrim=0:${Math.min(CLIP, d / s.speed)},asetpts=PTS-STARTPTS${s.speed > 1 ? `,atempo=${(1 / s.speed).toFixed(4)}` : ''},aresample=48000,aformat=channel_layouts=stereo,apad=whole_dur=${d.toFixed(3)},atrim=0:${d.toFixed(3)},volume=${MUTE_AMBIENT.has(s.clip) ? 0 : 0.22}[amb${i}]`) })
   tl.vo.forEach((v, i) => { inputs.push('-i', v.file); parts.push(`[${n + i}:a]aformat=channel_layouts=stereo,adelay=${Math.round(v.at * 1000)}:all=1[v${i}]`) })
   inputs.push('-i', path.join(src, `${tl.music}-music.mp3`)); const m = n + tl.vo.length
   parts.push(`${tl.shots.map((_, i) => `[amb${i}]`).join('')}concat=n=${n}:v=0:a=1[amb]`)
   parts.push(`${tl.vo.map((_, i) => `[v${i}]`).join('')}amix=inputs=${tl.vo.length}:normalize=0,apad=whole_dur=${tl.duration}[vo]`, '[vo]asplit[voA][voB]')
-  parts.push(`[${m}:a]atrim=0:${tl.duration},aformat=channel_layouts=stereo,aresample=48000,volume=0.4,afade=t=in:d=0.3,afade=t=out:st=${tl.duration - 1.6}:d=1.6[mus]`, '[mus][voA]sidechaincompress=threshold=0.04:ratio=5:attack=25:release=350[duck]')
+  parts.push(`[${m}:a]atrim=0:${tl.duration},aformat=channel_layouts=stereo,aresample=48000,volume=${o.music},afade=t=in:d=0.3,afade=t=out:st=${tl.duration - o.fadeOut}:d=${o.fadeOut}[mus]`, `[mus][voA]sidechaincompress=threshold=${o.duckThreshold}:ratio=${o.duckRatio}:attack=25:release=350[duck]`)
   parts.push(`[voB][duck][amb]amix=inputs=3:normalize=0,atrim=0:${tl.duration},loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]`)
   run('ffmpeg', ['-y', '-v', 'error', ...inputs, '-filter_complex', parts.join(';'), '-map', '[a]', '-c:a', 'pcm_s16le', file])
 }
@@ -99,6 +101,8 @@ function footageGraph(tl) {
 }
 
 const html = await fs.readFile(path.join(root, 'scripts/campaign-reel-overlay.html'))
+// End-card badge (optional), passed to the overlay page as a data URL.
+const badgeData = async (tl) => tl.endCard.badge ? `data:image/png;base64,${(await fs.readFile(path.join(root, tl.endCard.badge))).toString('base64')}` : null
 const server = http.createServer((req, res) => { res.setHeader('Content-Type', 'text/html'); res.end(html) })
 server.listen(0, '127.0.0.1'); await once(server, 'listening')
 const browser = await chromium.launch()
@@ -112,7 +116,7 @@ try {
     console.log(`${id}: ${tl.duration.toFixed(2)}s · shots ${tl.shots.map((s) => `${s.id} ${(s.end - s.start).toFixed(1)}s${s.speed > 1 ? ` (x${s.speed.toFixed(2)} slower)` : ''}`).join(', ')}`)
     const inputs = tl.shots.flatMap((s) => ['-i', path.join(src, `${s.clip}.mp4`)])
     if (preview) {
-      await page.evaluate((t) => window.init(t), { ...tl, captions: true })
+      await page.evaluate((t) => window.init(t), { ...tl, captions: true, badge: await badgeData(tl) })
       const times = [...tl.shots.map((s) => s.start + (s.end - s.start) * 0.62), tl.duration - 0.3]
       for (const [i, t] of times.entries()) {
         const ov = path.join(work, 'ov.png'); await fs.writeFile(ov, Buffer.from(await page.evaluate((t) => window.frame(t), t), 'base64'))
@@ -126,7 +130,7 @@ try {
     await fs.writeFile(path.join(out, `${id}.srt`), cues.map((k, i) => `${i + 1}\n${ts(k.start, ',')} --> ${ts(k.end, ',')}\n${k.text}\n`).join('\n'))
     await fs.writeFile(path.join(out, `${id}.vtt`), `WEBVTT\n\n${cues.map((k) => `${ts(k.start, '.')} --> ${ts(k.end, '.')}\n${k.text}\n`).join('\n')}`)
     for (const captions of [true, false]) {
-      await page.evaluate((t) => window.init(t), { ...tl, captions })
+      await page.evaluate((t) => window.init(t), { ...tl, captions, badge: await badgeData(tl) })
       const target = path.join(out, `${id}-reel${captions ? '' : '-clean'}.mp4`)
       const ff = spawn('ffmpeg', ['-y', '-v', 'error', ...inputs, '-f', 'image2pipe', '-c:v', 'png', '-framerate', String(FPS), '-i', 'pipe:0', '-i', audio,
         '-filter_complex', `${footageGraph(tl)};[bg][${tl.shots.length}:v]overlay=format=auto:shortest=1,format=yuv420p[v]`, '-map', '[v]', '-map', `${tl.shots.length + 1}:a`,

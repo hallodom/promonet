@@ -67,7 +67,24 @@ function captions(t){
   ls.forEach((l,li)=>{font(62,800);const y=top+li*lh;c.save();c.globalAlpha=ease((t-ch.start)/.15);rr(84,y-8,c.measureText(l).width+40,lh+4,16,'#0a0a0fc4');c.restore();let x=104
     for(const w of l.split(' ')){const p=ease((t-(ch.start+span*wi/n))/.15);c.save();c.globalAlpha=.3+.7*p;c.fillStyle=C.white;c.textBaseline='top';c.fillText(w,x,y+(1-p)*8);c.restore();font(62,800);x+=c.measureText(w+' ').width;wi++}})
 }
-function endCard(t){const e=T.endCard,p=ease((t-T.endCardAt)/.6);if(p<=0)return
+// Cinematic end card: footage stays full-bleed under a dark fade; type, one clean button and the badge sit on top.
+let badgeImg=null
+function endCardClean(t){const e=T.endCard,lt=t-T.endCardAt,p=ease(lt/.7);if(p<=0)return
+  c.save();c.globalAlpha=p;const g=c.createLinearGradient(0,560,0,1920);g.addColorStop(0,'#0a0a0f00');g.addColorStop(.38,'#0a0a0fc8');g.addColorStop(1,'#0a0a0ff2')
+  c.fillStyle='#0a0a0f30';c.fillRect(0,0,1080,1920);c.fillStyle=g;c.fillRect(0,0,1080,1920);c.restore()
+  inn(lt,.05,()=>wordmark(84,250,48,C.white),.5,0)
+  if(badgeImg)pop(lt,.35,906,330,()=>c.drawImage(badgeImg,816,240,180,180))
+  const tl=e.title.split('\n');font(100,800,SLAB);const ts=Math.min(100,Math.floor(100*912/Math.max(...tl.map(l=>c.measureText(l).width)))),lh=Math.round(ts*1.06)
+  const y0=1560-130-150-70-tl.length*lh-120
+  inn(lt,.15,()=>{c.fillStyle='#ff4a1c';c.fillRect(84,y0+10,44,4);txt(e.eyebrow,144,y0,24,'#f5f5f2cc',700,MONO)})
+  inn(lt,.25,()=>tl.forEach((l,i)=>txt(l,80,y0+52+i*lh,ts,C.white,800,SLAB)))
+  const sy=y0+52+tl.length*lh+22;inn(lt,.4,()=>txt(e.sub,84,sy,38,'#f5f5f2d9',500))
+  const by=sy+92;inn(lt,.55,()=>{font(42,700);const label=e.cta,tw=c.measureText(label).width,bw=tw+56+44+92,bh=116
+    shadow(()=>rr(84,by,bw,bh,bh/2,C.paper));txt(label,84+56,by+36,42,C.ink,700)
+    const cx=84+bw-58,cy=by+bh/2;dot(cx,cy,34,'#ff4a1c');c.save();c.strokeStyle=C.white;c.lineWidth=5;c.lineCap=c.lineJoin='round';c.beginPath();c.moveTo(cx-13,cy);c.lineTo(cx+13,cy);c.moveTo(cx+2,cy-11);c.lineTo(cx+13,cy);c.lineTo(cx+2,cy+11);c.stroke();c.restore()})
+  inn(lt,.7,()=>txt(e.url,84,by+150,30,'#f5f5f2bf',600))
+  inn(lt,.8,()=>e.note.forEach((l,i)=>txt(l,84,by+212+i*28,20,'#f5f5f28c',500)),.5,0)}
+function endCard(t){if(T.endCard.style==='clean')return endCardClean(t);const e=T.endCard,p=ease((t-T.endCardAt)/.6);if(p<=0)return
   c.save();c.translate(0,(1-p)*900);const y=840
   c.fillStyle='#f5f5f2f2';c.beginPath();c.roundRect(40,y,1000,1000,44);c.fill()
   txt(e.eyebrow,100,y+70,24,C.blue,700,MONO)
@@ -78,12 +95,12 @@ function endCard(t){const e=T.endCard,p=ease((t-T.endCardAt)/.6);if(p<=0)return
   shadow(()=>rr(100,sy+90,880,120,60,C.blue));txt(e.cta+'  →',540,sy+128,44,C.white,800,SANS,'center');txt(e.url,540,sy+246,32,C.ink,700,SANS,'center')
   e.note.forEach((l,i)=>txt(l,540,sy+310+i*32,21,C.muted,500,SANS,'center'));c.restore()}
 
-window.init=async tl=>{T=tl;await document.fonts.ready;for(const f of['800 40px "Roboto Slab"','800 40px Inter','700 40px Inter','600 40px Inter','500 40px Inter','700 20px "JetBrains Mono"'])await document.fonts.load(f);return true}
+window.init=async tl=>{T=tl;badgeImg=null;if(tl.badge){badgeImg=new Image();badgeImg.src=tl.badge;await badgeImg.decode()}await document.fonts.ready;for(const f of['800 40px "Roboto Slab"','800 40px Inter','700 40px Inter','600 40px Inter','500 40px Inter','700 20px "JetBrains Mono"'])await document.fonts.load(f);return true}
 window.frame=t=>{c.clearRect(0,0,W,H)
   // Gentle top/bottom scrims so white text reads over any footage.
   let g=c.createLinearGradient(0,0,0,360);g.addColorStop(0,'#0a0a0f80');g.addColorStop(1,'#0a0a0f00');c.fillStyle=g;c.fillRect(0,0,W,360)
   g=c.createLinearGradient(0,1150,0,H);g.addColorStop(0,'#0a0a0f00');g.addColorStop(1,'#0a0a0fb3');c.fillStyle=g;c.fillRect(0,1150,W,H-1150)
   const s=T.shots.find(s=>t<s.end)||T.shots.at(-1)
-  if(t<T.endCardAt+.6){wordmark(84,250,48,C.white);G[s.overlay](t-s.start);if(T.captions)captions(t)}
+  if(t<T.endCardAt+(T.endCard.style==='clean'?.3:.6)){wordmark(84,250,48,C.white);G[s.overlay](t-s.start);if(T.captions)captions(t)}
   endCard(t);return cv.toDataURL('image/png').split(',')[1]}
 </script></body></html>

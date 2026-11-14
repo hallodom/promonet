@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-labelledby="t">
+  <title id="t">UK Small Business 2026 · Promonet</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800&amp;family=Inter:wght@800&amp;display=swap');
+    .arc { font: 800 25px Inter, Arial, sans-serif; letter-spacing: 5px; fill: #F5F5F2; }
+    .brand { font: 800 30px 'Roboto Slab', Georgia, serif; letter-spacing: 1px; fill: #F5F5F2; }
+    .year { font: 800 84px 'Roboto Slab', Georgia, serif; fill: #F5F5F2; }
+  </style>
+  <defs>
+    <!-- Top arc reads left→right over the top; bottom arc reads left→right under the bottom. -->
+    <path id="top" d="M 54 200 A 146 146 0 0 1 346 200" />
+    <path id="bottom" d="M 32 200 A 168 168 0 0 0 368 200" />
+  </defs>
+  <circle cx="200" cy="200" r="196" fill="#0A0A0F" />
+  <circle cx="200" cy="200" r="184" fill="none" stroke="#F5F5F2" stroke-width="2" />
+  <circle cx="200" cy="200" r="126" fill="none" stroke="#F5F5F2" stroke-opacity="0.45" stroke-width="1.5" />
+  <text class="arc"><textPath href="#top" startOffset="50%" text-anchor="middle">UK SMALL BUSINESS</textPath></text>
+  <text class="brand"><textPath href="#bottom" startOffset="50%" text-anchor="middle">promonet<tspan fill="#FF4A1C">.</tspan></textPath></text>
+  <circle cx="44" cy="200" r="5" fill="#FF4A1C" />
+  <circle cx="356" cy="200" r="5" fill="#FF4A1C" />
+  <!-- Centre: the Promonet arc-and-dot mark above the year. -->
+  <path d="M 181 160 c 11.25 -2.5 20 -11.25 23.75 -23.75" fill="none" stroke="#F5F5F2" stroke-width="5.5" stroke-linecap="round" />
+  <circle cx="216" cy="129" r="8.5" fill="#FF4A1C" />
+  <text class="year" x="200" y="254" text-anchor="middle">2026</text>
+</svg>
