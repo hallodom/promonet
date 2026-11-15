@@ -3,6 +3,7 @@ import { useLocale } from '@/i18n/LocaleContext'
 import { LOCALE_META, type Locale } from '@/i18n/locales'
 import { toLocalePath } from '@/i18n/paths'
 import { cn } from '@/lib/cn'
+import { isCampaignPath } from '@/data/campaigns'
 
 type Props = {
   className?: string
@@ -12,6 +13,9 @@ export default function LanguageSwitcher({ className }: Props) {
   const { locale } = useLocale()
   const navigate = useNavigate()
   const location = useLocation()
+
+  // Campaign landing pages are English-only, so there is nothing to switch to.
+  if (isCampaignPath(location.pathname)) return null
 
   function switchTo(target: Locale) {
     if (target === locale) return

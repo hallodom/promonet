@@ -3,7 +3,7 @@ import { getMatrix } from '@/data/matrixLocale'
 import { STARTER_INTEGRATION_PRICE } from '@/data/pricing'
 import en from '@/i18n/messages/en.json'
 import es from '@/i18n/messages/es.json'
-import campaigns from '@/data/campaigns.json'
+import { CAMPAIGNS, CAMPAIGN_PATHS } from '@/data/campaigns'
 import { DEFAULT_LOCALE, type Locale } from '@/i18n/locales'
 import {
   connectPagePath,
@@ -173,7 +173,7 @@ export function listSeoRoutes(locale?: Locale): SeoRoute[] {
   }
 
   if (!locale || locale === 'en') {
-    routes.push(...Object.values(campaigns).map((campaign) => ({
+    routes.push(...Object.values(CAMPAIGNS).map((campaign) => ({
       path: campaign.path, title: campaign.title, description: campaign.description,
       locale: 'en' as const, priority: '0.8', changefreq: 'monthly',
     })))
@@ -317,7 +317,7 @@ export function offerCatalogJsonLd(locale: Locale = DEFAULT_LOCALE) {
 }
 
 export function hreflangAlternates(path: string) {
-  if (Object.values(campaigns).some((campaign) => campaign.path === path)) {
+  if (CAMPAIGN_PATHS.includes(path)) {
     return { en: absoluteUrl(path), es: undefined, xDefault: absoluteUrl(path) }
   }
   return {

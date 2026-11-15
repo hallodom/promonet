@@ -1,81 +1,84 @@
 import { useRef, useState, type FormEvent } from 'react'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { useLocation } from 'react-router-dom'
+import type { Campaign } from '@/data/campaigns'
 
-export type CampaignId = 'ai_ready' | 'connect_tools'
+const field = 'w-full rounded-[4px] border border-obsidian/20 bg-white px-4 py-3 text-[15px] outline-none focus:border-voltage transition-colors'
+const label = 'font-mono text-[11px] uppercase tracking-[0.14em] text-graphite mb-2 block'
 
-export default function CampaignForm({ campaign }: { campaign: CampaignId }) {
+/**
+ * Campaign sign-up. Posts to the existing /api/contact endpoint, folding the campaign,
+ * website/tools, task and UTM source into the message so enquiries are attributable.
+ */
+export default function CampaignForm({ campaign }: { campaign: Campaign }) {
   const { search, pathname } = useLocation()
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [error, setError] = useState('')
-  const submitting = useRef(false)
-  const ai = campaign === 'ai_ready'
+  const busy = useRef(false)
+  const f = campaign.form
 
-  async function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    if (submitting.current) return
-    const form = event.currentTarget
-    if (!form.reportValidity()) return
-    submitting.current = true
+  async function submit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    if (busy.current) return
+    busy.current = true
     setStatus('sending')
     setError('')
-    const fields = Object.fromEntries(new FormData(form))
-    const params = new URLSearchParams(search)
-    const utm = Object.fromEntries(
-      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']
-        .map((key) => [key, (params.get(key) || '').slice(0, 200)]),
-    )
-    const controller = new AbortController()
-    const timeout = window.setTimeout(() => controller.abort(), 20000)
+    const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>
+    const utm = new URLSearchParams(search)
+    const source = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].map((k) => utm.get(k)).filter(Boolean).join(' / ')
+    const message = [
+      `Campaign: ${campaign.id} (${pathname})`,
+      `${f.detailLabel}: ${data.detail}`,
+      data.task ? `${f.taskLabel}: ${data.task}` : '',
+      `Source: ${source || 'direct'}`,
+    ].filter(Boolean).join('\n')
     try {
-      const response = await fetch('/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        signal: controller.signal,
-        body: JSON.stringify({ ...fields, campaign, landingPage: pathname, utm }),
+        body: JSON.stringify({ name: data.name, email: data.email, company: data.company, message }),
       })
-      const result = await response.json().catch(() => ({}))
-      if (response.status === 400 && typeof result.error === 'string') {
-        setStatus('error')
-        setError(result.error)
-        return
-      }
-      if (!response.ok || result.ok !== true) throw new Error('send-failed')
+      const json = await res.json().catch(() => ({}))
+      if (!res.ok || !json.ok) throw new Error(typeof json.error === 'string' && res.status === 400 ? json.error : '')
       setStatus('sent')
-    } catch {
+    } catch (err) {
       setStatus('error')
-      setError('We couldn’t confirm your request. Your details are still here—please try again, or email hello@promonetconsulting.com.')
+      setError((err instanceof Error && err.message) || 'We couldn’t send that just now. Your details are still here, so please try again, or email hello@promonetconsulting.com.')
     } finally {
-      window.clearTimeout(timeout)
-      submitting.current = false
+      busy.current = false
     }
   }
 
-  if (status === 'sent') return (
-    <div className="campaign-form campaign-success" role="status" aria-live="polite">
-      <CheckCircle2 size={40} aria-hidden="true" />
-      <h3>Thanks. Let’s find a time to talk.</h3>
-      <p>Your request has been received. We’ll email you to arrange your free 30-minute call. A time hasn’t been booked yet.</p>
-    </div>
-  )
+  if (status === 'sent') {
+    return (
+      <div role="status" className="rounded-[8px] bg-white border border-obsidian/10 p-8 shadow-[0_24px_50px_rgba(10,10,15,0.08)]">
+        <CheckCircle2 className="text-imago mb-5" size={40} aria-hidden="true" />
+        <h3 className="font-display text-2xl mb-3">Thanks, we’ve got it.</h3>
+        <p className="text-graphite leading-relaxed">We’ll email you within one working day to arrange your free 30-minute call.</p>
+      </div>
+    )
+  }
 
   return (
-    <form className="campaign-form" onSubmit={submit} aria-label={ai ? 'Request an AI evaluation' : 'Request a connection call'} aria-busy={status === 'sending'}>
-      <div className="campaign-form-row">
-        <label>Your name<input name="name" autoComplete="name" required maxLength={120} /></label>
-        <label>Email address<input name="email" type="email" autoComplete="email" required maxLength={254} /></label>
+    <form onSubmit={submit} aria-label={f.submit} className="rounded-[8px] bg-white border border-obsidian/10 p-6 md:p-8 space-y-5 shadow-[0_24px_50px_rgba(10,10,15,0.08)]">
+      <div className="grid sm:grid-cols-2 gap-5">
+        <label className="block"><span className={label}>Your name</span><input className={field} name="name" autoComplete="name" required maxLength={120} /></label>
+        <label className="block"><span className={label}>Email</span><input className={field} name="email" type="email" autoComplete="email" required maxLength={254} /></label>
       </div>
-      <label>Business name<input name="company" autoComplete="organization" required maxLength={200} /></label>
-      {ai ? (
-        <label>Website address<input name="website" type="text" inputMode="url" autoComplete="url" placeholder="yourbusiness.co.uk" required maxLength={2048} aria-describedby="website-hint" /><span id="website-hint" className="campaign-field-hint">The public website you’d like us to review.</span></label>
-      ) : (<>
-        <label>Which tools would you like to connect?<input name="tools" placeholder="For example, your enquiry form and CRM" required maxLength={500} /></label>
-        <label>What are you copying or doing repeatedly?<textarea name="message" placeholder="Tell us a little about the task you’d like to simplify." rows={3} required maxLength={5000} /></label>
-      </>)}
-      <p className="campaign-field-hint">We’ll use these details to respond to your enquiry and arrange your call. This form does not subscribe you to marketing emails.</p>
-      {error && <p className="campaign-error" role="alert">{error}</p>}
-      <button className="campaign-button" type="submit" disabled={status === 'sending'}>{status === 'sending' ? 'Sending your request…' : 'Request my free 30-minute call'}<ArrowRight size={18} aria-hidden="true" /></button>
-      <p className="campaign-form-note">No payment details. No obligation. Just a useful conversation.</p>
+      <label className="block"><span className={label}>Business name</span><input className={field} name="company" autoComplete="organization" required maxLength={200} /></label>
+      <label className="block">
+        <span className={label}>{f.detailLabel}</span>
+        <input className={field} name="detail" required maxLength={500} placeholder={f.detailPlaceholder} aria-describedby={`${campaign.id}-hint`} />
+        <span id={`${campaign.id}-hint`} className="block text-xs text-graphite mt-2">{f.detailHint}</span>
+      </label>
+      {f.taskLabel && (
+        <label className="block"><span className={label}>{f.taskLabel}</span><textarea className={`${field} resize-y min-h-[96px]`} name="task" required rows={3} maxLength={2000} placeholder={f.taskPlaceholder} /></label>
+      )}
+      {status === 'error' && <p role="alert" className="text-sm text-emergence">{error}</p>}
+      <button type="submit" disabled={status === 'sending'} className="w-full inline-flex items-center justify-center gap-3 font-semibold text-[15px] py-4 rounded-full bg-voltage text-bone hover:bg-voltage/90 disabled:opacity-60 transition-colors">
+        {status === 'sending' ? 'Sending…' : f.submit}<ArrowRight size={18} aria-hidden="true" />
+      </button>
+      <p className="text-xs text-graphite text-center">No payment details. No obligation. We’ll only use this to arrange your call.</p>
     </form>
   )
 }

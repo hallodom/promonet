@@ -1,0 +1,56 @@
+{
+  "budgetCredits": 450,
+  "balanceBefore": 840.08,
+  "video": {
+    "model": "veo3_1 veo-3-1-fast, quality high, 8s, 9:16 (768x1344 output), text-to-video",
+    "note": "Batch call was interrupted client-side but all 8 jobs had been submitted (256 credits). IDs recovered from generation history; nothing resubmitted.",
+    "a1": "29ce888f-608f-43e3-99ae-d89f4cc06a07",
+    "a2": "9e8a95ae-e9ec-47b2-b422-73b1efbdb658",
+    "a3": "454b215a-5316-4588-9dad-d09914daaf99",
+    "a4": "f12cdcf4-a150-485b-8af1-fe4d3fa8a85b",
+    "b1": "07a39a4d-058f-46b2-922b-d0b913819562",
+    "b2": "4fba765b-04d0-493c-8846-405bf0a6c790",
+    "b3": "85aef5ea-0136-46c0-ae93-daec3396058f",
+    "b4": "91cfedb4-343e-4399-83e4-7d6a9261d072"
+  },
+  "voiceover": {
+    "model": "seed_audio, preset voice Vera 0c51919f-0756-5f8d-8169-026a339d8fd7",
+    "a1": "c1bfed31-f35e-4c58-badd-52fd819b6b63",
+    "a2": "394ff930-11cd-4b7f-99bf-467cb6f66e40",
+    "a3": "74bd341f-fc43-4a6f-9204-365813aeba2f",
+    "a4": "f0d7013b-2109-43ce-ab87-92fd96809276",
+    "b1": "8b79f37c-a803-49eb-a1b0-d6df4c662385",
+    "b2": "6e4a4e20-0792-48bb-b3ff-e03411d02f21",
+    "b3": "8ddb1381-afc9-4621-893e-80610e2d550e",
+    "b4": "f13d5d3b-ebdb-4e9a-8533-7590f5892ee1"
+  },
+  "music": {
+    "model": "elevenlabs_music_v2_5, 34s instrumental",
+    "ai_ready": "486bfb74-bb63-4b32-8fef-0c4b62a9cb8b",
+    "connect_tools": "90c7fe3b-0dec-4044-b80c-1879407aabb7"
+  },
+  "sourceFiles": "campaigns/source/ is gitignored. Re-download any job's result via the Higgsfield MCP (show_generation_by_ids / jobs_wait) using the IDs above.",
+  "connectTools24sVoiceover": {
+    "note": "Feedback re-cut (connect_tools_24s): reuses b1–b4 footage and the connect_tools music. c4 was regenerated shorter to fit 24s; the longer take (0ce25c37…) is unused.",
+    "c1": "ad6fa8a2-c4a7-4570-9c47-e520278b4720",
+    "c2": "4ce10559-1649-4d22-a65d-e419e87b9c95",
+    "c3": "0efb6fef-bf88-448e-993a-1d7cfe1f8f44",
+    "c4": "e5d4e3ca-a1c9-495f-80d7-b7b20100e36e",
+    "c4Unused": "0ce25c37-31fd-4cdf-a9e3-388116577603"
+  },
+  "connectTools30s": {
+    "note": "Second feedback re-cut (connect_tools_30s). t1/t2 are new Veo shots (same settings as b1–b4) with a new Promonet expert replacing the blue-jumper consultant. d4/d5 use the shorter alternates; d5-vo.wav = d5 + 0.3s + d6.",
+    "video": { "t1": "9319fbbc-44d8-4f7d-9864-74427ee32cf7", "t2": "2cf3396e-6cca-4ce2-be56-47146ba89682" },
+    "voiceover": {
+      "d1": "24ea96f2-d06b-4e68-8460-865c08e2f9bc",
+      "d2": "81180b93-90d8-49f5-97c1-a660184fc7f4",
+      "d3": "c0cf6b2f-9714-4c9e-9c2e-92a1eb61ce4f",
+      "d4": "09c09908-55f8-4b46-a44b-39f2f58b7114",
+      "d4Note": "Feedback: 'We get all your tools finally talking to each other.' Earlier takes 76e71e34… (hesitant pauses) and 4a3da87b… ('Finally, all your tools…') unused; spare take cc6c670b….",
+      "d5": "d1005fa7-725a-4c62-a4b7-088ebd121af8",
+      "d6": "d3ce6d4d-b336-47c0-920e-ba6eb6b19f26",
+      "unused": ["3f600819-d80e-442f-826d-85b0c2e8c4f3", "b9cd62d8-2058-4a0d-b7df-c0f2d65f1e42", "76e71e34-d22a-42e0-b1df-dadfb3ee007b", "bd72c0e0-f31c-4b64-86fd-90608c34b413"]
+    }
+  },
+  "spend": { "video": 256, "voiceoverAndMusic": 16.7, "totalCredits": 272.7, "balanceAfter": 567.38, "budget": 450 }
+}

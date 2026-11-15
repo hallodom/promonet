@@ -1,218 +1,191 @@
-import { useEffect, useRef, useState } from 'react'
-import { ArrowRight, BadgeCheck, Bot, BookOpenText, Check, Clock3, Contact, DoorOpen, Mail, Sheet, Volume2, VolumeX, Workflow, X } from 'lucide-react'
+import { ArrowRight, Cable, Check, Clock3, ShieldCheck, Sparkles, Workflow } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import campaigns from '@/data/campaigns.json'
-import CampaignForm, { type CampaignId } from '@/components/CampaignForm'
 import Seo from '@/components/Seo'
+import CampaignForm from '@/components/CampaignForm'
+import { LoopVideo, ReelPlayer } from '@/components/CampaignVideo'
+import { CAMPAIGNS, type CampaignId } from '@/data/campaigns'
 import { absoluteUrl, faqJsonLd } from '@/lib/seo'
-import '@/campaigns.css'
+import { useReveal } from '@/lib/useReveal'
 
-const MEDIA = '/campaigns/v2'
+const Eyebrow = ({ children, light = false }: { children: React.ReactNode; light?: boolean }) => (
+  <div className={`text-[11px] font-mono uppercase tracking-[0.18em] mb-6 flex items-center gap-3 ${light ? 'text-bone/80' : 'text-voltage'}`}>
+    <span className={`w-6 h-px ${light ? 'bg-bone/60' : 'bg-voltage'}`} />
+    {children}
+  </div>
+)
 
-// The landing page mirrors the reel beat-for-beat: hook → problem → what we do → real people → offer → sign-up.
-const COPY = {
-  ai_ready: {
-    icon: Bot,
-    problemImage: 'a2', problemAlt: 'Illustrative bike workshop owner frowning slightly at her website on a laptop',
-    solutionEyebrow: '02 / What we check on your call',
-    peopleImage: 'a4', peopleAlt: 'Illustrative Promonet consultant waving hello on a video call from a home office',
-    peopleTitle: 'Real people. Plain English.',
-    formImage: 'a6', formAlt: 'Illustrative bike workshop owner smiling in the doorway of her shop',
-    formTitle: 'Book your free AI evaluation call.',
-    formBody: 'Share your website and we’ll arrange a time to look at it together. You’ll leave with a clearer picture, and three practical next steps by email.',
-  },
-  connect_tools: {
-    icon: Workflow,
-    problemImage: 'b1', problemAlt: 'Illustrative garden designer at a desk covered in sticky notes, rubbing his forehead',
-    solutionEyebrow: '02 / How we fix it',
-    peopleImage: 'b5', peopleAlt: 'Illustrative Promonet developer and a garden designer working side by side at a laptop',
-    peopleTitle: 'Real humans. Hands-on. Direct with you.',
-    formImage: 'b6', formAlt: 'Illustrative garden designer relaxing with a cup of tea in a client’s garden',
-    formTitle: 'Tell us what you’re tired of copying.',
-    formBody: 'Share your tools and the task. We’ll arrange a time to explore what’s possible and whether a simple connection could help, then send a fixed quote before you commit.',
-  },
-} as const
+// Icons for the "future" points, in order: workflows, AI, connected tools, control.
+const FUTURE_ICONS = [Workflow, Sparkles, Cable, ShieldCheck]
 
-function ReelPlayer({ campaign, label }: { campaign: CampaignId; label: string }) {
-  const video = useRef<HTMLVideoElement>(null)
-  const [muted, setMuted] = useState(true)
-  const [playing, setPlaying] = useState(false)
+const Cta = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+  <a href="#book" className={`inline-flex items-center gap-3 rounded-full bg-voltage text-bone px-6 py-4 text-[15px] font-semibold shadow-[0_12px_30px_rgba(37,64,232,0.35)] hover:bg-voltage/90 transition-colors ${className}`}>
+    {children}
+    <ArrowRight size={18} aria-hidden="true" />
+  </a>
+)
 
-  useEffect(() => {
-    const v = video.current
-    if (!v || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return
-    v.play().then(() => setPlaying(true)).catch(() => setPlaying(false))
-  }, [])
-
-  function toggleSound() {
-    const v = video.current
-    if (!v) return
-    if (muted || !playing) {
-      v.muted = false
-      v.currentTime = 0
-      v.play().then(() => setPlaying(true)).catch(() => {})
-      setMuted(false)
-    } else {
-      v.muted = true
-      setMuted(true)
-    }
-  }
+export default function Campaign({ id }: { id: CampaignId }) {
+  useReveal()
+  const c = CAMPAIGNS[id]
 
   return (
-    <figure className="cv-reel">
-      <div className="cv-phone">
-        <video ref={video} muted loop playsInline preload="metadata" poster={`${MEDIA}/${campaign}-poster.jpg`} aria-label={label} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}>
-          <source src={`${MEDIA}/${campaign}-reel.mp4`} type="video/mp4" />
-          <track kind="captions" src={`${MEDIA}/${campaign}.vtt`} srcLang="en" label="English" />
-        </video>
-        <button type="button" className="cv-sound" onClick={toggleSound} aria-pressed={!muted}>
-          {muted || !playing ? <><Volume2 size={18} aria-hidden="true" />Play with sound</> : <><VolumeX size={18} aria-hidden="true" />Mute</>}
-        </button>
-      </div>
-      <figcaption>Illustrative scenes. People shown are AI-generated.</figcaption>
-    </figure>
-  )
-}
+    <>
+      <Seo title={c.title} description={c.description} path={c.path} image={absoluteUrl(`/campaigns/${id}-og.jpg`)} imageAlt={c.loopAlts[id === 'ai_ready' ? 1 : 0]} jsonLd={[faqJsonLd(c.faqs)]} englishOnly />
 
-function ChatMock() {
-  return (
-    <div className="cv-chat" aria-hidden="true">
-      <p className="cv-chat-head"><span className="cv-dot" />AI assistant</p>
-      <p className="cv-chat-q">Can you recommend a bike repair shop near me?</p>
-      <p className="cv-chat-a">Here are three well-reviewed options nearby:</p>
-      {[0, 1, 2].map((i) => <span key={i} className="cv-chat-row"><i /><b style={{ width: `${46 - i * 6}%` }} /><em>★★★★★</em></span>)}
-      <p className="cv-chat-miss">Your business isn’t mentioned</p>
-    </div>
-  )
-}
-
-function ToolsDiagram({ connected }: { connected: boolean }) {
-  const tools = [['Inbox', Mail], ['Spreadsheet', Sheet], ['CRM', Contact]] as const
-  return (
-    <div className={`cv-tools${connected ? ' is-connected' : ''}`} aria-hidden="true">
-      <div className="cv-tools-row">
-        {tools.map(([label, Icon], i) => (
-          <div key={label} className="cv-tool-wrap">
-            {i > 0 && <span className="cv-link">{!connected && <X size={18} />}</span>}
-            <div className="cv-tool">{connected && <span className="cv-tool-tick"><Check size={14} /></span>}<Icon size={30} strokeWidth={1.8} /><span>{label}</span></div>
-          </div>
-        ))}
-      </div>
-      <p className={connected ? 'cv-badge-ok' : 'cv-badge-warn'}>{connected ? 'Connected · runs on its own' : 'You become the connection'}</p>
-    </div>
-  )
-}
-
-export default function Campaign({ campaign }: { campaign: CampaignId }) {
-  const data = campaigns[campaign]
-  const copy = COPY[campaign]
-  const ai = campaign === 'ai_ready'
-  const Icon = copy.icon
-  const cta = (label = data.cta) => <a className="campaign-button" href="#request-call">{label}<ArrowRight size={18} aria-hidden="true" /></a>
-  const img = (name: string, alt: string, eager = false) => <img src={`${MEDIA}/${name}.jpg`} alt={alt} width="860" height="1520" loading={eager ? 'eager' : 'lazy'} decoding="async" />
-  const checks = [DoorOpen, BookOpenText, BadgeCheck]
-
-  return (
-    <div className="campaign-page">
-      <Seo title={data.title} description={data.description} path={data.path} image={absoluteUrl(`${MEDIA}/${campaign}-og.jpg`)} imageAlt={data.imageAlt} jsonLd={[faqJsonLd(data.faqs)]} />
-
-      <section className="cv-hero">
-        <div className="campaign-shell cv-hero-grid">
-          <div className="cv-hero-copy">
-            <p className="campaign-eyebrow"><Icon size={16} aria-hidden="true" />{data.eyebrow}</p>
-            <h1>{data.headline}</h1>
-            <p className="cv-lead">{data.intro}</p>
-            <div className="cv-actions">{cta()}<a className="cv-text-link" href="#how-it-works">How it works</a></div>
-            <p className="campaign-offer-label">{data.offerLabel}</p>
-            <ul className="cv-proof">
-              <li><strong>20+ years</strong>building CRM solutions</li>
-              <li><strong>Direct access</strong>to the people doing the work</li>
-              <li><strong>Small business</strong>helping small businesses</li>
+      {/* Hero: the hook shot plays full-bleed behind the copy; the full reel sits alongside. */}
+      <section className="relative overflow-hidden bg-obsidian text-bone">
+        <div className="absolute inset-0" aria-hidden="true">
+          <LoopVideo shot={c.loops[0]} label="" eager className="opacity-60 scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/75 to-obsidian/20" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-obsidian to-transparent" />
+        </div>
+        <div className="relative max-w-[1280px] mx-auto px-6 md:px-10 py-16 md:py-24 grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center">
+          <div className="reveal">
+            {c.eyebrow && <Eyebrow light>{c.eyebrow}</Eyebrow>}
+            <h1 className="font-display font-display-tight text-[clamp(42px,6.4vw,84px)] leading-[1.02] mb-6 text-balance">{c.headline}</h1>
+            <p className="text-lg md:text-xl text-bone/80 leading-relaxed max-w-[580px] mb-9">{c.intro}</p>
+            <Cta>{c.cta}</Cta>
+            <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.14em] text-bone/60">{c.offerLabel}</p>
+            <ul className="mt-10 pt-8 border-t border-bone/15 grid grid-cols-3 gap-6 max-w-[560px] text-[13px] text-bone/65">
+              <li><strong className="block text-bone text-[15px] mb-1">20+ years</strong>building CRM and web solutions</li>
+              <li><strong className="block text-bone text-[15px] mb-1">Real people</strong>you talk to the person doing the work</li>
+              <li><strong className="block text-bone text-[15px] mb-1">Small business</strong>helping small businesses</li>
             </ul>
           </div>
-          <ReelPlayer campaign={campaign} label={data.reelAlt} />
+          <ReelPlayer campaign={c.reel ?? id}label={c.reelLabel} className="reveal justify-self-center" />
         </div>
       </section>
 
-      <section className="campaign-shell campaign-section cv-split cv-problem">
-        <figure className="cv-photo">{img(copy.problemImage, copy.problemAlt)}</figure>
-        <div>
-          <p className="campaign-eyebrow">01 / The problem</p>
-          <h2>{data.problemTitle}</h2>
-          <p className="campaign-prose">{data.problemBody}</p>
-          {ai ? <ChatMock /> : <ToolsDiagram connected={false} />}
+      {/* 01: the problem, over the second shot */}
+      <section className="py-20 md:py-28 hairline-b">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <div className="reveal aspect-[4/5] rounded-[12px] overflow-hidden bg-obsidian/5"><LoopVideo shot={c.loops[1]} label={c.loopAlts[1]} /></div>
+          <div className="reveal">
+            <Eyebrow>{c.problem.eyebrow}</Eyebrow>
+            <h2 className="font-display text-[clamp(30px,4vw,48px)] leading-[1.1] mb-6 text-balance">{c.problem.title}</h2>
+            <p className="text-lg text-graphite leading-relaxed">{c.problem.body}</p>
+          </div>
         </div>
       </section>
 
-      <section id="how-it-works" className="cv-band">
-        <div className="campaign-shell campaign-section">
-          <div className="cv-section-head">
-            <p className="campaign-eyebrow">{copy.solutionEyebrow}</p>
-            <h2>{ai ? data.offerTitle : 'We connect them, so the work flows on its own.'}</h2>
-            <p className="campaign-prose">{data.offerBody}</p>
-          </div>
-          {!ai && <ToolsDiagram connected />}
-          <div className="campaign-benefits">
-            {data.benefits.map((benefit, i) => {
-              const BIcon = ai ? checks[i] : null
-              return <article key={benefit.title}>{BIcon ? <BIcon size={26} className="cv-benefit-icon" aria-hidden="true" /> : <span className="campaign-step-number">0{i + 1}</span>}<h3>{benefit.title}</h3><p>{benefit.body}</p></article>
-            })}
-          </div>
-          {ai ? (
-            <div className="cv-offer-card">
-              <div><p className="cv-pill">Free · 30 minutes</p><h3>{data.valueTitle}</h3><p>{data.valueBody}</p></div>
-              <ol className="cv-steps-mini"><li><span>1</span>We review your site together</li><li><span>2</span>We explain what AI can and can’t see</li><li><span>3</span>You get three next steps by email</li></ol>
+      {/* 02: what we do, with the third shot */}
+      <section className="py-20 md:py-28 bg-obsidian/[0.03] hairline-b">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          <div className="grid md:grid-cols-[1fr_0.8fr] gap-10 md:gap-16 items-center mb-14">
+            <div className="reveal">
+              <Eyebrow>{c.solution.eyebrow}</Eyebrow>
+              <h2 className="font-display text-[clamp(30px,4vw,48px)] leading-[1.1] mb-6 text-balance">{c.solution.title}</h2>
+              <p className="text-lg text-graphite leading-relaxed mb-8">{c.solution.body}</p>
+              <Cta>{c.cta}</Cta>
             </div>
-          ) : (
-            <div className="cv-offer-card">
-              <div><p className="cv-pill">Why so affordable?</p><h3>{data.valueTitle}</h3><p>{data.valueBody}</p></div>
-              <div className="cv-price"><span>Simple connections from</span><strong>£350</strong><small>total, including any applicable VAT</small><p>Fixed quote after a feasibility check. Third-party subscriptions are separate.</p></div>
-            </div>
-          )}
-          <p className="campaign-scope-note">
-            {ai
-              ? 'A focused introductory review. AI services choose what to include; we don’t guarantee rankings or recommendations. Any implementation work is quoted separately.'
-              : <>Migrations, complex custom systems, additional features and ongoing monitoring are quoted separately. <Link to="/pricing">Compare our wider services →</Link></>}
-          </p>
-          <div className="cv-center">{cta()}</div>
-        </div>
-      </section>
-
-      <section className="campaign-shell campaign-section cv-split cv-people">
-        <div>
-          <p className="campaign-eyebrow">03 / A small business, helping small businesses</p>
-          <h2>{copy.peopleTitle}</h2>
-          <p className="cv-stat">20+<span>years building CRM solutions</span></p>
-          <p className="campaign-prose">We’re a small team of developers and designers. You talk directly to the people who understand the problem, build the solution and explain how it works. No call centre, no jargon.</p>
-          <ol className="cv-checklist">
-            <li><Check size={18} aria-hidden="true" />A free 30-minute call to understand your business.</li>
-            <li><Check size={18} aria-hidden="true" />{ai ? 'Three clear, prioritised next steps.' : 'A fixed quote before you commit.'}</li>
-            <li><Check size={18} aria-hidden="true" />{ai ? 'Help implementing them, only if you want it.' : 'Built, tested and explained, with 14 days of fixes.'}</li>
-          </ol>
-          <Link className="cv-text-link" to="/about">Meet Promonet →</Link>
-        </div>
-        <figure className="cv-photo">{img(copy.peopleImage, copy.peopleAlt)}</figure>
-      </section>
-
-      <section className="cv-band cv-faq-band">
-        <div className="campaign-shell campaign-section cv-split">
-          <div><p className="campaign-eyebrow">Good questions</p><h2>A little clarity before we talk.</h2></div>
-          <div className="campaign-faq">{data.faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div>
-        </div>
-      </section>
-
-      <section id="request-call" className="campaign-request">
-        <div className="campaign-shell campaign-section cv-split">
-          <div>
-            <p className="campaign-eyebrow"><Clock3 size={16} aria-hidden="true" />Free / 30 minutes / Real people</p>
-            <h2>{copy.formTitle}</h2>
-            <p className="campaign-prose">{copy.formBody}</p>
-            <figure className="cv-photo cv-photo-small">{img(copy.formImage, copy.formAlt)}</figure>
-            <p className="campaign-request-note">A conversation with the people who do the work. No obligation to go further.</p>
+            <div className="reveal aspect-[4/5] rounded-[12px] overflow-hidden bg-obsidian/5 max-w-[420px] w-full justify-self-center"><LoopVideo shot={c.loops[2]} label={c.loopAlts[2]} /></div>
           </div>
-          <CampaignForm key={campaign} campaign={campaign} />
+          <div className="grid md:grid-cols-3 gap-5">
+            {c.solution.points.map((p, i) => (
+              <article key={p.title} className="reveal rounded-[8px] bg-white border border-obsidian/10 p-7">
+                <span className="font-mono text-[12px] text-voltage block mb-5">0{i + 1}</span>
+                <h3 className="font-display text-[22px] leading-snug mb-3">{p.title}</h3>
+                <p className="text-[15px] text-graphite leading-relaxed">{p.body}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
-    </div>
+
+      {/* Optional: preparing the business itself for a faster, AI-assisted way of working */}
+      {c.future && (
+        <section className="py-20 md:py-28 hairline-b">
+          <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-16 items-end mb-12 md:mb-14">
+              <div className="reveal">
+                <Eyebrow>{c.future.eyebrow}</Eyebrow>
+                <h2 className="font-display text-[clamp(30px,4vw,48px)] leading-[1.1] text-balance">{c.future.title}</h2>
+              </div>
+              <p className="reveal text-lg text-graphite leading-relaxed">{c.future.body}</p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {c.future.points.map((p, i) => {
+                const Icon = FUTURE_ICONS[i % FUTURE_ICONS.length]
+                return (
+                  <article key={p.title} className="reveal group relative flex flex-col rounded-[8px] bg-white border border-obsidian/10 p-7 overflow-hidden">
+                    <span className="absolute inset-x-0 top-0 h-[3px] bg-voltage origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" aria-hidden="true" />
+                    <span className="w-11 h-11 rounded-full bg-voltage/10 text-voltage grid place-items-center mb-6"><Icon size={20} aria-hidden="true" /></span>
+                    <h3 className="font-display text-[21px] leading-snug mb-3">{p.title}</h3>
+                    <p className="text-[15px] text-graphite leading-relaxed">{p.body}</p>
+                    {p.href && (
+                      <Link to={p.href} className="mt-auto pt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-voltage hover:underline underline-offset-4">
+                        {p.linkLabel ?? 'Find out more'}<ArrowRight size={15} aria-hidden="true" />
+                      </Link>
+                    )}
+                  </article>
+                )
+              })}
+            </div>
+            <div className="reveal mt-12 flex flex-col sm:flex-row sm:items-center gap-5">
+              <Cta>{c.cta}</Cta>
+              <p className="text-[15px] text-graphite">Start with the free 30-minute call. We’ll tell you what’s worth doing first.</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* who / why affordable */}
+      <section className="py-20 md:py-28 bg-obsidian text-bone">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <div className="reveal">
+            <Eyebrow light>{c.why.eyebrow}</Eyebrow>
+            <h2 className="font-display text-[clamp(30px,4vw,48px)] leading-[1.1] mb-6 text-balance">{c.why.title}</h2>
+            <p className="text-lg text-bone/75 leading-relaxed mb-8">{c.why.body}</p>
+            {id === 'connect_tools' ? (
+              <div className="rounded-[8px] bg-bone text-obsidian p-7 max-w-[440px]">
+                <p className="text-sm text-graphite font-semibold">One full integration · Fixed price</p>
+                <p className="font-display text-[84px] leading-none text-voltage my-2">£350</p>
+                <p className="text-sm text-graphite">Live in under a week from when we have access. Total, including any applicable VAT. Third-party subscriptions are separate.</p>
+              </div>
+            ) : (
+              <ul className="space-y-3 text-bone/85">
+                {['A free 30-minute call, on video or phone', 'Three prioritised next steps by email', 'Help implementing them, only if you want it'].map((s) => (
+                  <li key={s} className="flex gap-3 items-start"><Check className="text-imago shrink-0 mt-1" size={18} aria-hidden="true" />{s}</li>
+                ))}
+              </ul>
+            )}
+            <Link to="/about" className="inline-block mt-8 text-sm text-bone underline underline-offset-4 decoration-bone/40 hover:decoration-bone">Meet the Promonet team →</Link>
+          </div>
+          <div className="reveal aspect-[4/5] rounded-[12px] overflow-hidden"><LoopVideo shot={c.loops[3]} label={c.loopAlts[3]} /></div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 md:py-28 hairline-b">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10 grid md:grid-cols-[0.8fr_1.2fr] gap-10 md:gap-16">
+          <div className="reveal">
+            <Eyebrow>Good questions</Eyebrow>
+            <h2 className="font-display text-[clamp(30px,4vw,44px)] leading-[1.1] text-balance">A little clarity before we talk.</h2>
+          </div>
+          <div className="reveal">
+            {c.faqs.map((f) => (
+              <details key={f.question} className="group border-t border-obsidian/15 last:border-b py-5">
+                <summary className="cursor-pointer list-none flex justify-between gap-6 font-semibold text-[16px]">{f.question}<span aria-hidden="true" className="text-voltage group-open:rotate-45 transition-transform">+</span></summary>
+                <p className="pt-4 text-graphite leading-relaxed">{f.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sign-up */}
+      <section id="book" className="py-20 md:py-28 bg-voltage/[0.06] scroll-mt-20">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+          <div className="reveal">
+            <Eyebrow><Clock3 size={14} aria-hidden="true" />{c.bookLabel ?? 'Free · 30 minutes · Real people'}</Eyebrow>
+            <h2 className="font-display text-[clamp(30px,4vw,48px)] leading-[1.1] mb-6 text-balance">{c.form.title}</h2>
+            <p className="text-lg text-graphite leading-relaxed mb-8">{c.form.body}</p>
+            <div className="hidden md:block aspect-video rounded-[12px] overflow-hidden"><LoopVideo shot={c.loops[3]} label={c.loopAlts[3]} className="object-[50%_35%]" /></div>
+            <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.14em] text-graphite">Illustrative scenes · AI-generated people</p>
+          </div>
+          <div className="reveal"><CampaignForm campaign={c} /></div>
+        </div>
+      </section>
+    </>
   )
 }

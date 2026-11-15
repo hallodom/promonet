@@ -30,7 +30,7 @@ test('campaign emails include offer, tools, page and UTM attribution', async () 
   let mail
   const result = await sendContactEmail(integration, { env, sendEmail: async (value) => { mail = value; return { data: { id: 'mock-campaign' } } } })
   assert.equal(result.ok, true)
-  for (const value of ['£350 total', 'Enquiry form and CRM', '/connect-your-tools', 'facebook', 'social', 'connect_tools']) assert.ok(mail.text.includes(value))
+  for (const value of ['fixed £350', 'Enquiry form and CRM', '/connect-your-tools', 'facebook', 'social', 'connect_tools']) assert.ok(mail.text.includes(value))
   assert.equal(mail.tags[0].value, 'connect_tools')
 })
 

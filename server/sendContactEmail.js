@@ -1,8 +1,8 @@
 import { Resend } from 'resend'
 
 const CAMPAIGNS = {
-  ai_ready: { path: '/ai-ready', offer: 'Free 30-minute AI website visibility review + three prioritised next steps' },
-  connect_tools: { path: '/connect-your-tools', offer: 'Free 30-minute connection call; simple connections from £350 total' },
+  ai_ready: { path: '/ai-ready', offer: 'Free 30-minute AI evaluation call + three prioritised next steps' },
+  connect_tools: { path: '/connect-your-tools', offer: 'Free chat; one full integration, live in under a week, fixed £350' },
 }
 const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']
 

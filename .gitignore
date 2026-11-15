@@ -8,9 +8,8 @@ dist/
 tsconfig.tsbuildinfo
 .vite/
 dist-ssr/
-artifacts/campaign-qa/
-campaigns/production/*/edit-segment-*.mp4
-campaigns/production/*/edit-overlay-*.png
-campaigns/production/*/edit-segments.txt
 
-campaigns/v2/work/
+# Campaign media working files (sources re-downloadable via campaigns/generation-jobs.json)
+campaigns/source/
+campaigns/work/
+campaigns/output/

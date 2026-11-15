@@ -1,0 +1,155 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;800&family=Inter:wght@500;600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+</head><body style="margin:0;background:transparent"><canvas width="1080" height="1920"></canvas><script>
+// Transparent overlay layer for the campaign reels. The footage is composited underneath by ffmpeg,
+// so everything here is drawn on a clear canvas: wordmark, beat graphics, captions and the end card.
+const W=1080,H=1920,cv=document.querySelector('canvas'),c=cv.getContext('2d')
+const C={ink:'#0a0a0f',paper:'#f5f5f2',blue:'#2540e8',blueSoft:'#e8ecff',muted:'#5b6170',orange:'#e8431a',orangeSoft:'#fff0eb',green:'#127a55',greenSoft:'#e3f3ea',white:'#fff'}
+const SANS='Inter, Arial, sans-serif',SLAB="'Roboto Slab', Georgia, serif",MONO="'JetBrains Mono', monospace"
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),ease=x=>1-Math.pow(1-cl(x),3),back=x=>{x=cl(x);return 1+2.5*Math.pow(x-1,3)+1.5*Math.pow(x-1,2)}
+let T
+const font=(s,w=700,f=SANS)=>c.font=`${w} ${s}px ${f}`
+function txt(s,x,y,size,col=C.ink,w=700,f=SANS,align='left'){font(size,w,f);c.fillStyle=col;c.textAlign=align;c.textBaseline='top';c.fillText(s,x,y);c.textAlign='left'}
+function rr(x,y,w,h,r,fill,stroke,lw=3){c.beginPath();c.roundRect(x,y,w,h,r);if(fill){c.fillStyle=fill;c.fill()}if(stroke){c.strokeStyle=stroke;c.lineWidth=lw;c.stroke()}}
+function shadow(fn){c.save();c.shadowColor='#0a0a0f55';c.shadowBlur=40;c.shadowOffsetY=14;fn();c.restore()}
+function dot(x,y,r,f){c.beginPath();c.arc(x,y,r,0,7);c.fillStyle=f;c.fill()}
+function line(x1,y1,x2,y2,col,w=5,dash){c.save();c.strokeStyle=col;c.lineWidth=w;c.lineCap='round';if(dash)c.setLineDash(dash);c.beginPath();c.moveTo(x1,y1);c.lineTo(x2,y2);c.stroke();c.restore()}
+function tick(x,y,col,s=1){c.save();c.strokeStyle=col;c.lineWidth=6*s;c.lineCap=c.lineJoin='round';c.beginPath();c.moveTo(x,y+12*s);c.lineTo(x+10*s,y+22*s);c.lineTo(x+28*s,y);c.stroke();c.restore()}
+function inn(lt,at,fn,d=.45,rise=40){const p=ease((lt-at)/d);if(p<=0)return;c.save();c.globalAlpha*=p;c.translate(0,rise*(1-p));fn();c.restore()}
+function pop(lt,at,cx,cy,fn){const p=cl((lt-at)/.4);if(p<=0)return;const s=back(p);c.save();c.globalAlpha*=cl(p*2);c.translate(cx,cy);c.scale(s,s);c.translate(-cx,-cy);fn();c.restore()}
+function wrap(s,max,size){font(size,800);const out=[];let l='';for(const w of s.split(' ')){const t=l?l+' '+w:w;if(c.measureText(t).width>max&&l){out.push(l);l=w}else l=t}if(l)out.push(l);return out}
+function wordmark(x,y,size,col){font(size,800,SLAB);c.fillStyle=col;c.textBaseline='top';c.fillText('promonet',x,y);c.fillStyle='#ff4a1c';c.fillText('.',x+c.measureText('promonet').width,y)}
+function card(x,y,w,h,fn){shadow(()=>rr(x,y,w,h,30,C.white));fn()}
+
+// ---- beat graphics, all in the lower third (y 930–1300) so faces stay clear ----
+const G={
+  chat(lt){inn(lt,.2,()=>card(110,930,860,370,()=>{
+    dot(158,982,18,C.blue);dot(158,982,7,C.white);txt('AI assistant',190,968,28,C.ink,700)
+    const q='Can you recommend a bike repair shop near me?',n=Math.floor(q.length*cl((lt-.5)/1.4))
+    rr(300,1020,630,104,24,C.blue);const ls=['Can you recommend a bike','repair shop near me?'];let k=0;ls.forEach((l,i)=>{txt(q.slice(k,Math.min(n,k+l.length)),328,1036+i*40,32,C.white,600);k+=l.length+1})
+    inn(lt,2.2,()=>{for(let i=0;i<2;i++){const y=1146+i*60;rr(150,y,780,48,14,'#f2f4f8');rr(190,y+18,280-i*60,12,6,'#c8cfdb');txt('★★★★★',800,y+12,24,'#d99a12',700)}},.4,20)
+  }));pop(lt,3.6,540,1300,()=>{rr(250,1272,580,62,31,C.orangeSoft,C.orange);txt('Your business isn’t mentioned',540,1288,29,C.orange,800,SANS,'center')})},
+  scan(lt){inn(lt,.2,()=>card(110,960,860,300,()=>{
+    rr(110,960,860,60,30,'#edf0f5');rr(110,990,860,30,0,'#edf0f5');['#ff8c7c','#eac66a','#8cc8a5'].forEach((f,i)=>dot(150+i*26,990,7,f));txt('your-business.co.uk',250,976,24,C.muted,600)
+    txt('Bike repairs & servicing',150,1050,38,C.ink,800,SLAB);for(let i=0;i<2;i++)rr(150,1118+i*28,640-i*160,12,6,'#e2e6ee');rr(150,1186,200,48,12,C.blue)
+    const p=(lt%2.2)/2.2,sy=1020+p*230,g=c.createLinearGradient(0,sy-90,0,sy);g.addColorStop(0,'#2540e800');g.addColorStop(1,'#2540e833');c.fillStyle=g;c.fillRect(122,sy-90,836,90);line(122,sy,958,sy,C.blue,4)
+  }));pop(lt,.8,760,930,()=>{rr(600,902,330,58,29,C.ink);dot(634,931,8,lt%.8<.4?'#7cf0b2':'#3a8f68');txt('AI crawler visiting',654,915,24,C.white,700)})
+  ;['Services?','Opening hours?','Area covered?'].forEach((s,i)=>pop(lt,2.4+i*.45,0,0,()=>{const x=[640,420,170][i],y=[1040,1180,1270][i];rr(x,y,290,56,28,C.orangeSoft,C.orange);txt(s,x+145,y+13,26,C.orange,800,SANS,'center')}))},
+  checks(lt){const items=['Can AI bots access it?','Can they understand it?','Is your business clear?']
+    inn(lt,.2,()=>card(110,920,860,400,()=>{txt('YOUR FREE 30-MINUTE AI EVALUATION',150,958,22,C.blue,700,MONO)
+      items.forEach((s,i)=>inn(lt,1.2+i*.8,()=>{const y=1010+i*96;rr(150,y,780,80,18,'#f4f6fa');dot(198,y+40,24,lt>1.5+i*.8?C.greenSoft:'#e6e9ef');if(lt>1.5+i*.8)tick(185,y+29,C.green,.9);txt(s,240,y+22,34,C.ink,800)},.35,20))}))},
+  apart:tools.bind(null,'apart'),copying:tools.bind(null,'copying'),connect:tools.bind(null,'connect'),
+  price(lt){const p=T.price;inn(lt,p.at,()=>card(110,960,860,330,()=>{txt(p.eyebrow,150,996,20,C.blue,700,MONO);txt(p.label,150,1046,32,C.muted,600);txt(p.amount,150,1088,118,C.blue,800,SLAB);if(p.suffix)txt(p.suffix,440,1150,38,C.muted,600)
+    txt(p.note,150,1238,22,C.muted,500)}))},
+  none(){},
+}
+function icon(k,x,y){c.save();c.strokeStyle=C.ink;c.lineWidth=6;c.lineJoin=c.lineCap='round'
+  if(k===0){c.strokeRect(x-38,y-27,76,54);c.beginPath();c.moveTo(x-38,y-27);c.lineTo(x,y+5);c.lineTo(x+38,y-27);c.stroke()}
+  if(k===1){c.strokeRect(x-36,y-32,72,64);line(x-36,y-10,x+36,y-10,C.ink,5);line(x-36,y+11,x+36,y+11,C.ink,5);line(x-10,y-32,x-10,y+32,C.ink,5)}
+  if(k===2){c.beginPath();c.arc(x,y-14,16,0,7);c.stroke();c.beginPath();c.arc(x,y+34,30,Math.PI*1.12,Math.PI*1.88);c.stroke()}c.restore()}
+function tools(mode,lt){
+  const X=[110,440,770],Y=980,S=200,L=['Inbox','Spreadsheet','CRM']
+  L.forEach((l,i)=>pop(lt,.2+i*.15,X[i]+S/2,Y+S/2,()=>{shadow(()=>rr(X[i],Y,S,S,30,C.white));icon(i,X[i]+S/2,Y+82);txt(l,X[i]+S/2,Y+140,26,C.ink,700,SANS,'center')
+    if(mode==='connect'&&lt>1.6+i*.2){dot(X[i]+S-16,Y+16,22,C.green);tick(X[i]+S-29,Y+5,C.white,.75)}}))
+  for(let i=0;i<2;i++){const x1=X[i]+S+6,x2=X[i+1]-6,y=Y+S/2
+    if(mode==='connect'){const p=ease((lt-.6-i*.3)/.5);if(p>0)line(x1,y,x1+(x2-x1)*p,y,C.blue,10);if(p>=1)dot(x1+(x2-x1)*((lt*.9+i*.3)%1),y,8,C.white)}
+    else inn(lt,1+i*.2,()=>{line(x1,y,x2,y,'#ffffffcc',5,[10,10]);line((x1+x2)/2-12,y-12,(x1+x2)/2+12,y+12,C.orange,6);line((x1+x2)/2+12,y-12,(x1+x2)/2-12,y+12,C.orange,6)},.3,0)}
+  if(mode==='copying'&&lt>.6){const k=lt-.6,cyc=1.8,p=(k%cyc)/cyc,leg=p<.5?0:1,q=ease((p-leg*.5)/.42),x=X[leg]+S/2+(X[leg+1]-X[leg])*q,y=Y-50-Math.sin(q*Math.PI)*40
+    shadow(()=>rr(x-150,y-30,300,60,30,C.ink));txt('J. Smith · enquiry',x,y-14,25,C.white,700,SANS,'center')
+    pop(lt,1.2,540,Y+S+50,()=>{rr(355,Y+S+22,370,60,30,C.orange);txt(`Typed again ×${1+Math.floor(k/cyc)*2+(p>.5?1:0)}`,540,Y+S+38,28,C.white,800,SANS,'center')})}
+  if(mode==='apart')pop(lt,1.8,540,Y+S+52,()=>{rr(260,Y+S+22,560,62,31,C.orangeSoft,C.orange);txt('You become the connection',540,Y+S+38,28,C.orange,800,SANS,'center')})
+  if(mode==='connect')pop(lt,2.2,540,Y+S+52,()=>{rr(260,Y+S+22,560,62,31,C.greenSoft,C.green);txt('Connected · runs on its own',540,Y+S+38,28,C.green,800,SANS,'center')})
+}
+
+// ---- v2 motion graphics (opt-in with T.anim==='v2'; older reels keep the originals above) ----
+const HL=w=>!!T.highlight&&T.highlight.includes(w.toLowerCase().replace(/[^a-z0-9£]/g,''))
+function icon2(k,x,y){if(k<3)return icon(k,x,y);c.save();c.strokeStyle=C.ink;c.lineWidth=6;c.lineJoin=c.lineCap='round'
+  rr(x-36,y-30,72,64,10,null,C.ink,6);line(x-36,y-12,x+36,y-12,C.ink,5);line(x-18,y-40,x-18,y-24,C.ink,6);line(x+18,y-40,x+18,y-24,C.ink,6);dot(x-12,y+8,5,C.ink);dot(x+12,y+8,5,C.orange);c.restore()}
+function avatar(x,y,r,fill,you){c.save();c.beginPath();c.arc(x,y,r,0,7);c.fillStyle=fill;c.fill();c.lineWidth=6;c.strokeStyle=C.white;c.stroke();c.clip()
+  dot(x,y-r*.22,r*.32,'#ffffffe6');c.beginPath();c.arc(x,y+r*.78,r*.6,Math.PI,0);c.fillStyle='#ffffffe6';c.fill();c.restore()
+  if(you){font(22,800);rr(x-34,y+r-6,68,34,17,C.ink);txt('YOU',x,y+r-1,20,C.white,800,SANS,'center')}}
+const G2={
+  apart(lt){const X=[110,440,770],Y=980,S=200,L=['Inbox','Spreadsheet','CRM']
+    L.forEach((l,i)=>{const jx=Math.sin(lt*17+i*2)*3*cl(lt-.8),jy=Math.cos(lt*13+i)*2*cl(lt-.8);pop(lt,.2+i*.15,X[i]+S/2,Y+S/2,()=>{c.save();c.translate(jx,jy);shadow(()=>rr(X[i],Y,S,S,30,C.white));icon(i,X[i]+S/2,Y+82);txt(l,X[i]+S/2,Y+140,26,C.ink,700,SANS,'center');c.restore()})})
+    for(let i=0;i<2;i++){const x1=X[i]+S+6,x2=X[i+1]-6,y=Y+S/2,f=.45+.55*Math.abs(Math.sin(lt*7+i*1.7))
+      inn(lt,.9+i*.2,()=>{c.save();c.globalAlpha*=f;line(x1,y,x2,y,'#ff9c80',5,[10,10]);c.restore();const m=(x1+x2)/2,s=12*(1+.15*Math.sin(lt*6));line(m-s,y-s,m+s,y+s,C.orange,6);line(m+s,y-s,m-s,y+s,C.orange,6)},.3,0)}
+    pop(lt,1.6,540,Y+S+52,()=>{rr(260,Y+S+22,560,62,31,C.orangeSoft,C.orange);txt('You become the connection',540,Y+S+38,28,C.orange,800,SANS,'center')})},
+  copying:tools.bind(null,'copying'),
+  // "A small team of experts, working as part of your team": you, then three experts, then one team.
+  team(lt){const y=1240,m=ease((lt-3.2)/.7),P=[C.blue,'#ff4a1c','#4a7c59']
+    c.save();c.globalAlpha=m;shadow(()=>rr(150,y-100,780,200,100,C.white));c.restore()
+    inn(lt,.25,()=>{avatar(250+0*m,y,64,C.ink,true)},.5,0)
+    P.forEach((f,i)=>pop(lt,1.1+i*.18,0,0,()=>{const x0=560+i*120,x1=370+i*92;avatar(x0+(x1-x0)*m,y,58,f,false)}))
+    c.save();c.globalAlpha=1-m;inn(lt,1.6,()=>{rr(560,y+80,300,52,26,C.ink);txt('Promonet experts',710,y+92,24,C.white,700,SANS,'center')},.4,16);c.restore()
+    if(m>0){c.save();c.globalAlpha=m;txt('One team',660,y-44,46,C.ink,800,SLAB);txt('You + Promonet',662,y+14,26,C.muted,600);c.restore()
+      pop(lt,3.7,896,y-60,()=>{dot(896,y-60,26,C.green);tick(882,y-72,C.white,.8)})}
+    ;['Experts','Hands-on','Part of your team'].forEach((s,i)=>pop(lt,4.3+i*.3,0,0,()=>{font(24,800);const w=c.measureText(s).width+44,x=[170,380,600][i];rr(x,y-180,w,50,25,'#0a0a0fd9');txt(s,x+w/2,y-168,24,C.white,800,SANS,'center')}))},
+  // The payoff: four tools on a ring around Promonet, links draw in, pulses keep flowing, ticks pop.
+  connect(lt){const H={x:540,y:1090},T4=[[230,980,'Inbox'],[850,980,'Sheet'],[230,1200,'CRM'],[850,1200,'Calendar']],S=150
+    T4.forEach(([x,y],i)=>{const p=ease((lt-.6-i*.25)/.45);if(p<=0)return;line(H.x,H.y,H.x+(x-H.x)*p,H.y+(y-H.y)*p,C.blue,9)
+      if(p>=1)for(let k=0;k<2;k++){const q=((lt*.8+i*.23+k*.5)%1),d=k?q:1-q;dot(H.x+(x-H.x)*d,H.y+(y-H.y)*d,9,C.white)}})
+    pop(lt,.3,H.x,H.y,()=>{const r=62+4*Math.sin(lt*4);c.save();c.globalAlpha*=.25;dot(H.x,H.y,r+18,C.blue);c.restore();dot(H.x,H.y,r,C.blue);c.save();c.strokeStyle=C.white;c.lineWidth=7;c.lineCap='round';c.beginPath();c.moveTo(H.x-22,H.y+20);c.bezierCurveTo(H.x-6,H.y+16,H.x+8,H.y+4,H.x+12,H.y-14);c.stroke();c.restore();dot(H.x+22,H.y-22,10,'#ff4a1c')})
+    T4.forEach(([x,y,l],i)=>pop(lt,.15+i*.1,x,y,()=>{shadow(()=>rr(x-S/2,y-S/2,S,S,28,C.white));c.save();c.translate(x,y-14);c.scale(.8,.8);icon2(i,0,0);c.restore();txt(l,x,y+38,22,C.ink,700,SANS,'center')
+      if(lt>1.1+i*.25)pop(lt,1.1+i*.25,x+S/2-12,y-S/2+12,()=>{dot(x+S/2-12,y-S/2+12,20,C.green);tick(x+S/2-24,y-S/2+2,C.white,.7)})}))
+    pop(lt,2.4,540,1330,()=>{rr(250,1298,580,66,33,C.green);txt('All your tools, talking ✓',540,1315,30,C.white,800,SANS,'center')})},
+  // Fixed price: the amount rolls up to £350, a stamp lands, and a Mon→Fri bar fills to "live".
+  price(lt){const p=T.price,a=lt-p.at,num=+p.amount.replace(/\D/g,'')
+    inn(lt,p.at,()=>card(110,930,860,400,()=>{txt(p.eyebrow,150,966,20,C.blue,700,MONO);txt(p.label,150,1004,30,C.muted,600)
+      const n=Math.round(num*ease(a/1)),s=Math.min(1,a/1);txt('£'+n,150,1040,112,C.blue,800,SLAB)
+      pop(lt,p.at+1.05,790,1100,()=>{c.save();c.translate(790,1100);c.rotate(-.12);rr(-130,-38,260,76,16,null,C.orange,5);txt('FIXED PRICE',0,-18,32,C.orange,800,SANS,'center');c.restore()})
+      inn(lt,p.at+1.3,()=>{txt('Live in under a week',150,1172,30,C.ink,800);const D=['Mon','Tue','Wed','Thu','Fri'];D.forEach((d,i)=>{const x=150+i*156,f=cl((a-1.6-i*.28)/.28);rr(x,1222,144,18,9,'#e6e9ef');if(f>0)rr(x,1222,144*f,18,9,i===4?C.green:C.blue);txt(d,x,1250,20,C.muted,600)})
+        if(a>3.1)pop(lt,p.at+3.1,920,1180,()=>{dot(890,1186,22,C.green);tick(877,1175,C.white,.7)})},.4,16)
+      txt(p.note,150,1290,20,C.muted,500)}),.45,60)},
+}
+
+function captions(t){
+  const ch=T.chunks.find(k=>t>=k.start&&t<k.end+.1);if(!ch)return
+  const ls=wrap(ch.text,880,62),lh=76,ws=ch.text.split(' '),n=ws.length,span=Math.max(.3,(ch.end-ch.start)*.8),top=1560-ls.length*lh;let wi=0
+  ls.forEach((l,li)=>{font(62,800);const y=top+li*lh;c.save();c.globalAlpha=ease((t-ch.start)/.15);rr(84,y-8,c.measureText(l).width+40,lh+4,16,'#0a0a0fc4');c.restore();let x=104
+    for(const w of l.split(' ')){const p=ease((t-(ch.start+span*wi/n))/.15);c.save();c.globalAlpha=.3+.7*p;c.fillStyle=HL(w)?'#ff7a4d':C.white;c.textBaseline='top';c.fillText(w,x,y+(1-p)*8);c.restore();font(62,800);x+=c.measureText(w+' ').width;wi++}})
+}
+// Cinematic end card: footage stays full-bleed under a dark fade; type, one clean button and the badge sit on top.
+let badgeImg=null
+function endCardClean(t){const e=T.endCard,lt=t-T.endCardAt,p=ease(lt/.7);if(p<=0)return
+  c.save();c.globalAlpha=p;const g=c.createLinearGradient(0,560,0,1920);g.addColorStop(0,'#0a0a0f00');g.addColorStop(.38,'#0a0a0fc8');g.addColorStop(1,'#0a0a0ff2')
+  c.fillStyle='#0a0a0f30';c.fillRect(0,0,1080,1920);c.fillStyle=g;c.fillRect(0,0,1080,1920);c.restore()
+  inn(lt,.05,()=>wordmark(84,250,48,C.white),.5,0)
+  const v2=T.anim==='v2'
+  // v2: the badge spins in as it pops.
+  if(badgeImg)pop(lt,.35,906,330,()=>{c.save();if(v2){const r=(1-ease((lt-.35)/.6))*-0.9;c.translate(906,330);c.rotate(r);c.translate(-906,-330)}c.drawImage(badgeImg,816,240,180,180);c.restore()})
+  const tl=e.title.split('\n');font(100,800,SLAB);const ts=Math.min(100,Math.floor(100*912/Math.max(...tl.map(l=>c.measureText(l).width)))),lh=Math.round(ts*1.06)
+  const y0=1560-130-150-70-tl.length*lh-120
+  inn(lt,.15,()=>{c.fillStyle='#ff4a1c';c.fillRect(84,y0+10,44,4);txt(e.eyebrow,144,y0,24,'#f5f5f2cc',700,MONO)})
+  inn(lt,.25,()=>tl.forEach((l,i)=>txt(l,80,y0+52+i*lh,ts,C.white,800,SLAB)))
+  const sy=y0+52+tl.length*lh+22;inn(lt,.4,()=>txt(e.sub,84,sy,38,'#f5f5f2d9',500))
+  const by=sy+92;inn(lt,.55,()=>{font(42,700);const label=e.cta,tw=c.measureText(label).width,bw=tw+56+44+92,bh=116
+    // v2: the button breathes, a light shimmer sweeps across it, and the arrow nudges right.
+    const br=v2&&lt>1.3?1+.022*Math.sin((lt-1.3)*4.2):1,nud=v2?6*Math.max(0,Math.sin(lt*6)):0
+    c.save();c.translate(84+bw/2,by+bh/2);c.scale(br,br);c.translate(-(84+bw/2),-(by+bh/2))
+    shadow(()=>rr(84,by,bw,bh,bh/2,C.paper));txt(label,84+56,by+36,42,C.ink,700)
+    if(v2&&lt>1.1){const k=((lt-1.1)%1.6)/1.6,sx=84-200+(bw+400)*k;c.save();c.beginPath();c.roundRect(84,by,bw,bh,bh/2);c.clip();const sg=c.createLinearGradient(sx-90,0,sx+90,0);sg.addColorStop(0,'#ffffff00');sg.addColorStop(.5,'#ffffffcc');sg.addColorStop(1,'#ffffff00');c.fillStyle=sg;c.translate(sx,by+bh/2);c.rotate(.35);c.fillRect(-90,-140,180,280);c.restore()}
+    const cx=84+bw-58+nud,cy=by+bh/2;dot(cx-nud,cy,34,'#ff4a1c');c.save();c.strokeStyle=C.white;c.lineWidth=5;c.lineCap=c.lineJoin='round';c.beginPath();c.moveTo(cx-13,cy);c.lineTo(cx+13,cy);c.moveTo(cx+2,cy-11);c.lineTo(cx+13,cy);c.lineTo(cx+2,cy+11);c.stroke();c.restore();c.restore()})
+  inn(lt,.7,()=>txt(e.url,84,by+150,30,'#f5f5f2bf',600))
+  inn(lt,.8,()=>e.note.forEach((l,i)=>txt(l,84,by+212+i*28,20,'#f5f5f28c',500)),.5,0)}
+function endCard(t){if(T.endCard.style==='clean')return endCardClean(t);const e=T.endCard,p=ease((t-T.endCardAt)/.6);if(p<=0)return
+  c.save();c.translate(0,(1-p)*900);const y=840
+  c.fillStyle='#f5f5f2f2';c.beginPath();c.roundRect(40,y,1000,1000,44);c.fill()
+  txt(e.eyebrow,100,y+70,24,C.blue,700,MONO)
+  // Title shrinks to fit the card (880px) if a line is long.
+  const tl=e.title.split('\n');font(104,800,SLAB);const ts=Math.min(104,Math.floor(104*880/Math.max(...tl.map(l=>c.measureText(l).width)))),lh=Math.round(ts*1.08)
+  tl.forEach((l,i)=>txt(l,96,y+120+i*lh,ts,C.ink,800,SLAB))
+  const sy=y+120+tl.length*lh+28;txt(e.sub,100,sy,40,C.muted,600)
+  shadow(()=>rr(100,sy+90,880,120,60,C.blue));txt(e.cta+'  →',540,sy+128,44,C.white,800,SANS,'center');txt(e.url,540,sy+246,32,C.ink,700,SANS,'center')
+  e.note.forEach((l,i)=>txt(l,540,sy+310+i*32,21,C.muted,500,SANS,'center'));c.restore()}
+
+window.init=async tl=>{T=tl;badgeImg=null;if(tl.badge){badgeImg=new Image();badgeImg.src=tl.badge;await badgeImg.decode()}await document.fonts.ready;for(const f of['800 40px "Roboto Slab"','800 40px Inter','700 40px Inter','600 40px Inter','500 40px Inter','700 20px "JetBrains Mono"'])await document.fonts.load(f);return true}
+window.frame=t=>{c.clearRect(0,0,W,H)
+  // Gentle top/bottom scrims so white text reads over any footage.
+  let g=c.createLinearGradient(0,0,0,360);g.addColorStop(0,'#0a0a0f80');g.addColorStop(1,'#0a0a0f00');c.fillStyle=g;c.fillRect(0,0,W,360)
+  g=c.createLinearGradient(0,1150,0,H);g.addColorStop(0,'#0a0a0f00');g.addColorStop(1,'#0a0a0fb3');c.fillStyle=g;c.fillRect(0,1150,W,H-1150)
+  const s=T.shots.find(s=>t<s.end)||T.shots.at(-1)
+  if(t<T.endCardAt+(T.endCard.style==='clean'?.3:.6)){wordmark(84,250,48,C.white)
+    // v2: each beat's graphic fades out over the last 0.3s of its shot instead of vanishing on the cut.
+    const v2=T.anim==='v2',last=s===T.shots.at(-1);c.save();if(v2&&!last)c.globalAlpha=cl((s.end-t)/.3);((v2&&G2[s.overlay])||G[s.overlay])(t-s.start);c.restore();if(T.captions)captions(t)}
+  endCard(t);return cv.toDataURL('image/png').split(',')[1]}
+</script></body></html>

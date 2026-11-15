@@ -17,8 +17,8 @@ The site is available in English (default) and Spanish under /es paths.
 - [Connect your CRM](https://promonetconsulting.com/connect/crm): CRM → industry software matrix
 - [Pricing](https://promonetconsulting.com/pricing): Base £600/mo, Scale-up £1,500/mo, One-off £1,000
 - [About](https://promonetconsulting.com/about): Team background and why Promonet exists
-- [AI website visibility review](https://promonetconsulting.com/ai-ready): Free 30-minute review and three prioritised next steps
-- [Simple connection starter](https://promonetconsulting.com/connect-your-tools): From £350 total for a simple one-way workflow; fixed quote after feasibility check
+- [Are you AI ready?](https://promonetconsulting.com/ai-ready): Free 30-minute AI evaluation call and three prioritised next steps
+- [Connect your tools](https://promonetconsulting.com/connect-your-tools): One full integration between two tools, live in under a week, fixed £350
 
 ## Key pages (Spanish)
 - [Inicio](https://promonetconsulting.com/es)
