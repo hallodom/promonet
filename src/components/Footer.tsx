@@ -5,6 +5,7 @@ import LinkedInButton from '@/components/LinkedInButton'
 import SpamProtectedEmail from '@/components/SpamProtectedEmail'
 import { useLocale } from '@/i18n/LocaleContext'
 import { homeHashPath } from '@/i18n/paths'
+import { openCookieSettings } from '@/lib/consent'
 
 export default function Footer() {
   const { t, path, locale } = useLocale()
@@ -92,7 +93,16 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-obsidian/8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs font-mono text-graphite">
           <span suppressHydrationWarning>© {new Date().getFullYear()} Promonet</span>
-          <span>{t('footer.fixedPrice')}</span>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <span>{t('footer.fixedPrice')}</span>
+            <button
+              type="button"
+              onClick={openCookieSettings}
+              className="text-left text-graphite underline underline-offset-2 hover:text-obsidian transition-colors"
+            >
+              {t('footer.cookieSettings')}
+            </button>
+          </div>
         </div>
       </div>
     </footer>

@@ -6,6 +6,7 @@ import zlib from 'node:zlib'
 import { promisify } from 'node:util'
 import { fileURLToPath } from 'node:url'
 import { readJsonBody, sendContactEmail } from './sendContactEmail.js'
+import { handleConsentRequest } from './consentCookie.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.resolve(__dirname, '..')
@@ -295,6 +296,13 @@ const server = http.createServer(async (req, res) => {
 
     if (url.startsWith('/api/contact')) {
       return handleContact(req, res)
+    }
+    if (url === '/api/consent') {
+      const host = String(req.headers.host || '').split(':')[0].toLowerCase()
+      const proto = String(req.headers['x-forwarded-proto'] || '').split(',')[0].trim().toLowerCase()
+      const isLocal = !host || host === 'localhost' || host === '127.0.0.1' || host === '::1'
+      const result = await handleConsentRequest(req, { secure: proto === 'https' || !isLocal })
+      return send(req, res, result.status, '', result.headers)
     }
     if (url.startsWith('/api/')) {
       return sendJson(req, res, 404, { error: 'Not found' })

@@ -3,6 +3,7 @@ import Nav from './Nav'
 import Footer from './Footer'
 import ContactModal from './ContactModal'
 import ScrollToTop from './ScrollToTop'
+import CookieConsent from './CookieConsent'
 import { ContactProvider } from '@/lib/contact'
 import { LocaleProvider } from '@/i18n/LocaleContext'
 
@@ -18,6 +19,7 @@ export default function Layout() {
           </main>
           <Footer />
           <ContactModal />
+          <CookieConsent />
         </div>
       </ContactProvider>
     </LocaleProvider>

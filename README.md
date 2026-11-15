@@ -87,10 +87,18 @@ Per-route tags and JSON-LD (Organization/ProfessionalService, WebSite, FAQPage o
 
 | Var | Effect |
 | --- | --- |
-| `VITE_GA_MEASUREMENT_ID` | Adds the GA4 `gtag.js` snippet (must look like `G-XXXXXXXXXX`). SPA navigations are counted by GA4's enhanced measurement "page changes based on browser history events" (on by default) |
+| `VITE_GA_MEASUREMENT_ID` | Enables GA4 (must look like `G-XXXXXXXXXX`). `gtag.js` is loaded **only after the visitor accepts analytics cookies** (see below). SPA navigations are counted by GA4's enhanced measurement "page changes based on browser history events" (on by default) |
 | `VITE_GSC_VERIFICATION` | Adds `<meta name="google-site-verification">` (token or the full meta tag) |
 
 Nothing is emitted when they are unset. They are read by `vite build`, so on Sevalla they must be available at **build** time.
+
+### Cookie consent (UK GDPR / PECR)
+
+- `src/components/CookieConsent.tsx` shows a banner on first visit (every route, client-side only) with equal **Accept all** / **Reject non-essential** buttons and **Manage cookies** (strictly necessary: always on; analytics; marketing — all optional ones off by default). The footer's **Cookie settings** reopens the preferences.
+- The choice is stored in the strictly necessary first-party cookie `pn_consent` (`<version>.<analytics 0|1>.<marketing 0|1>.<timestamp>`, 12 months). `POST /api/consent` re-issues it from the server so Safari's 7-day cap on script-set cookies doesn't bring the banner back.
+- Bump `CONSENT_VERSION` in `src/lib/consent.ts` when the cookie policy or optional cookies change: everyone is asked again.
+- Anything non-essential (analytics, ad pixels, embeds that set cookies) must be loaded through `onConsentChange` / `hasConsent` from `src/lib/consent.ts` — see `src/lib/analytics.ts` for GA4. Marketing consent maps to Google's `ad_storage` / `ad_user_data` / `ad_personalization` signals.
+- Set `PRIVACY_POLICY_PATH` in `src/lib/consent.ts` once a privacy/cookie policy page exists, and the banner and preferences link to it.
 
 ## App catalog
 
