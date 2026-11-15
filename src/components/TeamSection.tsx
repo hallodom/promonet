@@ -1,40 +1,25 @@
 import { useT } from '@/i18n/LocaleContext'
 
-export default function TeamSection({ illustrated = false }: { illustrated?: boolean }) {
+export default function TeamSection() {
   const t = useT()
-  const image = illustrated
-    ? {
-        src: '/team-graphite.webp',
-        srcSet: '/team-graphite-640.webp 640w, /team-graphite.webp 1200w',
-        width: 1200,
-        height: 800,
-        alt: t('team.illustrationAlt'),
-      }
-    : {
-        src: '/team-office.jpg',
-        srcSet: '/team-office-640.webp 640w, /team-office-960.webp 960w, /team-office-1536.webp 1536w',
-        width: 1536,
-        height: 1024,
-        alt: t('team.imageAlt'),
-      }
 
   return (
     <section id="team" className="py-28 md:py-40 hairline-b">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         <div className="grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-20 items-center">
           <div className="reveal order-2 lg:order-1">
-            <div className={`relative overflow-hidden rounded-[4px] ${illustrated ? 'aspect-[3/2]' : 'aspect-[16/10]'}`}>
+            <div className="relative aspect-[16/10] overflow-hidden rounded-[4px]">
               <picture>
                 <source
                   type="image/webp"
-                  srcSet={image.srcSet}
+                  srcSet="/team-office-640.webp 640w, /team-office-960.webp 960w, /team-office-1536.webp 1536w"
                   sizes="(min-width: 1280px) 640px, (min-width: 1024px) 52vw, 100vw"
                 />
                 <img
-                  src={image.src}
-                  alt={image.alt}
-                  width={image.width}
-                  height={image.height}
+                  src="/team-office.jpg"
+                  alt={t('team.imageAlt')}
+                  width={1536}
+                  height={1024}
                   loading="lazy"
                   decoding="async"
                   className="absolute inset-0 h-full w-full object-cover object-center"

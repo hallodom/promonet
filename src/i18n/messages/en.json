@@ -79,8 +79,7 @@
     "p2Before": "We partner with you like your own team members. ",
     "p2Strong": "Side by side, as friends, until your software is talking",
     "p2After": " and your Sundays are free again.",
-    "imageAlt": "Promonet team that helps small businesses connect CRM and tools",
-    "illustrationAlt": "Black-and-white editorial pencil sketch of four smiling teammates gathered around a laptop"
+    "imageAlt": "Promonet team that helps small businesses connect CRM and tools"
   },
   "aiAgents": {
     "eyebrow": "Your AI team",
@@ -279,6 +278,7 @@
   "about": {
     "eyebrow": "About",
     "title": "Built by people who've lived the connectivity gap.",
+    "illustrationAlt": "Pencil sketch of four teammates mapping a workflow on a whiteboard",
     "p1": "We help small businesses connect CRM and industry tools at a low cost, with genuine human support — so owners stop re-typing data between systems.",
     "p2": "We're a small team of developers and designers. Over 20 years building some of the leading CRM solutions, we kept seeing the same thing: customers still struggling to connect their CRM to the rest of their tools — and their tools to each other, not just the CRM.",
     "storyTitle": "We saw a gap. Then we decided to fill it.",

@@ -79,8 +79,7 @@
     "p2Before": "Nos asociamos contigo como miembros de tu propio equipo. ",
     "p2Strong": "Codo a codo, como amigos, hasta que tu software se comunique",
     "p2After": " y tus domingos vuelvan a ser tuyos.",
-    "imageAlt": "Equipo de Promonet que ayuda a pequeñas empresas a conectar CRM y herramientas",
-    "illustrationAlt": "Ilustración editorial a lápiz en blanco y negro de cuatro compañeros sonriendo alrededor de un portátil"
+    "imageAlt": "Equipo de Promonet que ayuda a pequeñas empresas a conectar CRM y herramientas"
   },
   "aiAgents": {
     "eyebrow": "Tu equipo de IA",
@@ -279,6 +278,7 @@
   "about": {
     "eyebrow": "Nosotros",
     "title": "Hecho por gente que ha vivido el vacío de conectividad.",
+    "illustrationAlt": "Dibujo a lápiz de cuatro compañeros diseñando un flujo de trabajo en una pizarra",
     "p1": "Ayudamos a pymes a conectar CRM y herramientas sectoriales a bajo coste, con soporte humano de verdad — para que dejen de volver a teclear datos entre sistemas.",
     "p2": "Somos un equipo pequeño de desarrolladores y diseñadores. Tras más de 20 años construyendo algunas de las principales soluciones CRM, veíamos siempre lo mismo: clientes aún luchando por conectar su CRM con el resto de herramientas — y las herramientas entre sí, no solo con el CRM.",
     "storyTitle": "Vimos un vacío. Y decidimos llenarlo.",

@@ -20,22 +20,32 @@ export default function About() {
       />
 
       <section className="pt-28 md:pt-36 pb-16 md:pb-24 hairline-b">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10 grid gap-y-8 lg:grid-cols-[1.1fr_1fr] lg:gap-x-12">
           <div className="max-w-[780px] reveal">
             <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-voltage mb-8 flex items-center gap-3">
               <span className="w-6 h-px bg-voltage" />
               {t('about.eyebrow')}
             </div>
-            <h1 className="font-display text-[clamp(40px,7vw,88px)] leading-[1.02] tracking-[-0.02em] mb-8 text-balance">
+            <h1 className="font-display text-[clamp(40px,7vw,72px)] lg:text-[clamp(46px,4.8vw,68px)] leading-[1.02] tracking-[-0.02em] mb-8 text-balance">
               {t('about.title')}
             </h1>
-            <p className="text-lg md:text-xl leading-relaxed text-graphite max-w-[640px] mb-5">
+            <p className="text-lg md:text-xl leading-relaxed text-graphite max-w-[640px]">
               {t('about.p1')}
             </p>
-            <p className="text-lg md:text-xl leading-relaxed text-graphite max-w-[640px]">
-              {t('about.p2')}
-            </p>
           </div>
+          <img
+            src="/about-workflow-sketch.webp"
+            srcSet="/about-workflow-sketch-640.webp 640w, /about-workflow-sketch.webp 1200w"
+            sizes="(min-width: 1280px) 550px, (min-width: 1024px) 44vw, (min-width: 640px) 576px, calc(100vw - 48px)"
+            alt={t('about.illustrationAlt')}
+            width={1200}
+            height={800}
+            decoding="async"
+            className="w-full max-w-xl mx-auto lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:self-center"
+          />
+          <p className="text-lg md:text-xl leading-relaxed text-graphite max-w-[640px] lg:col-start-1 lg:row-start-2">
+            {t('about.p2')}
+          </p>
         </div>
       </section>
 
@@ -84,7 +94,7 @@ export default function About() {
         </div>
       </section>
 
-      <TeamSection illustrated />
+      <TeamSection />
 
       <section className="relative py-28 md:py-36 bg-obsidian text-bone overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-50" />
