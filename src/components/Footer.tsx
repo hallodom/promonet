@@ -5,6 +5,7 @@ import LinkedInButton from '@/components/LinkedInButton'
 import SpamProtectedEmail from '@/components/SpamProtectedEmail'
 import { useLocale } from '@/i18n/LocaleContext'
 import { homeHashPath } from '@/i18n/paths'
+import { openCookieSettings } from '@/lib/consent'
 
 export default function Footer() {
   const { t, path, locale } = useLocale()
@@ -34,9 +35,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-[11px] font-mono uppercase tracking-[0.18em] text-graphite mb-5">
+            <h2 className="text-[11px] font-mono uppercase tracking-[0.18em] text-graphite mb-5">
               {t('footer.connect')}
-            </h4>
+            </h2>
             <div className="flex flex-col gap-3 text-sm">
               <Link
                 to={path('connect')}
@@ -60,9 +61,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-[11px] font-mono uppercase tracking-[0.18em] text-graphite mb-5">
+            <h2 className="text-[11px] font-mono uppercase tracking-[0.18em] text-graphite mb-5">
               {t('footer.company')}
-            </h4>
+            </h2>
             <div className="flex flex-col gap-3 text-sm">
               <Link
                 to={path('about')}
@@ -80,9 +81,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-[11px] font-mono uppercase tracking-[0.18em] text-graphite mb-5">
+            <h2 className="text-[11px] font-mono uppercase tracking-[0.18em] text-graphite mb-5">
               {t('footer.contact')}
-            </h4>
+            </h2>
             <div className="flex flex-col gap-3 text-sm">
               <SpamProtectedEmail className="text-left text-graphite hover:text-obsidian transition-colors" />
               <LinkedInButton className="self-start px-4 py-2.5 rounded-[4px] bg-obsidian text-bone hover:bg-obsidian/90" />
@@ -91,8 +92,17 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-obsidian/8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs font-mono text-graphite">
-          <span>© {new Date().getFullYear()} Promonet</span>
-          <span>{t('footer.fixedPrice')}</span>
+          <span suppressHydrationWarning>© {new Date().getFullYear()} Promonet</span>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <span>{t('footer.fixedPrice')}</span>
+            <button
+              type="button"
+              onClick={openCookieSettings}
+              className="text-left text-graphite underline underline-offset-2 hover:text-obsidian transition-colors"
+            >
+              {t('footer.cookieSettings')}
+            </button>
+          </div>
         </div>
       </div>
     </footer>

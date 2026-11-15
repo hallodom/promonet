@@ -31,7 +31,28 @@
     "how": "How it works",
     "contact": "Contact",
     "linkedinAria": "Promonet on LinkedIn",
-    "fixedPrice": "Fixed-price CRM & tool integrations"
+    "fixedPrice": "Fixed-price CRM & tool integrations",
+    "cookieSettings": "Cookie settings"
+  },
+  "cookies": {
+    "title": "Cookies on Promonet",
+    "body": "We use strictly necessary cookies to make this site work. With your permission, we’d also like to use analytics cookies to understand how the site is used, and marketing cookies to measure our advertising. Nothing optional is set until you choose.",
+    "acceptAll": "Accept all",
+    "rejectAll": "Reject non-essential",
+    "manage": "Manage cookies",
+    "eyebrow": "Your privacy",
+    "prefsTitle": "Cookie preferences",
+    "prefsIntro": "Choose which optional cookies we can use. You can change your mind at any time from “Cookie settings” at the bottom of every page.",
+    "necessaryTitle": "Strictly necessary",
+    "necessaryBody": "Keep the site secure and working, and remember your cookie choice. These can’t be switched off.",
+    "alwaysOn": "Always on",
+    "analyticsTitle": "Analytics",
+    "analyticsBody": "Google Analytics tells us how visitors use the site, such as which pages they view, so we can improve it.",
+    "marketingTitle": "Marketing",
+    "marketingBody": "Help us measure our advertising (for example on Google or LinkedIn) and may be used to personalise ads you see elsewhere.",
+    "save": "Save my choices",
+    "close": "Close cookie preferences",
+    "policyLink": "Read our cookie policy"
   },
   "contact": {
     "eyebrow": "Contact us",
@@ -351,6 +372,12 @@
     "talkAbout": "Talk to us about connecting {{name}} to your CRM, accounting, booking software, or the rest of your stack.",
     "message": "I'd like to connect {{name}} to the rest of my tools.",
     "askAbout": "Ask about connecting {{name}}"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "seoTitle": "Page not found | Promonet",
+    "description": "That page could not be found.",
+    "body": "That page could not be found."
   },
   "seo": {
     "homeTitle": "Connect CRM & Business Tools for Small Businesses",

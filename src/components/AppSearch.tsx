@@ -56,6 +56,8 @@ export default function AppSearch({ variant = 'full', className }: Props) {
   }, [q, locale])
 
   const showEmpty = q.length >= 2 && results.length === 0
+  // The full variant sits directly under a page h1; the compact one inside an h2 section.
+  const Heading = variant === 'full' ? 'h2' : 'h3'
   const active = selected && (!q || scoreMatch(selected, q) > 0) ? selected : null
 
   return (
@@ -70,14 +72,14 @@ export default function AppSearch({ variant = 'full', className }: Props) {
         <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-voltage mb-3 block">
           {t('appSearch.eyebrow')}
         </span>
-        <h3
+        <Heading
           className={cn(
             'font-display tracking-[-0.015em] text-balance',
             variant === 'full' ? 'text-2xl md:text-3xl mb-2' : 'text-xl md:text-2xl mb-2',
           )}
         >
           {t('appSearch.title')}
-        </h3>
+        </Heading>
         <p className="text-sm text-graphite max-w-[520px]">
           {t('appSearch.subtitle')}
         </p>

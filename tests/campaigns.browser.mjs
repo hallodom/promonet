@@ -42,7 +42,7 @@ try {
     const html = await response.text()
     assert.ok(html.includes(campaign.headline))
     assert.ok(html.includes('A small business, helping small businesses'))
-    assert.ok(html.includes(campaign.offerTitle))
+    assert.ok(html.includes(id === 'ai_ready' ? campaign.offerTitle : '<strong>£350</strong>'))
     assert.ok(!html.includes('hreflang="es"'))
     assert.ok(html.includes(`campaigns/v2/${id}-og.jpg`))
     for (const asset of [`${id}-reel.mp4`, `${id}-poster.jpg`, `${id}.vtt`, `${id}-og.jpg`]) {

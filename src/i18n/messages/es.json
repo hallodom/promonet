@@ -31,7 +31,28 @@
     "how": "Cómo funciona",
     "contact": "Contacto",
     "linkedinAria": "Promonet en LinkedIn",
-    "fixedPrice": "Integraciones de CRM y herramientas a precio fijo"
+    "fixedPrice": "Integraciones de CRM y herramientas a precio fijo",
+    "cookieSettings": "Configuración de cookies"
+  },
+  "cookies": {
+    "title": "Cookies en Promonet",
+    "body": "Usamos cookies estrictamente necesarias para que el sitio funcione. Con tu permiso, también nos gustaría usar cookies analíticas para entender cómo se usa el sitio y cookies de marketing para medir nuestra publicidad. No se activa nada opcional hasta que elijas.",
+    "acceptAll": "Aceptar todas",
+    "rejectAll": "Rechazar las no esenciales",
+    "manage": "Gestionar cookies",
+    "eyebrow": "Tu privacidad",
+    "prefsTitle": "Preferencias de cookies",
+    "prefsIntro": "Elige qué cookies opcionales podemos usar. Puedes cambiar de opinión en cualquier momento desde «Configuración de cookies», al pie de cada página.",
+    "necessaryTitle": "Estrictamente necesarias",
+    "necessaryBody": "Mantienen el sitio seguro y en funcionamiento, y recuerdan tu elección sobre cookies. No se pueden desactivar.",
+    "alwaysOn": "Siempre activas",
+    "analyticsTitle": "Analíticas",
+    "analyticsBody": "Google Analytics nos indica cómo usan el sitio los visitantes, por ejemplo qué páginas ven, para poder mejorarlo.",
+    "marketingTitle": "Marketing",
+    "marketingBody": "Nos ayudan a medir nuestra publicidad (por ejemplo en Google o LinkedIn) y pueden usarse para personalizar los anuncios que ves en otros sitios.",
+    "save": "Guardar mis preferencias",
+    "close": "Cerrar preferencias de cookies",
+    "policyLink": "Lee nuestra política de cookies"
   },
   "contact": {
     "eyebrow": "Contáctanos",
@@ -351,6 +372,12 @@
     "talkAbout": "Háblanos de conectar {{name}} a tu CRM, contabilidad, reservas o el resto de tu stack.",
     "message": "Me gustaría conectar {{name}} al resto de mis herramientas.",
     "askAbout": "Preguntar por conectar {{name}}"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "seoTitle": "Página no encontrada | Promonet",
+    "description": "No se pudo encontrar esa página.",
+    "body": "No se pudo encontrar esa página."
   },
   "seo": {
     "homeTitle": "Conectar CRM y herramientas de negocio para pymes",

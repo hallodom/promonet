@@ -3,7 +3,13 @@ import { getPricing } from '@/data/pricing'
 import ContactButton from '@/components/ContactButton'
 import { useLocale } from '@/i18n/LocaleContext'
 
-export default function PricingTiers() {
+type Props = {
+  /** Heading level for tier names: h2 when the tiers sit directly under the page h1. */
+  headingLevel?: 'h2' | 'h3'
+}
+
+export default function PricingTiers({ headingLevel = 'h3' }: Props) {
+  const Heading = headingLevel
   const { locale, t } = useLocale()
   const pricing = getPricing(locale)
 
@@ -115,9 +121,9 @@ export default function PricingTiers() {
               <div className="p-6 md:p-10 grid md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-center">
                 <div>
                   <div className="flex flex-wrap items-baseline gap-3 mb-3">
-                    <h3 className="font-display text-3xl md:text-4xl tracking-[-0.02em]">
+                    <Heading className="font-display text-3xl md:text-4xl tracking-[-0.02em]">
                       {tier.name}
-                    </h3>
+                    </Heading>
                     {tier.price && (
                       <span className="font-mono text-lg text-graphite">{tier.price}</span>
                     )}

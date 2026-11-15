@@ -5,6 +5,7 @@ import Nav from './Nav'
 import Footer from './Footer'
 import ContactModal from './ContactModal'
 import ScrollToTop from './ScrollToTop'
+import CookieConsent from './CookieConsent'
 import { ContactProvider } from '@/lib/contact'
 import { LocaleProvider } from '@/i18n/LocaleContext'
 
@@ -22,6 +23,7 @@ export default function Layout() {
           </main>
           {campaign ? <footer className="campaign-shell campaign-footer"><span>Promonet Consulting · Small business helping small businesses.</span><Link to="/about">Meet the team →</Link></footer> : <Footer />}
           {!campaign && <ContactModal />}
+          <CookieConsent />
         </div>
       </ContactProvider>
     </LocaleProvider>

@@ -11,7 +11,7 @@ export default {
         voltage: '#2540E8',
         emergence: '#FF4A1C',
         bone: '#F5F5F2',
-        graphite: '#6B7280',
+        graphite: '#69707D',
         chrysalis: '#2D1B4E',
         imago: '#4A7C59',
       },

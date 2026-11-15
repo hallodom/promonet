@@ -5,36 +5,112 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { spawnSync } from 'node:child_process'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
-const MATRIX = JSON.parse(
-  fs.readFileSync(path.join(ROOT, 'src/data/matrix.json'), 'utf8'),
-)
+const readJson = (rel) => JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8'))
+const MATRIX = readJson('src/data/matrix.json')
+const MATRIX_ES = readJson('src/data/matrix.es.json')
+const MESSAGES = {
+  en: readJson('src/i18n/messages/en.json'),
+  es: readJson('src/i18n/messages/es.json'),
+}
 
 const SITE_URL = 'https://promonetconsulting.com'
-const CAMPAIGNS = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/campaigns.json'), 'utf8'))
+const CAMPAIGNS = Object.values(readJson('src/data/campaigns.json'))
+const SITE_NAME = 'Promonet'
 const CONTACT_EMAIL = 'hello@promonetconsulting.com'
 
 function connectSlug(crmSlug, verticalName) {
   return `${crmSlug}-to-${verticalName.replace(/\s+/g, '-')}-software`
 }
 
+// Same title derivation as listConnectPages() / pageTitle() in src/lib/seo.ts;
+// prerender.mjs fails the build if these drift from the rendered <title>s.
+function pageTitle(title) {
+  return title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`
+}
+
+function connectPageLinks(locale) {
+  const matrix = locale === 'es' ? MATRIX_ES : MATRIX
+  const template = MESSAGES[locale].seo.connectPageTitle
+  const base = locale === 'es' ? '/es/conectar' : '/connect'
+  const links = []
+  for (const crm of matrix.crms) {
+    for (const key of crm.verticals) {
+      const vertical = matrix.verticals[key]
+      if (!vertical) continue
+      const title = pageTitle(
+        template.replace(/\{\{(\w+)\}\}/g, (_, k) => ({ crm: crm.name, vertical: vertical.title })[k] ?? ''),
+      )
+      links.push(`- [${title}](${SITE_URL}${base}/${connectSlug(crm.slug, vertical.name)})`)
+    }
+  }
+  return links.join('\n')
+}
+
+// Source files whose last commit date is used as <lastmod> for each page type.
+const SHARED_SOURCES = [
+  'src/components',
+  'src/i18n',
+  'src/lib',
+  'src/App.tsx',
+  'index.html',
+]
+const PAGE_SOURCES = {
+  home: ['src/pages/Home.tsx', 'src/data/pricing.ts', 'public/illustrations'],
+  about: ['src/pages/About.tsx'],
+  pricing: ['src/pages/Pricing.tsx', 'src/data/pricing.ts'],
+  campaign: ['src/pages/Campaign.tsx', 'src/data/campaigns.json', 'src/campaigns.css', 'public/campaigns'],
+  connect: ['src/pages/ConnectIndex.tsx', 'src/data/apps.json'],
+  connectCrm: ['src/pages/ConnectCrm.tsx', 'src/data/matrix.json', 'src/data/matrix.es.json'],
+  connectPage: [
+    'src/pages/ConnectPage.tsx',
+    'src/data/matrix.json',
+    'src/data/matrix.es.json',
+    'src/data/product-websites.json',
+  ],
+}
+
+function gitLastModified(paths) {
+  const result = spawnSync('git', ['log', '-1', '--format=%cs', '--', ...paths], {
+    cwd: ROOT,
+    encoding: 'utf8',
+  })
+  const date = result.status === 0 ? result.stdout.trim() : ''
+  return /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : null
+}
+
+/** Previous <lastmod> values, used when the build runs without git history. */
+function previousLastmods() {
+  const map = new Map()
+  try {
+    const xml = fs.readFileSync(path.join(ROOT, 'public/sitemap.xml'), 'utf8')
+    for (const m of xml.matchAll(/<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g)) {
+      map.set(m[1], m[2])
+    }
+  } catch {
+    // no previous sitemap
+  }
+  return map
+}
+
 function listRoutes() {
   const enBase = [
-    ...Object.values(CAMPAIGNS).map(({ path }) => ({ path, priority: '0.8', changefreq: 'monthly' })),
-    { path: '/', priority: '1.0', changefreq: 'weekly' },
-    { path: '/about', priority: '0.6', changefreq: 'monthly' },
-    { path: '/pricing', priority: '0.8', changefreq: 'monthly' },
-    { path: '/connect', priority: '0.9', changefreq: 'weekly' },
-    { path: '/connect/crm', priority: '0.9', changefreq: 'weekly' },
+    { path: '/', priority: '1.0', changefreq: 'weekly', page: 'home' },
+    { path: '/about', priority: '0.6', changefreq: 'monthly', page: 'about' },
+    { path: '/pricing', priority: '0.8', changefreq: 'monthly', page: 'pricing' },
+    { path: '/connect', priority: '0.9', changefreq: 'weekly', page: 'connect' },
+    { path: '/connect/crm', priority: '0.9', changefreq: 'weekly', page: 'connectCrm' },
+    ...CAMPAIGNS.map(({ path }) => ({ path, priority: '0.8', changefreq: 'monthly', page: 'campaign' })),
   ]
   const esBase = [
-    { path: '/es', priority: '1.0', changefreq: 'weekly' },
-    { path: '/es/nosotros', priority: '0.6', changefreq: 'monthly' },
-    { path: '/es/precios', priority: '0.8', changefreq: 'monthly' },
-    { path: '/es/conectar', priority: '0.9', changefreq: 'weekly' },
-    { path: '/es/conectar/crm', priority: '0.9', changefreq: 'weekly' },
+    { path: '/es', priority: '1.0', changefreq: 'weekly', page: 'home' },
+    { path: '/es/nosotros', priority: '0.6', changefreq: 'monthly', page: 'about' },
+    { path: '/es/precios', priority: '0.8', changefreq: 'monthly', page: 'pricing' },
+    { path: '/es/conectar', priority: '0.9', changefreq: 'weekly', page: 'connect' },
+    { path: '/es/conectar/crm', priority: '0.9', changefreq: 'weekly', page: 'connectCrm' },
   ]
 
   const routes = [...enBase, ...esBase]
@@ -48,11 +124,13 @@ function listRoutes() {
         path: `/connect/${slug}`,
         priority: '0.7',
         changefreq: 'monthly',
+        page: 'connectPage',
       })
       routes.push({
         path: `/es/conectar/${slug}`,
         priority: '0.7',
         changefreq: 'monthly',
+        page: 'connectPage',
       })
     }
   }
@@ -69,10 +147,21 @@ function writeBoth(relPath, content) {
 }
 
 const routes = listRoutes()
-const today = new Date().toISOString().slice(0, 10)
+const previous = previousLastmods()
+const lastmodByPage = Object.fromEntries(
+  Object.entries(PAGE_SOURCES).map(([page, sources]) => [
+    page,
+    gitLastModified([...sources, ...SHARED_SOURCES]),
+  ]),
+)
+
+function lastmodFor(route) {
+  return lastmodByPage[route.page] ?? previous.get(`${SITE_URL}${route.path}`) ?? null
+}
 
 const robots = `User-agent: *
 Allow: /
+Disallow: /api/
 
 Sitemap: ${SITE_URL}/sitemap.xml
 `
@@ -104,19 +193,36 @@ ${routes
     const esPath = toEsPath(r.path)
     const enHref = `${SITE_URL}${enPath === '/' ? '/' : enPath}`
     const esHref = `${SITE_URL}${esPath}`
+    const lastmod = lastmodFor(r)
     return `  <url>
-    <loc>${SITE_URL}${loc}</loc>
-    <lastmod>${today}</lastmod>
+    <loc>${SITE_URL}${loc}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
     <changefreq>${r.changefreq}</changefreq>
     <priority>${r.priority}</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="${enHref}"/>
-${Object.values(CAMPAIGNS).some((campaign) => campaign.path === r.path) ? '' : `    <xhtml:link rel="alternate" hreflang="es" href="${esHref}"/>`}
+    <xhtml:link rel="alternate" hreflang="en" href="${enHref}"/>${r.page === 'campaign' ? '' : `\n    <xhtml:link rel="alternate" hreflang="es" href="${esHref}"/>`}
     <xhtml:link rel="alternate" hreflang="x-default" href="${enHref}"/>
   </url>`
   })
   .join('\n')}
 </urlset>
 `
+
+// AI-agent summary: quoted from the home page "Your AI team" section and AI FAQs
+// in en.json only, so it never says more than the visible site does.
+const AI = MESSAGES.en.aiAgents
+const AI_FAQS = MESSAGES.en.faqs.filter((f) => /\bAI\b/.test(f.question))
+const AI_COST_FAQ = AI_FAQS.find((f) => /cost/i.test(f.question))
+if (!AI_FAQS.length || !AI_COST_FAQ) throw new Error('en.json: AI-agent FAQs not found')
+const aiRoles = ['social', 'sales', 'content']
+  .map((key) => `- ${AI[`${key}Title`]}: ${AI[`${key}Body`]}`)
+  .join('\n')
+const aiSummary = `${AI.intro}
+
+${AI.body}
+
+Example roles:
+${aiRoles}
+
+${AI.note}`
 
 const crmList = MATRIX.crms.map((c) => c.name).join(', ')
 const verticalList = Object.values(MATRIX.verticals)
@@ -152,11 +258,24 @@ The site is available in English (default) and Spanish under /es paths.
 - [Precios](${SITE_URL}/es/precios)
 - [Nosotros](${SITE_URL}/es/nosotros)
 
+## AI agents
+Details: ${SITE_URL}/#ai-agents
+
+${aiSummary}
+
+${AI_COST_FAQ.question} ${AI_COST_FAQ.answer}
+
 ## CRMs we commonly connect
 ${crmList}
 
 ## Industry software areas
 ${verticalList}
+
+## Integration pages (English)
+${connectPageLinks('en')}
+
+## Integration pages (Spanish)
+${connectPageLinks('es')}
 
 ## Contact
 Email: ${CONTACT_EMAIL}
@@ -202,6 +321,20 @@ The free AI website visibility review covers public page access, readable conten
 1. Get-to-know-you call — map tools, sketch flows, fixed quote
 2. Build — typically two to four weeks with monitoring from day one
 3. Run — ongoing maintenance and 24-hour response on partnership plans
+
+## AI agents
+Details: ${SITE_URL}/#ai-agents
+
+${aiSummary}
+
+### AI-agent questions
+${AI_FAQS.map((f) => `Q: ${f.question}\nA: ${f.answer}`).join('\n\n')}
+
+## Integration pages (English)
+${connectPageLinks('en')}
+
+## Integration pages (Spanish)
+${connectPageLinks('es')}
 
 ## Important URLs
 ${routes.map((r) => `- ${SITE_URL}${r.path === '/' ? '/' : r.path}`).join('\n')}

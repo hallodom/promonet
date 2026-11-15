@@ -1,10 +1,11 @@
-import { defineConfig, loadEnv, type Plugin } from 'vite'
+import { defineConfig, loadEnv, type HtmlTagDescriptor, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import path from 'path'
 import {
   readJsonBody,
   sendContactEmail,
 } from './server/sendContactEmail.js'
+import { handleConsentRequest } from './server/consentCookie.js'
 
 function contactApiPlugin(env: Record<string, string>): Plugin {
   return {
@@ -15,6 +16,12 @@ function contactApiPlugin(env: Record<string, string>): Plugin {
       if (env.CONTACT_TO) process.env.CONTACT_TO = env.CONTACT_TO
 
       server.middlewares.use(async (req, res, next) => {
+        if (req.url === '/api/consent') {
+          const result = await handleConsentRequest(req, { secure: false })
+          res.writeHead(result.status, result.headers)
+          res.end()
+          return
+        }
         if (!req.url?.startsWith('/api/contact')) return next()
         if (req.method === 'OPTIONS') {
           res.statusCode = 204
@@ -53,10 +60,58 @@ function contactApiPlugin(env: Record<string, string>): Plugin {
   }
 }
 
-export default defineConfig(({ mode }) => {
+const GA_ID_PATTERN = /^G-[A-Z0-9]{4,20}$/
+const GSC_TOKEN_PATTERN = /^[A-Za-z0-9_-]{10,100}$/
+
+/**
+ * Injects the Search Console verification meta tag into index.html (and
+ * therefore every prerendered page) at build time, when its env var is set to a
+ * well-formed value.
+ *
+ * Google Analytics is NOT injected here: it sets cookies, so under PECR it may
+ * only load after opt-in. src/lib/analytics.ts loads it from
+ * VITE_GA_MEASUREMENT_ID once the visitor accepts analytics cookies.
+ */
+function siteTagsPlugin(env: Record<string, string>): Plugin {
+  const gaId = (env.VITE_GA_MEASUREMENT_ID || '').trim()
+  // Accept either the bare token or the full <meta ... content="..."> snippet.
+  const gscRaw = (env.VITE_GSC_VERIFICATION || '').trim()
+  const gscToken = gscRaw.match(/content=["']([^"']+)["']/)?.[1] ?? gscRaw
+
+  return {
+    name: 'site-tags',
+    apply: 'build',
+    transformIndexHtml() {
+      const tags: HtmlTagDescriptor[] = []
+
+      if (gscToken) {
+        if (GSC_TOKEN_PATTERN.test(gscToken)) {
+          tags.push({
+            tag: 'meta',
+            attrs: { name: 'google-site-verification', content: gscToken },
+            injectTo: 'head',
+          })
+        } else {
+          console.warn('[site-tags] VITE_GSC_VERIFICATION is not a valid token; skipped')
+        }
+      }
+
+      if (gaId && !GA_ID_PATTERN.test(gaId)) {
+        console.warn('[site-tags] VITE_GA_MEASUREMENT_ID must look like G-XXXXXXXXXX; analytics disabled')
+      }
+
+      return tags
+    },
+  }
+}
+
+export default defineConfig(({ mode, isSsrBuild }) => {
   const env = loadEnv(mode, process.cwd(), '')
   return {
-    plugins: [react(), contactApiPlugin(env)],
+    plugins: [react(), contactApiPlugin(env), siteTagsPlugin(env)],
+    build: {
+      copyPublicDir: !isSsrBuild,
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),

@@ -37,7 +37,7 @@ export default function ConnectCrm() {
           <h1 className="font-display text-[clamp(40px,7vw,88px)] leading-[1.02] tracking-[-0.02em] mb-8 max-w-[900px] text-balance reveal">
             {t('connectCrm.title')}
           </h1>
-          <p className="text-lg md:text-xl text-graphite max-w-[600px] reveal" style={{ transitionDelay: '100ms' }}>
+          <p className="text-lg md:text-xl text-graphite max-w-[600px] reveal" style={{ transitionDelay: '100ms', animationDelay: '100ms' }}>
             {t('connectCrm.body')}
           </p>
         </div>

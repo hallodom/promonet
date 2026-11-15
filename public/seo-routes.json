@@ -1,13 +1,13 @@
 {
   "siteUrl": "https://promonetconsulting.com",
   "routes": [
-    "/ai-ready",
-    "/connect-your-tools",
     "/",
     "/about",
     "/pricing",
     "/connect",
     "/connect/crm",
+    "/ai-ready",
+    "/connect-your-tools",
     "/es",
     "/es/nosotros",
     "/es/precios",

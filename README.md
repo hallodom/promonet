@@ -20,7 +20,7 @@ Marketing site for **Promonet** — CRM and tool integrations for small business
 | Obsidian | `#0A0A0F` | Dark surfaces / text |
 | Voltage | `#2540E8` | Primary CTAs, links |
 | Emergence | `#FF4A1C` | Accent (e.g. wordmark dot) |
-| Graphite | `#6B7280` | Secondary text |
+| Graphite | `#69707D` | Secondary text (nudged from `#6B7280` to meet WCAG AA 4.5:1 on Bone) |
 | Chrysalis | `#2D1B4E` | Brand-story moments |
 | Imago | `#4A7C59` | Success states |
 
@@ -51,7 +51,7 @@ npm run dev
 Dev server: **http://127.0.0.1:3010/** (`vite.config.ts`).
 
 ```bash
-npm run build       # apps catalog → tsc → vite → SEO files → prerender
+npm run build       # apps catalog → tsc → vite (client) → vite --ssr → SEO files → prerender
 npm start           # serve dist/ via server/index.js (PORT, default 8080)
 npm run preview     # vite preview only (no 404/SEO server behaviour)
 npm run build:apps  # refresh src/data/apps.json only
@@ -61,17 +61,46 @@ npm run build:apps  # refresh src/data/apps.json only
 
 Build emits (into `public/` and `dist/`):
 
-- `robots.txt` — allow all, points at sitemap
-- `sitemap.xml` — home, about, pricing, connect, CRM matrix, all connect slugs
+- `robots.txt` — allow all except `/api/`, points at sitemap
+- `sitemap.xml` — every route (EN + ES, with hreflang alternates). `<lastmod>` is the last git commit touching that page type's sources (falls back to the committed `public/sitemap.xml` when the build has no git history)
 - `llms.txt` / `llms-full.txt` — plain-text digests for AI crawlers
-- `seo-routes.json` — route list for prerender + server 404 checks
-- Prerendered HTML under `dist/<path>/index.html` (static SEO inject at build time)
+- `seo-routes.json` — the route list used by the prerender and by the server's 404 handling
 
-Per-route `<title>`, meta description, canonical, Open Graph/Twitter, and JSON-LD (Organization, WebSite, FAQ on home, OfferCatalog on pricing, BreadcrumbList on connect pages) via `src/components/Seo.tsx` + `src/lib/seo.ts`.
+### Prerendering (SSR at build time)
 
-Canonical site URL: `https://promonetconsulting.com`. Optional server env `CANONICAL_HOST=promonetconsulting.com` 301s other hosts (e.g. www) to the apex.
+`npm run build:ssr` bundles `src/entry-server.tsx`; `scripts/prerender.mjs` then renders every route in `seo-routes.json` with the real app and writes `dist/<path>/index.html` — full page markup plus that route's `<title>`, description, robots, canonical, hreflang, Open Graph/Twitter tags (lifted into `<head>`) and JSON-LD. The client hydrates that markup (`src/main.tsx`). It also writes `dist/404.html` and `dist/es/404.html`.
 
-Unknown `/connect/:slug` values return **HTTP 404** with `dist/404.html` (not SPA 200).
+The prerender fails the build if an indexable route is missing its title, description, canonical, OG/Twitter tags or JSON-LD, if a FAQPage question in JSON-LD is not visible on the page, or if `llms.txt` / `llms-full.txt` do not list every integration page with its rendered `<title>`. It warns on pages without exactly one `<h1>`, images without `alt`, or duplicate titles/descriptions.
+
+`.reveal` blocks only start hidden under `html.reveal-js`, which the inline script in `index.html` sets when JavaScript, IntersectionObserver and motion are all available, so the prerendered HTML is fully visible without JS. The first section of each page animates in with CSS alone (so it registers as LCP).
+
+Per-route tags and JSON-LD (Organization/ProfessionalService, WebSite, FAQPage on home — the first three integration FAQs only, OfferCatalog on pricing, BreadcrumbList on connect pages) come from `src/components/Seo.tsx` + `src/lib/seo.ts`.
+
+### Server behaviour (`server/index.js`)
+
+- Known routes (from `seo-routes.json`) → prerendered HTML, 200
+- Anything else → `404.html` (or `es/404.html` under `/es`) with a real **404** status
+- Trailing slashes, `/index.html` and duplicate slashes → **301** to the canonical path
+- `www.` → apex and `X-Forwarded-Proto: http` → https in one 301; set `CANONICAL_HOST` to also fold any other hostname. Requests on other hosts get `X-Robots-Tag: noindex`
+- Caching: `/assets/*` (hashed) 1 year immutable; HTML revalidates every request; `robots.txt`, `sitemap.xml`, `llms*.txt`, manifest 1 hour; other public files 1 day
+- Brotli/gzip for text responses, weak ETags + 304s
+
+### Analytics / Search Console (build-time env)
+
+| Var | Effect |
+| --- | --- |
+| `VITE_GA_MEASUREMENT_ID` | Enables GA4 (must look like `G-XXXXXXXXXX`). `gtag.js` is loaded **only after the visitor accepts analytics cookies** (see below). SPA navigations are counted by GA4's enhanced measurement "page changes based on browser history events" (on by default) |
+| `VITE_GSC_VERIFICATION` | Adds `<meta name="google-site-verification">` (token or the full meta tag) |
+
+Nothing is emitted when they are unset. They are read by `vite build`, so on Sevalla they must be available at **build** time.
+
+### Cookie consent (UK GDPR / PECR)
+
+- `src/components/CookieConsent.tsx` shows a banner on first visit (every route, client-side only) with equal **Accept all** / **Reject non-essential** buttons and **Manage cookies** (strictly necessary: always on; analytics; marketing — all optional ones off by default). The footer's **Cookie settings** reopens the preferences.
+- The choice is stored in the strictly necessary first-party cookie `pn_consent` (`<version>.<analytics 0|1>.<marketing 0|1>.<timestamp>`, 12 months). `POST /api/consent` re-issues it from the server so Safari's 7-day cap on script-set cookies doesn't bring the banner back.
+- Bump `CONSENT_VERSION` in `src/lib/consent.ts` when the cookie policy or optional cookies change: everyone is asked again.
+- Anything non-essential (analytics, ad pixels, embeds that set cookies) must be loaded through `onConsentChange` / `hasConsent` from `src/lib/consent.ts` — see `src/lib/analytics.ts` for GA4. Marketing consent maps to Google's `ad_storage` / `ad_user_data` / `ad_personalization` signals.
+- Set `PRIVACY_POLICY_PATH` in `src/lib/consent.ts` once a privacy/cookie policy page exists, and the banner and preferences link to it.
 
 ## App catalog
 
@@ -96,7 +125,8 @@ CRM × vertical copy lives in [`src/data/matrix.json`](src/data/matrix.json) (an
 - **Start command:** `npm start` (or `node server/index.js`)
 - **Node:** ≥ 20
 - Env vars for contact: `RESEND_API_KEY`, `RESEND_FROM`, `CONTACT_TO`
-- Optional: `CANONICAL_HOST=promonetconsulting.com`, `PORT`
+- Recommended: `CANONICAL_HOST=promonetconsulting.com`; optional `PORT`
+- Build-time: `VITE_GA_MEASUREMENT_ID`, `VITE_GSC_VERIFICATION` (see above)
 
 The Node server serves `dist/` (including prerendered routes and SEO files) and handles `/api/contact`.
 
