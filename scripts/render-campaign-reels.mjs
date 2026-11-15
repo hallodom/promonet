@@ -20,6 +20,11 @@ const MUTE_AMBIENT = new Set(['a1', 'a3']) // Veo added speech to these shots; k
 const CROP = { t1: 'crop=1080:1672:0:124,' } // Veo letterboxed t1; crop the black bars before it is scaled to fill.
 const args = process.argv.slice(2), preview = args.includes('--preview')
 const only = args.find((a) => a.startsWith('--campaign='))?.split('=')[1]
+// --format=4x5 renders a separate feed copy (1080×1350, the middle of the 9:16 frame) as {id}-reel-4x5.mp4
+// for Facebook/Instagram feed placements; the 9:16 reels and the landing-page assets are left untouched.
+const format = args.find((a) => a.startsWith('--format='))?.split('=')[1] ?? '9x16'
+if (!['9x16', '4x5'].includes(format)) throw new Error(`unknown --format=${format} (9x16 or 4x5)`)
+const F45 = format === '4x5', FRAME_H = F45 ? 1350 : 1920, CROP_Y = 285, SFX = F45 ? '-4x5' : ''
 const brief = JSON.parse(await fs.readFile(path.join(root, 'campaigns/brief.json'), 'utf8'))
 
 const END = {
@@ -109,7 +114,7 @@ function mix(tl, file) {
 
 function footageGraph(tl) {
   return tl.shots.map((s, i) => `[${i}:v]${CROP[s.clip] ?? ''}trim=0:${Math.min(CLIP, (s.end - s.start) / s.speed).toFixed(3)},setpts=(PTS-STARTPTS)*${s.speed.toFixed(4)},scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=${FPS},setsar=1,trim=0:${(s.end - s.start).toFixed(3)},setpts=PTS-STARTPTS[s${i}]`).join(';')
-    + `;${tl.shots.map((_, i) => `[s${i}]`).join('')}concat=n=${tl.shots.length}:v=1:a=0[bg]`
+    + `;${tl.shots.map((_, i) => `[s${i}]`).join('')}concat=n=${tl.shots.length}:v=1:a=0${F45 ? `[bg0];[bg0]crop=1080:${FRAME_H}:0:${CROP_Y}` : ''}[bg]`
 }
 
 const html = await fs.readFile(path.join(root, 'scripts/campaign-reel-overlay.html'))
@@ -120,11 +125,12 @@ server.listen(0, '127.0.0.1'); await once(server, 'listening')
 const browser = await chromium.launch()
 await Promise.all([work, out, path.join(pub, 'loops')].map((d) => fs.mkdir(d, { recursive: true })))
 try {
-  const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } })
+  const page = await browser.newPage({ viewport: { width: 1080, height: FRAME_H } })
   await page.goto(`http://127.0.0.1:${server.address().port}/`)
   for (const id of only ? [only] : Object.keys(brief.campaigns)) {
     const tl = timeline(id)
     await fs.writeFile(path.join(work, `${id}-timeline.json`), JSON.stringify(tl, null, 2))
+    if (F45) tl.format = '4x5'
     console.log(`${id}: ${tl.duration.toFixed(2)}s · shots ${tl.shots.map((s) => `${s.id} ${(s.end - s.start).toFixed(1)}s${s.speed > 1 ? ` (x${s.speed.toFixed(2)} slower)` : ''}`).join(', ')}`)
     const inputs = tl.shots.flatMap((s) => ['-i', path.join(src, `${s.clip}.mp4`)])
     if (preview) {
@@ -132,7 +138,7 @@ try {
       const times = [...tl.shots.map((s) => s.start + (s.end - s.start) * 0.62), tl.duration - 0.3]
       for (const [i, t] of times.entries()) {
         const ov = path.join(work, 'ov.png'); await fs.writeFile(ov, Buffer.from(await page.evaluate((t) => window.frame(t), t), 'base64'))
-        run('ffmpeg', ['-y', '-v', 'error', ...inputs, '-i', ov, '-filter_complex', `${footageGraph(tl)};[bg]trim=start=${t}:end=${t + 0.05},setpts=PTS-STARTPTS[f];[f][${tl.shots.length}:v]overlay[o]`, '-map', '[o]', '-frames:v', '1', path.join(out, `${id}-preview-${i + 1}.jpg`)])
+        run('ffmpeg', ['-y', '-v', 'error', ...inputs, '-i', ov, '-filter_complex', `${footageGraph(tl)};[bg]trim=start=${t}:end=${t + 0.05},setpts=PTS-STARTPTS[f];[f][${tl.shots.length}:v]overlay[o]`, '-map', '[o]', '-frames:v', '1', path.join(out, `${id}${SFX}-preview-${i + 1}.jpg`)])
       }
       console.log(`${id}: preview frames in campaigns/output`); continue
     }
@@ -143,7 +149,7 @@ try {
     await fs.writeFile(path.join(out, `${id}.vtt`), `WEBVTT\n\n${cues.map((k) => `${ts(k.start, '.')} --> ${ts(k.end, '.')}\n${k.text}\n`).join('\n')}`)
     for (const captions of [true, false]) {
       await page.evaluate((t) => window.init(t), { ...tl, captions, badge: await badgeData(tl) })
-      const target = path.join(out, `${id}-reel${captions ? '' : '-clean'}.mp4`)
+      const target = path.join(out, `${id}-reel${captions ? '' : '-clean'}${SFX}.mp4`)
       const ff = spawn('ffmpeg', ['-y', '-v', 'error', ...inputs, '-f', 'image2pipe', '-c:v', 'png', '-framerate', String(FPS), '-i', 'pipe:0', '-i', audio,
         '-filter_complex', `${footageGraph(tl)};[bg][${tl.shots.length}:v]overlay=format=auto:shortest=1,format=yuv420p[v]`, '-map', '[v]', '-map', `${tl.shots.length + 1}:a`,
         '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-r', String(FPS), '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-shortest', '-movflags', '+faststart', target], { stdio: ['pipe', 'ignore', 'pipe'] })
@@ -153,6 +159,7 @@ try {
       ff.stdin.end(); const [code] = await done; if (code !== 0) throw new Error(err)
       console.log(`${id}: wrote ${path.relative(root, target)}`)
     }
+    if (F45) continue // the feed copy is for ads only; the site keeps using the 9:16 reel
     // Landing-page assets: 720p reel with sound, poster from the moving hook shot, captions, and silent loops per shot.
     const reel = path.join(out, `${id}-reel.mp4`)
     run('ffmpeg', ['-y', '-v', 'error', '-i', reel, '-vf', 'scale=720:1280', '-c:v', 'libx264', '-preset', 'slow', '-crf', '25', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', path.join(pub, `${id}-reel.mp4`)])
