@@ -77,6 +77,20 @@
         { "id": "c3", "clip": "b3", "vo": "Promonet will help you connect them, so the work flows on its own.", "overlay": "connect" },
         { "id": "c4", "clip": "b4", "vo": "Fixed price, three hundred pounds. Book your free call.", "overlay": "price" }
       ]
+    },
+    "connect_tools_30s": {
+      "note": "Second feedback round (~30s): small expert team working as part of yours, all tools finally talking, one full integration live in under a week, fixed £350, 'Book your free chat'. No mention of AI. The blue-jumper consultant (b3) is replaced by a new Promonet expert in t1/t2. d5-vo.wav is d5only-vo.wav + 0.3s + d6-vo.wav.",
+      "path": "/connect-your-tools",
+      "url": "promonetconsulting.com/connect-your-tools",
+      "shots": [
+        { "id": "d1", "clip": "b1", "vo": "Do your tools talk to each other?", "overlay": "apart" },
+        { "id": "d2", "clip": "b2", "vo": "Or are you copying the same details, again and again?", "overlay": "copying" },
+        { "id": "d3", "clip": "t1", "vo": "Promonet is a small team of experts. We work with you, as part of your team.", "overlay": "team",
+          "prompt": "Garage office covered in garden-design drawings. The British-Indian garden designer (early fifties, short greying hair, neat grey beard, olive-green quarter-zip) at his desk; beside him a woman in her late thirties with dark curly hair tied back, rust-coloured cardigan over a white t-shirt, calmly sketches three linked boxes in his notebook while he leans in and relaxes into a quiet half-smile. Candid: nobody talks, lips closed, nobody looks at camera. Warm side-window daylight, slow handheld push-in." },
+        { "id": "d4", "clip": "t2", "vo": "We get all your tools finally talking to each other.", "overlay": "connect", "minDur": 4.4,
+          "prompt": "Side view of the same woman (late thirties, dark curly hair tied back, rust cardigan, white t-shirt) at a tidy wooden desk by a window, typing on a laptop angled away, glancing at a notebook sketch of linked boxes, tapping the trackpad, then sitting back with a small satisfied breath. Candid: no talking, never looks at camera. Plants and bookshelf out of focus, gentle lateral slide." },
+        { "id": "d5", "clip": "b4", "vo": "One full integration, working in under a week, for a fixed three hundred and fifty pounds. Book your free chat, and we'll do the rest.", "overlay": "price" }
+      ]
     }
   },
   "claims": [

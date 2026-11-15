@@ -70,7 +70,6 @@ export function ReelPlayer({ campaign, label, className }: { campaign: string; l
           {sound ? <><VolumeX size={16} aria-hidden="true" />Mute</> : <><Volume2 size={16} aria-hidden="true" />Play with sound</>}
         </button>
       </div>
-      <figcaption className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.14em] text-graphite">Illustrative scenes · AI-generated people</figcaption>
     </figure>
   )
 }

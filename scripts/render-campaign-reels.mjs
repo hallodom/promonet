@@ -17,6 +17,7 @@ const out = path.join(root, 'campaigns/output')
 const pub = path.join(root, 'public/campaigns')
 const FPS = 30, LEAD = 0.4, GAP = 0.35, CLIP = 8
 const MUTE_AMBIENT = new Set(['a1', 'a3']) // Veo added speech to these shots; keep only the voiceover.
+const CROP = { t1: 'crop=1080:1672:0:124,' } // Veo letterboxed t1; crop the black bars before it is scaled to fill.
 const args = process.argv.slice(2), preview = args.includes('--preview')
 const only = args.find((a) => a.startsWith('--campaign='))?.split('=')[1]
 const brief = JSON.parse(await fs.readFile(path.join(root, 'campaigns/brief.json'), 'utf8'))
@@ -35,6 +36,15 @@ const END = {
     mix: { music: 0.65, duckRatio: 3, duckThreshold: 0.05, fadeOut: 0.8 }, // music ~4.5 dB under the voice (was ~9)
     price: { at: 0.8, eyebrow: 'ONE SIMPLE CONNECTION', label: 'Fixed price', amount: '£300', suffix: '', note: 'Third-party subscriptions separate' },
     card: { style: 'clean', badge: 'public/badges/uk-small-business-2026.png', eyebrow: 'REAL PEOPLE · HANDS-ON HELP', title: 'Promonet will help\nyou connect.', sub: 'One simple connection. Fixed price £300.', cta: 'Book your free call', url: 'promonetconsulting.com/connect-your-tools', note: ['Fixed price for one simple connection. Third-party costs separate.', 'Illustrative scenes; people shown are digitally generated.'] },
+  },
+  // Second feedback round: ~30s, small expert team, all tools talking, £350 fixed, live in under a week,
+  // "Book your free chat", livelier graphics (anim v2). A copy; the reels above are unchanged.
+  connect_tools_30s: {
+    hold: 1.8, maxLen: 32, variant: true, anim: 'v2', music: 'connect_tools', endCardPhrase: 'Book your free chat',
+    mix: { music: 0.65, duckRatio: 3, duckThreshold: 0.05, fadeOut: 0.8 },
+    highlight: ['talking', 'finally', 'experts', 'team', 'week', '£350', 'free', 'chat'],
+    price: { at: 0.3, eyebrow: 'ONE FULL INTEGRATION', label: 'Fixed price', amount: '£350', suffix: '', note: 'Incl. any VAT · third-party subscriptions separate' },
+    card: { style: 'clean', badge: 'public/badges/uk-small-business-2026.png', eyebrow: 'SMALL EXPERT TEAM · PART OF YOURS', title: 'Get your tools\ntalking.', sub: 'One full integration, live in under a week. Fixed £350.', cta: 'Book your free chat', url: 'promonetconsulting.com/connect-your-tools', note: ['£350 incl. any VAT for one integration. Third-party costs separate.', 'Illustrative scenes; people shown are digitally generated.'] },
   },
 }
 const clipOf = (s) => s.clip ?? s.id
@@ -69,6 +79,8 @@ function timeline(id) {
     const f = tightVo(s.id), d = dur(f), last = i === camp.shots.length - 1
     // The last shot holds for the end card; a variant with a target length stretches that hold to hit it exactly.
     let stop = voAt + d + (last ? end.hold ?? end.minHold : GAP)
+    if (s.minDur) stop = Math.max(stop, start + s.minDur) // let a shot's graphic play out after a short line
+    if (last && end.maxLen && stop > end.maxLen) throw new Error(`${id}: ${stop.toFixed(2)}s is over the ${end.maxLen}s limit`)
     if (last && end.target) { if (end.target < stop) throw new Error(`${id}: voiceover needs ${stop.toFixed(2)}s, over the ${end.target}s target`); stop = end.target }
     shots.push({ id: s.id, clip: clipOf(s), overlay: s.overlay, start, end: stop, speed: Math.max(1, (stop - start) / CLIP) })
     vo.push({ file: f, at: voAt, text: s.vo, d, ps: pauses(f) })
@@ -79,7 +91,7 @@ function timeline(id) {
   // Optionally bring the end card in as the spoken call to action starts.
   const ctaChunk = end.endCardPhrase && all.find((k) => k.text.startsWith(end.endCardPhrase))
   const endCardAt = ctaChunk ? ctaChunk.start - 0.1 : lastVo.at + lastVo.d + 0.2
-  return { id, shots, vo, chunks: all, duration: shots.at(-1).end, endCardAt, endCard: end.card, price: end.price, music: end.music ?? id, mixOpts: { music: 0.4, duckRatio: 5, duckThreshold: 0.04, fadeOut: 1.6, ...end.mix }, variant: !!end.variant }
+  return { id, shots, vo, chunks: all, duration: shots.at(-1).end, endCardAt, endCard: end.card, price: end.price, music: end.music ?? id, mixOpts: { music: 0.4, duckRatio: 5, duckThreshold: 0.04, fadeOut: 1.6, ...end.mix }, variant: !!end.variant, anim: end.anim ?? 'v1', highlight: end.highlight ?? null }
 }
 
 // Ambient (Veo) + voiceover + ducked music, loudness-normalised.
@@ -96,7 +108,7 @@ function mix(tl, file) {
 }
 
 function footageGraph(tl) {
-  return tl.shots.map((s, i) => `[${i}:v]trim=0:${Math.min(CLIP, (s.end - s.start) / s.speed).toFixed(3)},setpts=(PTS-STARTPTS)*${s.speed.toFixed(4)},scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=${FPS},setsar=1,trim=0:${(s.end - s.start).toFixed(3)},setpts=PTS-STARTPTS[s${i}]`).join(';')
+  return tl.shots.map((s, i) => `[${i}:v]${CROP[s.clip] ?? ''}trim=0:${Math.min(CLIP, (s.end - s.start) / s.speed).toFixed(3)},setpts=(PTS-STARTPTS)*${s.speed.toFixed(4)},scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=${FPS},setsar=1,trim=0:${(s.end - s.start).toFixed(3)},setpts=PTS-STARTPTS[s${i}]`).join(';')
     + `;${tl.shots.map((_, i) => `[s${i}]`).join('')}concat=n=${tl.shots.length}:v=1:a=0[bg]`
 }
 
@@ -146,8 +158,13 @@ try {
     run('ffmpeg', ['-y', '-v', 'error', '-i', reel, '-vf', 'scale=720:1280', '-c:v', 'libx264', '-preset', 'slow', '-crf', '25', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', path.join(pub, `${id}-reel.mp4`)])
     run('ffmpeg', ['-y', '-v', 'error', '-ss', '1.6', '-i', path.join(out, `${id}-reel-clean.mp4`), '-frames:v', '1', '-vf', 'scale=720:1280', '-q:v', '4', path.join(pub, `${id}-poster.jpg`)])
     await fs.copyFile(path.join(out, `${id}.vtt`), path.join(pub, `${id}.vtt`))
-    if (tl.variant) continue // variants reuse the original shots, so no new page loops
-    for (const s of tl.shots) run('ffmpeg', ['-y', '-v', 'error', '-i', path.join(src, `${s.id}.mp4`), '-an', '-t', '7.5', '-vf', 'scale=720:1280,fps=24', '-c:v', 'libx264', '-preset', 'slow', '-crf', '27', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', path.join(pub, 'loops', `${s.id}.mp4`)])
-    for (const s of tl.shots) run('ffmpeg', ['-y', '-v', 'error', '-ss', '1', '-i', path.join(src, `${s.id}.mp4`), '-frames:v', '1', '-vf', 'scale=720:1280', '-q:v', '5', path.join(pub, 'loops', `${s.id}.jpg`)])
+    // Silent page loops per clip. Variants only add loops for clips that don't have one yet (e.g. new footage).
+    for (const clip of new Set(tl.shots.map((s) => s.clip))) {
+      const dest = path.join(pub, 'loops', `${clip}.mp4`)
+      if (tl.variant && await fs.access(dest).then(() => true, () => false)) continue
+      const vf = `${CROP[clip] ?? ''}scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280`
+      run('ffmpeg', ['-y', '-v', 'error', '-i', path.join(src, `${clip}.mp4`), '-an', '-t', '7.5', '-vf', `${vf},fps=24`, '-c:v', 'libx264', '-preset', 'slow', '-crf', '27', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', dest])
+      run('ffmpeg', ['-y', '-v', 'error', '-ss', '1', '-i', path.join(src, `${clip}.mp4`), '-frames:v', '1', '-vf', vf, '-q:v', '5', path.join(pub, 'loops', `${clip}.jpg`)])
+    }
   }
 } finally { await browser.close(); server.close() }

@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Clock3 } from 'lucide-react'
+import { ArrowRight, Cable, Check, Clock3, ShieldCheck, Sparkles, Workflow } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Seo from '@/components/Seo'
 import CampaignForm from '@/components/CampaignForm'
@@ -13,6 +13,9 @@ const Eyebrow = ({ children, light = false }: { children: React.ReactNode; light
     {children}
   </div>
 )
+
+// Icons for the "future" points, in order: workflows, AI, connected tools, control.
+const FUTURE_ICONS = [Workflow, Sparkles, Cable, ShieldCheck]
 
 const Cta = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
   <a href="#book" className={`inline-flex items-center gap-3 rounded-full bg-voltage text-bone px-6 py-4 text-[15px] font-semibold shadow-[0_12px_30px_rgba(37,64,232,0.35)] hover:bg-voltage/90 transition-colors ${className}`}>
@@ -38,7 +41,7 @@ export default function Campaign({ id }: { id: CampaignId }) {
         </div>
         <div className="relative max-w-[1280px] mx-auto px-6 md:px-10 py-16 md:py-24 grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center">
           <div className="reveal">
-            <Eyebrow light>{c.eyebrow}</Eyebrow>
+            {c.eyebrow && <Eyebrow light>{c.eyebrow}</Eyebrow>}
             <h1 className="font-display font-display-tight text-[clamp(42px,6.4vw,84px)] leading-[1.02] mb-6 text-balance">{c.headline}</h1>
             <p className="text-lg md:text-xl text-bone/80 leading-relaxed max-w-[580px] mb-9">{c.intro}</p>
             <Cta>{c.cta}</Cta>
@@ -49,7 +52,7 @@ export default function Campaign({ id }: { id: CampaignId }) {
               <li><strong className="block text-bone text-[15px] mb-1">Small business</strong>helping small businesses</li>
             </ul>
           </div>
-          <ReelPlayer campaign={id} label={c.reelLabel} className="reveal justify-self-center" />
+          <ReelPlayer campaign={c.reel ?? id}label={c.reelLabel} className="reveal justify-self-center" />
         </div>
       </section>
 
@@ -89,7 +92,44 @@ export default function Campaign({ id }: { id: CampaignId }) {
         </div>
       </section>
 
-      {/* 03: who / why affordable */}
+      {/* Optional: preparing the business itself for a faster, AI-assisted way of working */}
+      {c.future && (
+        <section className="py-20 md:py-28 hairline-b">
+          <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-16 items-end mb-12 md:mb-14">
+              <div className="reveal">
+                <Eyebrow>{c.future.eyebrow}</Eyebrow>
+                <h2 className="font-display text-[clamp(30px,4vw,48px)] leading-[1.1] text-balance">{c.future.title}</h2>
+              </div>
+              <p className="reveal text-lg text-graphite leading-relaxed">{c.future.body}</p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {c.future.points.map((p, i) => {
+                const Icon = FUTURE_ICONS[i % FUTURE_ICONS.length]
+                return (
+                  <article key={p.title} className="reveal group relative flex flex-col rounded-[8px] bg-white border border-obsidian/10 p-7 overflow-hidden">
+                    <span className="absolute inset-x-0 top-0 h-[3px] bg-voltage origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" aria-hidden="true" />
+                    <span className="w-11 h-11 rounded-full bg-voltage/10 text-voltage grid place-items-center mb-6"><Icon size={20} aria-hidden="true" /></span>
+                    <h3 className="font-display text-[21px] leading-snug mb-3">{p.title}</h3>
+                    <p className="text-[15px] text-graphite leading-relaxed">{p.body}</p>
+                    {p.href && (
+                      <Link to={p.href} className="mt-auto pt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-voltage hover:underline underline-offset-4">
+                        {p.linkLabel ?? 'Find out more'}<ArrowRight size={15} aria-hidden="true" />
+                      </Link>
+                    )}
+                  </article>
+                )
+              })}
+            </div>
+            <div className="reveal mt-12 flex flex-col sm:flex-row sm:items-center gap-5">
+              <Cta>{c.cta}</Cta>
+              <p className="text-[15px] text-graphite">Start with the free 30-minute call. We’ll tell you what’s worth doing first.</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* who / why affordable */}
       <section className="py-20 md:py-28 bg-obsidian text-bone">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div className="reveal">
@@ -98,9 +138,9 @@ export default function Campaign({ id }: { id: CampaignId }) {
             <p className="text-lg text-bone/75 leading-relaxed mb-8">{c.why.body}</p>
             {id === 'connect_tools' ? (
               <div className="rounded-[8px] bg-bone text-obsidian p-7 max-w-[440px]">
-                <p className="text-sm text-graphite font-semibold">Simple connections from</p>
+                <p className="text-sm text-graphite font-semibold">One full integration · Fixed price</p>
                 <p className="font-display text-[84px] leading-none text-voltage my-2">£350</p>
-                <p className="text-sm text-graphite">Total, including any applicable VAT. Fixed quote after a feasibility check. Third-party subscriptions are separate.</p>
+                <p className="text-sm text-graphite">Live in under a week from when we have access. Total, including any applicable VAT. Third-party subscriptions are separate.</p>
               </div>
             ) : (
               <ul className="space-y-3 text-bone/85">
@@ -137,7 +177,7 @@ export default function Campaign({ id }: { id: CampaignId }) {
       <section id="book" className="py-20 md:py-28 bg-voltage/[0.06] scroll-mt-20">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-10 md:gap-16 items-start">
           <div className="reveal">
-            <Eyebrow><Clock3 size={14} aria-hidden="true" />Free · 30 minutes · Real people</Eyebrow>
+            <Eyebrow><Clock3 size={14} aria-hidden="true" />{c.bookLabel ?? 'Free · 30 minutes · Real people'}</Eyebrow>
             <h2 className="font-display text-[clamp(30px,4vw,48px)] leading-[1.1] mb-6 text-balance">{c.form.title}</h2>
             <p className="text-lg text-graphite leading-relaxed mb-8">{c.form.body}</p>
             <div className="hidden md:block aspect-video rounded-[12px] overflow-hidden"><LoopVideo shot={c.loops[3]} label={c.loopAlts[3]} className="object-[50%_35%]" /></div>
