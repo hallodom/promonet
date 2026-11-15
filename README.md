@@ -35,6 +35,8 @@ Default theme is **light**. Users can toggle dark mode; preference is stored in 
 | `/` | Home — hero, workflows, how it works, pricing, FAQ, CTA |
 | `/about` | Team / company |
 | `/pricing` | Base / Scale-up / One-off pricing |
+| `/ai-ready` | English campaign — free AI website visibility review |
+| `/connect-your-tools` | English campaign — simple connection starter from £350 total |
 | `/connect` | App search + full catalog (~1,300 tools) |
 | `/connect/crm` | CRM → industry vertical matrix |
 | `/connect/:slug` | Individual integration pages (e.g. `capsule-to-mortgage-software`) |
@@ -128,7 +130,15 @@ CRM × vertical copy lives in [`src/data/matrix.json`](src/data/matrix.json) (an
 
 The Node server serves `dist/` (including prerendered routes and SEO files) and handles `/api/contact`.
 
-## Contact
+## Campaigns
+
+The two campaign pages share content in `src/data/campaigns.json`, an inline request form and English-only SEO/prerendering. Enquiries reuse `/api/contact` with optional `campaign` (`ai_ready` or `connect_tools`), `website`, `tools`, `landingPage` and `utm` fields; existing modal payloads remain supported. Campaign and UTM attribution appear in the enquiry email. No marketing subscription or tracking pixel is added.
+
+The English pricing page includes a smaller, scoped starter alongside the existing plans. See [campaign production pack](campaigns/README.md) for scripts, generation prompts, the Higgsfield spending record, social copy, assets and narration requirements. The approved 325.5-credit first pass produced two photographs and four clips. The assembled MP4s are silent visual drafts; final narrated reels await the owner's voice recordings.
+
+Checks: `node --test tests/contact.test.mjs`, `npm run build`, `node tests/campaigns.browser.mjs`. Browser checks start an isolated local production server and mock email delivery. QA screenshots are written to the ignored `artifacts/campaign-qa/` folder.
+
+## Contact delivery
 
 Contact modal posts to `/api/contact` (Resend → `eddy@promonetconsulting.com`). Requires `RESEND_API_KEY`, `RESEND_FROM`, `CONTACT_TO`.
 

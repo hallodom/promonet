@@ -1,0 +1,4 @@
+{
+  "ai_ready": { "still": "ai_ready-still.png", "clips": ["ai_ready-01.mp4", "ai_ready-02.mp4"] },
+  "connect_tools": { "still": "connect_tools-still.png", "clips": ["connect_tools-01.mp4", "connect_tools-02.mp4"] }
+}

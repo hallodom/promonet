@@ -1,0 +1,121 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0;background:#f5f5f2"><canvas id="film" width="1080" height="1920"></canvas><script>
+const canvas=document.querySelector('canvas'), c=canvas.getContext('2d');
+const C={paper:'#f5f5f2',ink:'#141d31',blue:'#2540e8',muted:'#647087',line:'#dce1e9',green:'#14755b',orange:'#ff592f'};
+const clamp=x=>Math.max(0,Math.min(1,x)), ease=x=>1-Math.pow(1-clamp(x),3);
+const imgs={}, vids={}; let id,ai;
+function box(x,y,w,h,r=24,fill='white',stroke){c.beginPath();c.roundRect(x,y,w,h,r);c.fillStyle=fill;c.fill();if(stroke){c.strokeStyle=stroke;c.lineWidth=2;c.stroke()}}
+function text(s,x,y,size=40,color=C.ink,weight=500,font='Arial'){c.fillStyle=color;c.font=`${weight} ${size}px ${font}`;c.textBaseline='top';c.fillText(s,x,y)}
+function lines(s,x,y,size=75,color=C.ink,weight=700,gap=1.08){s.split('\n').forEach((l,i)=>text(l,x,y+i*size*gap,size,color,weight))}
+function line(x1,y1,x2,y2,color=C.line,width=3){c.strokeStyle=color;c.lineWidth=width;c.beginPath();c.moveTo(x1,y1);c.lineTo(x2,y2);c.stroke()}
+function circle(x,y,r,color){c.fillStyle=color;c.beginPath();c.arc(x,y,r,0,Math.PI*2);c.fill()}
+function pill(s,x,y,w,color=C.blue,bg='#e8ecff'){box(x,y,w,56,28,bg);text(s,x+22,y+15,24,color,700)}
+function tick(x,y,color=C.green){c.strokeStyle=color;c.lineWidth=6;c.lineCap='round';c.beginPath();c.moveTo(x,y+12);c.lineTo(x+10,y+22);c.lineTo(x+29,y);c.stroke()}
+function enter(t,delay,fn){const p=ease((t-delay)/.65);if(!p)return;c.save();c.globalAlpha*=p;c.translate(0,55*(1-p));fn();c.restore()}
+function photo(img,x,y,w,h,zoom=1){c.save();c.beginPath();c.roundRect(x,y,w,h,30);c.clip();const r=Math.max(w/img.width,h/img.height)*zoom;c.drawImage(img,x+(w-img.width*r)/2,y+(h-img.height*r)*(ai?.28:.56),img.width*r,img.height*r);c.restore()}
+function movie(v,x,y,w,h){c.save();c.beginPath();c.roundRect(x,y,w,h,30);c.clip();const r=Math.max(w/v.videoWidth,h/v.videoHeight);c.drawImage(v,x+(w-v.videoWidth*r)/2,y+(h-v.videoHeight*r)/2,v.videoWidth*r,v.videoHeight*r);c.restore()}
+function eyebrow(s){text(s,92,307,25,C.blue,700)}
+function title(s,t,size=82){enter(t,0,()=>lines(s,88,367,size))}
+function footer(s,t){enter(t,.5,()=>lines(s,92,1400,36,C.muted,500,1.35))}
+function shadow(fn){c.save();c.shadowColor='#172c5620';c.shadowBlur=40;c.shadowOffsetY=15;fn();c.restore()}
+function browser(x,y,w,h,t,scan=false){
+ shadow(()=>box(x,y,w,h,26));box(x,y,w,70,26,'#edf0f5');box(x,y+35,w,35,0,'#edf0f5');[0,1,2].forEach(i=>circle(x+28+i*23,y+35,6,['#ff8c7c','#eac66a','#8cc8a5'][i]));
+ text('your-business.co.uk',x+115,y+23,22,C.muted);text('YOUR BUSINESS',x+38,y+108,24,C.blue,700);
+ text('Good work.',x+38,y+166,54,C.ink,700);text('Clearly explained.',x+38,y+227,44,C.ink,700);
+ for(let i=0;i<3;i++)box(x+38,y+315+i*24,w-100-i*45,9,4,'#e4e8ee');
+ box(x+38,y+420,180,51,12,C.blue);text('Get in touch',x+56,y+435,22,'white',700);
+ if(scan){const p=(t%2.8)/2.8, sy=y+88+p*(h-110);const g=c.createLinearGradient(0,sy-100,0,sy);g.addColorStop(0,'#2540e800');g.addColorStop(1,'#2540e81f');c.fillStyle=g;c.fillRect(x+12,sy-100,w-24,100);line(x+12,sy,x+w-12,sy,C.blue,3)}
+}
+function record(x,y,w,label,name,active=false){shadow(()=>box(x,y,w,215,22,'white',active?'#b5c2ff':C.line));pill(label,x+22,y+23,w-44);circle(x+45,y+123,20,'#e8ecff');text(name,x+78,y+104,29,C.ink,700);text('New enquiry',x+25,y+164,24,C.muted)}
+function arrow(x,y,color=C.blue){line(x-15,y-12,x,y,color,4);line(x-15,y+12,x,y,color,4)}
+function connector(t,y=940){const p=ease(t/.9);line(220,y,220,y+85,C.blue,5);line(220,y+85,810,y+85,'#d7defc',5);line(810,y+85,810,y+170,C.blue,5);line(220,y+85,220+590*p,y+85,C.blue,5);for(let i=0;i<3;i++){const q=((t*.37+i/3)%1);circle(220+590*q,y+85,9,C.blue)}arrow(810,y+170,C.blue)}
+function badge(s,x,y,w,t,delay){enter(t,delay,()=>{box(x,y,w,78,18,'#e7f3ed');tick(x+22,y+24);text(s,x+70,y+25,28,C.green,700)})}
+function scanScene(t){
+ eyebrow('01 / WEBSITE VISIBILITY');title('Can AI find\nyour business?',t);
+ enter(t,.15,()=>browser(115,655,740,565,t,true));
+ ['Website access','Readable content','Business clarity'].forEach((s,i)=>enter(t,.8+i*.6,()=>{box(445,930+i*112,440,88,18,C.ink);tick(470,958+i*112,'#a7e2c8');text(s,520,958+i*112,28,'white',700)}));
+ footer('Start with what AI search\ncan access and understand.',t);
+}
+function aiHook(t){
+ eyebrow('A SMALL BUSINESS. A SMART FIRST STEP.');title('Are you\nAI-ready?',t,112);
+ enter(t,.3,()=>browser(118+Math.sin(t)*8,725,700,555,t,false));
+ enter(t,.9,()=>{shadow(()=>box(290,1130,580,130,22,C.blue));text('Can AI understand this?',322,1176,34,'white',700)});
+ const q=(t*.3)%1;circle(215,1370,5+q*12,`rgba(37,64,232,${1-q})`);text('Your website is a useful place to start.',92,1450,32,C.muted);
+}
+function manual(t){
+ eyebrow('THE SAME TASK. AGAIN AND AGAIN.');title('Still copying\nbetween tools?',t,87);
+ enter(t,.2,()=>record(100,720,355,'ENQUIRY FORM','Alex Morgan'));
+ enter(t,.45,()=>record(535,1040,355,'YOUR CRM','Alex Morgan'));
+ const p=(t%2.1)/2.1, px=290+ease(p)*310,py=946+Math.sin(p*Math.PI)*15+ease(p)*42;
+ box(px-100,py-28,200,56,12,C.orange);text('Copy → Paste',px-83,py-16,23,'white',700);
+ line(455,822,712,822,'#d4d9e4',3);line(712,822,712,1020,'#d4d9e4',3);
+ pill(`${Math.min(9,Math.floor(t*2)+1)} repeated entries`,110,1310,340,'#a94629','#fce7df');
+ footer('How much time does your team\nlose doing this every week?',t);
+}
+function connected(t){
+ eyebrow('01 / ONE USEFUL CONNECTION');title('Enter it once.\nLet it flow.',t,91);
+ enter(t,.2,()=>record(100,725,390,'ENQUIRY FORM','Alex Morgan',true));
+ connector(Math.max(0,t-.6),940);
+ enter(t,.7,()=>record(500,1130,390,'YOUR CRM','Alex Morgan'.slice(0,Math.floor(Math.max(0,t-1.1)*15)),true));
+ badge('Record created',105,1250,340,t,1.9);
+ footer('One simple, one-way workflow.\nBetween two suitable tools.',t);
+}
+function value(t){
+ eyebrow(ai?'02 / SMALL IMPROVEMENTS, LASTING VALUE':'02 / TIME BACK, WEEK AFTER WEEK');
+ title(ai?'Make your business\neasier to understand.':'A little time back.\nEvery week.',t,74);
+ if(ai){
+ ['What you do','Who you help','How to contact you'].forEach((s,i)=>enter(t,.3+i*.45,()=>{box(105,745+i*163,775,132,23,'white',C.line);pill(`0${i+1}`,130,780+i*163,86);text(s,250,785+i*163,38,C.ink,700);tick(805,794+i*163)}));
+ footer('Prioritise useful improvements.\nAI inclusion is never guaranteed.',t);
+ }else{
+ const count=Math.floor(ease((t-.25)/2.5)*8);enter(t,.25,()=>{text(`${count}`,100,720,235,C.blue,700);text('hours',375,824,72,C.ink,700);text('across four weeks',109,978,35,C.muted)});
+ for(let i=0;i<4;i++)enter(t,.4+i*.35,()=>{box(110+i*195,1110,175,150,20,'white',C.line);text(`WEEK ${i+1}`,130+i*195,1136,22,C.muted,700);text('+2h',130+i*195,1183,48,C.blue,700)});
+ footer('Illustration: saving 2 hours each week.\nRecovered capacity, not necessarily cash.',t);
+ }
+}
+function expertise(t){
+ eyebrow('EXPERIENCE THAT GETS THINGS BUILT');title('20+ years.\nPractical expertise.',t,81);
+ movie(vids.one,100,715,790,650);
+ enter(t,.4,()=>{box(125,1190,735,130,22,C.blue);text('CRM & software development',153,1218,33,'white',700);text('Applied to practical AI adoption.',153,1263,29,'#e1e6ff')});
+ footer('Choose a useful first step.\nBuild it. Test it. Make it work.',t);
+}
+function offer(t){
+ eyebrow(ai?'YOUR FREE WEBSITE VISIBILITY REVIEW':'SMALL PROJECTS. CLEAR PRICING.');
+ title(ai?'30 minutes.\n3 clear next steps.':'A small connection.\nFrom £350 total.',t,80);
+ if(ai){
+ ['Review your website','Prioritise the improvements','Email your next steps'].forEach((s,i)=>enter(t,.3+i*.55,()=>{box(105,740+i*174,775,144,22,'white',C.line);circle(160,810+i*174,28,C.blue);text(String(i+1),151,793+i*174,31,'white',700);text(s,215,788+i*174,34,C.ink,700)}));
+ footer('Expert advice on what matters.\nNo obligation to buy.',t);
+ }else{
+ enter(t,.3,()=>{box(105,750,775,580,30,'white');text('ONE SIMPLE, ONE-WAY WORKFLOW',140,796,25,C.blue,700);
+ ['Setup & testing','Personal handover','14 days of agreed-workflow fault fixes'].forEach((s,i)=>enter(t,.6+i*.45,()=>{tick(140,882+i*90);text(s,190,877+i*90,i===2?27:34,C.ink,600)}));
+ line(140,1166,840,1166);text('Includes any applicable VAT.',140,1200,28,C.muted);text('Fixed quote after feasibility check.',140,1248,28,C.muted)});
+ footer('AI helps us reduce development time.\nThird-party subscriptions separate.',t);
+ }
+}
+function human(t){
+ eyebrow('SMALL BUSINESS HELPING SMALL BUSINESS');title('Real people.\nHands-on help.',t,95);
+ movie(vids.two,100,735,790,620);
+ enter(t,.6,()=>{pill('Work directly with us',130,1246,390,'white',C.blue)});
+ footer(ai?'Expert guidance for your business.\nStart with a conversation.':'Let’s find an improvement\nworth investing in.',t);
+}
+function end(t){
+ c.fillStyle=C.blue;c.fillRect(0,285,1080,1360);
+ enter(t,0,()=>{text('SMALL INVESTMENT. LASTING VALUE.',92,342,25,'#dbe1ff',700);lines(ai?'Let’s get you\nAI-ready.':'Time back.\nStarts here.',85,440,103,'white')});
+ photo(imgs.still,100,742,790,365,1+t*.008);
+ enter(t,.3,()=>{box(100,1150,790,142,24,'white');text(ai?'Request my free':'Request my free',136,1175,39,C.blue,700);text(ai?'AI evaluation →':'connection call →',136,1224,39,C.blue,700)});
+ enter(t,.6,()=>{text('Free 30-minute call · No obligation',105,1340,30,'white');text('promonetconsulting.com',105,1420,29,'#e3e8ff');text(ai?'/ai-ready':'/connect-your-tools',105,1468,35,'white',700)});
+}
+window.init=async campaign=>{id=campaign;ai=id==='ai_ready';imgs.still=new Image();imgs.still.src=`/generated/${id}-still.png`;await imgs.still.decode();for(const [key,n]of [['one','01'],['two','02']]){const v=document.createElement('video');v.muted=true;v.preload='auto';v.src=`/generated/${id}-${n}.mp4`;await new Promise((r,j)=>{v.onloadeddata=r;v.onerror=()=>j(new Error(`${v.src}: ${v.error?.message}`))});vids[key]=v}};
+window.render=async time=>{
+ const scene=Math.min(6,Math.floor(time/5)),t=time-scene*5;
+ if(scene===3||scene===5){const v=vids[scene===3?'one':'two'],target=Math.min(4.96,t);if(Math.abs(v.currentTime-target)>.001){await new Promise(r=>{v.onseeked=r;v.currentTime=target})}}
+ c.globalAlpha=1;c.fillStyle=C.paper;c.fillRect(0,0,1080,1920);
+ // Quiet grid and moving accent give the editorial canvas depth without competing with the message.
+ for(let y=300;y<1650;y+=60)for(let x=80;x<930;x+=60)circle(x,y,1.2,'#d7dce5');
+ c.save();const progress=ease(t/.5);c.globalAlpha=progress;c.translate(0,24*(1-progress));
+ [ai?aiHook:manual,ai?scanScene:connected,value,expertise,offer,human,end][scene](t);c.restore();
+ text('promonet',88,196,49,C.ink,700,'Georgia');text('.',340,185,70,C.orange,700);
+ text(ai?'AI READINESS':'CONNECTED TOOLS',566,215,22,C.muted,700);
+ for(let i=0;i<7;i++)box(94+i*116,1590,96,5,2,scene>=i?(scene===6?'#a7b6ff':C.blue):'#dde2ea');
+ text('ILLUSTRATIVE VISUALS · VOICEOVER PENDING',94,1665,18,C.muted,500);
+ return canvas.toDataURL('image/jpeg',.94).split(',')[1];
+};
+</script></body></html>
