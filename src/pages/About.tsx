@@ -84,7 +84,7 @@ export default function About() {
         </div>
       </section>
 
-      <TeamSection />
+      <TeamSection illustrated />
 
       <section className="relative py-28 md:py-36 bg-obsidian text-bone overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-50" />
