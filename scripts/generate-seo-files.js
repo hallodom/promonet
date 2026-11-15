@@ -250,6 +250,8 @@ The site is available in English (default) and Spanish under /es paths.
 - [Connect your CRM](${SITE_URL}/connect/crm): CRM → industry software matrix
 - [Pricing](${SITE_URL}/pricing): Base £600/mo, Scale-up £1,500/mo, One-off £1,000
 - [About](${SITE_URL}/about): Team background and why Promonet exists
+- [Are you AI ready?](${SITE_URL}/ai-ready): Free 30-minute AI evaluation call and three prioritised next steps
+- [Connect your tools](${SITE_URL}/connect-your-tools): One full integration between two tools, live in under a week, fixed £350
 
 ## Key pages (Spanish)
 - [Inicio](${SITE_URL}/es)
@@ -309,12 +311,15 @@ Connecting tools means moving data automatically between systems you already pay
 ${MATRIX.crms.map((c) => `- ${c.name}: ${c.blurb}`).join('\n')}
 
 ## Pricing (GBP)
+- Connect your tools: fixed £350 total including any applicable VAT — one full integration between two tools with suitable existing integration access; setup, testing, a short handover and 14 days of fault fixes. Live in under a week once we have access. Third-party costs separate; scope confirmed on a free chat before you commit. Details: ${SITE_URL}/connect-your-tools
 - Base: £600 / month — one CRM + tools, monitoring, email and Zoom support
 - Scale-up: £1,500 / month — multiple CRMs + tools, priority support
 - One-off: £1,000 — one connection end-to-end, one follow-up task, documented handoff
 - Custom: quoted for multi-CRM / complex logic
 
 ## How it works
+The free 30-minute AI evaluation looks at whether AI tools can find and understand your website and where AI could speed up the way you work, with three prioritised next steps emailed afterwards. No guarantee of rankings or inclusion in AI answers. Details: ${SITE_URL}/ai-ready
+
 1. Get-to-know-you call — map tools, sketch flows, fixed quote
 2. Build — typically two to four weeks with monitoring from day one
 3. Run — ongoing maintenance and 24-hour response on partnership plans

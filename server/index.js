@@ -27,6 +27,8 @@ const mime = {
   '.jpeg': 'image/jpeg',
   '.webp': 'image/webp',
   '.avif': 'image/avif',
+  '.mp4': 'video/mp4',
+  '.vtt': 'text/vtt; charset=utf-8',
   '.ico': 'image/x-icon',
   '.woff': 'font/woff',
   '.woff2': 'font/woff2',
@@ -163,11 +165,34 @@ async function serveFile(req, res, filePath, { status = 200, urlPath, extraHeade
     ...extraHeaders,
   }
   if (entry.compressible) headers.Vary = 'Accept-Encoding'
+  if (entry.ext === '.mp4') headers['Accept-Ranges'] = 'bytes'
 
   if (status === 200 && req.headers['if-none-match'] === entry.etag) {
     res.writeHead(304, headers)
     res.end()
     return true
+  }
+
+  // Video players can request a small initial range or seek to a later byte.
+  if (status === 200 && entry.ext === '.mp4' && req.method === 'GET' &&
+      (!req.headers['if-range'] || req.headers['if-range'] === entry.lastModified)) {
+    const range = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '')
+    if (range && (range[1] || range[2])) {
+      const [, first, last] = range
+      const start = first ? Number(first) : Math.max(0, entry.size - Number(last))
+      const end = first && last ? Math.min(Number(last), entry.size - 1) : entry.size - 1
+      if (start > end) {
+        send(req, res, 416, '', {
+          ...headers,
+          'Content-Range': `bytes */${entry.size}`,
+          'Cache-Control': 'no-store',
+        })
+        return true
+      }
+      headers['Content-Range'] = `bytes ${start}-${end}/${entry.size}`
+      send(req, res, 206, entry.body.subarray(start, end + 1), headers)
+      return true
+    }
   }
 
   let body = entry.body
@@ -256,7 +281,7 @@ async function handleContact(req, res) {
     }
     return sendJson(req, res, 200, { ok: true, id: result.id })
   } catch (err) {
-    return sendJson(req, res, 500, {
+    return sendJson(req, res, err?.status || 500, {
       error: err instanceof Error ? err.message : 'Server error',
     })
   }

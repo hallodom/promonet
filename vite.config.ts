@@ -37,12 +37,7 @@ function contactApiPlugin(env: Record<string, string>): Plugin {
 
         try {
           const body = (await readJsonBody(req)) as Record<string, unknown>
-          const result = await sendContactEmail({
-            name: String(body.name || ''),
-            email: String(body.email || ''),
-            company: String(body.company || ''),
-            message: String(body.message || ''),
-          })
+          const result = await sendContactEmail(body)
 
           res.statusCode = result.ok ? 200 : result.status || 500
           res.setHeader('Content-Type', 'application/json')
@@ -52,7 +47,7 @@ function contactApiPlugin(env: Record<string, string>): Plugin {
             ),
           )
         } catch (err) {
-          res.statusCode = 500
+          res.statusCode = typeof err === 'object' && err && 'status' in err ? Number(err.status) : 500
           res.setHeader('Content-Type', 'application/json')
           res.end(
             JSON.stringify({

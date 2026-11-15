@@ -35,6 +35,8 @@ Default theme is **light**. Users can toggle dark mode; preference is stored in 
 | `/` | Home — hero, workflows, how it works, pricing, FAQ, CTA |
 | `/about` | Team / company |
 | `/pricing` | Base / Scale-up / One-off pricing |
+| `/ai-ready` | English campaign — "Are you AI ready?" free 30-minute AI evaluation |
+| `/connect-your-tools` | English campaign — one full integration, live in under a week, fixed £350 |
 | `/connect` | App search + full catalog (~1,300 tools) |
 | `/connect/crm` | CRM → industry vertical matrix |
 | `/connect/:slug` | Individual integration pages (e.g. `capsule-to-mortgage-software`) |
@@ -128,7 +130,17 @@ CRM × vertical copy lives in [`src/data/matrix.json`](src/data/matrix.json) (an
 
 The Node server serves `dist/` (including prerendered routes and SEO files) and handles `/api/contact`.
 
-## Contact
+## Campaigns
+
+The two English-only campaign pages share content in [`src/data/campaigns.ts`](src/data/campaigns.ts) and are rendered by `src/pages/Campaign.tsx`, with the reel player in `src/components/CampaignVideo.tsx` and an inline request form (`src/components/CampaignForm.tsx`) that posts to `/api/contact` with the campaign and UTM source folded into the message. `/api/contact` also accepts optional structured `campaign`, `website`, `tools`, `landingPage` and `utm` fields. No marketing subscription or tracking pixel is added.
+
+Reels are made with Higgsfield (Veo 3.1 footage, Vera voiceover, ElevenLabs music). The script lives in `campaigns/brief.json`, every generation ID and the credit spend in `campaigns/generation-jobs.json`, and `node scripts/render-campaign-reels.mjs --campaign=<id>` renders a reel (overlay graphics: `scripts/campaign-reel-overlay.html`) and writes the web copies to `public/campaigns`. Working sources (`campaigns/source/`, `work/`, `output/`) are gitignored and can be re-downloaded from the job IDs.
+
+The English pricing page includes a smaller, scoped starter alongside the existing plans.
+
+Checks: `node --test tests/contact.test.mjs`, `npm run build`.
+
+## Contact delivery
 
 Contact modal posts to `/api/contact` (Resend → `eddy@promonetconsulting.com`). Requires `RESEND_API_KEY`, `RESEND_FROM`, `CONTACT_TO`.
 

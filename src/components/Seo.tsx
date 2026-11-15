@@ -74,7 +74,7 @@ export default function Seo({
       <meta property="og:description" content={description} />
       {!noIndex && <meta property="og:url" content={url} />}
       <meta property="og:locale" content={meta.ogLocale} />
-      <meta property="og:locale:alternate" content={LOCALE_META[altLocale].ogLocale} />
+      {!englishOnly && <meta property="og:locale:alternate" content={LOCALE_META[altLocale].ogLocale} />}
       <meta property="og:image" content={image} />
       <meta property="og:image:secure_url" content={image} />
       <meta property="og:image:type" content={imageType} />
