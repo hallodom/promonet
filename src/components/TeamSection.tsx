@@ -4,8 +4,8 @@ export default function TeamSection({ illustrated = false }: { illustrated?: boo
   const t = useT()
   const image = illustrated
     ? {
-        src: '/team-editorial-sketch.webp',
-        srcSet: '/team-editorial-sketch-640.webp 640w, /team-editorial-sketch.webp 1200w',
+        src: '/team-graphite.webp',
+        srcSet: '/team-graphite-640.webp 640w, /team-graphite.webp 1200w',
         width: 1200,
         height: 800,
         alt: t('team.illustrationAlt'),
