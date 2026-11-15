@@ -1,0 +1,107 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;800&family=Inter:wght@500;600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+/* Static campaign ads (scripts/render-campaign-ads.mjs). One ad per page load: window.render(cfg). */
+:root{--ink:#0a0a0f;--paper:#f5f5f2;--blue:#2540e8;--orange:#ff4a1c;--orangeText:#e8431a;--orangeSoft:#fff0eb;--green:#127a55;--greenSoft:#e3f3ea;--muted:#5b6170}
+*{box-sizing:border-box;margin:0}
+body{background:transparent;font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.ad{position:relative;overflow:hidden;background:var(--ink);color:#fff}
+.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.scrim{position:absolute;inset:0;background:linear-gradient(180deg,#0a0a0f99 0%,#0a0a0f00 18%,#0a0a0f00 var(--clear),#0a0a0fd9 calc(var(--clear) + 18%),#0a0a0ff5 100%)}
+.frame{position:absolute;inset:0;display:flex;flex-direction:column;padding:var(--pt) 64px var(--pb)}
+.top{display:flex;justify-content:space-between;align-items:flex-start}
+.wordmark{font:800 52px 'Roboto Slab',Georgia,serif;letter-spacing:-.01em;line-height:1}
+.wordmark span{color:var(--orange)}
+.badge{width:var(--badge);height:var(--badge);filter:drop-shadow(0 10px 24px #0008)}
+.spacer{flex:1}
+.graphic{margin-bottom:40px}
+.eyebrow{display:flex;align-items:center;gap:16px;font:700 24px 'JetBrains Mono',monospace;letter-spacing:.04em;color:#f5f5f2d9;margin-bottom:18px}
+.eyebrow:before{content:'';width:44px;height:4px;background:var(--orange)}
+h1{font:800 var(--h1) 'Roboto Slab',Georgia,serif;line-height:1.04;letter-spacing:-.02em;margin-bottom:20px;text-wrap:balance}
+h1 em{font-style:normal;color:#ff7a4d}
+.sub{font:500 var(--sub)/1.32 Inter,sans-serif;color:#f5f5f2e0;max-width:900px;margin-bottom:30px}
+.cta{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:22px;background:var(--paper);color:var(--ink);font:700 38px Inter,sans-serif;border-radius:999px;padding:22px 22px 22px 46px;box-shadow:0 14px 40px #0006}
+.btn i{width:64px;height:64px;border-radius:50%;background:var(--orange);display:grid;place-items:center}
+.url{font:600 28px Inter,sans-serif;color:#f5f5f2c4}
+.foot{font:500 19px/1.45 Inter,sans-serif;color:#f5f5f28c;margin-top:24px}.foot b{display:block;font:600 26px Inter,sans-serif;color:#f5f5f2c4;margin-bottom:6px}
+/* ---- UI graphics ---- */
+.card{background:#fff;color:var(--ink);border-radius:30px;box-shadow:0 18px 50px #0a0a0f66;padding:30px 34px}
+.mono{font:700 21px 'JetBrains Mono',monospace;color:var(--blue);letter-spacing:.03em}
+.chip{display:inline-flex;align-items:center;gap:12px;border-radius:999px;padding:13px 26px;font:800 28px Inter,sans-serif;box-shadow:0 10px 30px #0a0a0f55}
+.chip.warn{background:var(--orangeSoft);color:var(--orangeText);border:3px solid var(--orangeText)}
+.chip.ok{background:var(--greenSoft);color:var(--green);border:3px solid var(--green)}
+.chip.dark{background:var(--ink);color:#fff;border:2px solid #ffffff33}
+.chat .who{display:flex;align-items:center;gap:12px;font:700 26px Inter;margin-bottom:16px}
+.chat .who b{width:34px;height:34px;border-radius:50%;background:var(--blue);display:grid;place-items:center}.chat .who b:after{content:'';width:12px;height:12px;border-radius:50%;background:#fff}
+.bubble{margin-left:auto;width:fit-content;max-width:640px;background:var(--blue);color:#fff;border-radius:26px 26px 6px 26px;padding:20px 28px;font:600 31px/1.3 Inter}
+.res{display:flex;align-items:center;gap:16px;background:#f2f4f8;border-radius:14px;padding:14px 18px;margin-top:14px}
+.res s{flex:1;height:12px;border-radius:6px;background:#c8cfdb;text-decoration:none}.res u{text-decoration:none;color:#d99a12;font:700 22px Inter}
+.checks .row{display:flex;align-items:center;gap:20px;background:#f4f6fa;border-radius:18px;padding:18px 22px;margin-top:14px;font:800 31px Inter}
+.tick{flex:none;width:48px;height:48px;border-radius:50%;background:var(--greenSoft);display:grid;place-items:center}
+.tools{display:flex;align-items:center;justify-content:center}
+.tile{width:196px;height:196px;border-radius:30px;background:#fff;color:var(--ink);box-shadow:0 18px 50px #0a0a0f66;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;font:700 25px Inter;position:relative}
+.tile .ok{position:absolute;top:-14px;right:-14px;width:50px;height:50px;border-radius:50%;background:var(--green);display:grid;place-items:center;box-shadow:0 6px 16px #0005}
+.link{width:96px;height:10px;position:relative;display:grid;place-items:center}
+.link.broken{background:repeating-linear-gradient(90deg,#ff9c80 0 12px,transparent 12px 22px);height:5px}
+.link.broken:after{content:'×';position:absolute;font:800 46px Inter;color:var(--orange);top:-30px}
+.link.live{background:var(--blue);border-radius:5px}.link.live:after{content:'';position:absolute;width:16px;height:16px;border-radius:50%;background:#fff;left:30%}
+.under{display:flex;justify-content:center;margin-top:30px}
+.over{display:flex;justify-content:center;margin-bottom:28px}
+.price .amt{font:800 140px/1 'Roboto Slab',Georgia,serif;color:var(--blue);letter-spacing:-.02em;margin:6px 0 8px}
+.price .lbl{font:600 30px Inter;color:var(--muted);margin-top:12px}
+.price .pts{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:6px}
+.price .pts div{display:flex;align-items:center;gap:10px;font:700 27px Inter}
+.price .stamp{float:right;transform:rotate(-6deg);border:4px solid var(--orange);color:var(--orange);border-radius:12px;padding:8px 16px;font:800 24px 'JetBrains Mono',monospace;margin-top:20px}
+.flow{display:flex;align-items:stretch;gap:0}
+.step{flex:1;text-align:center;padding:4px 6px}
+.step .t{font:700 22px 'JetBrains Mono',monospace;color:var(--blue)}
+.step .n{font:800 27px/1.2 Inter;margin-top:10px}
+.step .d{width:60px;height:60px;border-radius:50%;background:var(--greenSoft);display:grid;place-items:center;margin:0 auto 12px}
+.arrow{align-self:center;width:46px;height:6px;background:var(--blue);border-radius:3px;position:relative;margin-top:-40px}
+.arrow:after{content:'';position:absolute;right:-4px;top:-8px;border:11px solid transparent;border-left:14px solid var(--blue);border-right:0}
+</style></head><body><div id="root"></div><script>
+const ICON={
+  inbox:'<svg width="84" height="64" viewBox="0 0 84 64" fill="none" stroke="#0a0a0f" stroke-width="6" stroke-linejoin="round"><rect x="4" y="4" width="76" height="56" rx="6"/><path d="M4 8l38 30L80 8"/></svg>',
+  sheet:'<svg width="78" height="70" viewBox="0 0 78 70" fill="none" stroke="#0a0a0f" stroke-width="6"><rect x="3" y="3" width="72" height="64" rx="6"/><path d="M3 25h72M3 46h72M28 3v64"/></svg>',
+  crm:'<svg width="74" height="74" viewBox="0 0 74 74" fill="none" stroke="#0a0a0f" stroke-width="6" stroke-linecap="round"><circle cx="37" cy="22" r="16"/><path d="M8 70c3-18 15-26 29-26s26 8 29 26"/></svg>',
+  cal:'<svg width="78" height="74" viewBox="0 0 78 74" fill="none" stroke="#0a0a0f" stroke-width="6" stroke-linecap="round"><rect x="3" y="10" width="72" height="61" rx="8"/><path d="M3 30h72M22 3v14M56 3v14"/><circle cx="27" cy="50" r="4" fill="#0a0a0f"/><circle cx="51" cy="50" r="4" fill="#ff4a1c" stroke="#ff4a1c"/></svg>',
+}
+const TICK=(c='#127a55',s=26)=>`<svg width="${s}" height="${s}" viewBox="0 0 28 24" fill="none" stroke="${c}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13l8 8L26 3"/></svg>`
+const ARROW='<svg width="30" height="26" viewBox="0 0 30 26" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h24M16 3l11 10-11 10"/></svg>'
+const tile=(k,l,ok)=>`<div class="tile">${ICON[k]}<span>${l}</span>${ok?`<b class="ok">${TICK('#fff',24)}</b>`:''}</div>`
+const GRAPHIC={
+  chat:()=>`<div class="card chat"><div class="who"><b></b>AI assistant</div><div class="bubble">Can you recommend a bike repair shop near me?</div>
+    <div class="res"><s style="max-width:300px"></s><u>★★★★★</u></div><div class="res"><s style="max-width:220px"></s><u>★★★★★</u></div></div>
+    <div class="under" style="margin-top:-26px"><span class="chip warn">Is your business in the answer?</span></div>`,
+  checks:()=>`<div class="card checks"><div class="mono">WHAT WE CHECK ON THE CALL</div>${['Can AI find and understand you?','Is your business clear?','Where could AI save you time?'].map(s=>`<div class="row"><span class="tick">${TICK()}</span>${s}</div>`).join('')}</div>`,
+  flow:()=>`<div class="card"><div class="mono" style="margin-bottom:22px">AN ENQUIRY, HANDLED IN MINUTES</div><div class="flow">
+    ${[['09:02','Enquiry in'],['09:04','Reply drafted'],['09:06','Follow-up booked']].map(([t,n],i)=>`${i?'<div class="arrow"></div>':''}<div class="step"><div class="d">${TICK()}</div><div class="t">${t}</div><div class="n">${n}</div></div>`).join('')}</div></div>`,
+  apart:()=>`<div class="tools">${tile('inbox','Inbox')}<div class="link broken"></div>${tile('sheet','Spreadsheet')}<div class="link broken"></div>${tile('crm','CRM')}</div>
+    <div class="under"><span class="chip warn">You become the connection</span></div>`,
+  copying:()=>`<div class="over"><span class="chip dark">J. Smith · new enquiry</span></div><div class="tools">${tile('inbox','Inbox')}<div class="link broken"></div>${tile('sheet','Spreadsheet')}<div class="link broken"></div>${tile('crm','CRM')}</div>
+    <div class="under"><span class="chip warn" style="background:var(--orange);color:#fff;border-color:var(--orange)">Typed again ×3</span></div>`,
+  connected:()=>`<div class="tools">${tile('inbox','Inbox',1)}<div class="link live"></div>${tile('sheet','Sheet',1)}<div class="link live"></div>${tile('crm','CRM',1)}<div class="link live"></div>${tile('cal','Calendar',1)}</div>
+    <div class="under"><span class="chip ok">${TICK('#127a55',24)} All your tools, talking</span></div>`,
+  price:()=>`<div class="card price"><span class="stamp">FIXED PRICE</span><div class="mono">ONE FULL INTEGRATION</div><div class="amt">£350</div>
+    <div class="pts"><div>${TICK()}Live in under a week</div><div>${TICK()}Built, tested, explained</div><div>${TICK()}14 days of fixes</div></div></div>`,
+}
+window.render=async cfg=>{
+  const S=cfg.size, story=S.h/S.w>1.6
+  const k=story?1:0,long=!!cfg.long
+  const v={'--pt':story?'250px':'56px','--pb':story?'300px':'52px','--badge':story?'180px':'160px','--h1':`${story?(long?82:90):(long?68:76)}px`,'--sub':story?'32px':'29px','--clear':story?'38%':'34%'}
+  // 9:16 only: drop the photo down (dark band under the Stories UI) so faces clear the graphic.
+  const drop=story?(cfg.drop??0):0
+  document.getElementById('root').innerHTML=`<div class="ad" style="width:${S.w}px;height:${S.h}px;${Object.entries(v).map(([k,x])=>`${k}:${x}`).join(';')}">
+    <img class="photo" src="${cfg.photo}" style="object-position:${cfg.pos?.[k]??'50% 30%'};top:${drop}px;height:${S.h}px">
+    <div class="scrim"></div>
+    <div class="frame"><div class="top"><div class="wordmark">promonet<span>.</span></div><img class="badge" src="${cfg.badge}"></div>
+      <div class="spacer"></div>
+      <div class="graphic" style="zoom:${story?.84:.72};margin-bottom:${story?36:30}px">${GRAPHIC[cfg.graphic]()}</div>
+      <div class="eyebrow">${cfg.eyebrow}</div><h1>${cfg.headline}</h1><p class="sub">${cfg.sub}</p>
+      <div class="cta"><span class="btn">${cfg.cta}<i>${ARROW}</i></span></div>
+      <p class="foot"><b>${cfg.url}</b>${cfg.foot}</p></div></div>`
+  await document.fonts.ready;await Promise.all([...document.images].map(i=>i.decode()))
+  return true
+}
+</script></body></html>
