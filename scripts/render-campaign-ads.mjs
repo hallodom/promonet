@@ -20,8 +20,8 @@ const STILLS = {
   b1: { t: 6 }, b2: { t: 3.5 }, t1: { t: 6, crop: '1080:1672:0:124' }, t2: { t: 1.2 },
 }
 
-const AI = { cta: 'Book your free AI evaluation', url: 'promonetconsulting.com/ai-ready', foot: 'Free 30-minute video call. We can’t guarantee AI recommendations. People shown are AI-generated.' }
-const CT = { cta: 'Book your free chat', url: 'promonetconsulting.com/connect-your-tools', foot: '£350 incl. any VAT for one integration. Third-party costs separate. People shown are AI-generated.' }
+const AI = { cta: 'Book your free AI evaluation', url: 'promonetconsulting.com/ai-ready', foot: 'Free 30-minute video call. We can’t guarantee AI recommendations.' }
+const CT = { cta: 'Book your free chat', url: 'promonetconsulting.com/connect-your-tools', foot: '£350 incl. any VAT for one integration. Third-party costs separate.' }
 const ADS = [
   { id: 'ai_ready-ask-ai', still: 'a1', graphic: 'chat', pos: ['50% 18%', '50% 30%'], drop: 60, eyebrow: 'FREE 30-MINUTE AI EVALUATION', headline: 'Are you AI ready?', sub: 'Customers are asking AI who to call. We’ll check whether it can find you, and where it could save you time.', ...AI },
   { id: 'ai_ready-checks', still: 'a2', graphic: 'checks', pos: ['55% 22%', '55% 26%'], drop: 170, eyebrow: '30 MINUTES · 3 CLEAR NEXT STEPS', headline: 'Can AI find your business?', sub: 'A free video call with real people. Three prioritised next steps by email afterwards.', ...AI },

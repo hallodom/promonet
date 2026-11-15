@@ -28,11 +28,11 @@ const F45 = format === '4x5', FRAME_H = F45 ? 1350 : 1920, CROP_Y = 285, SFX = F
 const brief = JSON.parse(await fs.readFile(path.join(root, 'campaigns/brief.json'), 'utf8'))
 
 const END = {
-  ai_ready: { hold: 3.2, card: { eyebrow: 'FREE · 30 MINUTES · NO OBLIGATION', title: 'Are you\nAI-ready?', sub: 'Book your free AI evaluation call.', cta: 'Book your free call', url: 'promonetconsulting.com/ai-ready', note: ['We can’t guarantee AI recommendations.', 'Illustrative scenes. People shown are AI-generated.'] } },
+  ai_ready: { hold: 3.2, card: { eyebrow: 'FREE · 30 MINUTES · NO OBLIGATION', title: 'Are you\nAI-ready?', sub: 'Book your free AI evaluation call.', cta: 'Book your free call', url: 'promonetconsulting.com/ai-ready', note: ['We can’t guarantee AI recommendations.'] } },
   connect_tools: {
     hold: 3.0,
     price: { at: 3.0, eyebrow: 'WHY SO AFFORDABLE? AI MAKES BUILDING FASTER.', label: 'Simple connections from', amount: '£350', suffix: 'total', note: 'Incl. any VAT · fixed quote after a feasibility check' },
-    card: { eyebrow: 'REAL PEOPLE · HANDS-ON HELP', title: 'Get your tools\ntalking.', sub: 'Simple connections from £350.', cta: 'Book your free call', url: 'promonetconsulting.com/connect-your-tools', note: ['£350 total incl. any VAT. Fixed quote after feasibility check.', 'Third-party costs separate. AI-generated people.'] },
+    card: { eyebrow: 'REAL PEOPLE · HANDS-ON HELP', title: 'Get your tools\ntalking.', sub: 'Simple connections from £350.', cta: 'Book your free call', url: 'promonetconsulting.com/connect-your-tools', note: ['£350 total incl. any VAT. Fixed quote after feasibility check.', 'Third-party costs separate.'] },
   },
   // Feedback re-cut: 24s, no mention of AI, fixed £300. A copy; connect_tools above is unchanged.
   connect_tools_24s: {
@@ -40,7 +40,7 @@ const END = {
     // Feedback: music clearly audible throughout — higher level, gentle ducking under the voice.
     mix: { music: 0.65, duckRatio: 3, duckThreshold: 0.05, fadeOut: 0.8 }, // music ~4.5 dB under the voice (was ~9)
     price: { at: 0.8, eyebrow: 'ONE SIMPLE CONNECTION', label: 'Fixed price', amount: '£300', suffix: '', note: 'Third-party subscriptions separate' },
-    card: { style: 'clean', badge: 'public/badges/uk-small-business-2026.png', eyebrow: 'REAL PEOPLE · HANDS-ON HELP', title: 'Promonet will help\nyou connect.', sub: 'One simple connection. Fixed price £300.', cta: 'Book your free call', url: 'promonetconsulting.com/connect-your-tools', note: ['Fixed price for one simple connection. Third-party costs separate.', 'Illustrative scenes; people shown are digitally generated.'] },
+    card: { style: 'clean', badge: 'public/badges/uk-small-business-2026.png', eyebrow: 'REAL PEOPLE · HANDS-ON HELP', title: 'Promonet will help\nyou connect.', sub: 'One simple connection. Fixed price £300.', cta: 'Book your free call', url: 'promonetconsulting.com/connect-your-tools', note: ['Fixed price for one simple connection. Third-party costs separate.'] },
   },
   // Second feedback round: ~30s, small expert team, all tools talking, £350 fixed, live in under a week,
   // "Book your free chat", livelier graphics (anim v2). A copy; the reels above are unchanged.
@@ -49,7 +49,7 @@ const END = {
     mix: { music: 0.65, duckRatio: 3, duckThreshold: 0.05, fadeOut: 0.8 },
     highlight: ['talking', 'finally', 'experts', 'team', 'week', '£350', 'free', 'chat'],
     price: { at: 0.3, eyebrow: 'ONE FULL INTEGRATION', label: 'Fixed price', amount: '£350', suffix: '', note: 'Incl. any VAT · third-party subscriptions separate' },
-    card: { style: 'clean', badge: 'public/badges/uk-small-business-2026.png', eyebrow: 'SMALL EXPERT TEAM · PART OF YOURS', title: 'Get your tools\ntalking.', sub: 'One full integration, live in under a week. Fixed £350.', cta: 'Book your free chat', url: 'promonetconsulting.com/connect-your-tools', note: ['£350 incl. any VAT for one integration. Third-party costs separate.', 'Illustrative scenes; people shown are digitally generated.'] },
+    card: { style: 'clean', badge: 'public/badges/uk-small-business-2026.png', eyebrow: 'SMALL EXPERT TEAM · PART OF YOURS', title: 'Get your tools\ntalking.', sub: 'One full integration, live in under a week. Fixed £350.', cta: 'Book your free chat', url: 'promonetconsulting.com/connect-your-tools', note: ['£350 incl. any VAT for one integration. Third-party costs separate.'] },
   },
 }
 const clipOf = (s) => s.clip ?? s.id

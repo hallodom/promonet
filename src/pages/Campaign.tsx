@@ -180,9 +180,7 @@ export default function Campaign({ id }: { id: CampaignId }) {
             <Eyebrow><Clock3 size={14} aria-hidden="true" />{c.bookLabel ?? 'Free · 30 minutes · Real people'}</Eyebrow>
             <h2 className="font-display text-[clamp(30px,4vw,48px)] leading-[1.1] mb-6 text-balance">{c.form.title}</h2>
             <p className="text-lg text-graphite leading-relaxed mb-8">{c.form.body}</p>
-            <div className="hidden md:block aspect-video rounded-[12px] overflow-hidden"><LoopVideo shot={c.loops[3]} label={c.loopAlts[3]} className="object-[50%_35%]" /></div>
-            <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.14em] text-graphite">Illustrative scenes · AI-generated people</p>
-          </div>
+            <div className="hidden md:block aspect-video rounded-[12px] overflow-hidden"><LoopVideo shot={c.loops[3]} label={c.loopAlts[3]} className="object-[50%_35%]" /></div>          </div>
           <div className="reveal"><CampaignForm campaign={c} /></div>
         </div>
       </section>
