@@ -26,12 +26,55 @@ test('AI requests normalise a website and generate the appropriate message', () 
   assert.match(result.value.offer, /three prioritised next steps/)
 })
 
-test('campaign emails include offer, tools, page and UTM attribution', async () => {
-  let mail
-  const result = await sendContactEmail(integration, { env, sendEmail: async (value) => { mail = value; return { data: { id: 'mock-campaign' } } } })
-  assert.equal(result.ok, true)
-  for (const value of ['fixed £350', 'Enquiry form and CRM', '/connect-your-tools', 'facebook', 'social', 'connect_tools']) assert.ok(mail.text.includes(value))
-  assert.equal(mail.tags[0].value, 'connect_tools')
+test('both campaigns send an internal notification and a copy of the submitted fields', async (t) => {
+  const fetch = t.mock.method(globalThis, 'fetch', async () => Response.json({
+    data: [{ id: 'mock-notification' }, { id: 'mock-confirmation' }],
+  }))
+  const task = 'Copy enquiries to CRM.\nKeep <reference numbers> as written.'
+  const cases = [
+    [ai, ['Website address: example.test'], ['https://example.test/', 'three prioritised next steps']],
+    [{ ...integration, message: task }, [
+      'Tools you’d like to connect: Enquiry form and CRM',
+      `What you’re copying or doing repeatedly: ${task}`,
+    ], ['fixed £350', 'Enquiry form and CRM', 'facebook', 'social']],
+  ]
+  for (const [index, [payload, receiptFields, notificationFields]] of cases.entries()) {
+    assert.deepEqual(await sendContactEmail(payload, { env }), { ok: true, id: 'mock-notification' })
+    assert.equal(fetch.mock.callCount(), index + 1)
+    const [url, options] = fetch.mock.calls[index].arguments
+    assert.equal(new URL(url).pathname, '/emails/batch')
+    assert.equal(new Headers(options.headers).get('x-batch-validation'), 'strict')
+    const batch = JSON.parse(options.body)
+    assert.equal(batch.length, 2)
+    const [notification, confirmation] = batch
+
+    assert.deepEqual(notification.to, [env.CONTACT_TO])
+    assert.equal(notification.reply_to, payload.email)
+    assert.equal(notification.tags[0].value, payload.campaign)
+    for (const value of [payload.landingPage, ...notificationFields]) assert.ok(notification.text.includes(value))
+
+    assert.equal(confirmation.from, env.RESEND_FROM)
+    assert.deepEqual(confirmation.to, [payload.email])
+    assert.equal(confirmation.reply_to, env.CONTACT_TO)
+    assert.match(confirmation.subject, /Promonet received your .* request/)
+    assert.deepEqual(confirmation.text.split('Here’s a copy of what you submitted:\n\n')[1]?.split('\n\n'), [
+      `Name: ${payload.name}`,
+      `Email: ${payload.email}`,
+      `Business name: ${payload.company}`,
+      ...receiptFields,
+    ])
+  }
+})
+
+test('a rejected campaign batch returns an error without sending individual emails', async (t) => {
+  const fetch = t.mock.method(globalThis, 'fetch', async () => Response.json(
+    { name: 'validation_error', message: 'private provider information' }, { status: 422 },
+  ))
+  const result = await sendContactEmail(ai, { env })
+  assert.equal(result.ok, false)
+  assert.equal(result.status, 502)
+  assert.doesNotMatch(result.error, /private/)
+  assert.equal(fetch.mock.callCount(), 1)
 })
 
 test('required fields, campaign scope and contact types are validated', () => {

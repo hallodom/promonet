@@ -6,10 +6,6 @@ import type { Campaign } from '@/data/campaigns'
 const field = 'w-full rounded-[4px] border border-obsidian/20 bg-white px-4 py-3 text-[15px] outline-none focus:border-voltage transition-colors'
 const label = 'font-mono text-[11px] uppercase tracking-[0.14em] text-graphite mb-2 block'
 
-/**
- * Campaign sign-up. Posts to the existing /api/contact endpoint, folding the campaign,
- * website/tools, task and UTM source into the message so enquiries are attributable.
- */
 export default function CampaignForm({ campaign }: { campaign: Campaign }) {
   const { search, pathname } = useLocation()
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
@@ -25,18 +21,26 @@ export default function CampaignForm({ campaign }: { campaign: Campaign }) {
     setError('')
     const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>
     const utm = new URLSearchParams(search)
-    const source = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].map((k) => utm.get(k)).filter(Boolean).join(' / ')
-    const message = [
-      `Campaign: ${campaign.id} (${pathname})`,
-      `${f.detailLabel}: ${data.detail}`,
-      data.task ? `${f.taskLabel}: ${data.task}` : '',
-      `Source: ${source || 'direct'}`,
-    ].filter(Boolean).join('\n')
+    const attribution = Object.fromEntries(
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']
+        .map((key) => [key, (utm.get(key) || '').slice(0, 200)]),
+    )
+    const details = campaign.id === 'ai_ready'
+      ? { website: data.detail }
+      : { tools: data.detail, message: data.task }
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: data.name, email: data.email, company: data.company, message }),
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          campaign: campaign.id,
+          landingPage: pathname,
+          utm: attribution,
+          ...details,
+        }),
       })
       const json = await res.json().catch(() => ({}))
       if (!res.ok || !json.ok) throw new Error(typeof json.error === 'string' && res.status === 400 ? json.error : '')
@@ -54,7 +58,7 @@ export default function CampaignForm({ campaign }: { campaign: Campaign }) {
       <div role="status" className="rounded-[8px] bg-white border border-obsidian/10 p-8 shadow-[0_24px_50px_rgba(10,10,15,0.08)]">
         <CheckCircle2 className="text-imago mb-5" size={40} aria-hidden="true" />
         <h3 className="font-display text-2xl mb-3">Thanks, we’ve got it.</h3>
-        <p className="text-graphite leading-relaxed">We’ll email you within one working day to arrange your free 30-minute call.</p>
+        <p className="text-graphite leading-relaxed">Check your inbox for a copy of your request. We’ll be in touch within one working day to arrange your free call.</p>
       </div>
     )
   }
