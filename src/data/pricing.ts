@@ -4,6 +4,8 @@ import es from '@/i18n/messages/es.json'
 
 export type PricingKey = 'base' | 'scaleup' | 'oneoff' | 'custom'
 
+export const STARTER_INTEGRATION_PRICE = 350
+
 export type PricingTier = {
   id: PricingKey
   name: string

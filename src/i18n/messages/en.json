@@ -104,6 +104,16 @@
     "customBadge": "Built around your stack",
     "footnote": "All plans · no asterisks · no hidden hourly fees · cancel any time"
   },
+  "starterIntegration": {
+    "eyebrow": "Special offer",
+    "title": "Starter integration",
+    "body": "Tell us which two apps you’ve never been able to connect. We’ll set up one simple workflow that passes information from one to the other automatically.",
+    "example": "For example, a new website enquiry could go straight into your CRM.",
+    "period": "one-off",
+    "terms": "Includes any applicable VAT. We’ll check your two apps can support the workflow first. Third-party costs are separate.",
+    "cta": "Tell us which apps",
+    "message": "I’m interested in the {{price}} starter integration.\n\nThe two apps I’d like to connect are:\nWhat I’d like to happen automatically:"
+  },
   "pricingData": {
     "base": {
       "name": "Base",
@@ -386,7 +396,7 @@
     "aboutTitle": "About Promonet — CRM Integrations for Small Businesses",
     "aboutDescription": "We are a small team of developers and designers helping small businesses connect CRM and industry tools at a low cost, with genuine human support.",
     "pricingTitle": "Pricing for CRM & Tool Integrations",
-    "pricingDescription": "Simple pricing for CRM and tool integrations: monthly partnership options from £600, or a fixed one-off connection from £1,000. No hidden hourly fees.",
+    "pricingDescription": "Connect two apps with a £350 one-off starter integration. Explore larger one-off builds and monthly CRM integration plans from £600.",
     "connectTitle": "Connect Business Tools & Integrations",
     "connectDescription": "Search and browse tools we help small businesses connect — CRMs, accounting, booking, and niche industry software. Fixed monthly price.",
     "connectCrmTitle": "Connect Your CRM to Industry Tools",

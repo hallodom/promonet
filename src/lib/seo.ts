@@ -1,5 +1,6 @@
 import matrixEn from '@/data/matrix.json'
 import { getMatrix } from '@/data/matrixLocale'
+import { STARTER_INTEGRATION_PRICE } from '@/data/pricing'
 import en from '@/i18n/messages/en.json'
 import es from '@/i18n/messages/es.json'
 import { DEFAULT_LOCALE, type Locale } from '@/i18n/locales'
@@ -270,11 +271,19 @@ export function faqJsonLd(
 export function offerCatalogJsonLd(locale: Locale = DEFAULT_LOCALE) {
   const seo = messages(locale).seo
   const pricing = messages(locale).pricingData
+  const starter = messages(locale).starterIntegration
   return {
     '@context': 'https://schema.org',
     '@type': 'OfferCatalog',
     name: seo.offerCatalogName,
     itemListElement: [
+      {
+        '@type': 'Offer',
+        name: starter.title,
+        price: String(STARTER_INTEGRATION_PRICE),
+        priceCurrency: 'GBP',
+        description: `${starter.body} ${starter.terms}`,
+      },
       {
         '@type': 'Offer',
         name: pricing.base.name,

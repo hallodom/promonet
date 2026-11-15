@@ -104,6 +104,16 @@
     "customBadge": "Diseñado para tu stack",
     "footnote": "Todos los planes · sin asteriscos · sin tarifas horarias ocultas · cancela cuando quieras"
   },
+  "starterIntegration": {
+    "eyebrow": "Oferta especial",
+    "title": "Integración inicial",
+    "body": "Dinos qué dos aplicaciones nunca has logrado conectar. Configuramos un flujo sencillo para que la información pase automáticamente de una a la otra.",
+    "example": "Por ejemplo, una consulta desde tu web podría llegar directamente a tu CRM.",
+    "period": "pago único",
+    "terms": "Incluye el IVA aplicable. Primero comprobamos que tus dos aplicaciones admiten el flujo. Los costes de terceros se pagan aparte.",
+    "cta": "Cuéntanos qué aplicaciones usas",
+    "message": "Me interesa la integración inicial de {{price}}.\n\nLas dos aplicaciones que quiero conectar son:\nLo que quiero que suceda automáticamente:"
+  },
   "pricingData": {
     "base": {
       "name": "Base",
@@ -386,7 +396,7 @@
     "aboutTitle": "Sobre Promonet — Integraciones CRM para pymes",
     "aboutDescription": "Somos un equipo pequeño de desarrolladores y diseñadores que ayudan a pymes a conectar CRM y herramientas sectoriales a bajo coste, con soporte humano de verdad.",
     "pricingTitle": "Precios de integraciones CRM y herramientas",
-    "pricingDescription": "Precios simples para integraciones CRM y herramientas: partnerships mensuales desde £600, o una conexión puntual fija desde £1.000. Sin tarifas horarias ocultas.",
+    "pricingDescription": "Conecta dos aplicaciones con una integración inicial de £350 en un solo pago. Consulta proyectos más amplios y planes mensuales de CRM desde £600.",
     "connectTitle": "Conectar herramientas de negocio e integraciones",
     "connectDescription": "Busca y explora herramientas que ayudamos a conectar a pymes — CRM, contabilidad, reservas y software sectorial de nicho. Precio mensual fijo.",
     "connectCrmTitle": "Conecta tu CRM a herramientas sectoriales",

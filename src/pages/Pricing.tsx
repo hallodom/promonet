@@ -6,6 +6,7 @@ import ContactButton from '@/components/ContactButton'
 import Seo from '@/components/Seo'
 import { listSeoRoutes, offerCatalogJsonLd } from '@/lib/seo'
 import { useLocale } from '@/i18n/LocaleContext'
+import { STARTER_INTEGRATION_PRICE } from '@/data/pricing'
 
 export default function Pricing() {
   useReveal()
@@ -51,6 +52,31 @@ export default function Pricing() {
 
       <section className="py-20 md:py-28 hairline-b">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          <article id="starter-integration" className="reveal mb-12 scroll-mt-24 rounded-[4px] border border-voltage/25 bg-voltage/[0.04] p-6 md:mb-16 md:grid md:grid-cols-[1fr_16rem] md:items-center md:gap-12 md:p-10">
+            <div>
+              <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.18em] text-voltage">
+                {t('starterIntegration.eyebrow')}
+              </p>
+              <h2 className="mb-4 font-display text-3xl tracking-[-0.02em] md:text-4xl">
+                {t('starterIntegration.title')}
+              </h2>
+              <p className="max-w-[560px] text-lg text-obsidian">{t('starterIntegration.body')}</p>
+              <p className="mt-3 max-w-[560px] text-graphite">{t('starterIntegration.example')}</p>
+            </div>
+            <div className="mt-6 border-t border-voltage/20 pt-6 md:mt-0 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+              <p className="flex flex-wrap items-baseline gap-x-3">
+                <span className="font-display text-5xl tracking-[-0.02em]">£{STARTER_INTEGRATION_PRICE}</span>
+                <span className="text-sm text-graphite">{t('starterIntegration.period')}</span>
+              </p>
+              <p className="mt-2 text-sm text-graphite">{t('starterIntegration.terms')}</p>
+              <ContactButton
+                className="mt-5 rounded-[4px] bg-voltage px-5 py-3.5 text-bone hover:bg-voltage/90"
+                message={t('starterIntegration.message', { price: `£${STARTER_INTEGRATION_PRICE}` })}
+              >
+                {t('starterIntegration.cta')}
+              </ContactButton>
+            </div>
+          </article>
           <PricingTiers headingLevel="h2" />
         </div>
       </section>
