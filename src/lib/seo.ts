@@ -1,7 +1,9 @@
 import matrixEn from '@/data/matrix.json'
 import { getMatrix } from '@/data/matrixLocale'
+import { STARTER_INTEGRATION_PRICE } from '@/data/pricing'
 import en from '@/i18n/messages/en.json'
 import es from '@/i18n/messages/es.json'
+import campaigns from '@/data/campaigns.json'
 import { DEFAULT_LOCALE, type Locale } from '@/i18n/locales'
 import {
   connectPagePath,
@@ -170,6 +172,12 @@ export function listSeoRoutes(locale?: Locale): SeoRoute[] {
     )
   }
 
+  if (!locale || locale === 'en') {
+    routes.push(...Object.values(campaigns).map((campaign) => ({
+      path: campaign.path, title: campaign.title, description: campaign.description,
+      locale: 'en' as const, priority: '0.8', changefreq: 'monthly',
+    })))
+  }
   return routes
 }
 
@@ -270,11 +278,19 @@ export function faqJsonLd(
 export function offerCatalogJsonLd(locale: Locale = DEFAULT_LOCALE) {
   const seo = messages(locale).seo
   const pricing = messages(locale).pricingData
+  const starter = messages(locale).starterIntegration
   return {
     '@context': 'https://schema.org',
     '@type': 'OfferCatalog',
     name: seo.offerCatalogName,
     itemListElement: [
+      {
+        '@type': 'Offer',
+        name: starter.title,
+        price: String(STARTER_INTEGRATION_PRICE),
+        priceCurrency: 'GBP',
+        description: `${starter.body} ${starter.terms}`,
+      },
       {
         '@type': 'Offer',
         name: pricing.base.name,
@@ -301,6 +317,9 @@ export function offerCatalogJsonLd(locale: Locale = DEFAULT_LOCALE) {
 }
 
 export function hreflangAlternates(path: string) {
+  if (Object.values(campaigns).some((campaign) => campaign.path === path)) {
+    return { en: absoluteUrl(path), es: undefined, xDefault: absoluteUrl(path) }
+  }
   return {
     en: absoluteUrl(toLocalePath(path, 'en')),
     es: absoluteUrl(toLocalePath(path, 'es')),

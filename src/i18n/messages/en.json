@@ -104,6 +104,16 @@
     "customBadge": "Built around your stack",
     "footnote": "All plans · no asterisks · no hidden hourly fees · cancel any time"
   },
+  "starterIntegration": {
+    "eyebrow": "Special offer",
+    "title": "Starter integration",
+    "body": "Tell us which two apps you’ve never been able to connect. We’ll set up one simple workflow that passes information from one to the other automatically.",
+    "example": "For example, a new website enquiry could go straight into your CRM.",
+    "period": "one-off",
+    "terms": "Includes any applicable VAT. We’ll check your two apps can support the workflow first. Third-party costs are separate.",
+    "cta": "Tell us which apps",
+    "message": "I’m interested in the {{price}} starter integration.\n\nThe two apps I’d like to connect are:\nWhat I’d like to happen automatically:"
+  },
   "pricingData": {
     "base": {
       "name": "Base",
@@ -228,7 +238,7 @@
     },
     {
       "question": "How much does it cost to connect tools?",
-      "answer": "Monthly partnerships start at £600. Scale-up is £1,500 per month. A one-off connection starts at £1,000. Custom work is quoted separately."
+      "answer": "A simple connection starter begins at £350 total, including any applicable VAT, for one qualifying one-way workflow. Third-party costs are separate and we confirm a fixed quote after checking feasibility. Monthly partnerships start at £600; Scale-up is £1,500 per month. Our broader one-off connection starts at £1,000. Custom work is quoted separately."
     },
     {
       "question": "How long does a typical integration take?",
@@ -236,7 +246,7 @@
     },
     {
       "question": "What support do we get after an integration goes live?",
-      "answer": "Monthly partnerships include ongoing monitoring, alerts, and support for the agreed connections. A one-off project includes a documented handover, one follow-up task, and support to help you get comfortable with it. We agree any further maintenance separately."
+      "answer": "The simple connection starter includes a short handover and 14 days of fixes for faults in the agreed workflow. Monthly partnerships include ongoing monitoring, alerts, and support for the agreed connections. A broader one-off project includes a documented handover, one follow-up task, and support to help you get comfortable with it. We agree any further maintenance separately."
     },
     {
       "question": "Do I need developers on my team?",
@@ -278,6 +288,7 @@
   "about": {
     "eyebrow": "About",
     "title": "Built by people who've lived the connectivity gap.",
+    "illustrationAlt": "Pencil sketch of four teammates mapping a workflow on a whiteboard",
     "p1": "We help small businesses connect CRM and industry tools at a low cost, with genuine human support — so owners stop re-typing data between systems.",
     "p2": "We're a small team of developers and designers. Over 20 years building some of the leading CRM solutions, we kept seeing the same thing: customers still struggling to connect their CRM to the rest of their tools — and their tools to each other, not just the CRM.",
     "storyTitle": "We saw a gap. Then we decided to fill it.",
@@ -385,7 +396,7 @@
     "aboutTitle": "About Promonet — CRM Integrations for Small Businesses",
     "aboutDescription": "We are a small team of developers and designers helping small businesses connect CRM and industry tools at a low cost, with genuine human support.",
     "pricingTitle": "Pricing for CRM & Tool Integrations",
-    "pricingDescription": "Simple pricing for CRM and tool integrations: monthly partnership options from £600, or a fixed one-off connection from £1,000. No hidden hourly fees.",
+    "pricingDescription": "Connect two apps with a £350 one-off starter integration. Explore larger one-off builds and monthly CRM integration plans from £600.",
     "connectTitle": "Connect Business Tools & Integrations",
     "connectDescription": "Search and browse tools we help small businesses connect — CRMs, accounting, booking, and niche industry software. Fixed monthly price.",
     "connectCrmTitle": "Connect Your CRM to Industry Tools",

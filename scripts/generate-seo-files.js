@@ -18,6 +18,7 @@ const MESSAGES = {
 }
 
 const SITE_URL = 'https://promonetconsulting.com'
+const CAMPAIGNS = Object.values(readJson('src/data/campaigns.json'))
 const SITE_NAME = 'Promonet'
 const CONTACT_EMAIL = 'hello@promonetconsulting.com'
 
@@ -61,6 +62,7 @@ const PAGE_SOURCES = {
   home: ['src/pages/Home.tsx', 'src/data/pricing.ts', 'public/illustrations'],
   about: ['src/pages/About.tsx'],
   pricing: ['src/pages/Pricing.tsx', 'src/data/pricing.ts'],
+  campaign: ['src/pages/Campaign.tsx', 'src/data/campaigns.json', 'src/campaigns.css', 'public/campaigns'],
   connect: ['src/pages/ConnectIndex.tsx', 'src/data/apps.json'],
   connectCrm: ['src/pages/ConnectCrm.tsx', 'src/data/matrix.json', 'src/data/matrix.es.json'],
   connectPage: [
@@ -101,6 +103,7 @@ function listRoutes() {
     { path: '/pricing', priority: '0.8', changefreq: 'monthly', page: 'pricing' },
     { path: '/connect', priority: '0.9', changefreq: 'weekly', page: 'connect' },
     { path: '/connect/crm', priority: '0.9', changefreq: 'weekly', page: 'connectCrm' },
+    ...CAMPAIGNS.map(({ path }) => ({ path, priority: '0.8', changefreq: 'monthly', page: 'campaign' })),
   ]
   const esBase = [
     { path: '/es', priority: '1.0', changefreq: 'weekly', page: 'home' },
@@ -195,8 +198,7 @@ ${routes
     <loc>${SITE_URL}${loc}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
     <changefreq>${r.changefreq}</changefreq>
     <priority>${r.priority}</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="${enHref}"/>
-    <xhtml:link rel="alternate" hreflang="es" href="${esHref}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${enHref}"/>${r.page === 'campaign' ? '' : `\n    <xhtml:link rel="alternate" hreflang="es" href="${esHref}"/>`}
     <xhtml:link rel="alternate" hreflang="x-default" href="${enHref}"/>
   </url>`
   })
@@ -246,6 +248,8 @@ The site is available in English (default) and Spanish under /es paths.
 - [Connect your CRM](${SITE_URL}/connect/crm): CRM → industry software matrix
 - [Pricing](${SITE_URL}/pricing): Base £600/mo, Scale-up £1,500/mo, One-off £1,000
 - [About](${SITE_URL}/about): Team background and why Promonet exists
+- [AI website visibility review](${SITE_URL}/ai-ready): Free 30-minute review and three prioritised next steps
+- [Simple connection starter](${SITE_URL}/connect-your-tools): From £350 total for a simple one-way workflow; fixed quote after feasibility check
 
 ## Key pages (Spanish)
 - [Inicio](${SITE_URL}/es)
@@ -305,12 +309,15 @@ Connecting tools means moving data automatically between systems you already pay
 ${MATRIX.crms.map((c) => `- ${c.name}: ${c.blurb}`).join('\n')}
 
 ## Pricing (GBP)
+- Simple connection starter: from £350 total including applicable VAT — one simple one-way workflow between two tools with existing integration access; setup, testing, handover and 14 days of fault fixes. Third-party costs separate. Final fixed quote after feasibility check. Larger work and ongoing monitoring quoted separately.
 - Base: £600 / month — one CRM + tools, monitoring, email and Zoom support
 - Scale-up: £1,500 / month — multiple CRMs + tools, priority support
 - One-off: £1,000 — one connection end-to-end, one follow-up task, documented handoff
 - Custom: quoted for multi-CRM / complex logic
 
 ## How it works
+The free AI website visibility review covers public page access, readable content and business clarity, with three prioritised next steps emailed afterwards. No guarantee of rankings or inclusion in AI answers. Details: ${SITE_URL}/ai-ready
+
 1. Get-to-know-you call — map tools, sketch flows, fixed quote
 2. Build — typically two to four weeks with monitoring from day one
 3. Run — ongoing maintenance and 24-hour response on partnership plans
