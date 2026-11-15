@@ -48,7 +48,20 @@ try {
     for (const asset of [`${id}-reel.mp4`, `${id}-poster.jpg`, `${id}.vtt`, `${id}-og.jpg`]) {
       const r = await fetch(`${origin}/campaigns/v2/${asset}`, { method: 'HEAD' })
       assert.equal(r.status, 200, `missing ${asset}`)
+      if (asset.endsWith('.vtt')) assert.match(r.headers.get('content-type'), /^text\/vtt/)
     }
+    const videoUrl = `${origin}/campaigns/v2/${id}-reel.mp4`
+    const range = await fetch(videoUrl, { headers: { Range: 'bytes=0-99' } })
+    assert.equal(range.status, 206)
+    assert.equal(range.headers.get('content-type'), 'video/mp4')
+    assert.equal(range.headers.get('accept-ranges'), 'bytes')
+    assert.match(range.headers.get('content-range'), /^bytes 0-99\//)
+    assert.equal((await range.arrayBuffer()).byteLength, 100)
+    const suffix = await fetch(videoUrl, { headers: { Range: 'bytes=-20' } })
+    assert.equal(suffix.status, 206)
+    assert.equal((await suffix.arrayBuffer()).byteLength, 20)
+    const unsatisfiable = await fetch(videoUrl, { headers: { Range: 'bytes=999999999999-' } })
+    assert.equal(unsatisfiable.status, 416)
     const url = `${origin}${campaign.path}?utm_source=instagram&utm_medium=social&utm_campaign=${id}&utm_content=reel_v1`
     await page.goto(url)
     await page.getByRole('heading', { level: 1, name: campaign.headline }).waitFor()
