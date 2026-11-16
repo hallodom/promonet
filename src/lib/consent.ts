@@ -12,7 +12,7 @@ import { useSyncExternalStore } from 'react'
  * cookies changes: stored choices from older versions are ignored, so every
  * visitor is asked again.
  */
-export const CONSENT_VERSION = 1
+export const CONSENT_VERSION = 2
 export const CONSENT_COOKIE = 'pn_consent'
 /** Re-ask after 12 months, in line with ICO/CNIL guidance. */
 export const CONSENT_MAX_AGE_DAYS = 365

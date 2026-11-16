@@ -2,6 +2,7 @@ import { useRef, useState, type FormEvent } from 'react'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { useLocation } from 'react-router-dom'
 import type { Campaign } from '@/data/campaigns'
+import { trackAiReadyLead } from '@/lib/metaPixel'
 
 const field = 'w-full rounded-[4px] border border-obsidian/20 bg-white px-4 py-3 text-[15px] outline-none focus:border-voltage transition-colors'
 const label = 'font-mono text-[11px] uppercase tracking-[0.14em] text-graphite mb-2 block'
@@ -45,6 +46,7 @@ export default function CampaignForm({ campaign }: { campaign: Campaign }) {
       const json = await res.json().catch(() => ({}))
       if (!res.ok || !json.ok) throw new Error(typeof json.error === 'string' && res.status === 400 ? json.error : '')
       setStatus('sent')
+      if (campaign.id === 'ai_ready') trackAiReadyLead()
     } catch (err) {
       setStatus('error')
       setError((err instanceof Error && err.message) || 'We couldn’t send that just now. Your details are still here, so please try again, or email hello@promonetconsulting.com.')

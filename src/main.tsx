@@ -4,10 +4,12 @@ import { BrowserRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import App from './App'
 import { initAnalytics } from './lib/analytics'
+import { initMetaPixel } from './lib/metaPixel'
 import './globals.css'
 
 // Loads GA4 only if (and once) the visitor has opted in to analytics cookies.
 initAnalytics()
+initMetaPixel()
 
 const container = document.getElementById('root')!
 const app = (
