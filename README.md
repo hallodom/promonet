@@ -100,6 +100,7 @@ Nothing is emitted when they are unset. They are read by `vite build`, so on Sev
 - The choice is stored in the strictly necessary first-party cookie `pn_consent` (`<version>.<analytics 0|1>.<marketing 0|1>.<timestamp>`, 12 months). `POST /api/consent` re-issues it from the server so Safari's 7-day cap on script-set cookies doesn't bring the banner back.
 - Bump `CONSENT_VERSION` in `src/lib/consent.ts` when the cookie policy or optional cookies change: everyone is asked again.
 - Anything non-essential (analytics, ad pixels, embeds that set cookies) must be loaded through `onConsentChange` / `hasConsent` from `src/lib/consent.ts` — see `src/lib/analytics.ts` for GA4. Marketing consent maps to Google's `ad_storage` / `ad_user_data` / `ad_personalization` signals.
+- The Meta Pixel runs on `promonetconsulting.com` after marketing consent. It sends a `Lead` event after the AI-ready form confirms a successful submission. To check the consent and conversion flow locally, run `npm run build` and `node --test tests/meta-pixel.browser.mjs` with Playwright Chromium installed.
 - Set `PRIVACY_POLICY_PATH` in `src/lib/consent.ts` once a privacy/cookie policy page exists, and the banner and preferences link to it.
 
 ## App catalog

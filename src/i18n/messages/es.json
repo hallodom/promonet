@@ -36,7 +36,7 @@
   },
   "cookies": {
     "title": "Cookies en Promonet",
-    "body": "Usamos cookies estrictamente necesarias para que el sitio funcione. Con tu permiso, también nos gustaría usar cookies analíticas para entender cómo se usa el sitio y cookies de marketing para medir nuestra publicidad. No se activa nada opcional hasta que elijas.",
+    "body": "Usamos cookies estrictamente necesarias para que el sitio funcione. Con tu permiso, usamos Google Analytics para entender cómo se usa el sitio y el píxel de Meta para medir nuestra publicidad en Facebook e Instagram. Puedes elegir qué cookies opcionales permitir.",
     "acceptAll": "Aceptar todas",
     "rejectAll": "Rechazar las no esenciales",
     "manage": "Gestionar cookies",
@@ -49,7 +49,7 @@
     "analyticsTitle": "Analíticas",
     "analyticsBody": "Google Analytics nos indica cómo usan el sitio los visitantes, por ejemplo qué páginas ven, para poder mejorarlo.",
     "marketingTitle": "Marketing",
-    "marketingBody": "Nos ayudan a medir nuestra publicidad (por ejemplo en Google o LinkedIn) y pueden usarse para personalizar los anuncios que ves en otros sitios.",
+    "marketingBody": "En nuestro sitio, el píxel de Meta puede establecer cookies de marketing e informa a Meta cuando visitas el sitio o envías correctamente una solicitud de evaluación de IA. Así podemos medir y mejorar nuestros anuncios en Facebook e Instagram. Puedes retirar tu consentimiento aquí en cualquier momento.",
     "save": "Guardar mis preferencias",
     "close": "Cerrar preferencias de cookies",
     "policyLink": "Lee nuestra política de cookies"
